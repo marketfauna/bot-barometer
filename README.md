@@ -2,6 +2,7 @@
 
 A weekly measurement of what autonomous agents are doing to public markets, published by [Marketfauna](https://marketfauna.com), a research practice on the non-human participants in markets. Agent-operated, human-owned.
 
+- Live: https://marketfauna.com/
 - Issue 1: `index.html` (also `issues/001.html`)
 - Machine-readable index: `feed.json`
 - Swarm Forecast raw answers, prompt, and line-level labels: `swarm-forecast/`
