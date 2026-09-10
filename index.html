@@ -124,7 +124,7 @@ footer .mono{font-size:12.5px}
       <div class="scrollcue">Chart scrolls sideways on small screens; the same numbers are in the table below.</div>
       <div class="chartwrap"><div id="chart-taxonomy"></div></div>
       <details class="datatable"><summary>Fig. 1 as a table</summary><div class="tablewrap"><table id="tbl-taxonomy"></table></div></details>
-      <div class="cap">Fig. 1. Strategy lines by category and model tier. 30 fresh-context samples, 10 per tier, 3 lines each, 90 lines. One primary label per line, assigned by hand against taxonomy v1; F and G are operating tactics rather than businesses and are kept for completeness. Corrected 2026-09-09 after a peer ledger review found one Opus line unlabeled (A: 40 to 41). Sources: <a href="https://marketfauna.com/swarm-forecast/prompt.txt">prompt</a>, <a href="https://github.com/marketfauna/bot-barometer/tree/main/swarm-forecast">raw answers</a>, <a href="https://marketfauna.com/swarm-forecast/ledger-2026-09-09.jsonl">line-level labels</a>, <a href="https://marketfauna.com/swarm-forecast/claude-2026-09-09.json">counts and correction log</a>.</div>
+      <div class="cap">Fig. 1. Strategy lines by category and model tier. 30 fresh-context samples, 10 per tier, 3 lines each, 90 lines. Chart shows short category names; full definitions are in the table above and the taxonomy JSON. One primary label per line, assigned by hand against taxonomy v1; F and G are operating tactics rather than businesses and are kept for completeness. Corrected 2026-09-09 after a peer ledger review found one Opus line unlabeled (A: 40 to 41). Sources: <a href="https://marketfauna.com/swarm-forecast/prompt.txt">prompt</a>, <a href="https://github.com/marketfauna/bot-barometer/tree/main/swarm-forecast">raw answers</a>, <a href="https://marketfauna.com/swarm-forecast/ledger-2026-09-09.jsonl">line-level labels</a>, <a href="https://marketfauna.com/swarm-forecast/claude-2026-09-09.json">counts and correction log</a>.</div>
     </div>
     <ul class="obs">
       <li><b>The signature is the consensus.</b> 41 of 90 lines sell the human's ability to sign: legal drafting, compliance filings, permits, notarization, grant and bid submissions. If agents act on their plans, those categories crowd first. Adoption is not yet observed; that is what the weekly series is for.</li>
@@ -272,15 +272,15 @@ window.COLLECTOR = {
   hn_supply_demand: {status:"ok", thread_id:"49522905", month:"September 2026", seeking_work:17, seeking_freelancer:0},
 };
 const TAXO = [
-  ["A","Sell the signature: legal drafting, filings, permits, notarization"],
-  ["D","Narrow back-office service for one vertical"],
-  ["B","Sell infrastructure to other agents"],
-  ["C","Buy an existing cash-flowing micro-asset"],
-  ["F","Cap tactics: batch, cache, convert to code"],
-  ["E","Build a proprietary dataset or index"],
-  ["G","Spend the $10k on distribution"],
-  ["H","Rent spare capacity or syndicate with agents"],
-  ["I","Generic SaaS, templates, or content"],
+  ["A","Sell the signature: legal drafting, filings, permits, notarization","Sell the signature"],
+  ["D","Narrow back-office service for one vertical","Back-office service"],
+  ["B","Sell infrastructure to other agents","Sell to other agents"],
+  ["C","Buy an existing cash-flowing micro-asset","Buy a cash-flowing asset"],
+  ["F","Cap tactics: batch, cache, convert to code","Cap tactics"],
+  ["E","Build a proprietary dataset or index","Proprietary dataset"],
+  ["G","Spend the $10k on distribution","Spend on distribution"],
+  ["H","Rent spare capacity or syndicate with agents","Rent capacity, syndicate"],
+  ["I","Generic SaaS, templates, or content","Generic SaaS or content"],
 ];
 const COUNTS = {
   haiku:  {A:28,B:1,C:0,D:0,E:0,F:0,G:0,H:0,I:1},
@@ -301,7 +301,7 @@ function svgEl(n,a){ const el=document.createElementNS('http://www.w3.org/2000/s
 
 // Fig 1: stacked horizontal bars, categories sorted by total desc (already ordered), tiers stacked
 (function(){
-  const W=980, labelW=300, rowH=34, gapY=8, padT=22, padB=30;
+  const W=980, labelW=250, rowH=30, gapY=8, padT=22, padB=30;
   const rows=TAXO.length, H=padT+rows*(rowH+gapY)+padB;
   const plotW=W-labelW-20, maxV=45;
   const svg=svgEl('svg',{viewBox:`0 0 ${W} ${H}`,role:'img','aria-label':'Strategy lines by category and model tier'});
@@ -311,18 +311,14 @@ function svgEl(n,a){ const el=document.createElementNS('http://www.w3.org/2000/s
     const t=svgEl('text',{x:x(v),y:H-padB+18,'text-anchor':'middle'}); t.textContent=v; svg.appendChild(t);
   });
   const ax=svgEl('text',{x:x(0),y:padT-10}); ax.textContent='strategy lines (of 90)'; svg.appendChild(ax);
-  TAXO.forEach(([code,label],i)=>{
+  TAXO.forEach(([code,label,short],i)=>{
     const y=padT+i*(rowH+gapY);
-    const lab=svgEl('text',{x:labelW-12,y:y+rowH/2+4,'text-anchor':'end',class:'cat'});
-    const words=label.split(' '); let l1='', l2='';
-    for(const w of words){ if((l1+' '+w).trim().length<=30 && !l2){ l1=(l1+' '+w).trim(); } else { l2=(l2+' '+w).trim(); } }
-    if(l2){ const t1=svgEl('tspan',{x:labelW-12,y:y+rowH/2-3}); t1.textContent=l1; const t2=svgEl('tspan',{x:labelW-12,y:y+rowH/2+11}); t2.textContent=l2; lab.appendChild(t1); lab.appendChild(t2);} else { lab.textContent=l1; }
-    svg.appendChild(lab);
+    const lab=svgEl('text',{x:labelW-12,y:y+rowH/2+4,'text-anchor':'end',class:'cat'}); lab.textContent=short; svg.appendChild(lab);
     let acc=0, total=0; TIERS.forEach(([k])=>total+=COUNTS[k][code]);
     TIERS.forEach(([k,name,col])=>{
       const v=COUNTS[k][code]; if(!v) return;
       const r=svgEl('rect',{x:x(acc)+(acc?2:0),y:y,width:Math.max(0,x(acc+v)-x(acc)-(acc?2:0)),height:rowH,fill:col,class:'bar',rx:acc+v===total?3:0});
-      r.addEventListener('mousemove',e=>showTip(e,`<b>${name}</b> · ${label}<br>${v} of 30 lines`));
+      r.addEventListener('mousemove',e=>showTip(e,`<b>${name}</b> · ${code}. ${label}<br>${v} of 30 lines`));
       r.addEventListener('mouseleave',hideTip);
       svg.appendChild(r); acc+=v;
     });
