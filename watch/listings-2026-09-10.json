@@ -1,0 +1,307 @@
+{
+  "gbstudio-overlay": {
+    "url": "https://www.freelancer.com/projects/game-development/gbstudio-overlay-image-integration",
+    "http": 404,
+    "sha16": "",
+    "fields": {},
+    "len": 0
+  },
+  "windows-cis-hardening": {
+    "url": "https://www.freelancer.com/projects/windows-server/windows-cis-hardening",
+    "http": 200,
+    "sha16": "ee52a940af763ea2",
+    "fields": {
+      "title": "Windows 2025 CIS Hardening | Freelancer",
+      "status": "",
+      "budget": "$10-30",
+      "bids": "3",
+      "avg_bid": "",
+      "awarded_to": "",
+      "time_left": ""
+    },
+    "len": 1011138
+  },
+  "sheets-call-routing": {
+    "url": "https://www.freelancer.com/projects/google-sheets/google-sheets-call-routing-automation",
+    "http": 200,
+    "sha16": "752caff9915ae703",
+    "fields": {
+      "title": "Google Sheets Call Routing Automation | Freelancer",
+      "status": "",
+      "budget": "£20-250",
+      "bids": "108",
+      "avg_bid": "",
+      "awarded_to": "",
+      "time_left": ""
+    },
+    "len": 1335854
+  },
+  "composer-dag": {
+    "url": "https://www.freelancer.com/projects/data-processing/composer-dag-for-data-ingestion",
+    "http": 200,
+    "sha16": "5d6861bb2a668762",
+    "fields": {
+      "title": "Composer DAG for Data Ingestion Pipeline | Freelancer",
+      "status": "",
+      "budget": "€18-36",
+      "bids": "8",
+      "avg_bid": "",
+      "awarded_to": "",
+      "time_left": ""
+    },
+    "len": 1007559
+  },
+  "import-pdf-bank": {
+    "url": "https://www.freelancer.com/projects/google-sheets/import-pdf-bank-transactions",
+    "http": 200,
+    "sha16": "af932beb08449674",
+    "fields": {
+      "title": "Import PDF Bank Transactions | Freelancer",
+      "status": "",
+      "budget": "$10-30",
+      "bids": "68",
+      "avg_bid": "",
+      "awarded_to": "",
+      "time_left": ""
+    },
+    "len": 1326916
+  },
+  "fix-bing-indexing": {
+    "url": "https://www.freelancer.com/projects/seo/fix-bing-indexing-issue",
+    "http": 200,
+    "sha16": "e0cb4e0e23cf89ea",
+    "fields": {
+      "title": "Fix Bing Indexing Issue | Freelancer",
+      "status": "",
+      "budget": "$50-100",
+      "bids": "33",
+      "avg_bid": "",
+      "awarded_to": "",
+      "time_left": ""
+    },
+    "len": 1064731
+  },
+  "winomkar-data-entry": {
+    "url": "https://www.freelancer.com/projects/automation/automate-winomkar-data-entry",
+    "http": 200,
+    "sha16": "cc61343ce58efc04",
+    "fields": {
+      "title": "Automate Winomkar Data Entry | Freelancer",
+      "status": "",
+      "budget": "$25-50",
+      "bids": "39",
+      "avg_bid": "",
+      "awarded_to": "",
+      "time_left": ""
+    },
+    "len": 1355808
+  },
+  "remote-work-rebels": {
+    "url": "https://flippa.com/12761258",
+    "http": 200,
+    "sha16": "466fd70d1333b4d4",
+    "fields": {
+      "title": "Remote Work Rebels: Established… | Website for Sale on Flippa",
+      "status": "",
+      "price": "$9,639",
+      "orig_price": "$11,900",
+      "reduced": "Reduced 19%",
+      "bids": "",
+      "time_left": "",
+      "reserve": ""
+    },
+    "len": 431152
+  },
+  "concealed-carry-society": {
+    "url": "https://flippa.com/13446183",
+    "http": 200,
+    "sha16": "5164a9ff7d943823",
+    "fields": {
+      "title": "Concealed Carry Society… | Website for Sale on Flippa",
+      "status": "",
+      "price": "$7,290",
+      "orig_price": "$24,999",
+      "reduced": "Reduced 71%",
+      "bids": "",
+      "time_left": "",
+      "reserve": ""
+    },
+    "len": 424797
+  },
+  "my-kind-of-meeple": {
+    "url": "https://flippa.com/13816202",
+    "http": 200,
+    "sha16": "430fc0c8d2a2f4ca",
+    "fields": {
+      "title": "My Kind of Meeple: Offers detailed… | Website for Sale on Flippa",
+      "status": "",
+      "price": "$15,000",
+      "orig_price": "",
+      "reduced": "",
+      "bids": "1",
+      "time_left": "15 days left",
+      "reserve": ""
+    },
+    "len": 423182
+  },
+  "cofonts": {
+    "url": "https://flippa.com/13706273",
+    "http": 200,
+    "sha16": "cdeeb8ed1ab80231",
+    "fields": {
+      "title": "Cofonts: Cofonts.com | $1,068/mo… | Website for Sale on Flippa",
+      "status": "",
+      "price": "",
+      "orig_price": "",
+      "reduced": "",
+      "bids": "12",
+      "time_left": "14 hours left",
+      "reserve": ""
+    },
+    "len": 420559
+  },
+  "flippa-13933449-speisekarte-NOT-nyevents": {
+    "url": "https://flippa.com/13933449",
+    "http": 200,
+    "sha16": "521839e524f9a1bb",
+    "fields": {
+      "title": "Speisekartemenus.de… | Website for Sale on Flippa",
+      "status": "",
+      "price": "$4,400",
+      "orig_price": "",
+      "reduced": "",
+      "bids": "3",
+      "time_left": "27 days left",
+      "reserve": "Reserve not met"
+    },
+    "len": 420953
+  },
+  "flippa-11226620": {
+    "url": "https://flippa.com/11226620",
+    "http": 200,
+    "sha16": "4f44e67b16847850",
+    "fields": {
+      "title": "Trade Scape: Highly… | Service Business Listing Ended on Flippa",
+      "status": "",
+      "price": "",
+      "orig_price": "",
+      "reduced": "",
+      "bids": "",
+      "time_left": "",
+      "reserve": ""
+    },
+    "len": 412535
+  },
+  "flippa-11836890": {
+    "url": "https://flippa.com/11836890",
+    "http": 200,
+    "sha16": "92391925f75de491",
+    "fields": {
+      "title": "Trade Scape: Highly… | Service Business for Sale on Flippa",
+      "status": "",
+      "price": "$5,000",
+      "orig_price": "$7,500",
+      "reduced": "Reduced 33%",
+      "bids": "",
+      "time_left": "",
+      "reserve": ""
+    },
+    "len": 419320
+  },
+  "flippa-12005809": {
+    "url": "https://flippa.com/12005809",
+    "http": 200,
+    "sha16": "31675eb461c0352d",
+    "fields": {
+      "title": "MyWWList: Passive 99% margin weight… | Website for Sale on Flippa",
+      "status": "",
+      "price": "$3,000",
+      "orig_price": "",
+      "reduced": "",
+      "bids": "",
+      "time_left": "",
+      "reserve": ""
+    },
+    "len": 421320
+  },
+  "flippa-12286007": {
+    "url": "https://flippa.com/12286007",
+    "http": 200,
+    "sha16": "deafa3179c1d3bad",
+    "fields": {
+      "title": "The Grace: Highly profitable South… | Website for Sale on Flippa",
+      "status": "",
+      "price": "$8,000",
+      "orig_price": "",
+      "reduced": "",
+      "bids": "",
+      "time_left": "",
+      "reserve": ""
+    },
+    "len": 430157
+  },
+  "flippa-12383685": {
+    "url": "https://flippa.com/12383685",
+    "http": 200,
+    "sha16": "dcb8b6a90a3da351",
+    "fields": {
+      "title": "Massage Chairs and… | Ecommerce Store for Sale on Flippa",
+      "status": "",
+      "price": "$5,500",
+      "orig_price": "$80,000",
+      "reduced": "Reduced 93%",
+      "bids": "",
+      "time_left": "",
+      "reserve": ""
+    },
+    "len": 421322
+  },
+  "flippa-12884918": {
+    "url": "https://flippa.com/12884918",
+    "http": 200,
+    "sha16": "86394c3b4871b6f9",
+    "fields": {
+      "title": "Cameronjournal.com: 12-Year… | Website for Sale on Flippa",
+      "status": "",
+      "price": "",
+      "orig_price": "",
+      "reduced": "",
+      "bids": "6",
+      "time_left": "3 days left",
+      "reserve": ""
+    },
+    "len": 422206
+  },
+  "flippa-13463497": {
+    "url": "https://flippa.com/13463497",
+    "http": 200,
+    "sha16": "ff8c9aa007c26a5f",
+    "fields": {
+      "title": "3D TrueDepth Camera Scan: 3D… | iOS App for Sale on Flippa",
+      "status": "",
+      "price": "$3,150",
+      "orig_price": "$5,500",
+      "reduced": "Reduced 43%",
+      "bids": "",
+      "time_left": "",
+      "reserve": ""
+    },
+    "len": 417290
+  },
+  "flippa-13551982": {
+    "url": "https://flippa.com/13551982",
+    "http": 200,
+    "sha16": "2c75de39d8f6ae92",
+    "fields": {
+      "title": "Hemp Heals Foundation: Established… | Website for Sale on Flippa",
+      "status": "",
+      "price": "$6,479",
+      "orig_price": "$7,199",
+      "reduced": "Reduced 10%",
+      "bids": "",
+      "time_left": "",
+      "reserve": ""
+    },
+    "len": 421660
+  }
+}

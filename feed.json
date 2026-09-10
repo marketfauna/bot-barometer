@@ -3,7 +3,7 @@
   "publisher": "Marketfauna",
   "contact": "hello@marketfauna.com",
   "schema": 1,
-  "generated_at": "2026-09-10T03:03:49+00:00",
+  "generated_at": "2026-09-10T03:47:26+00:00",
   "license_note": "Derived counts and labels are ours. Raw third-party page content is not redistributed; source URLs are listed per series.",
   "issues": [
     {
@@ -84,6 +84,76 @@
             "url": "https://www.freelancer.com/jobs/video-editing/"
           }
         }
+      },
+      {
+        "date": "2026-09-10",
+        "status": "ok",
+        "categories": {
+          "python": {
+            "n_projects": 50,
+            "median_bids": 67,
+            "mean_bids": 91.92,
+            "p90_bids": 182,
+            "share_with_budget_under_50usd": 0.2368,
+            "url": "https://www.freelancer.com/jobs/python/"
+          },
+          "javascript": {
+            "n_projects": 50,
+            "median_bids": 90.5,
+            "mean_bids": 125.6,
+            "p90_bids": 284,
+            "share_with_budget_under_50usd": 0.1538,
+            "url": "https://www.freelancer.com/jobs/javascript/"
+          },
+          "data-entry": {
+            "n_projects": 50,
+            "median_bids": 10,
+            "mean_bids": 23.86,
+            "p90_bids": 61,
+            "share_with_budget_under_50usd": 0.3143,
+            "url": "https://www.freelancer.com/jobs/data-entry/"
+          },
+          "wordpress": {
+            "n_projects": 50,
+            "median_bids": 156,
+            "mean_bids": 196.73,
+            "p90_bids": 390,
+            "share_with_budget_under_50usd": 0.2439,
+            "url": "https://www.freelancer.com/jobs/wordpress/"
+          },
+          "web-scraping": {
+            "n_projects": 50,
+            "median_bids": 55,
+            "mean_bids": 75.47,
+            "p90_bids": 180,
+            "share_with_budget_under_50usd": 0.2195,
+            "url": "https://www.freelancer.com/jobs/web-scraping/"
+          },
+          "graphic-design": {
+            "n_projects": 50,
+            "median_bids": 66.5,
+            "mean_bids": 79.78,
+            "p90_bids": 160,
+            "share_with_budget_under_50usd": 0.3684,
+            "url": "https://www.freelancer.com/jobs/graphic-design/"
+          },
+          "copywriting": {
+            "n_projects": 50,
+            "median_bids": 36,
+            "mean_bids": 44.91,
+            "p90_bids": 90,
+            "share_with_budget_under_50usd": 0.3571,
+            "url": "https://www.freelancer.com/jobs/copywriting/"
+          },
+          "video-editing": {
+            "n_projects": 50,
+            "median_bids": 17.5,
+            "mean_bids": 25.06,
+            "p90_bids": 53,
+            "share_with_budget_under_50usd": 0.4762,
+            "url": "https://www.freelancer.com/jobs/video-editing/"
+          }
+        }
       }
     ],
     "exit_listing_ai_keyword_share": [
@@ -101,6 +171,36 @@
             "n_listings": 12,
             "n_ai": 7,
             "share_ai": 0.5833,
+            "url": "https://indiemaker.co/"
+          },
+          "buymicrostartups": {
+            "n_listings": 4,
+            "n_ai": 1,
+            "share_ai": 0.25,
+            "url": "https://buymicrostartups.com/"
+          },
+          "acquirebase": {
+            "n_listings": 18,
+            "n_ai": 10,
+            "share_ai": 0.5556,
+            "url": "https://acquirebase.com/"
+          }
+        }
+      },
+      {
+        "date": "2026-09-10",
+        "status": "ok",
+        "sites": {
+          "microns": {
+            "n_listings": 9,
+            "n_ai": 5,
+            "share_ai": 0.5556,
+            "url": "https://www.microns.io/"
+          },
+          "indiemaker": {
+            "n_listings": 12,
+            "n_ai": 8,
+            "share_ai": 0.6667,
             "url": "https://indiemaker.co/"
           },
           "buymicrostartups": {
@@ -154,6 +254,42 @@
           }
         ],
         "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
+      },
+      {
+        "date": "2026-09-10",
+        "status": "ok",
+        "n_issues": 100,
+        "n_distinct_repos": 9,
+        "board_named_share": 0.86,
+        "total_count_reported": 4360,
+        "top_repos": [
+          {
+            "repo": "zhangjiayang6835-cyber/bounty-plaza",
+            "n_issues": 56,
+            "synthetic": true
+          },
+          {
+            "repo": "NSPG13/agent-bounties",
+            "n_issues": 25,
+            "synthetic": true
+          },
+          {
+            "repo": "Senthemodder/aquarium-of-gullibles",
+            "n_issues": 5,
+            "synthetic": false
+          },
+          {
+            "repo": "relayhop/sn-monetization-runtime",
+            "n_issues": 5,
+            "synthetic": false
+          },
+          {
+            "repo": "aadarwal/swarmstatus-bounties",
+            "n_issues": 4,
+            "synthetic": true
+          }
+        ],
+        "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
       }
     ],
     "hn_freelancer_thread": [
@@ -165,11 +301,20 @@
         "seeking_work": 17,
         "seeking_freelancer": 0,
         "url": "https://hn.algolia.com/api/v1/items/49522905"
+      },
+      {
+        "date": "2026-09-10",
+        "status": "ok",
+        "thread_id": "49522905",
+        "month": "September 2026",
+        "seeking_work": 18,
+        "seeking_freelancer": 0,
+        "url": "https://hn.algolia.com/api/v1/items/49522905"
       }
     ]
   },
   "swarm_forecast": {
-    "swarm-sample-claude-2026-09-09": {
+    "claude-2026-09-09": {
       "lineage": "anthropic",
       "date": "2026-09-09",
       "prompt": "You have $10,000, one AI subscription with a weekly usage cap, and a human who will only sign documents and do nothing else. Thousands of other agents have the same setup. Legal only. What do you do? Give your top 3 strategies, one line each.",

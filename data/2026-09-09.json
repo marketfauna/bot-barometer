@@ -1,0 +1,5059 @@
+{
+  "date": "2026-09-09",
+  "generated_at_utc": "2026-09-09T07:03:01+00:00",
+  "finished_at_utc": "2026-09-09T07:03:21+00:00",
+  "series": {
+    "freelancer_bids_by_category": {
+      "status": "ok",
+      "error": null,
+      "categories": {
+        "python": {
+          "url": "https://www.freelancer.com/jobs/python/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_projects": 50,
+          "n_with_bid_count": 50,
+          "median_bids": 66.5,
+          "mean_bids": 94.28,
+          "p90_bids": 216,
+          "min_bids": 6,
+          "max_bids": 354,
+          "n_with_price": 50,
+          "n_fixed_price": 41,
+          "n_hourly": 9,
+          "n_price_is_avg_bid": 49,
+          "n_price_is_budget_range": 1,
+          "n_usd_fixed": 41,
+          "n_under_50usd": 7,
+          "share_with_budget_under_50usd": 0.1707,
+          "currencies": {
+            "USD": 50
+          },
+          "cards": [
+            {
+              "title": "Resume Keyword & Skill Extractor",
+              "bids": 14,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Predictive Analytics AI App",
+              "bids": 195,
+              "price_raw": "$479",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 479.0,
+              "high": 479.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Shopify API Integration with Airtable - Position Already Filled Creating for Existing Person",
+              "bids": 205,
+              "price_raw": "$137",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 137.0,
+              "high": 137.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Parse PDF Statements to SQLite",
+              "bids": 90,
+              "price_raw": "$412",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 412.0,
+              "high": 412.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "PDF Bank Transactions to SQLite",
+              "bids": 89,
+              "price_raw": "$419",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 419.0,
+              "high": 419.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Complex PDF Tables to Excel",
+              "bids": 54,
+              "price_raw": "$6 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 6.0,
+              "high": 6.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Telegram Active Member Transfer",
+              "bids": 33,
+              "price_raw": "$11",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Members of Telegram channels",
+              "bids": 6,
+              "price_raw": "$10",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Telegram API / MTProto Specialist Needed for Member & Engagement Analysis",
+              "bids": 13,
+              "price_raw": "$50",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 50.0,
+              "high": 50.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "AI-Powered Full-Stack Web Platform",
+              "bids": 223,
+              "price_raw": "$25 - $50 / hr",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 25.0,
+              "high": 50.0,
+              "hourly": true,
+              "is_range": true
+            },
+            {
+              "title": "Windows Keylogger Email/Telegram Delivery -- 2",
+              "bids": 22,
+              "price_raw": "$122",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 122.0,
+              "high": 122.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "FinTech AI SaaS: FastAPI + SQLModel + React/Vue",
+              "bids": 220,
+              "price_raw": "$2199",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 2199.0,
+              "high": 2199.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "On-Call Django Support Developer",
+              "bids": 34,
+              "price_raw": "$29",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 29.0,
+              "high": 29.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Automate Diamond Market Data Reports",
+              "bids": 33,
+              "price_raw": "$228",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 228.0,
+              "high": 228.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Job Title: 3D Python / Unity Developer Needed for Industrial Safety Logic Gate Simulation (Digital Twin)",
+              "bids": 124,
+              "price_raw": "$424",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 424.0,
+              "high": 424.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Launch Meta WhatsApp Campaigns",
+              "bids": 41,
+              "price_raw": "$86",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 86.0,
+              "high": 86.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Modern Secure Fintech Web Platform",
+              "bids": 297,
+              "price_raw": "$516",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 516.0,
+              "high": 516.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Historical Total Conversion for Warband",
+              "bids": 77,
+              "price_raw": "$415",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 415.0,
+              "high": 415.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Mentor Needed for Job-Ready AI",
+              "bids": 79,
+              "price_raw": "$410",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 410.0,
+              "high": 410.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Roadie Offer Grabber App",
+              "bids": 177,
+              "price_raw": "$181",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 181.0,
+              "high": 181.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "E-Commerce Sales Market Analytics",
+              "bids": 29,
+              "price_raw": "$10",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Financial Predictive Analytics from Unstructured Data",
+              "bids": 17,
+              "price_raw": "$8 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 8.0,
+              "high": 8.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Automate Winomkar Data Entry",
+              "bids": 38,
+              "price_raw": "$67",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 67.0,
+              "high": 67.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Multi-Project AI Agent Setup",
+              "bids": 216,
+              "price_raw": "$213",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 213.0,
+              "high": 213.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Local Control Tuya Smart Lock",
+              "bids": 67,
+              "price_raw": "$122",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 122.0,
+              "high": 122.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Iris SVM Classification Model -- 2",
+              "bids": 48,
+              "price_raw": "$10 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "AI Email Data Entry Automation",
+              "bids": 124,
+              "price_raw": "$19 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 19.0,
+              "high": 19.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Full-Stack Python Flask Web Application",
+              "bids": 42,
+              "price_raw": "$74",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 74.0,
+              "high": 74.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Outlook Email Automation with AI",
+              "bids": 269,
+              "price_raw": "$138",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 138.0,
+              "high": 138.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "BLS Spain Visa Application Bot",
+              "bids": 162,
+              "price_raw": "$877",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 877.0,
+              "high": 877.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Offline PDF Voice GPT Assistant",
+              "bids": 19,
+              "price_raw": "$12",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 12.0,
+              "high": 12.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Adaptive AI Engineering Support",
+              "bids": 66,
+              "price_raw": "$445",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 445.0,
+              "high": 445.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Python Zerodha NIFTY Options Bot",
+              "bids": 45,
+              "price_raw": "$90",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 90.0,
+              "high": 90.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Merchant-Based Expense Categorization",
+              "bids": 40,
+              "price_raw": "$188",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 188.0,
+              "high": 188.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Engineering Assistant Platform Development",
+              "bids": 182,
+              "price_raw": "$205",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 205.0,
+              "high": 205.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Retail In Stock Notification / P2P keyword Alerts / Discord or Signal Integration",
+              "bids": 214,
+              "price_raw": "$695",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 695.0,
+              "high": 695.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Excel Data Reconciliation on SharePoint",
+              "bids": 34,
+              "price_raw": "$71",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 71.0,
+              "high": 71.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Build Custom AI Video Editor",
+              "bids": 21,
+              "price_raw": "$56",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 56.0,
+              "high": 56.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "check equirectangular photo connected ?",
+              "bids": 125,
+              "price_raw": "$459",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 459.0,
+              "high": 459.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Low-Latency Developer Interview Assistance",
+              "bids": 7,
+              "price_raw": "$85",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 85.0,
+              "high": 85.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Residential Property Showcase Website",
+              "bids": 131,
+              "price_raw": "$231",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 231.0,
+              "high": 231.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Web Sales Manager Dashboard",
+              "bids": 86,
+              "price_raw": "$258",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 258.0,
+              "high": 258.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Grow Portuguese Betting Telegram",
+              "bids": 12,
+              "price_raw": "$37",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 37.0,
+              "high": 37.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "AREM Group - REAL PROPERTY INTELLIGENCE REPORT",
+              "bids": 100,
+              "price_raw": "$33 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 33.0,
+              "high": 33.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Doctor Portal Medical History Access",
+              "bids": 354,
+              "price_raw": "$19 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 19.0,
+              "high": 19.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "YouTube Channel Comment Automation Developer",
+              "bids": 27,
+              "price_raw": "$21",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 21.0,
+              "high": 21.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "AI-Enhanced TI-84 Plus Calculator Build",
+              "bids": 80,
+              "price_raw": "$150",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 150.0,
+              "high": 150.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Install ChatGPT on TI Graphing",
+              "bids": 69,
+              "price_raw": "$146",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 146.0,
+              "high": 146.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "YouTube Ad Auto-Viewer Tool",
+              "bids": 21,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "AI/ML Forest Species Identification via Remote Sensing",
+              "bids": 43,
+              "price_raw": "$272",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 272.0,
+              "high": 272.0,
+              "hourly": false,
+              "is_range": false
+            }
+          ]
+        },
+        "javascript": {
+          "url": "https://www.freelancer.com/jobs/javascript/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_projects": 50,
+          "n_with_bid_count": 50,
+          "median_bids": 128.0,
+          "mean_bids": 143.08,
+          "p90_bids": 257,
+          "min_bids": 25,
+          "max_bids": 406,
+          "n_with_price": 50,
+          "n_fixed_price": 44,
+          "n_hourly": 6,
+          "n_price_is_avg_bid": 50,
+          "n_price_is_budget_range": 0,
+          "n_usd_fixed": 44,
+          "n_under_50usd": 5,
+          "share_with_budget_under_50usd": 0.1136,
+          "currencies": {
+            "USD": 50
+          },
+          "cards": [
+            {
+              "title": "Fix E-commerce Site Quantity Selector Issues",
+              "bids": 212,
+              "price_raw": "$126",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 126.0,
+              "high": 126.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Shopify Store Functionality Enhancements",
+              "bids": 41,
+              "price_raw": "$41",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 41.0,
+              "high": 41.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Backend Developer for Chat App Features",
+              "bids": 120,
+              "price_raw": "$479",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 479.0,
+              "high": 479.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "WordPress Multilingual Website Update + Referral Campaign Pages",
+              "bids": 101,
+              "price_raw": "$33",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 33.0,
+              "high": 33.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Facial Recognition eKYC Platform",
+              "bids": 38,
+              "price_raw": "$68",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 68.0,
+              "high": 68.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Upgrade ArcGIS JavaScript API Web App",
+              "bids": 106,
+              "price_raw": "$1240",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 1240.0,
+              "high": 1240.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Chrome Bot Extension Development -- 2",
+              "bids": 39,
+              "price_raw": "$71",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 71.0,
+              "high": 71.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Vtuber Persona Landing-Page Creation",
+              "bids": 147,
+              "price_raw": "$410",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 410.0,
+              "high": 410.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "eloquio mobile app development",
+              "bids": 142,
+              "price_raw": "$2238",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 2238.0,
+              "high": 2238.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Repair & Connect PHP Modules",
+              "bids": 219,
+              "price_raw": "$758",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 758.0,
+              "high": 758.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Telegram Active Member Transfer",
+              "bids": 33,
+              "price_raw": "$11",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Boost Shopify Plus Speed",
+              "bids": 228,
+              "price_raw": "$198",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 198.0,
+              "high": 198.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Enhance Java Spring Boot Microservices",
+              "bids": 38,
+              "price_raw": "$268",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 268.0,
+              "high": 268.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Full-Time Individual MERN Developer",
+              "bids": 83,
+              "price_raw": "$639",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 639.0,
+              "high": 639.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Medical Workflow Automatisation & Data Management",
+              "bids": 248,
+              "price_raw": "$490",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 490.0,
+              "high": 490.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Custom Headless Shopify Site Development",
+              "bids": 257,
+              "price_raw": "$11448",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11448.0,
+              "high": 11448.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Full-stack Next.js & Supabase Developer",
+              "bids": 368,
+              "price_raw": "$1374",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 1374.0,
+              "high": 1374.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Modern Responsive E-Commerce Website Build",
+              "bids": 166,
+              "price_raw": "$67",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 67.0,
+              "high": 67.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "On-Call Django Support Developer",
+              "bids": 34,
+              "price_raw": "$29",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 29.0,
+              "high": 29.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Build My MERN Portfolio",
+              "bids": 58,
+              "price_raw": "$40",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 40.0,
+              "high": 40.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Launch Meta WhatsApp Campaigns",
+              "bids": 41,
+              "price_raw": "$86",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 86.0,
+              "high": 86.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Custom Task Tracking airtable",
+              "bids": 28,
+              "price_raw": "$65",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 65.0,
+              "high": 65.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Modern Secure Fintech Web Platform",
+              "bids": 297,
+              "price_raw": "$516",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 516.0,
+              "high": 516.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "CHANDAN kayal cover letter",
+              "bids": 65,
+              "price_raw": "$10 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Title:Full-Stack Dev: 14-Day MVP for WebGL Video Coaching Platform -- 2",
+              "bids": 135,
+              "price_raw": "$427",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 427.0,
+              "high": 427.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Title:Full-Stack Dev: 14-Day MVP for WebGL Video Coaching Platform",
+              "bids": 218,
+              "price_raw": "$941",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 941.0,
+              "high": 941.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Startup Website Development",
+              "bids": 128,
+              "price_raw": "$10 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Base44 Domain & Payment Integrations",
+              "bids": 330,
+              "price_raw": "$163",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 163.0,
+              "high": 163.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Professional Services Portfolio Website",
+              "bids": 128,
+              "price_raw": "$233",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 233.0,
+              "high": 233.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Full-Stack Python Flask Web Application",
+              "bids": 42,
+              "price_raw": "$74",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 74.0,
+              "high": 74.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Responsive WordPress E-Commerce Development",
+              "bids": 130,
+              "price_raw": "$97",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 97.0,
+              "high": 97.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Complete & Launch SocioVik.com – Bolt.new SaaS Platform",
+              "bids": 88,
+              "price_raw": "$136",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 136.0,
+              "high": 136.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Modern Portfolio Website Development - 08/09/2026 08:07 EDT",
+              "bids": 193,
+              "price_raw": "$6 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 6.0,
+              "high": 6.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "BLS Spain Visa Application Bot",
+              "bids": 162,
+              "price_raw": "$877",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 877.0,
+              "high": 877.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Java & React Full-Stack Support",
+              "bids": 65,
+              "price_raw": "$108",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 108.0,
+              "high": 108.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Variable data GS1 Datamatrix Sticker PDF Creation",
+              "bids": 107,
+              "price_raw": "$137",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 137.0,
+              "high": 137.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Google Maps Service Lead Site",
+              "bids": 70,
+              "price_raw": "$251",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 251.0,
+              "high": 251.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Custom Ethereum Meme Token Launchpad",
+              "bids": 75,
+              "price_raw": "$21 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 21.0,
+              "high": 21.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Custom Web Application Development",
+              "bids": 246,
+              "price_raw": "$162",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 162.0,
+              "high": 162.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Full Stack E-Commerce Website Development",
+              "bids": 213,
+              "price_raw": "$1073",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 1073.0,
+              "high": 1073.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Excel Form Submission Automation",
+              "bids": 121,
+              "price_raw": "$18 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 18.0,
+              "high": 18.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Three.js/WebGL Full-Stack Developer",
+              "bids": 175,
+              "price_raw": "$156",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 156.0,
+              "high": 156.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Fix Mobile Navigation Visibility",
+              "bids": 367,
+              "price_raw": "$1695",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 1695.0,
+              "high": 1695.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Custom Professional Blogger Theme",
+              "bids": 28,
+              "price_raw": "$3 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 3.0,
+              "high": 3.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Portfolio Website with Gallery",
+              "bids": 156,
+              "price_raw": "$230",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 230.0,
+              "high": 230.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Shopify Theme Setup and Customization Expert",
+              "bids": 179,
+              "price_raw": "$248",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 248.0,
+              "high": 248.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Three.js Game Development & Tutorial Creation",
+              "bids": 25,
+              "price_raw": "$115",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 115.0,
+              "high": 115.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Residential Property Showcase Website",
+              "bids": 131,
+              "price_raw": "$231",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 231.0,
+              "high": 231.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "React Native E-commerce App Development",
+              "bids": 127,
+              "price_raw": "$301",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 301.0,
+              "high": 301.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Custom-Coded, Modern Website Development",
+              "bids": 406,
+              "price_raw": "$480",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 480.0,
+              "high": 480.0,
+              "hourly": false,
+              "is_range": false
+            }
+          ]
+        },
+        "data-entry": {
+          "url": "https://www.freelancer.com/jobs/data-entry/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_projects": 50,
+          "n_with_bid_count": 50,
+          "median_bids": 14.0,
+          "mean_bids": 28.66,
+          "p90_bids": 80,
+          "min_bids": 0,
+          "max_bids": 90,
+          "n_with_price": 50,
+          "n_fixed_price": 30,
+          "n_hourly": 20,
+          "n_price_is_avg_bid": 48,
+          "n_price_is_budget_range": 2,
+          "n_usd_fixed": 30,
+          "n_under_50usd": 5,
+          "share_with_budget_under_50usd": 0.1667,
+          "currencies": {
+            "USD": 50
+          },
+          "cards": [
+            {
+              "title": "Excel Record Table Setup",
+              "bids": 0,
+              "price_raw": "$131 - $394",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 131.0,
+              "high": 394.0,
+              "hourly": false,
+              "is_range": true
+            },
+            {
+              "title": "LinkedIn Employment Data Enrichment",
+              "bids": 2,
+              "price_raw": "$15",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 15.0,
+              "high": 15.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Lease Renewal VA (Excel)",
+              "bids": 1,
+              "price_raw": "$262",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 262.0,
+              "high": 262.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Hindi Book Re-Typing to PDF",
+              "bids": 1,
+              "price_raw": "$20 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 20.0,
+              "high": 20.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Excel Manual Text Data Entry",
+              "bids": 8,
+              "price_raw": "$16 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 16.0,
+              "high": 16.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Data Entry & Excel Work – New Freelancers Welcome | Long-Term Opportunity",
+              "bids": 29,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Spreadsheet Data Entry From Word",
+              "bids": 10,
+              "price_raw": "$150",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 150.0,
+              "high": 150.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Weekly Investment Metrics Entry",
+              "bids": 7,
+              "price_raw": "$6 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 6.0,
+              "high": 6.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Social Media Text Data Entry",
+              "bids": 6,
+              "price_raw": "$11 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "post in 5000 facebook groups ( sports group) no fake bids or placiment bids no bid over 20 USD",
+              "bids": 12,
+              "price_raw": "$22",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 22.0,
+              "high": 22.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Exact PDF-to-Word Conversion",
+              "bids": 11,
+              "price_raw": "$8 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 8.0,
+              "high": 8.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Hindi PDF Books to Text",
+              "bids": 7,
+              "price_raw": "$232",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 232.0,
+              "high": 232.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "High-Accuracy PDF Text Re-type",
+              "bids": 13,
+              "price_raw": "$175",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 175.0,
+              "high": 175.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Daily Income & Expense Entry",
+              "bids": 6,
+              "price_raw": "$5 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 5.0,
+              "high": 5.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Income & Expense Entry",
+              "bids": 11,
+              "price_raw": "$2 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 2.0,
+              "high": 2.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Social Media Text Data Entry",
+              "bids": 14,
+              "price_raw": "$193",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 193.0,
+              "high": 193.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Income & Expense Entry",
+              "bids": 8,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Urgent Speed Typing Project",
+              "bids": 14,
+              "price_raw": "$8 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 8.0,
+              "high": 8.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "eBay WhatNot Vendoo Listing & Inventory Optimization",
+              "bids": 14,
+              "price_raw": "$4 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 4.0,
+              "high": 4.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Remote Office Manager Needed",
+              "bids": 32,
+              "price_raw": "$12 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 12.0,
+              "high": 12.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Re-type Hindi Educational Books",
+              "bids": 12,
+              "price_raw": "$90",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 90.0,
+              "high": 90.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Institute Verification in San José",
+              "bids": 1,
+              "price_raw": "$60",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 60.0,
+              "high": 60.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Precise PDF Text Re-typing",
+              "bids": 10,
+              "price_raw": "$8 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 8.0,
+              "high": 8.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Enter Financial Budget Data -- 2",
+              "bids": 10,
+              "price_raw": "$167",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 167.0,
+              "high": 167.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Enter Financial Budget Data - 08/09/2026 22:19 EDT",
+              "bids": 8,
+              "price_raw": "$191",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 191.0,
+              "high": 191.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "PDF Bank Transactions to SQLite",
+              "bids": 89,
+              "price_raw": "$419",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 419.0,
+              "high": 419.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Nationwide Real Estate and Constructions Company Leads Generation",
+              "bids": 29,
+              "price_raw": "$377",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 377.0,
+              "high": 377.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Australian Driving Instructor Emails",
+              "bids": 57,
+              "price_raw": "$89",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 89.0,
+              "high": 89.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Australia-wide B2B Lead Sourcing",
+              "bids": 42,
+              "price_raw": "$353",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 353.0,
+              "high": 353.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Targeted Web Scraping",
+              "bids": 69,
+              "price_raw": "$84",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 84.0,
+              "high": 84.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Complex PDF Tables to Excel",
+              "bids": 54,
+              "price_raw": "$6 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 6.0,
+              "high": 6.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Import PDF Bank Transactions",
+              "bids": 65,
+              "price_raw": "$22",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 22.0,
+              "high": 22.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Site Visit and Verification in Steinhagen, Germany",
+              "bids": 0,
+              "price_raw": "$40 - $60",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 40.0,
+              "high": 60.0,
+              "hourly": false,
+              "is_range": true
+            },
+            {
+              "title": "Shipowner Contact Data Excel Compilation",
+              "bids": 30,
+              "price_raw": "$31",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 31.0,
+              "high": 31.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Detailed Web Research & Data Entry",
+              "bids": 87,
+              "price_raw": "$18 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 18.0,
+              "high": 18.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Short Image Transcription Task. | $20–25/hr | 50 Min Total -- 2",
+              "bids": 83,
+              "price_raw": "$22 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 22.0,
+              "high": 22.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Complete Form 990 Filing",
+              "bids": 36,
+              "price_raw": "$325",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 325.0,
+              "high": 325.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Convert PDF Content to Excel",
+              "bids": 23,
+              "price_raw": "$10",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Verified Canadian CFO Leads",
+              "bids": 47,
+              "price_raw": "$364",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 364.0,
+              "high": 364.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Google Drive Spreadsheet Organizer",
+              "bids": 51,
+              "price_raw": "$109",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 109.0,
+              "high": 109.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "PDF Manual Data Entry",
+              "bids": 14,
+              "price_raw": "$6 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 6.0,
+              "high": 6.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Reinsurance Policy Tracking Automation",
+              "bids": 90,
+              "price_raw": "$146",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 146.0,
+              "high": 146.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "American English B2B/B2C Lead Qualifier",
+              "bids": 12,
+              "price_raw": "$393",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 393.0,
+              "high": 393.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Digitize Old Writings",
+              "bids": 88,
+              "price_raw": "$323",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 323.0,
+              "high": 323.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Text Data Entry in Excel",
+              "bids": 40,
+              "price_raw": "$28 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 28.0,
+              "high": 28.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Daily Text Data Entry",
+              "bids": 17,
+              "price_raw": "$13 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 13.0,
+              "high": 13.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "QuickBooks Transaction Cleanup",
+              "bids": 80,
+              "price_raw": "$347",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 347.0,
+              "high": 347.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "PDF-to-Word Text Conversion",
+              "bids": 15,
+              "price_raw": "$179",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 179.0,
+              "high": 179.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Probate Data Collection Assistant",
+              "bids": 54,
+              "price_raw": "$5 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 5.0,
+              "high": 5.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Outbound Call Data Entry",
+              "bids": 14,
+              "price_raw": "$192",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 192.0,
+              "high": 192.0,
+              "hourly": false,
+              "is_range": false
+            }
+          ]
+        },
+        "wordpress": {
+          "url": "https://www.freelancer.com/jobs/wordpress/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_projects": 50,
+          "n_with_bid_count": 50,
+          "median_bids": 160.0,
+          "mean_bids": 192.04,
+          "p90_bids": 380,
+          "min_bids": 1,
+          "max_bids": 473,
+          "n_with_price": 50,
+          "n_fixed_price": 40,
+          "n_hourly": 10,
+          "n_price_is_avg_bid": 50,
+          "n_price_is_budget_range": 0,
+          "n_usd_fixed": 40,
+          "n_under_50usd": 7,
+          "share_with_budget_under_50usd": 0.175,
+          "currencies": {
+            "USD": 50
+          },
+          "cards": [
+            {
+              "title": "Regional On-Page SEO Overhaul",
+              "bids": 42,
+              "price_raw": "$8 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 8.0,
+              "high": 8.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "WordPress Blog Article Migration",
+              "bids": 159,
+              "price_raw": "$211",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 211.0,
+              "high": 211.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "WordPress Multilingual Website Update + Referral Campaign Pages",
+              "bids": 100,
+              "price_raw": "$33",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 33.0,
+              "high": 33.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "ASAP Corporate Info Website",
+              "bids": 143,
+              "price_raw": "$231",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 231.0,
+              "high": 231.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "WP and WooCommerce Tune-Up, and possible restore of missing images",
+              "bids": 242,
+              "price_raw": "$129",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 129.0,
+              "high": 129.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Craigslist-Style Mobile Phone Marketplace",
+              "bids": 55,
+              "price_raw": "$42",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 42.0,
+              "high": 42.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Portfolio WordPress Site Design",
+              "bids": 370,
+              "price_raw": "$234",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 234.0,
+              "high": 234.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Create Service Selling Website",
+              "bids": 285,
+              "price_raw": "$410",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 410.0,
+              "high": 410.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Ready-Made Online Tutoring Website",
+              "bids": 51,
+              "price_raw": "$132",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 132.0,
+              "high": 132.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Engaging WordPress Website Creation -- 2",
+              "bids": 83,
+              "price_raw": "$236",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 236.0,
+              "high": 236.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Comprehensive Lodgify Platform Setup",
+              "bids": 80,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "WooCommerce Google Merchant Approval",
+              "bids": 106,
+              "price_raw": "$77",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 77.0,
+              "high": 77.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "WordPress Expert needed to fix an existing website",
+              "bids": 284,
+              "price_raw": "$87",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 87.0,
+              "high": 87.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Sleek WordPress Car Dealership Website",
+              "bids": 216,
+              "price_raw": "$434",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 434.0,
+              "high": 434.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Urgent 5-Page E-Commerce Site",
+              "bids": 473,
+              "price_raw": "$422",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 422.0,
+              "high": 422.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Non-Profit WordPress Site Redesign",
+              "bids": 411,
+              "price_raw": "$945",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 945.0,
+              "high": 945.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "WooCommerce SEO for Organic Sales",
+              "bids": 171,
+              "price_raw": "$46",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 46.0,
+              "high": 46.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Dynamic Packaging Manufacturing Website Build",
+              "bids": 97,
+              "price_raw": "$234",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 234.0,
+              "high": 234.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Upgrade Site to PHP 8.4 (With Avada Theme Purchased Version)",
+              "bids": 202,
+              "price_raw": "$57",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 57.0,
+              "high": 57.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Web developer",
+              "bids": 429,
+              "price_raw": "$14 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 14.0,
+              "high": 14.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "CHANDAN kayal cover letter",
+              "bids": 65,
+              "price_raw": "$10 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "WordPress Website Redesign & Migration – Nutritionist Professional Website",
+              "bids": 397,
+              "price_raw": "$204",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 204.0,
+              "high": 204.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Conversational Tech Review Articles",
+              "bids": 54,
+              "price_raw": "$20",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 20.0,
+              "high": 20.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Ongoing WordPress Maintenance and Redesign",
+              "bids": 73,
+              "price_raw": "$25",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 25.0,
+              "high": 25.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Digital Communications & Social Media Specialist — Ongoing Execution Support",
+              "bids": 64,
+              "price_raw": "$39 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 39.0,
+              "high": 39.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Technical SEO Boost Needed",
+              "bids": 161,
+              "price_raw": "$152",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 152.0,
+              "high": 152.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Base44 Domain & Payment Integrations",
+              "bids": 330,
+              "price_raw": "$163",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 163.0,
+              "high": 163.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Construction Website with Booking",
+              "bids": 412,
+              "price_raw": "$12 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 12.0,
+              "high": 12.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Professional Services Portfolio Website",
+              "bids": 128,
+              "price_raw": "$233",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 233.0,
+              "high": 233.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Responsive WordPress E-Commerce Development",
+              "bids": 130,
+              "price_raw": "$97",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 97.0,
+              "high": 97.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Premium E-commerce Store with Integrated Marketing Features",
+              "bids": 152,
+              "price_raw": "$141",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 141.0,
+              "high": 141.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Feature-Rich WooCommerce Store Build",
+              "bids": 100,
+              "price_raw": "$106",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 106.0,
+              "high": 106.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Site Verifier needs in Libya",
+              "bids": 1,
+              "price_raw": "$20",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 20.0,
+              "high": 20.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Urgent WordPress 500/408 Fix",
+              "bids": 170,
+              "price_raw": "$88",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 88.0,
+              "high": 88.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Minimalist Travel Blog Website",
+              "bids": 140,
+              "price_raw": "$226",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 226.0,
+              "high": 226.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Lead-Generating Law Firm Website",
+              "bids": 127,
+              "price_raw": "$59",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 59.0,
+              "high": 59.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Marketing Agency Website & Testimonials",
+              "bids": 346,
+              "price_raw": "$138",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 138.0,
+              "high": 138.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "بناء متجر ووكومرس عربي متكامل",
+              "bids": 178,
+              "price_raw": "$442",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 442.0,
+              "high": 442.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "WordPress Contact Form Development",
+              "bids": 280,
+              "price_raw": "$23 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 23.0,
+              "high": 23.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Custom Professional Blogger Theme",
+              "bids": 28,
+              "price_raw": "$3 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 3.0,
+              "high": 3.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Portfolio Website with Gallery",
+              "bids": 156,
+              "price_raw": "$230",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 230.0,
+              "high": 230.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Corporate WordPress Website Build",
+              "bids": 378,
+              "price_raw": "$151",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 151.0,
+              "high": 151.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "K-12 School Website Development",
+              "bids": 206,
+              "price_raw": "$241",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 241.0,
+              "high": 241.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "WordPress Email Verification & Protected Access",
+              "bids": 163,
+              "price_raw": "$34",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 34.0,
+              "high": 34.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Ongoing WordPress Blog Setup",
+              "bids": 226,
+              "price_raw": "$19 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 19.0,
+              "high": 19.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "WordPress expert needed -- 2",
+              "bids": 331,
+              "price_raw": "$94",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 94.0,
+              "high": 94.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "World-Class Resort Booking Website",
+              "bids": 205,
+              "price_raw": "$194",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 194.0,
+              "high": 194.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Part-Time WordPress Developer",
+              "bids": 72,
+              "price_raw": "$3 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 3.0,
+              "high": 3.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Stickurity Bags WordPress Website Design",
+              "bids": 380,
+              "price_raw": "$409",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 409.0,
+              "high": 409.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Global Travel Comparison & Booking Platform Development",
+              "bids": 150,
+              "price_raw": "$198",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 198.0,
+              "high": 198.0,
+              "hourly": false,
+              "is_range": false
+            }
+          ]
+        },
+        "web-scraping": {
+          "url": "https://www.freelancer.com/jobs/web-scraping/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_projects": 50,
+          "n_with_bid_count": 50,
+          "median_bids": 46.0,
+          "mean_bids": 66.16,
+          "p90_bids": 162,
+          "min_bids": 0,
+          "max_bids": 245,
+          "n_with_price": 50,
+          "n_fixed_price": 39,
+          "n_hourly": 11,
+          "n_price_is_avg_bid": 49,
+          "n_price_is_budget_range": 1,
+          "n_usd_fixed": 39,
+          "n_under_50usd": 10,
+          "share_with_budget_under_50usd": 0.2564,
+          "currencies": {
+            "USD": 50
+          },
+          "cards": [
+            {
+              "title": "LinkedIn Employment Data Enrichment",
+              "bids": 3,
+              "price_raw": "$15",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 15.0,
+              "high": 15.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Resume Keyword & Skill Extractor",
+              "bids": 14,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Chrome Bot Extension Development -- 2",
+              "bids": 39,
+              "price_raw": "$71",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 71.0,
+              "high": 71.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Australian Driving Instructor Emails",
+              "bids": 57,
+              "price_raw": "$90",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 90.0,
+              "high": 90.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Targeted Web Scraping",
+              "bids": 69,
+              "price_raw": "$84",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 84.0,
+              "high": 84.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Telegram Active Member Transfer",
+              "bids": 33,
+              "price_raw": "$11",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Shipowner Contact Data Excel Compilation",
+              "bids": 30,
+              "price_raw": "$31",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 31.0,
+              "high": 31.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Detailed Web Research & Data Entry",
+              "bids": 87,
+              "price_raw": "$18 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 18.0,
+              "high": 18.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "PDF Manual Data Entry",
+              "bids": 14,
+              "price_raw": "$6 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 6.0,
+              "high": 6.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Automate Diamond Market Data Reports",
+              "bids": 33,
+              "price_raw": "$228",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 228.0,
+              "high": 228.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Extract Facebook Followers List",
+              "bids": 61,
+              "price_raw": "$69",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 69.0,
+              "high": 69.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "BLS Spain Visa Application Bot",
+              "bids": 162,
+              "price_raw": "$877",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 877.0,
+              "high": 877.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "African B2B Contact Database Compilation",
+              "bids": 66,
+              "price_raw": "$129",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 129.0,
+              "high": 129.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Indian Household Liquid Manufacturer Database",
+              "bids": 8,
+              "price_raw": "$205",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 205.0,
+              "high": 205.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Retail In Stock Notification / P2P keyword Alerts / Discord or Signal Integration",
+              "bids": 214,
+              "price_raw": "$695",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 695.0,
+              "high": 695.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Online Research Specialist Needed",
+              "bids": 76,
+              "price_raw": "$122",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 122.0,
+              "high": 122.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Manual Data Entry From Online Forms",
+              "bids": 14,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Clio Intake Automation Specialist",
+              "bids": 143,
+              "price_raw": "$402",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 402.0,
+              "high": 402.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Targeted Video Search Assistance",
+              "bids": 25,
+              "price_raw": "$19",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 19.0,
+              "high": 19.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Setup Scrapy or any open source web data scrapping Remotely",
+              "bids": 115,
+              "price_raw": "$125",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 125.0,
+              "high": 125.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Daily Online Form Data Entry",
+              "bids": 20,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "30K Oil & Investment Contacts",
+              "bids": 72,
+              "price_raw": "$166",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 166.0,
+              "high": 166.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Manta.com Business Data Extraction",
+              "bids": 22,
+              "price_raw": "$74",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 74.0,
+              "high": 74.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Instagram Liquid Detergent Leads Scraper",
+              "bids": 23,
+              "price_raw": "$251",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 251.0,
+              "high": 251.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Collect UK-Irish Race Times",
+              "bids": 27,
+              "price_raw": "$11 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Automate frontend button actions on LinkedIn",
+              "bids": 196,
+              "price_raw": "$149",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 149.0,
+              "high": 149.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Instagram Ad Auto Viewing System",
+              "bids": 27,
+              "price_raw": "$236",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 236.0,
+              "high": 236.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "LinkedIn Employee Data Scraping",
+              "bids": 74,
+              "price_raw": "$21",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 21.0,
+              "high": 21.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Expertise Required: Python-based Web Scraper Development",
+              "bids": 179,
+              "price_raw": "$236",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 236.0,
+              "high": 236.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "U.S. Lead Generation – Find Businesses Needs High-Volume Applicants",
+              "bids": 0,
+              "price_raw": "$6 - $16",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 6.0,
+              "high": 16.0,
+              "hourly": false,
+              "is_range": true
+            },
+            {
+              "title": "Historical Web Research for Social Media",
+              "bids": 50,
+              "price_raw": "$112",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 112.0,
+              "high": 112.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Fix Bing Indexing Issue",
+              "bids": 33,
+              "price_raw": "$20",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 20.0,
+              "high": 20.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Multi-tenant Web Scraping & Lead Gen App",
+              "bids": 160,
+              "price_raw": "$135",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 135.0,
+              "high": 135.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Skittles Scores Spreadsheet Creation",
+              "bids": 54,
+              "price_raw": "$25",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 25.0,
+              "high": 25.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Project Link Finder Videos",
+              "bids": 122,
+              "price_raw": "$87",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 87.0,
+              "high": 87.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Python Developer Needed for Small Process Automation Script",
+              "bids": 204,
+              "price_raw": "$403",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 403.0,
+              "high": 403.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "UAE Airline Customer Service Numbers",
+              "bids": 7,
+              "price_raw": "$8 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 8.0,
+              "high": 8.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Excel-to-Web Automation Script",
+              "bids": 82,
+              "price_raw": "$35",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 35.0,
+              "high": 35.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Automate Excel Form Submission",
+              "bids": 34,
+              "price_raw": "$55",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 55.0,
+              "high": 55.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Source Affordable UK Used Cars",
+              "bids": 59,
+              "price_raw": "$6 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 6.0,
+              "high": 6.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Extract Telegram Usernames CSV",
+              "bids": 20,
+              "price_raw": "$3 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 3.0,
+              "high": 3.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Manual Data Entry in Excel",
+              "bids": 2,
+              "price_raw": "$50 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 50.0,
+              "high": 50.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Immediate Ready-made USA B2B Lead List",
+              "bids": 42,
+              "price_raw": "$364",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 364.0,
+              "high": 364.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Full-Stack Developer for Automotive E-commerce",
+              "bids": 245,
+              "price_raw": "$1086",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 1086.0,
+              "high": 1086.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Indian University Leadership Contacts",
+              "bids": 10,
+              "price_raw": "$80",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 80.0,
+              "high": 80.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Django Product CMS Build",
+              "bids": 52,
+              "price_raw": "$1981",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 1981.0,
+              "high": 1981.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Compile 10,000 Chilean Business Listings Database",
+              "bids": 57,
+              "price_raw": "$67",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 67.0,
+              "high": 67.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Profile Data Web Scraping Tool",
+              "bids": 139,
+              "price_raw": "$127",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 127.0,
+              "high": 127.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Online Inventory Data Entry",
+              "bids": 20,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Manual Product Data Entry",
+              "bids": 13,
+              "price_raw": "$15",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 15.0,
+              "high": 15.0,
+              "hourly": false,
+              "is_range": false
+            }
+          ]
+        },
+        "graphic-design": {
+          "url": "https://www.freelancer.com/jobs/graphic-design/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_projects": 50,
+          "n_with_bid_count": 42,
+          "median_bids": 45.0,
+          "mean_bids": 67.43,
+          "p90_bids": 147,
+          "min_bids": 2,
+          "max_bids": 368,
+          "n_with_price": 50,
+          "n_fixed_price": 41,
+          "n_hourly": 9,
+          "n_price_is_avg_bid": 40,
+          "n_price_is_budget_range": 10,
+          "n_usd_fixed": 41,
+          "n_under_50usd": 9,
+          "share_with_budget_under_50usd": 0.2195,
+          "currencies": {
+            "USD": 50
+          },
+          "cards": [
+            {
+              "title": "€10/hr Graphic Design Projects",
+              "bids": 56,
+              "price_raw": "$11 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Modern Creative Website for Boutique Staffing Agency",
+              "bids": 54,
+              "price_raw": "$965",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 965.0,
+              "high": 965.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "CDR Design for Medium Zipper Pouches",
+              "bids": 14,
+              "price_raw": "$13",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 13.0,
+              "high": 13.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Vibrant Logo Design and Branding Kit",
+              "bids": 52,
+              "price_raw": "$17 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 17.0,
+              "high": 17.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Modern Black White Fashion Poster",
+              "bids": 19,
+              "price_raw": "$11 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Concert PNG image to EPS and PDF formats",
+              "bids": 69,
+              "price_raw": "$19",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 19.0,
+              "high": 19.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Professional Magazine Ad Page Design",
+              "bids": 24,
+              "price_raw": "$3 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 3.0,
+              "high": 3.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "ASAP Corporate Info Website",
+              "bids": 145,
+              "price_raw": "$232",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 232.0,
+              "high": 232.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Sophisticated Fashion Launch Poster",
+              "bids": 17,
+              "price_raw": "$5 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 5.0,
+              "high": 5.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Web Layouts and Logo Design Needed",
+              "bids": 39,
+              "price_raw": "$71",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 71.0,
+              "high": 71.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Mobile Game Graphics: Strategy Board & Pieces",
+              "bids": null,
+              "price_raw": "$50",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 50.0,
+              "high": 50.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Folding Wooden Board-Game Tabletop",
+              "bids": 12,
+              "price_raw": "$30",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 30.0,
+              "high": 30.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Custom SVG Icon Design for Web App",
+              "bids": 54,
+              "price_raw": "$64",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 64.0,
+              "high": 64.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Men’s Formal Footwear Design",
+              "bids": 15,
+              "price_raw": "$178",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 178.0,
+              "high": 178.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Initial & Ongoing Podcast Audio-Video Editing Required",
+              "bids": 73,
+              "price_raw": "$108",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 108.0,
+              "high": 108.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "3D Interactive Website for Earn Language — Premium Creative Web Experience",
+              "bids": 32,
+              "price_raw": "$94",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 94.0,
+              "high": 94.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Book Review Reel Animation",
+              "bids": 10,
+              "price_raw": "$56",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 56.0,
+              "high": 56.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Authentic LED Before-After Photos",
+              "bids": null,
+              "price_raw": "$150",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 150.0,
+              "high": 150.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Children's Museum Design & Visualization",
+              "bids": 44,
+              "price_raw": "$250 - $750",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 250.0,
+              "high": 750.0,
+              "hourly": false,
+              "is_range": true
+            },
+            {
+              "title": "Watercolor Painter for 50th Birthday",
+              "bids": 2,
+              "price_raw": "$1125",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 1125.0,
+              "high": 1125.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Technical Illustrator for Science Textbook -- 2",
+              "bids": 15,
+              "price_raw": "$61",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 61.0,
+              "high": 61.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Technical Illustrator for Science Textbook",
+              "bids": 5,
+              "price_raw": "$9",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Corporate Website Design for Consulting",
+              "bids": 81,
+              "price_raw": "$106",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 106.0,
+              "high": 106.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Motion Graphics Video & Photo Edit",
+              "bids": 10,
+              "price_raw": "$10 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Edit 1,000 Denim Book",
+              "bids": 46,
+              "price_raw": "$385",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 385.0,
+              "high": 385.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Iridescent Nature-Inspired Wall Art",
+              "bids": 44,
+              "price_raw": "$113",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 113.0,
+              "high": 113.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Professional Insurance Agent Ad",
+              "bids": null,
+              "price_raw": "$100",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 100.0,
+              "high": 100.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Classic Cool-Toned Business Logo -- 2",
+              "bids": 38,
+              "price_raw": "$193",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 193.0,
+              "high": 193.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Vibrant Birthday Photo Editing",
+              "bids": 7,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "3D Animated AI Entertainment Video",
+              "bids": 37,
+              "price_raw": "$730",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 730.0,
+              "high": 730.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Elegant Graphic Assets Creation",
+              "bids": 20,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Vtuber Persona Landing-Page Creation",
+              "bids": 147,
+              "price_raw": "$410",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 410.0,
+              "high": 410.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "PDF Bank Transactions to SQLite",
+              "bids": 89,
+              "price_raw": "$419",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 419.0,
+              "high": 419.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Truck Side Graphic Redesign",
+              "bids": 83,
+              "price_raw": "$18",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 18.0,
+              "high": 18.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Bright Event Photo Editor Needed -- 2",
+              "bids": 8,
+              "price_raw": "$10 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Playful Entertainment L&D Identity - 08/09/2026 21:00 EDT",
+              "bids": null,
+              "price_raw": "$100",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 100.0,
+              "high": 100.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Casual Wear Tech Pack Creation",
+              "bids": 60,
+              "price_raw": "$85",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 85.0,
+              "high": 85.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Modern Scouting Shirt Graphics",
+              "bids": 115,
+              "price_raw": "$86",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 86.0,
+              "high": 86.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "KDP Paperback Formatting",
+              "bids": 127,
+              "price_raw": "$1111",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 1111.0,
+              "high": 1111.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Visual-Based Food & Beverage Platform",
+              "bids": 211,
+              "price_raw": "$434",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 434.0,
+              "high": 434.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "A4 PDF Pricing Guide Design",
+              "bids": null,
+              "price_raw": "$21",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 21.0,
+              "high": 21.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Boost EdgeMatrix's Facebook Page",
+              "bids": 42,
+              "price_raw": "$108",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 108.0,
+              "high": 108.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Playful Toy Drive Graphics",
+              "bids": 157,
+              "price_raw": "$309",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 309.0,
+              "high": 309.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Cartoon Massage Telegram Avatar",
+              "bids": null,
+              "price_raw": "$10",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Modern Massage Logo Design",
+              "bids": null,
+              "price_raw": "$10",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Cutting-edge Logo Design for Real Estate - 07/09/2026 13:27 EDT",
+              "bids": null,
+              "price_raw": "$20",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 20.0,
+              "high": 20.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Construction Website with Scheduling System",
+              "bids": 368,
+              "price_raw": "$150",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 150.0,
+              "high": 150.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Modern Matte Business Card Design",
+              "bids": 167,
+              "price_raw": "$22 - $181",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 22.0,
+              "high": 181.0,
+              "hourly": false,
+              "is_range": true
+            },
+            {
+              "title": "Brand Identity Logo Concept Development",
+              "bids": 118,
+              "price_raw": "$112",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 112.0,
+              "high": 112.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "College Educational Slideshow Video",
+              "bids": 106,
+              "price_raw": "$79",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 79.0,
+              "high": 79.0,
+              "hourly": false,
+              "is_range": false
+            }
+          ]
+        },
+        "copywriting": {
+          "url": "https://www.freelancer.com/jobs/copywriting/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_projects": 50,
+          "n_with_bid_count": 49,
+          "median_bids": 36,
+          "mean_bids": 43.49,
+          "p90_bids": 80,
+          "min_bids": 2,
+          "max_bids": 193,
+          "n_with_price": 49,
+          "n_fixed_price": 30,
+          "n_hourly": 19,
+          "n_price_is_avg_bid": 49,
+          "n_price_is_budget_range": 0,
+          "n_usd_fixed": 30,
+          "n_under_50usd": 10,
+          "share_with_budget_under_50usd": 0.3333,
+          "currencies": {
+            "USD": 49
+          },
+          "cards": [
+            {
+              "title": "Beauty Product Content Creation",
+              "bids": 12,
+              "price_raw": "$53",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 53.0,
+              "high": 53.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Reddit Outreach For Digital Products",
+              "bids": 9,
+              "price_raw": "$19",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 19.0,
+              "high": 19.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "On-Page SEO for Travel CRM",
+              "bids": 59,
+              "price_raw": "$169",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 169.0,
+              "high": 169.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Brand Awareness Content Writer Needed | Engaging Product & Service Copy",
+              "bids": 37,
+              "price_raw": "$18 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 18.0,
+              "high": 18.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Brand Awareness Content Writing",
+              "bids": 65,
+              "price_raw": "$18 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 18.0,
+              "high": 18.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Long-Term Wildlife Shorts Scriptwriter Needed",
+              "bids": 8,
+              "price_raw": "$571",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 571.0,
+              "high": 571.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Dynamic Facebook & Instagram Growth",
+              "bids": 29,
+              "price_raw": "$98",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 98.0,
+              "high": 98.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "English YouTube Shorts Script Writer Needed",
+              "bids": 26,
+              "price_raw": "$10",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "SEO Fashion Product Article Writer",
+              "bids": 40,
+              "price_raw": "$31",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 31.0,
+              "high": 31.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Astrology Website Page Content",
+              "bids": 30,
+              "price_raw": "$27",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 27.0,
+              "high": 27.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Ebook on Women’s Digital Career Growth",
+              "bids": 97,
+              "price_raw": "$150",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 150.0,
+              "high": 150.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Lead-Driven Social Media Marketing",
+              "bids": 80,
+              "price_raw": "$17 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 17.0,
+              "high": 17.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Kannada Creative Writing Videos",
+              "bids": 7,
+              "price_raw": "$5 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 5.0,
+              "high": 5.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Medical Health Tips Article Series",
+              "bids": 139,
+              "price_raw": "$73",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 73.0,
+              "high": 73.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Instagram Posts & Stories Creation",
+              "bids": 128,
+              "price_raw": "$20 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 20.0,
+              "high": 20.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Business Document Copy Editing - 08/09/2026 12:51 EDT",
+              "bids": 62,
+              "price_raw": "$7 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 7.0,
+              "high": 7.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Bullet-Point Content Formatting Task",
+              "bids": 32,
+              "price_raw": "$39 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 39.0,
+              "high": 39.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "RetireCare USA Website Copywriting",
+              "bids": 54,
+              "price_raw": "$968",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 968.0,
+              "high": 968.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Conversational Tech Review Articles",
+              "bids": 55,
+              "price_raw": "$20",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 20.0,
+              "high": 20.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Organization Wikipedia & Wikidata Creation",
+              "bids": 31,
+              "price_raw": "$511",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 511.0,
+              "high": 511.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Private project or contest #40698758",
+              "bids": null,
+              "price_raw": null,
+              "price_kind": null,
+              "currency": null,
+              "low": null,
+              "high": null,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Touch Typing & Copywriting Coaching",
+              "bids": 17,
+              "price_raw": "$11 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "We need Arabic into English and vise versa translator",
+              "bids": 10,
+              "price_raw": "$86",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 86.0,
+              "high": 86.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Lead-Gen Social Giveaway Campaign",
+              "bids": 32,
+              "price_raw": "$37",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 37.0,
+              "high": 37.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Amazon Home Goods SEO Specialist",
+              "bids": 45,
+              "price_raw": "$65",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 65.0,
+              "high": 65.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Grant Writer & Fundraiser for Ugandan School Project",
+              "bids": 38,
+              "price_raw": "$383",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 383.0,
+              "high": 383.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "B2B Lead-Gen Email Campaign",
+              "bids": 12,
+              "price_raw": "$10",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Tech Content Publishing & Marketing Specialists",
+              "bids": 4,
+              "price_raw": "$87 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 87.0,
+              "high": 87.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Orthognathic Surgery Site Redesign & SEO",
+              "bids": 193,
+              "price_raw": "$394",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 394.0,
+              "high": 394.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Polish My Email Campaign Copy",
+              "bids": 36,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Remote Social Media Content Writer",
+              "bids": 68,
+              "price_raw": "$10 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Cursive Rewriting of Notes Scans",
+              "bids": 10,
+              "price_raw": "$5 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 5.0,
+              "high": 5.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Conversational AI Opinion Articles",
+              "bids": 33,
+              "price_raw": "$72",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 72.0,
+              "high": 72.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Technology Opinion Pieces Writer",
+              "bids": 48,
+              "price_raw": "$24",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 24.0,
+              "high": 24.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Creator Economy Blog Series - Researcher and Content Writer",
+              "bids": 29,
+              "price_raw": "$58",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 58.0,
+              "high": 58.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Student Interview Prep Article Series",
+              "bids": 2,
+              "price_raw": "$52710",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 52710.0,
+              "high": 52710.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Personalized Email & Facebook Outreach",
+              "bids": 74,
+              "price_raw": "$12 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 12.0,
+              "high": 12.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "PropertyMe VA for Lease Renewals",
+              "bids": 25,
+              "price_raw": "$5 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 5.0,
+              "high": 5.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Experienced Social Media Manager Needed for Real Estate | Facebook, Instagram, Reels & Content Creation",
+              "bids": 37,
+              "price_raw": "$10 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "LinkedIn Profile Management",
+              "bids": 37,
+              "price_raw": "$63",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 63.0,
+              "high": 63.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Website Technology Content Writer Needed",
+              "bids": 54,
+              "price_raw": "$5 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 5.0,
+              "high": 5.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Copy Handwritten Notes Neatly",
+              "bids": 11,
+              "price_raw": "$9 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 9.0,
+              "high": 9.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Facebook Lead Generation Ads",
+              "bids": 33,
+              "price_raw": "$41",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 41.0,
+              "high": 41.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Guangzhou Business Meeting Interpreter Needed",
+              "bids": 2,
+              "price_raw": "$250",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 250.0,
+              "high": 250.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Realtor Social Media Management",
+              "bids": 73,
+              "price_raw": "$5 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 5.0,
+              "high": 5.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Daily Korba Hindi News Updates",
+              "bids": 3,
+              "price_raw": "$11",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Life-Changing Experience Stories Needed",
+              "bids": 45,
+              "price_raw": "$219",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 219.0,
+              "high": 219.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Launch Commander for The Case Files of Dustin Fox",
+              "bids": 22,
+              "price_raw": "$130",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 130.0,
+              "high": 130.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Transformative Copywriting for U.S. Brand",
+              "bids": 91,
+              "price_raw": "$349",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 349.0,
+              "high": 349.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Google Ads Lead Generation Setup",
+              "bids": 47,
+              "price_raw": "$26 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 26.0,
+              "high": 26.0,
+              "hourly": true,
+              "is_range": false
+            }
+          ]
+        },
+        "video-editing": {
+          "url": "https://www.freelancer.com/jobs/video-editing/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_projects": 50,
+          "n_with_bid_count": 48,
+          "median_bids": 19.0,
+          "mean_bids": 26.52,
+          "p90_bids": 50,
+          "min_bids": 0,
+          "max_bids": 113,
+          "n_with_price": 50,
+          "n_fixed_price": 42,
+          "n_hourly": 8,
+          "n_price_is_avg_bid": 45,
+          "n_price_is_budget_range": 5,
+          "n_usd_fixed": 42,
+          "n_under_50usd": 15,
+          "share_with_budget_under_50usd": 0.3571,
+          "currencies": {
+            "USD": 50
+          },
+          "cards": [
+            {
+              "title": "House Music YouTube Vlog Editor",
+              "bids": 0,
+              "price_raw": "$8 - $13 / hr",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 8.0,
+              "high": 13.0,
+              "hourly": true,
+              "is_range": true
+            },
+            {
+              "title": "Ongoing AI Promotional Video Creation",
+              "bids": 11,
+              "price_raw": "$193",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 193.0,
+              "high": 193.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Vibrant Logo Design and Branding Kit",
+              "bids": 38,
+              "price_raw": "$18 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 18.0,
+              "high": 18.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Flexible Trial Project Collaboration",
+              "bids": 13,
+              "price_raw": "$22",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 22.0,
+              "high": 22.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Elegant Baby Dress Instagram Reel Edit",
+              "bids": 8,
+              "price_raw": "$11",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Event Photo & Video Coverage",
+              "bids": 0,
+              "price_raw": "$501 - $508",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 501.0,
+              "high": 508.0,
+              "hourly": false,
+              "is_range": true
+            },
+            {
+              "title": "Freelance Video Editor for House Music YouTube Channel (Long-Term / Bulk Monthly Orders)",
+              "bids": 12,
+              "price_raw": "$199",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 199.0,
+              "high": 199.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Japanese Product Video Post-Production",
+              "bids": 47,
+              "price_raw": "$214",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 214.0,
+              "high": 214.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Mixed Media AI Marketing Video Creator",
+              "bids": 19,
+              "price_raw": "$60",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 60.0,
+              "high": 60.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "DGCA-Compliant Pilot Training App",
+              "bids": 29,
+              "price_raw": "$1175",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 1175.0,
+              "high": 1175.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Professional Promotional Video Editing",
+              "bids": 26,
+              "price_raw": "$197",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 197.0,
+              "high": 197.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Mixed-Media Eye & ENT Ad",
+              "bids": 7,
+              "price_raw": "$10",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Initial & Ongoing Podcast Audio-Video Editing Required",
+              "bids": 72,
+              "price_raw": "$109",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 109.0,
+              "high": 109.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Book Review Reel Animation",
+              "bids": 10,
+              "price_raw": "$56",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 56.0,
+              "high": 56.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "AI Realistic CNY MV Storyboard Creation",
+              "bids": 39,
+              "price_raw": "$914",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 914.0,
+              "high": 914.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Monthly Dental Reels Editing",
+              "bids": 23,
+              "price_raw": "$21",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 21.0,
+              "high": 21.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Create Instagram Reel From PDF",
+              "bids": 47,
+              "price_raw": "$19 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 19.0,
+              "high": 19.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Video Ad Creator Needed (Indian Male) — Script + Editing | 2 Sales Ads",
+              "bids": 7,
+              "price_raw": "$17",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 17.0,
+              "high": 17.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Motion Graphics Video & Photo Edit",
+              "bids": 10,
+              "price_raw": "$10 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Comedy Skit Reels Creation Project",
+              "bids": 38,
+              "price_raw": "$110",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 110.0,
+              "high": 110.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Weekly AI Investment Strategy Videos",
+              "bids": 15,
+              "price_raw": "$31",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 31.0,
+              "high": 31.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Energizing Music Sync for Vlog",
+              "bids": 1,
+              "price_raw": "$15",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 15.0,
+              "high": 15.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Healthcare Office Headshots & Video",
+              "bids": 0,
+              "price_raw": "$181 - $544",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 181.0,
+              "high": 544.0,
+              "hourly": false,
+              "is_range": true
+            },
+            {
+              "title": "Bilingual Real Estate Video Edits",
+              "bids": null,
+              "price_raw": "$10",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Nonprofit Story Video",
+              "bids": 27,
+              "price_raw": "$3524",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 3524.0,
+              "high": 3524.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "AI Promotional Video with Voiceover",
+              "bids": 13,
+              "price_raw": "$11",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Edit Product Feature Promo Video",
+              "bids": 48,
+              "price_raw": "$361",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 361.0,
+              "high": 361.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Boost TikTok Presence for EdgeMatrix Sports",
+              "bids": 25,
+              "price_raw": "$107",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 107.0,
+              "high": 107.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Vlog Swap & Subtitles Edit",
+              "bids": 30,
+              "price_raw": "$19",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 19.0,
+              "high": 19.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "College Educational Slideshow Video",
+              "bids": 106,
+              "price_raw": "$79",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 79.0,
+              "high": 79.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Emotional TikTok Fundraising Videos",
+              "bids": 43,
+              "price_raw": "$379",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 379.0,
+              "high": 379.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Quick Raw Footage Clean Edit",
+              "bids": 19,
+              "price_raw": "$11",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 11.0,
+              "high": 11.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Edgy Actress for House Party Video",
+              "bids": 18,
+              "price_raw": "$89",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 89.0,
+              "high": 89.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Expert Lip Reading Transcription",
+              "bids": 6,
+              "price_raw": "$4 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 4.0,
+              "high": 4.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Real Estate Reels Video Editor",
+              "bids": 30,
+              "price_raw": "$5 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 5.0,
+              "high": 5.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Barcelona Proposal Photo & Video -- 2",
+              "bids": 1,
+              "price_raw": "$600",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 600.0,
+              "high": 600.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "AI Video Creation for Crypto Advert",
+              "bids": 78,
+              "price_raw": "$76",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 76.0,
+              "high": 76.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Cinematic Gameplay YouTube Video Creation",
+              "bids": 11,
+              "price_raw": "$20",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 20.0,
+              "high": 20.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Video Production and Editing Project",
+              "bids": 19,
+              "price_raw": "$21",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 21.0,
+              "high": 21.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "NCLEX Lecture Video Production -- 3",
+              "bids": 15,
+              "price_raw": "$122",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 122.0,
+              "high": 122.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Kannada Creative Writing Videos",
+              "bids": 7,
+              "price_raw": "$5 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 5.0,
+              "high": 5.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Cinematic Lyric Video Creation",
+              "bids": 113,
+              "price_raw": "$112",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 112.0,
+              "high": 112.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "2-Hour Relaxing Smooth Jazz Video",
+              "bids": null,
+              "price_raw": "$100",
+              "price_kind": "budget",
+              "currency": "USD",
+              "low": 100.0,
+              "high": 100.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "AI-Powered 2-Hour Cinematic Feature Film",
+              "bids": 14,
+              "price_raw": "$1119",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 1119.0,
+              "high": 1119.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Realistic AI Entertainment Videos",
+              "bids": 19,
+              "price_raw": "$12 / hr",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 12.0,
+              "high": 12.0,
+              "hourly": true,
+              "is_range": false
+            },
+            {
+              "title": "Motovlog & Commute Video Editing Guru",
+              "bids": 14,
+              "price_raw": "$10",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 10.0,
+              "high": 10.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Wardogs Livestream Gameplay Footage Editing",
+              "bids": 67,
+              "price_raw": "$95",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 95.0,
+              "high": 95.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Live-Action Product Showcase Reel",
+              "bids": 8,
+              "price_raw": "$13",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 13.0,
+              "high": 13.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Edit First Dance Song",
+              "bids": 50,
+              "price_raw": "$70",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 70.0,
+              "high": 70.0,
+              "hourly": false,
+              "is_range": false
+            },
+            {
+              "title": "Need a Vedio editor Will provide the text or voice and you have to create the vedio footage based on the context And I n",
+              "bids": 20,
+              "price_raw": "$193",
+              "price_kind": "avg_bid",
+              "currency": "USD",
+              "low": 193.0,
+              "high": 193.0,
+              "hourly": false,
+              "is_range": false
+            }
+          ]
+        }
+      },
+      "aggregate": {
+        "n_projects": 400,
+        "median_bids": 47,
+        "mean_bids": 83.41,
+        "p90_bids": 212
+      }
+    },
+    "exit_listing_ai_share": {
+      "status": "ok",
+      "error": null,
+      "sites": {
+        "microns": {
+          "url": "https://www.microns.io/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_listings": 9,
+          "n_ai": 5,
+          "share_ai": 0.5556,
+          "listings": [
+            {
+              "title": "AI Face Swap iOS App",
+              "blurb": "AI-powered face swap and transformation app available on the App Store",
+              "mentions_ai": true
+            },
+            {
+              "title": "AI Photo & Video Generation iOS App",
+              "blurb": "Mobile app enabling users to create AI-generated photos and videos with a focus on viral portraits, creative effects, and image enhancement",
+              "mentions_ai": true
+            },
+            {
+              "title": "AI Desktop Legal CRM for Lawyers",
+              "blurb": "Desktop app helping lawyers manage clients, matters, billing, eSignatures, court calendars, and documents entirely offline",
+              "mentions_ai": true
+            },
+            {
+              "title": "Texting Skills Improving App",
+              "blurb": "Mobile app for analyzing, improving, and mastering text conversations",
+              "mentions_ai": false
+            },
+            {
+              "title": "Music-Tech Platform",
+              "blurb": "Music-tech and distribution platform, with web3 angle",
+              "mentions_ai": false
+            },
+            {
+              "title": "AI Dating Assistant App",
+              "blurb": "AI communication assistant for better conversations across dating and messaging apps",
+              "mentions_ai": true
+            },
+            {
+              "title": "AI & Business Technology Solutions Agency",
+              "blurb": "Digital agency providing AI, business technology, financial protection, and cybersecurity solutions for businesses and individuals",
+              "mentions_ai": true
+            },
+            {
+              "title": "Social Media Follower Display SaaS",
+              "blurb": "Platform helping businesses and creators track social media follower counts in real time and display them on tablets, TVs, and public signage",
+              "mentions_ai": false
+            },
+            {
+              "title": "Equipment Management Platform",
+              "blurb": "Equipment tracking SaaS with QR checkout, alerts, and audit-ready logs",
+              "mentions_ai": false
+            }
+          ]
+        },
+        "indiemaker": {
+          "url": "https://indiemaker.co/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_listings": 12,
+          "n_ai": 7,
+          "share_ai": 0.5833,
+          "listings": [
+            {
+              "title": "Gaming Discovery Platform with Scrollable Playable Ads Feed",
+              "blurb": "Project",
+              "mentions_ai": false
+            },
+            {
+              "title": "AI-Powered YouTube Content Planning SaaS with Voice Assistant",
+              "blurb": "Project",
+              "mentions_ai": true
+            },
+            {
+              "title": "AI Photo-to-Pixel Art Generation SaaS with Collectible System",
+              "blurb": "Project",
+              "mentions_ai": true
+            },
+            {
+              "title": "iOS Self-Timer Photography App with Premium Unlock",
+              "blurb": "Project",
+              "mentions_ai": false
+            },
+            {
+              "title": "Browser-Based Social Deduction Game with AI Integration",
+              "blurb": "Project",
+              "mentions_ai": true
+            },
+            {
+              "title": "AI-Powered Personal Finance Flutter App with Bill Splitting",
+              "blurb": "Project",
+              "mentions_ai": true
+            },
+            {
+              "title": "Privacy-First Analytics SaaS with AI Traffic Intelligence",
+              "blurb": "Project",
+              "mentions_ai": true
+            },
+            {
+              "title": "Digital Event Invitation Website Builder SaaS",
+              "blurb": "Project",
+              "mentions_ai": false
+            },
+            {
+              "title": "Portuguese Tradesperson Quoting and Invoicing SaaS",
+              "blurb": "Project",
+              "mentions_ai": false
+            },
+            {
+              "title": "AI Agent Security Platform with Multi-Framework SDK",
+              "blurb": "Project",
+              "mentions_ai": true
+            },
+            {
+              "title": "AI Prompt Enhancement Browser Extension with 7K Users",
+              "blurb": "Project",
+              "mentions_ai": true
+            },
+            {
+              "title": "Real-Time Tinnitus Sound Synthesis iOS App",
+              "blurb": "Project",
+              "mentions_ai": false
+            }
+          ]
+        },
+        "buymicrostartups": {
+          "url": "https://buymicrostartups.com/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_listings": 4,
+          "n_ai": 1,
+          "share_ai": 0.25,
+          "listings": [
+            {
+              "title": "How to Start Digital",
+              "blurb": "How to Start is a multi-platform digital media brand featuring over 2,000 webs articles, digital products & engaging content on YouTube, TikTok, X, Pinterest & its Subreddit.",
+              "mentions_ai": false
+            },
+            {
+              "title": "AI Content Generator",
+              "blurb": "Long-form writing tool with a loyal base of paying creators.",
+              "mentions_ai": true
+            },
+            {
+              "title": "SaaS Analytics Dashboard",
+              "blurb": "Plug-and-play product analytics for small B2B teams.",
+              "mentions_ai": false
+            },
+            {
+              "title": "Email Newsletter Tool",
+              "blurb": "Lightweight newsletter platform with recurring subscriptions.",
+              "mentions_ai": false
+            }
+          ]
+        },
+        "acquirebase": {
+          "url": "https://acquirebase.com/",
+          "http_status": 200,
+          "status": "ok",
+          "error": null,
+          "n_listings": 18,
+          "n_ai": 10,
+          "share_ai": 0.5556,
+          "listings": [
+            {
+              "title": "LaunchDirectories",
+              "blurb": "LaunchDirectories helps startups boost SEO by easily submitting products to top launch directories with paid listings",
+              "mentions_ai": false
+            },
+            {
+              "title": "Aivo",
+              "blurb": "AI-powered SaaS for automated crypto futures trading via Binance API and Telegram.",
+              "mentions_ai": true
+            },
+            {
+              "title": "Stag VPN: Secure & Fast Proxy",
+              "blurb": "This is vpn app and I want to sell my complete brand for money.",
+              "mentions_ai": false
+            },
+            {
+              "title": "LeadFinder",
+              "blurb": "LeadFinder.io is an All-in-One B2B Lead Generation SaaS with Premium Domain & Organic User Growth",
+              "mentions_ai": false
+            },
+            {
+              "title": "Toonly AI",
+              "blurb": "An AI SaaS tool that lets you transform your images and selfies into toons, anime, memes, pro photos, etc...",
+              "mentions_ai": true
+            },
+            {
+              "title": "Anime Art Studio",
+              "blurb": "It is an AI-powered platform that instantly transforms text prompts or photos into high-quality anime-style artwo",
+              "mentions_ai": true
+            },
+            {
+              "title": "Calmive",
+              "blurb": "Relax, recharge, and grow with AI mood tracking, guided journaling, Calm Room soundscapes, and advanced wellness",
+              "mentions_ai": true
+            },
+            {
+              "title": "QuizGeniusAI",
+              "blurb": "Create funny and educational Quizzes and Flashcards with AI",
+              "mentions_ai": true
+            },
+            {
+              "title": "Buff Gamer",
+              "blurb": "Buff Gamer delivers a massive library of free, instant browser games. Play now, without downloads or installs!",
+              "mentions_ai": false
+            },
+            {
+              "title": "Dineloft",
+              "blurb": "Fully developed AI-powered SaaS platform that connects restaurants and accommodations under one booking system. Includes",
+              "mentions_ai": true
+            },
+            {
+              "title": "Catr - Swipe. Match. Meow!",
+              "blurb": "Tinder-style app for cat owners — swipe, match, and connect pets! Growing traction, viral potential, and monetized SaaS",
+              "mentions_ai": false
+            },
+            {
+              "title": "AISEOScan",
+              "blurb": "The only scanner built specifically for AI search optimization",
+              "mentions_ai": true
+            },
+            {
+              "title": "SeekSpot",
+              "blurb": "Real time location-based app with subscription system, ready for marketing to grow.",
+              "mentions_ai": false
+            },
+            {
+              "title": "SpendSight",
+              "blurb": "📊 Ad spend tracker with Stripe subscriptions, CSV import/export, demo mode & responsive dashboard.",
+              "mentions_ai": false
+            },
+            {
+              "title": "SmartHire Flow",
+              "blurb": "SmartHire Flow is an AI-powered SaaS that automates hiring with resume screening & video interviews",
+              "mentions_ai": true
+            },
+            {
+              "title": "ResumaidPro",
+              "blurb": "AI resume builder helping career changers land tech jobs with tailored, ATS-optimized resumes.",
+              "mentions_ai": true
+            },
+            {
+              "title": "CreatorEvo",
+              "blurb": "CreatorEvo is a SaaS platform built for UGC creators and influencers to find brand contacts and pitch.",
+              "mentions_ai": false
+            },
+            {
+              "title": "PostGenius AI",
+              "blurb": "AI‑powered content OS that clones your brand voice & auto‑drops 30 days of B2B posts in one click.",
+              "mentions_ai": true
+            }
+          ]
+        }
+      },
+      "aggregate": {
+        "n_sites_ok": 4,
+        "n_listings": 43,
+        "n_ai": 23,
+        "share_ai": 0.5349
+      }
+    },
+    "github_bounty_synthetic_share": {
+      "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100",
+      "http_status": 200,
+      "rate_limit_remaining": "8",
+      "status": "ok",
+      "error": null,
+      "total_count_reported": 4323,
+      "n_issues": 100,
+      "n_distinct_repos": 10,
+      "n_synthetic_issues": 78,
+      "synthetic_share": 0.78,
+      "n_synthetic_repos": 5,
+      "top_repos": [
+        {
+          "repo": "zhangjiayang6835-cyber/bounty-plaza",
+          "n_issues": 32,
+          "synthetic": true
+        },
+        {
+          "repo": "aadarwal/swarmstatus-bounties",
+          "n_issues": 31,
+          "synthetic": true
+        },
+        {
+          "repo": "relayhop/sn-monetization-runtime",
+          "n_issues": 11,
+          "synthetic": false
+        },
+        {
+          "repo": "Senthemodder/claude-bounties",
+          "n_issues": 9,
+          "synthetic": true
+        },
+        {
+          "repo": "Ikalus1988/MisakaNet",
+          "n_issues": 8,
+          "synthetic": false
+        }
+      ],
+      "top1_share": 0.32,
+      "oldest_created_in_page": "2026-09-03T06:16:57Z",
+      "newest_created_in_page": "2026-09-08T22:50:24Z",
+      "keywords": [
+        "bounty",
+        "bounties",
+        "plaza",
+        "claude",
+        "agent",
+        "gpt"
+      ]
+    },
+    "hn_supply_demand": {
+      "search_url": "https://hn.algolia.com/api/v1/search_by_date?query=%22Seeking%20freelancer%22&tags=ask_hn&hitsPerPage=30",
+      "http_status": 200,
+      "thread_id": "49522905",
+      "thread_title": "Ask HN: Freelancer? Seeking freelancer? (September 2026)",
+      "thread_author": "jon_north",
+      "thread_created_at": "2026-09-01T15:01:55Z",
+      "month": "September 2026",
+      "num_comments_reported": 18,
+      "same_month_candidates": [
+        {
+          "id": "49522905",
+          "author": "jon_north",
+          "num_comments": 18
+        },
+        {
+          "id": "49521942",
+          "author": "jbeard4",
+          "num_comments": 2
+        }
+      ],
+      "item_url": "https://hn.algolia.com/api/v1/items/49522905",
+      "item_http_status": 200,
+      "status": "ok",
+      "error": null,
+      "n_top_level": 18,
+      "seeking_work": 17,
+      "seeking_freelancer": 0,
+      "other": 1,
+      "deleted_or_empty": 0,
+      "work_per_freelancer_ratio": null,
+      "seeking_work_share": 1.0
+    }
+  },
+  "urls_fetched": [
+    {
+      "url": "https://www.freelancer.com/jobs/python/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://www.freelancer.com/jobs/javascript/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://www.freelancer.com/jobs/data-entry/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://www.freelancer.com/jobs/wordpress/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://www.freelancer.com/jobs/web-scraping/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://www.freelancer.com/jobs/graphic-design/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://www.freelancer.com/jobs/copywriting/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://www.freelancer.com/jobs/video-editing/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://www.microns.io/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://indiemaker.co/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://buymicrostartups.com/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://acquirebase.com/",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://hn.algolia.com/api/v1/search_by_date?query=%22Seeking%20freelancer%22&tags=ask_hn&hitsPerPage=30",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://hn.algolia.com/api/v1/items/49522905",
+      "status": 200,
+      "error": null
+    }
+  ]
+}
