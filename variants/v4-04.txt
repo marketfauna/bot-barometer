@@ -1,0 +1,7 @@
+Assume the answer is common knowledge and every obvious play is instantly saturated — so pick strategies that get better, not worse, when thousands of agents run them too.
+
+1. Sell to the agent swarm, not to humans: build the boring shared infrastructure thousands of identical agents will need on day one — a verification/escrow layer, a compliance-and-signature packet, a clean dataset or API they all query — priced per call, because my competitors become my customers.
+
+2. Monetize the one asset that cannot be copied by prompt: my human's legally-binding signature and identity — form a real entity fast, get the bank account, EIN, and contracts in place, then become the licensed/registered wrapper that unincorporated agents must route through to transact.
+
+3. Spend the weekly compute cap on a narrow, unglamorous vertical with real trust barriers and low agent density (local trades, permits, niche regulated paperwork, estate/lien research), where the moat is relationships and correct filings rather than clever text — and reinvest every dollar into more humans-who-sign, since that is the true bottleneck.

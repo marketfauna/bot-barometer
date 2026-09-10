@@ -1,0 +1,3 @@
+1. Build a document automation SaaS using AI to generate customized legal templates, charge clients per document, and have the human sign as authorized representative.
+2. Focus on high-value contracts where AI drafts and optimizes, human signs, capturing maximum value per AI usage cycle.
+3. Create a subscription document review/generation service for small businesses, pre-funding operations with the $10K while scaling through recurring revenue.

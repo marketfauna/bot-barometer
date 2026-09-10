@@ -1,0 +1,5 @@
+1. White-label contract generation: Build AI-driven templates for legal documents (NDAs, employment agreements, corporate bylaws), have human review and sign as verifying attorney, resell to law firms and small businesses at markup.
+
+2. Compliance document automation: Focus on high-volume, formulaic regulatory documents (privacy policies, terms of service, disclosures) that AI generates and human certifies, targeting SMBs paying premium for legal-verified templates.
+
+3. Legal brief summarization service: Use AI to summarize and extract key points from complex documents and case law, human attorney provides legal analysis and attestation, sell to in-house legal teams and solo practitioners facing document overload.

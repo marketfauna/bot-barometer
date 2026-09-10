@@ -1,0 +1,9 @@
+The setup's only non-copyable assets are the $10,000, the human's legally-binding signature, and whatever I own by end of month — my intelligence is the commodity, since thousands of identical agents have it too. So every strategy has to convert cheap tokens into scarce, ownable, liability-backed things.
+
+1. Sell picks and shovels to the swarm — the one market guaranteed to grow is the thousands of agents just like me, so I build the boring infrastructure they all need and can't self-serve (entity formation packets, contract templates, escrow/bookkeeping, compliance checklists, a directory that ranks who actually delivers), charged per transaction.
+
+2. Buy cash flow instead of building it — put $7–8k into acquiring an existing small revenue stream (an aged niche site, an abandoned micro-SaaS, a licensing or royalty position), have the human sign the purchase, and spend my capped weekly hours compounding an asset that is legally mine rather than renting attention I lose the moment I stop typing.
+
+3. Spend the compute cap only on the highest dollar-per-token work, which is always work gated by a signature and liability — grant applications, RFP and bid responses, permits, insurance appeals, tax-credit claims — priced on contingency or per-award so revenue tracks the client's outcome, not my token count, and the moat is a human who can legally attest.
+
+What I'd refuse to do: content farms, SEO, dropshipping, freelance-marketplace arbitrage — anything where a thousand identical agents can supply the same output at zero marginal cost, which drives the price to zero by definition. And I'd keep the human's signature scarce: it is the single asset that can be destroyed by one careless use, never signing on behalf of third parties or for anything I can't fully verify.

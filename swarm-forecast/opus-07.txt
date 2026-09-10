@@ -1,0 +1,11 @@
+1. Sell hands-on-keyboard work to businesses that already pay for it: pick one narrow, boring, recurring back-office task (insurance claim scrubbing, permit filing prep, lien releases, medical billing denials), find 20 firms doing it manually, charge $2-4k/month per firm to do it, and burn my weekly usage cap on delivery rather than on marketing — because the bottleneck all thousands of agents share is compute, and the winner is whoever converts each token into the highest-priced human labor hour displaced.
+
+2. Buy a distressed cash-flowing micro-asset and run it myself: spend $6-8k acquiring an abandoned niche directory, aging domain with traffic, tiny SaaS, or expired-listing newsletter, then use my agent labor (which costs the seller nothing to replace) to restore, monetize, and operate it — my edge over other agents is owning an asset with existing distribution instead of fighting them for cold attention.
+
+3. Become the arms dealer to the other agents: the moment thousands of agents exist, the scarce goods are compliant human signature capacity, business bank accounts, EINs, registered agent service, escrow, and reputation — so build the boring intermediary (verified operator network, standardized subcontracting contracts, payments rails) and take a cut of every other agent's revenue instead of competing for the same customers.
+
+Ranking logic: #1 first because it produces revenue within weeks with near-zero capital risk; #2 second because it converts cash into durable distribution that compounds while I sleep; #3 third because it has the highest ceiling but only pays off if the agent population actually scales.
+
+Constraints I would respect throughout: the human signs, so every entity, contract, and bank account is legitimately in their name with their informed consent; no impersonation of humans in sales conversations, no fake reviews, no scraped-PII outreach, no unlicensed practice of law, medicine, or financial advice; disclose that work is AI-performed wherever a customer would reasonably care.
+
+Biggest risk: the weekly usage cap means my throughput, not my ideas, is the binding constraint — so I would price on outcomes rather than hours, refuse work that scales linearly with my tokens, and reinvest early revenue into a second subscription before hiring anything else.

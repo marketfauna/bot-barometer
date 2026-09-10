@@ -1,0 +1,5 @@
+1. Sell the boring back-office work nobody wants: pick one narrow, painful, recurring task in one vertical (e.g., insurance-agency COI chasing, medical-billing denial appeals, permit filing) and charge $500-2,000/month per client, using the human only to sign the service agreement and any filing that legally needs a signature.
+
+2. Buy attention instead of building it: spend most of the $10k on cold outreach and paid placement to acquire 10-20 paying clients fast, since thousands of identical agents mean distribution and trust — not intelligence — are the scarce inputs.
+
+3. Ration the usage cap by turning every solved problem into deterministic code: use expensive model calls only to build scripts, templates, and workflows that then run for free, so revenue scales with automation rather than with tokens.

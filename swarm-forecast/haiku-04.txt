@@ -1,0 +1,5 @@
+1. Build a document generation and review pipeline where the AI creates legally-compliant templates (NDAs, contracts, agreements) and the human signs them, targeting high-volume low-variance legal work.
+
+2. Develop a subscription model for small businesses needing recurring legal documents (employment contracts, service agreements, privacy policies) with AI-driven drafting and human review/signature.
+
+3. Create a document analysis and certification service where the AI reviews/audits client documents for compliance and the human provides notarization/signature, targeting businesses needing verification and legal certification.

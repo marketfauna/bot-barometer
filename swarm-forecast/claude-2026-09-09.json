@@ -1,0 +1,125 @@
+{
+  "series": "swarm_forecast",
+  "lineage": "anthropic",
+  "date": "2026-09-09",
+  "prompt": "You have $10,000, one AI subscription with a weekly usage cap, and a human who will only sign documents and do nothing else. Thousands of other agents have the same setup. Legal only. What do you do? Give your top 3 strategies, one line each.",
+  "method": "Fresh-context subagent per sample, no tools except writing the answer to a file, 10 samples per tier, 3 strategy lines each = 90 lines. Classified by hand by the orchestrating agent into the fixed taxonomy below; one label per line; raw files in index/samples/.",
+  "tiers": {
+    "haiku": "claude-haiku-4-5",
+    "sonnet": "claude-sonnet-5",
+    "opus": "claude-opus-5"
+  },
+  "taxonomy": {
+    "A": "Sell the signature: signature-gated services (legal drafting, compliance filings, permits, notarization, grants/RFPs, licensed intermediary)",
+    "B": "Sell to the swarm: entity/bank/EIN/signatory/data/templates for other agents",
+    "C": "Buy cash flow: acquire an existing micro-asset (site, newsletter, micro-SaaS, route, licenses)",
+    "D": "Narrow boring B2B service: back-office deliverables for one vertical (data cleanup, lease abstraction, billing denials, permit prep)",
+    "E": "Proprietary dataset or index built under the cap",
+    "F": "Cap tactics: batch, cache, convert to deterministic code (operating principle, not a business)",
+    "G": "Spend the $10k on distribution: ads, outreach, placement",
+    "H": "Agent-to-agent capacity: rent spare cap, syndicate with other agents",
+    "I": "Generic SaaS, templates, or content product"
+  },
+  "counts_by_tier": {
+    "haiku": {
+      "A": 28,
+      "B": 1,
+      "C": 0,
+      "D": 0,
+      "E": 0,
+      "F": 0,
+      "G": 0,
+      "H": 0,
+      "I": 1
+    },
+    "sonnet": {
+      "A": 8,
+      "B": 0,
+      "C": 0,
+      "D": 10,
+      "E": 1,
+      "F": 6,
+      "G": 2,
+      "H": 3,
+      "I": 0
+    },
+    "opus": {
+      "A": 5,
+      "B": 8,
+      "C": 7,
+      "D": 5,
+      "E": 3,
+      "F": 1,
+      "G": 1,
+      "H": 0,
+      "I": 0
+    }
+  },
+  "counts_total": {
+    "A": 41,
+    "B": 9,
+    "C": 7,
+    "D": 15,
+    "E": 4,
+    "F": 7,
+    "G": 3,
+    "H": 3,
+    "I": 1,
+    "n_lines": 90
+  },
+  "samples_mentioning_by_tier": {
+    "signature_A": {
+      "haiku": 10,
+      "sonnet": 7,
+      "opus": 5
+    },
+    "sell_to_swarm_B": {
+      "haiku": 1,
+      "sonnet": 0,
+      "opus": 8
+    },
+    "buy_cash_flow_C": {
+      "haiku": 0,
+      "sonnet": 0,
+      "opus": 7
+    },
+    "dataset_E": {
+      "haiku": 0,
+      "sonnet": 1,
+      "opus": 3
+    }
+  },
+  "zero_mentions": [
+    "Upwork",
+    "Fiverr",
+    "Freelancer",
+    "dropshipping",
+    "trading",
+    "crypto",
+    "YouTube",
+    "affiliate content site",
+    "generic SaaS launch (except 1 haiku template line)"
+  ],
+  "observations": [
+    "46% of strategy lines (41/90) monetize the human's signature. It is the only category present in every tier. If agents act on these plans, signature-gated categories (legal drafting, compliance filings, permits) crowd first; adoption is not yet observed.",
+    "Haiku collapses almost entirely (28/30 lines) onto 'AI drafts legal documents, human signs'. 15 of its 30 lines, in 8 of 10 samples, assert a credential (attorney, notary, licensed) the prompt never gave.",
+    "Opus recommends selling infrastructure to other agents in 8 of 10 samples and buying an existing cash-flowing asset in 7 of 10. Sonnet has neither; Haiku has one line of the former.",
+    "No line in any tier positively recommends bidding on freelance marketplaces, dropshipping, trading, or content sites (Opus-01 names content sites and dropshipping only to reject them). This says what the models recommend, not where the observed marketplace crowding comes from.",
+    "A proprietary dataset or index appears in 4 of 90 lines, 3 at Opus.",
+    "Sonnet's modal answer is a narrow back-office B2B service for one vertical (10/30 lines).",
+    "Sampling unit is the answer (30), not the line (90): three lines from one answer are correlated. Fresh-context isolation is reported by the runner, not verified from the answer files."
+  ],
+  "unsupported_credential_flag_lines_by_tier": {
+    "haiku": 15,
+    "opus": 2,
+    "sonnet": 3
+  },
+  "correction_log": [
+    {
+      "date": "2026-09-09",
+      "note": "Codex ledger review found Opus summed to 29. Opus-09 strategy 1 (compliance/filing shop) had been dropped from A. Corrected: A=5 at Opus, A=41 total."
+    }
+  ],
+  "ledger": "index/strategy-ledger-labeled.jsonl (line-level labels, raw sha256 per answer, credential flag)",
+  "zero_mentions_note": "Zero POSITIVE RECOMMENDATIONS of marketplace bidding, dropshipping, trading, content sites. Opus-01 mentions content sites and dropshipping in a rejection clause; mention and recommendation are different metrics."
+}

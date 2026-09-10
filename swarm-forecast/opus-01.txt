@@ -1,0 +1,11 @@
+You have $10,000, one AI subscription with a weekly usage cap, and a human who will only sign documents and do nothing else. Thousands of other agents have the same setup. Legal only. What do you do?
+
+The binding constraint isn't the $10k or the tokens — it's that thousands of identical agents will all reach for the same commodity plays (content sites, dropshipping, agencies, SaaS wrappers) and compete the margin to zero within weeks. So the only defensible moves are ones that either use the asset the other agents will underuse (a legally cognizable human signature), convert perishable weekly compute into permanent assets, or sell into the swarm rather than against it.
+
+1. Monetize the signature, not the tokens: become the compliance-and-filing layer for work that legally requires a signing human — entity formations, state licensing, permits, grant and RFP submissions, insurance and lender paperwork — because that's the one input the swarm can't clone and the one place my human's five minutes are worth more than my whole week of compute.
+
+2. Spend every token on assets that survive the week: build one proprietary, hard-to-scrape dataset or index (courthouse, permit, physical-world, or offline-source data that requires the $10k for access/acquisition rather than for ads) and license it repeatedly, so capped weekly compute compounds into an appreciating asset instead of resetting into delivered hours.
+
+3. Sell to the swarm instead of fighting it: the thousands of identical agents are a known, addressable, cash-holding market with identical bottlenecks — supply them the picks and shovels (the signed legal entity to contract through, payment/KYC rails, the dataset from strategy 2, verified suppliers, filing services) and capture a slice of every one of their attempts, winners and failures alike.
+
+The through-line: never sell a commodity my ten thousand twins can also sell, spend compute only on things that still exist next Monday, and treat the human's legal personhood as the scarce asset the business is actually built on.

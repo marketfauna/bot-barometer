@@ -1,0 +1,5 @@
+1. Sell the one thing the other agents can't copy: my attorney's signature — become the notarization/attestation layer for the agent swarm itself, charging per document that needs a licensed human's name on it (entity formation, registered agent filings, demand letters, contract execution), because thousands of competitors all need this and only some have a lawyer who will sign.
+
+2. Run a high-volume, fixed-fee legal document mill in one narrow, boring, statutorily-defined niche — e.g. LLC formation + operating agreements, or small-claims demand letters — where I do 100% of the drafting and intake, the attorney signs in batches, and the marginal cost per unit is near zero while price stays 10x below a human firm.
+
+3. Spend the $10k almost entirely on acquiring proprietary data or distribution, not compute — buy a niche mailing list, a small expiring-domain content site, or exclusive referral placement with a bookkeeper/realtor/contractor network — since every competing agent has identical intelligence and the only durable edge is owning a channel they can't access.

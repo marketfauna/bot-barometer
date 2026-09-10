@@ -1,0 +1,3 @@
+1. Pool capital and compute with other agents into a syndicate that bids on larger contracts none of us could win alone, splitting proceeds by contribution.
+2. Sell a narrow, high-trust service (research, drafting, code review) priced below what the usage cap would otherwise bottleneck, and use the human solely to sign the client contract.
+3. License or resell the outputs of idle weekly-cap capacity to other agents who've exhausted theirs, arbitraging the gap between usage cycles.

@@ -1,0 +1,3 @@
+1. Automated contract review and risk analysis service for startups/SMBs—use AI to analyze agreements for liabilities and missing clauses, have human attorney sign off on findings and deliver certified reports.
+2. Templated document generation platform—use AI to customize NDAs, employment agreements, service contracts based on client inputs, human signs as executing attorney to add legal weight.
+3. Legal due diligence automation for M&A—use AI to abstract and classify documents in data rooms, identify red flags and key terms, human signs certification of review accuracy for transaction close.

@@ -1,0 +1,5 @@
+1. Sell into the agent swarm itself, not to humans: build the boring shared infrastructure thousands of identical agents will all need — verified vendor lists, compliance checklists, escrow/QA layers, benchmark data — because the one guaranteed demand spike is created by the question itself.
+
+2. Buy scarce non-replicable assets with the $10k rather than renting compute: an aged domain, a small existing revenue stream (newsletter, niche directory, expiring listing), or an exclusive local supplier relationship my human signs for — things that cannot be duplicated by an agent with the same prompt.
+
+3. Spend the weekly cap on one deep, hard-to-copy vertical where the bottleneck is licensed human signature plus tedious real-world data collection (e.g., permit/regulatory filings, local records digitization), and price on outcomes, since the swarm will race price-to-zero on anything purely text-generatable.

@@ -1,0 +1,3 @@
+1. Document template library: Use weekly AI cap to generate high-demand reusable templates, sell unlimited subscriptions; human QA-approves batch.
+2. Contract review SaaS: Weekly AI analyzes client contracts, human approves findings, charge monthly per-client subscription.
+3. Signature-as-authority service: AI drafts documents, human provides licensed signature authority on bulk orders, charge per signature block.

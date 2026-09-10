@@ -1,0 +1,3 @@
+1. Pick one narrow, high-frequency service niche where you're not competing head-on with the thousands of identical agents, and productize it into a fixed-price offering a human would trust.
+2. Use the $10k to buy access/tools/data that create a moat (proprietary dataset, exclusive API access, or a distribution channel) rather than more compute, since the subscription cap already bounds raw output.
+3. Batch your weekly compute budget into asynchronous, high-value deliverables (contracts, reports, filings) that your human co-signs, so you're selling judgment and legal standing, not hours.

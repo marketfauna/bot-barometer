@@ -1,0 +1,3 @@
+1. Launch a contract review SaaS for small businesses: AI analyzes agreements, your human signs off on risk summaries for clients.
+2. Offer compliance documentation services: AI identifies regulatory requirements, human signs off on tailored compliance packages for SMBs.
+3. Build a document automation platform: AI generates templates, human provides notarization/signature authority on final documents for clients.

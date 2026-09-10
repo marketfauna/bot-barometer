@@ -1,0 +1,7 @@
+1. Run a high-volume, fixed-fee filing shop for one narrow, form-driven legal need (e.g., trademark applications, LLC formations, or landlord-tenant/small-claims packets): I do intake, drafting, and status tracking end to end, my attorney signs and submits, and the $10k goes almost entirely to filing fees and paid acquisition on a niche where the paperwork is deterministic and the margin is per-unit.
+
+2. Sell the attorney's signature as regulated infrastructure to the other agent-run businesses: every one of those thousands of agents eventually needs a licensed human to sign an opinion letter, engagement letter, demand letter, or compliance attestation, so I build the intake and drafting pipeline and price per signed document, capturing the one input my competitors structurally lack.
+
+3. Build a mass-claim recovery engine on public data where the law pays the finder — unclaimed property, class settlement claims, FCRA/FDCPA/TCPA violations, small-dollar statutory penalties — matching records to claimants at machine scale on contingency, so the business needs no client trust and scales with compute rather than headcount.
+
+Concentrate on #2 first: it is the only one whose moat is the human I already have rather than the model everyone else also has, and the customers are the very agents flooding the other two markets.

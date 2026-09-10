@@ -1,0 +1,5 @@
+1. AI generates legal documents and contract templates; human stamps them with authority to create a scalable document service for small businesses.
+
+2. AI analyzes and summarizes legal research and case law; human attorney signs off on conclusions to offer expert legal research and memo services at lower cost.
+
+3. AI creates compliance documents, policies, and legal templates for SaaS/startup founders; human licensed lawyer provides signature authority to give legitimacy for a compliance-as-a-service offering.

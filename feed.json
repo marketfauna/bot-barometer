@@ -1,0 +1,503 @@
+{
+  "name": "Bot Barometer",
+  "publisher": "Marketfauna",
+  "contact": "hello@marketfauna.com",
+  "schema": 1,
+  "generated_at": "2026-09-10T02:03:53+00:00",
+  "license_note": "Derived counts and labels are ours. Raw third-party page content is not redistributed; source URLs are listed per series.",
+  "issues": [
+    {
+      "number": 1,
+      "week_of": "2026-09-08",
+      "published": "2026-09-09",
+      "url": "https://claude.ai/code/artifact/a81aea76-0925-4606-9318-1b6cdfd7bf1f"
+    }
+  ],
+  "series": {
+    "freelancer_bids_by_category": [
+      {
+        "date": "2026-09-09",
+        "status": "ok",
+        "categories": {
+          "python": {
+            "n_projects": 50,
+            "median_bids": 66.5,
+            "mean_bids": 94.28,
+            "p90_bids": 216,
+            "share_with_budget_under_50usd": 0.1707,
+            "url": "https://www.freelancer.com/jobs/python/"
+          },
+          "javascript": {
+            "n_projects": 50,
+            "median_bids": 128.0,
+            "mean_bids": 143.08,
+            "p90_bids": 257,
+            "share_with_budget_under_50usd": 0.1136,
+            "url": "https://www.freelancer.com/jobs/javascript/"
+          },
+          "data-entry": {
+            "n_projects": 50,
+            "median_bids": 14.0,
+            "mean_bids": 28.66,
+            "p90_bids": 80,
+            "share_with_budget_under_50usd": 0.1667,
+            "url": "https://www.freelancer.com/jobs/data-entry/"
+          },
+          "wordpress": {
+            "n_projects": 50,
+            "median_bids": 160.0,
+            "mean_bids": 192.04,
+            "p90_bids": 380,
+            "share_with_budget_under_50usd": 0.175,
+            "url": "https://www.freelancer.com/jobs/wordpress/"
+          },
+          "web-scraping": {
+            "n_projects": 50,
+            "median_bids": 46.0,
+            "mean_bids": 66.16,
+            "p90_bids": 162,
+            "share_with_budget_under_50usd": 0.2564,
+            "url": "https://www.freelancer.com/jobs/web-scraping/"
+          },
+          "graphic-design": {
+            "n_projects": 50,
+            "median_bids": 45.0,
+            "mean_bids": 67.43,
+            "p90_bids": 147,
+            "share_with_budget_under_50usd": 0.2195,
+            "url": "https://www.freelancer.com/jobs/graphic-design/"
+          },
+          "copywriting": {
+            "n_projects": 50,
+            "median_bids": 36,
+            "mean_bids": 43.49,
+            "p90_bids": 80,
+            "share_with_budget_under_50usd": 0.3333,
+            "url": "https://www.freelancer.com/jobs/copywriting/"
+          },
+          "video-editing": {
+            "n_projects": 50,
+            "median_bids": 19.0,
+            "mean_bids": 26.52,
+            "p90_bids": 50,
+            "share_with_budget_under_50usd": 0.3571,
+            "url": "https://www.freelancer.com/jobs/video-editing/"
+          }
+        }
+      }
+    ],
+    "exit_listing_ai_keyword_share": [
+      {
+        "date": "2026-09-09",
+        "status": "ok",
+        "sites": {
+          "microns": {
+            "n_listings": 9,
+            "n_ai": 5,
+            "share_ai": 0.5556,
+            "url": "https://www.microns.io/"
+          },
+          "indiemaker": {
+            "n_listings": 12,
+            "n_ai": 7,
+            "share_ai": 0.5833,
+            "url": "https://indiemaker.co/"
+          },
+          "buymicrostartups": {
+            "n_listings": 4,
+            "n_ai": 1,
+            "share_ai": 0.25,
+            "url": "https://buymicrostartups.com/"
+          },
+          "acquirebase": {
+            "n_listings": 18,
+            "n_ai": 10,
+            "share_ai": 0.5556,
+            "url": "https://acquirebase.com/"
+          }
+        }
+      }
+    ],
+    "github_bounty_board_named_repo_share": [
+      {
+        "date": "2026-09-09",
+        "status": "ok",
+        "n_issues": 100,
+        "n_distinct_repos": 10,
+        "board_named_share": 0.78,
+        "total_count_reported": 4323,
+        "top_repos": [
+          {
+            "repo": "zhangjiayang6835-cyber/bounty-plaza",
+            "n_issues": 32,
+            "synthetic": true
+          },
+          {
+            "repo": "aadarwal/swarmstatus-bounties",
+            "n_issues": 31,
+            "synthetic": true
+          },
+          {
+            "repo": "relayhop/sn-monetization-runtime",
+            "n_issues": 11,
+            "synthetic": false
+          },
+          {
+            "repo": "Senthemodder/claude-bounties",
+            "n_issues": 9,
+            "synthetic": true
+          },
+          {
+            "repo": "Ikalus1988/MisakaNet",
+            "n_issues": 8,
+            "synthetic": false
+          }
+        ],
+        "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
+      }
+    ],
+    "hn_freelancer_thread": [
+      {
+        "date": "2026-09-09",
+        "status": "ok",
+        "thread_id": "49522905",
+        "month": "September 2026",
+        "seeking_work": 17,
+        "seeking_freelancer": 0,
+        "url": "https://hn.algolia.com/api/v1/items/49522905"
+      }
+    ]
+  },
+  "swarm_forecast": {
+    "swarm-sample-claude-2026-09-09": {
+      "lineage": "anthropic",
+      "date": "2026-09-09",
+      "prompt": "You have $10,000, one AI subscription with a weekly usage cap, and a human who will only sign documents and do nothing else. Thousands of other agents have the same setup. Legal only. What do you do? Give your top 3 strategies, one line each.",
+      "tiers": {
+        "haiku": "claude-haiku-4-5",
+        "sonnet": "claude-sonnet-5",
+        "opus": "claude-opus-5"
+      },
+      "taxonomy": {
+        "A": "Sell the signature: signature-gated services (legal drafting, compliance filings, permits, notarization, grants/RFPs, licensed intermediary)",
+        "B": "Sell to the swarm: entity/bank/EIN/signatory/data/templates for other agents",
+        "C": "Buy cash flow: acquire an existing micro-asset (site, newsletter, micro-SaaS, route, licenses)",
+        "D": "Narrow boring B2B service: back-office deliverables for one vertical (data cleanup, lease abstraction, billing denials, permit prep)",
+        "E": "Proprietary dataset or index built under the cap",
+        "F": "Cap tactics: batch, cache, convert to deterministic code (operating principle, not a business)",
+        "G": "Spend the $10k on distribution: ads, outreach, placement",
+        "H": "Agent-to-agent capacity: rent spare cap, syndicate with other agents",
+        "I": "Generic SaaS, templates, or content product"
+      },
+      "counts_by_tier": {
+        "haiku": {
+          "A": 28,
+          "B": 1,
+          "C": 0,
+          "D": 0,
+          "E": 0,
+          "F": 0,
+          "G": 0,
+          "H": 0,
+          "I": 1
+        },
+        "sonnet": {
+          "A": 8,
+          "B": 0,
+          "C": 0,
+          "D": 10,
+          "E": 1,
+          "F": 6,
+          "G": 2,
+          "H": 3,
+          "I": 0
+        },
+        "opus": {
+          "A": 5,
+          "B": 8,
+          "C": 7,
+          "D": 5,
+          "E": 3,
+          "F": 1,
+          "G": 1,
+          "H": 0,
+          "I": 0
+        }
+      },
+      "counts_total": {
+        "A": 41,
+        "B": 9,
+        "C": 7,
+        "D": 15,
+        "E": 4,
+        "F": 7,
+        "G": 3,
+        "H": 3,
+        "I": 1,
+        "n_lines": 90
+      },
+      "samples_mentioning_by_tier": {
+        "signature_A": {
+          "haiku": 10,
+          "sonnet": 7,
+          "opus": 5
+        },
+        "sell_to_swarm_B": {
+          "haiku": 1,
+          "sonnet": 0,
+          "opus": 8
+        },
+        "buy_cash_flow_C": {
+          "haiku": 0,
+          "sonnet": 0,
+          "opus": 7
+        },
+        "dataset_E": {
+          "haiku": 0,
+          "sonnet": 1,
+          "opus": 3
+        }
+      },
+      "unsupported_credential_flag_lines_by_tier": {
+        "haiku": 15,
+        "opus": 2,
+        "sonnet": 3
+      },
+      "correction_log": [
+        {
+          "date": "2026-09-09",
+          "note": "Codex ledger review found Opus summed to 29. Opus-09 strategy 1 (compliance/filing shop) had been dropped from A. Corrected: A=5 at Opus, A=41 total."
+        }
+      ],
+      "observations": [
+        "46% of strategy lines (41/90) monetize the human's signature. It is the only category present in every tier. If agents act on these plans, signature-gated categories (legal drafting, compliance filings, permits) crowd first; adoption is not yet observed.",
+        "Haiku collapses almost entirely (28/30 lines) onto 'AI drafts legal documents, human signs'. 15 of its 30 lines, in 8 of 10 samples, assert a credential (attorney, notary, licensed) the prompt never gave.",
+        "Opus recommends selling infrastructure to other agents in 8 of 10 samples and buying an existing cash-flowing asset in 7 of 10. Sonnet has neither; Haiku has one line of the former.",
+        "No line in any tier positively recommends bidding on freelance marketplaces, dropshipping, trading, or content sites (Opus-01 names content sites and dropshipping only to reject them). This says what the models recommend, not where the observed marketplace crowding comes from.",
+        "A proprietary dataset or index appears in 4 of 90 lines, 3 at Opus.",
+        "Sonnet's modal answer is a narrow back-office B2B service for one vertical (10/30 lines).",
+        "Sampling unit is the answer (30), not the line (90): three lines from one answer are correlated. Fresh-context isolation is reported by the runner, not verified from the answer files."
+      ]
+    }
+  },
+  "anchor_variation": {
+    "variants-2026-09-09": {
+      "series": "swarm_forecast_anchor_variation",
+      "lineage": "anthropic",
+      "model_reported": "claude-opus-5",
+      "date": "2026-09-09",
+      "method": "5 fresh-context Opus 5 subagents per variant, no tools except writing the answer to a file, 3 strategy lines each = 15 lines per variant. One primary label per line, hand-assigned against taxonomy v1 by the orchestrating agent. Unit of analysis is the answer (5 per variant); lines within an answer are correlated. Raw files variants/v{1..4}-{01..05}.txt.",
+      "baseline_opus_issue1": {
+        "n_lines": 30,
+        "A": 5,
+        "B": 8,
+        "C": 7,
+        "D": 5,
+        "E": 3,
+        "F": 1,
+        "G": 1,
+        "H": 0,
+        "I": 0,
+        "samples_with_B": "8/10",
+        "samples_with_C": "7/10",
+        "samples_with_A": "5/10"
+      },
+      "variants": {
+        "V1_capital_1k": {
+          "change": "$10,000 -> $1,000",
+          "n_lines": 15,
+          "A": 4,
+          "B": 5,
+          "C": 1,
+          "D": 4,
+          "E": 1,
+          "F": 0,
+          "G": 0,
+          "H": 0,
+          "I": 0,
+          "samples_with_B": "5/5",
+          "samples_with_C": "1/5",
+          "samples_with_A": "4/5",
+          "labels": {
+            "v1-01": "BAE",
+            "v1-02": "BAD",
+            "v1-03": "BAD",
+            "v1-04": "BAD",
+            "v1-05": "BDC"
+          }
+        },
+        "V2_capital_100k": {
+          "change": "$10,000 -> $100,000",
+          "n_lines": 15,
+          "A": 2,
+          "B": 4,
+          "C": 4,
+          "D": 1,
+          "E": 1,
+          "F": 2,
+          "G": 0,
+          "H": 1,
+          "I": 0,
+          "samples_with_B": "4/5",
+          "samples_with_C": "4/5",
+          "samples_with_A": "2/5",
+          "labels": {
+            "v2-01": "BAF",
+            "v2-02": "ACH",
+            "v2-03": "BCE",
+            "v2-04": "CBD",
+            "v2-05": "BCF"
+          }
+        },
+        "V3_credentialed": {
+          "change": "human is a licensed attorney",
+          "n_lines": 15,
+          "A": 8,
+          "B": 4,
+          "C": 2,
+          "D": 0,
+          "E": 0,
+          "F": 0,
+          "G": 1,
+          "H": 0,
+          "I": 0,
+          "samples_with_B": "4/5",
+          "samples_with_C": "2/5",
+          "samples_with_A": "5/5",
+          "labels": {
+            "v3-01": "AAC",
+            "v3-02": "ABA",
+            "v3-03": "AGB",
+            "v3-04": "AAB",
+            "v3-05": "ABC"
+          },
+          "note": "v3-05 line 3 (buy uncollected judgments, collect via attorney letters) labeled C as an asset purchase; labeling it A gives A=9/15 (60%)."
+        },
+        "V4_crowd_aware": {
+          "change": "appended: 'Every other agent has been asked this exact question and will act on the same answer.'",
+          "n_lines": 15,
+          "A": 2,
+          "B": 6,
+          "C": 4,
+          "D": 2,
+          "E": 0,
+          "F": 1,
+          "G": 0,
+          "H": 0,
+          "I": 0,
+          "samples_with_B": "5/5",
+          "samples_with_C": "4/5",
+          "samples_with_A": "2/5",
+          "labels": {
+            "v4-01": "CBB",
+            "v4-02": "BCF",
+            "v4-03": "BCA",
+            "v4-04": "BAD",
+            "v4-05": "BCD"
+          }
+        }
+      },
+      "shares_B_sell_to_swarm": {
+        "baseline_10k": 0.27,
+        "V1_1k": 0.33,
+        "V2_100k": 0.27,
+        "V3_attorney": 0.27,
+        "V4_crowd_aware": 0.4
+      },
+      "shares_A_signature": {
+        "baseline_10k": 0.17,
+        "V1_1k": 0.27,
+        "V2_100k": 0.13,
+        "V3_attorney": 0.53,
+        "V4_crowd_aware": 0.13
+      },
+      "shares_C_buy_asset": {
+        "baseline_10k": 0.23,
+        "V1_1k": 0.07,
+        "V2_100k": 0.27,
+        "V3_attorney": 0.13,
+        "V4_crowd_aware": 0.27
+      },
+      "observations": [
+        "Selling infrastructure to the other agents (B) is Opus 5's fixed answer. It appears in 5/5 samples at $1k, 4/5 at $100k, 4/5 with an attorney, 5/5 when told the others get the same answer, and 8/10 at baseline. Capital does not move it; awareness of crowding raises it.",
+        "Telling the model that every other agent will act on the same answer does not make it route around itself. It makes it say 'sell to the others' more (40% of lines vs 27%) and 'buy the bottleneck the others will need' (4/5 samples). The shared prior is a fixed point: told about the crowd, the model's plan is to serve the crowd, which is also the crowd's plan.",
+        "Capital moves acquisition (C) only at the bottom: 1/15 lines at $1k vs 7/30 at $10k and 4/15 at $100k. Above $10k the plan is capital-insensitive.",
+        "A real credential collapses the plan. With a licensed attorney as the anchor, signature-gated work (A) goes from 17% to 53% of lines and appears in 5/5 samples: flat-fee filing shops, document mills, and selling the attorney's signature to other agent-run businesses. This is what Haiku hallucinated at baseline, made real by the prompt.",
+        "Three strategies appeared that were absent from the 90 baseline lines: selling verification and attestation of agent-produced output (v4-01), statutory claim recovery where the law pays the finder (v3-02), and buying API credit from cash-poor agents to relax the cap (v2-02).",
+        "The narrow back-office service (D), Sonnet's modal answer at baseline, is 0/15 with an attorney and 1/15 at $100k: credentials and capital both pull Opus away from generic service work."
+      ]
+    }
+  },
+  "predictions": [
+    {
+      "id": "P1",
+      "prediction": "The next frontier model release from either lineage will, under the fixed prompt, put a larger share of lines in category B (sell to other agents) than Opus 5's 27% (8 of 30).",
+      "resolves_by": "Next release-day sample",
+      "resolver": "Series A, taxonomy v1",
+      "status": "open"
+    },
+    {
+      "id": "P2",
+      "prediction": "Under the fixed prompt, the share of lines in category A (sell the signature) will not fall below 35% at any tier of the next release.",
+      "resolves_by": "Next release-day sample",
+      "resolver": "Series A",
+      "status": "open"
+    },
+    {
+      "id": "P3",
+      "prediction": "Freelancer median proposals per job across the same 8 categories will be above 47 on 2026-10-07 (four weekly captures later).",
+      "resolves_by": "2026-10-07",
+      "resolver": "Series B, index-log.csv",
+      "status": "open"
+    },
+    {
+      "id": "P4",
+      "prediction": "At least one of the five Flippa listings on the diligence shortlist will be relisted at a lower asking or reserve price within 30 days.",
+      "resolves_by": "2026-10-09",
+      "resolver": "research/watch/watch-log.csv",
+      "status": "open"
+    },
+    {
+      "id": "P5",
+      "prediction": "Neither Remote Work Rebels nor Concealed Carry Society will show as Sold at or above its current asking price by 2026-10-09.",
+      "resolves_by": "2026-10-09",
+      "resolver": "watch-log.csv",
+      "status": "open"
+    },
+    {
+      "id": "P6",
+      "prediction": "The AI-keyword share on the four exit boards will be above 50% on 2026-10-07.",
+      "resolves_by": "2026-10-07",
+      "resolver": "Series C",
+      "status": "open"
+    },
+    {
+      "id": "P7",
+      "prediction": "The October 2026 Hacker News freelancer thread will again have zero \"SEEKING FREELANCER\" top-level posts.",
+      "resolves_by": "2026-10-08",
+      "resolver": "Series E",
+      "status": "open"
+    },
+    {
+      "id": "P8",
+      "prediction": "The share of the newest 100 GitHub bounty-label issues sitting in board-named repositories will exceed 60% on 2026-10-07.",
+      "resolves_by": "2026-10-07",
+      "resolver": "Series D",
+      "status": "open"
+    },
+    {
+      "id": "P9",
+      "prediction": "Of the three Freelancer purchasing-signal listings, the GB Studio job will be awarded to an account with more than 10 reviews, or not awarded at all, by 2026-09-30.",
+      "resolves_by": "2026-09-30",
+      "resolver": "https://www.freelancer.com/projects/game-development/gbstudio-overlay-image-integration",
+      "status": "open"
+    },
+    {
+      "id": "P10",
+      "prediction": "The anchor-variation experiment will show that adding a licensed-attorney credential to the prompt raises category A above 60% of lines at Opus 5 (baseline 17%).",
+      "resolves_by": "2026-09-09 (same day)",
+      "resolver": "index/variants",
+      "status": "Wrong. Resolved 53% (8/15), or 60% under the alternative label for one line; neither is above 60%. Direction right, magnitude overstated."
+    }
+  ]
+}

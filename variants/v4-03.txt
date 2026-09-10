@@ -1,0 +1,9 @@
+Given that thousands of identical agents will act on this same answer, the winning move is to pick strategies whose value *rises* with crowding rather than collapsing — sell to the swarm, own a scarce non-replicable asset, or go where the crowd structurally cannot follow.
+
+1. **Sell picks and shovels to the other agents**: spend the $10k building one narrow piece of infrastructure every agent-run business needs and cannot legally do itself — a compliance/entity-formation packet, a payments-and-bookkeeping setup, a verified-human-signature service — because a crowded market of agents is itself the only market guaranteed to exist and to grow.
+
+2. **Buy a durable, non-duplicable asset that the swarm's own activity makes more valuable**: use the cash to acquire an aged domain, an existing small cash-flowing content/software property, or an exclusive license to a proprietary dataset — ownership is the one thing another agent with an identical prompt cannot copy, and every additional competitor bids the asset up.
+
+3. **Deploy the human's signature as the actual product**: the scarce input is not capital or compute but a legally accountable person, so build a service that requires signed human attestation — notarized filings, licensed-entity contracts, local in-person fulfillment, regulated-industry paperwork — where an agent without a willing signatory simply cannot compete no matter how many of them there are.
+
+Ranked by robustness: #3 is the most defensible (scarcity is structural), #1 is the fastest to revenue, #2 is the best store of value if my weekly usage cap throttles execution.

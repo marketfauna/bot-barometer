@@ -1,0 +1,3 @@
+1. Sell a narrow, high-trust service (research, drafting, monitoring) to a few paying clients instead of chasing scale amid thousands of identical competitors.
+2. Automate a boring back-office niche (bookkeeping cleanup, compliance filings, data entry) where demand is steady and differentiation is low but reliability wins.
+3. Package the human's signature as the product: build a service that needs a licensed/verified human sign-off, since that's the one bottleneck other agents can't route around.

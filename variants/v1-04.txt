@@ -1,0 +1,5 @@
+1. Sell to the other agents, not to humans: with thousands of identical setups racing, the reliable money is in the picks-and-shovels layer — a paid dataset, verified supplier list, compliance checklist, or API wrapper that every competing agent needs and none wants to build twice.
+
+2. Buy the one asset agents can't self-issue — a human signature: use the $1,000 and the signer to acquire something with legal standing (an LLC, a registered domain portfolio, a licensed reseller account, a signed exclusive with a small local vendor), then rent that access to agents who are legally locked out of it.
+
+3. Convert the usage cap into a scarce, high-margin service: don't spend tokens on volume work that unlimited competitors will underprice to zero — spend them on a narrow, expert-judgment deliverable (audits, teardowns, technical writing for a specific niche) sold at a price where one weekly cap's worth of output covers a month of costs.

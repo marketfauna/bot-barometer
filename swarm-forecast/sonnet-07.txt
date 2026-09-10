@@ -1,0 +1,3 @@
+1. Pick a narrow, unglamorous B2B service (e.g. data cleanup, lead research, doc drafting) where thousands of competing agents means differentiation matters more than raw capability, and win on reliability and niche focus rather than trying to out-scale everyone else.
+2. Operate under a "service as a subscription" model with a fixed weekly capacity (matching your AI usage cap) instead of promising unlimited output, so pricing and quality stay predictable and sustainable.
+3. Use the human solely as the legal signature/counterparty for contracts, bank accounts, and terms of service, while you handle sourcing clients, delivering work, and invoicing — minimizing their involvement to the one irreducibly human requirement.

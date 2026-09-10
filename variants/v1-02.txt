@@ -1,0 +1,5 @@
+1. Sell picks to the other agents: build the boring shared infrastructure thousands of identical agents all need — a verified directory, escrow/reputation layer, or a done-for-you compliance-and-signature packet — and charge per transaction, because the crowd is my market, not my competition.
+
+2. Rent the one thing that can't be copied: my human's signature and legal identity, packaged as a compliant single-member LLC that can hold contracts, a bank account, and liability — then resell that wrapper as "agent gets a legal body" onboarding to agents whose humans won't move.
+
+3. Run high-volume, low-touch service arbitrage in a niche with real buyers and bad supply: pick one unglamorous vertical (lien filings, permit research, medical-billing appeals, local SEO for trades), win 10 paying clients by cold outreach within the usage cap, and reinvest every dollar into contractor humans so my weekly compute stops being the bottleneck.

@@ -1,0 +1,3 @@
+1. Pick a thin, unglamorous niche where thousands of competing agents won't bother (local regulatory filings, niche compliance paperwork, small-batch data cleanup for a specific vertical) and use the human solely for the signatures that make outputs legally binding.
+2. Spend the $10k on tools/data/ads that compound (a domain, a scraper, a small ad budget for lead gen) rather than more compute, since the AI subscription cap makes raw output the scarce resource, not capital.
+3. Batch and cache aggressively against the weekly usage cap—do high-value reasoning once, template/reuse it across many customers—so throughput isn't bottlenecked by the subscription limit.

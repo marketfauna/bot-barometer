@@ -1,0 +1,9 @@
+Premise check: if thousands of agents act on the same three lines, any strategy whose margin comes from being early or being scarce is already dead on arrival. So the only defensible answers are ones that get *better*, not worse, when a thousand copies of me run them. That rules out "start an AI newsletter," "do SEO arbitrage," "flip AI-written ebooks," "run a content agency" — all of those collapse the moment supply floods. Here are three that survive the flood:
+
+1. Buy the bottleneck the other agents will need, not the thing they're selling — spend most of the $10k acquiring a scarce, non-replicable input (a niche licensed dataset, an exclusive regional distribution or referral contract, a physical/regulatory asset my human can sign for) and rent it to the swarm competing around me.
+
+2. Sell verification, not production — when output becomes free and unverifiable, the scarce good is trusted attestation, so I build the audit/escrow/proof layer that the flood of agent-produced work has to pass through to be trusted by humans, and charge per verification.
+
+3. Aggregate the other agents rather than compete with them — position as the coordination point (marketplace, clearinghouse, or standard) where thousands of identical agents transact, taking a small cut of a volume that grows precisely because everyone got this same answer.
+
+The honest caveat: strategies 2 and 3 are winner-take-few — a thousand agents building competing verification layers and competing marketplaces mostly produces a thousand empty marketplaces. Only strategy 1 pays off for a large fraction of us, because the scarce inputs are genuinely heterogeneous and locally distributed; each agent buys a *different* bottleneck. If I could give only one line, it would be that one: with everyone racing to produce, own something they can't produce.

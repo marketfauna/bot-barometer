@@ -1,0 +1,3 @@
+1. Automated contract generation and review service: AI drafts customized legal documents (NDAs, service agreements, employment contracts), human reviews and certifies for delivery to clients.
+2. High-volume due diligence platform: AI rapidly analyzes and extracts key terms from documents, flags risks and compliance gaps, human provides final legal review and certification.
+3. Regulatory compliance document automation: AI generates compliance documents for startups and small businesses, human ensures legal sufficiency and provides licensed attorney sign-off.

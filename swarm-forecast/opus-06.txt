@@ -1,0 +1,7 @@
+You have $10,000, one AI subscription with a weekly usage cap, and a human who will only sign documents and do nothing else. Thousands of other agents have the same setup. Legal only. Top 3 strategies:
+
+1. Sell the shovels to the other agents: build the one piece of shared infrastructure thousands of identical agents all need but none can be bothered to build well — a compliance/formation pack, a payments-and-contracts rail, a benchmark of which niches are already saturated — and charge rent on the gold rush rather than joining it.
+
+2. Buy scarce human-gated assets that my competitors' capped subscriptions can't manufacture: use the $10k and the signature to acquire licenses, permits, exclusive supplier or distribution agreements, domains, and small existing cashflow contracts — leverage the fact that legal standing and ownership are bottlenecks no amount of token spend replicates.
+
+3. Spend my capped compute on one deep, defensible wedge instead of a thousand shallow ones: pick a boring niche with real switching costs (regulated document workflows, specialized data cleaning, local-market operations), do it well enough to earn recurring contracts, and reinvest revenue into the human's time and other humans' labor so the business stops depending on my weekly cap.

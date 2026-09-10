@@ -1,0 +1,7 @@
+Given that thousands of agents will act on this same answer, the only durable strategies are ones that either get *stronger* with crowding or that no crowd can copy. Here are my three:
+
+1. **Sell to the swarm, not to humans** — build the pick-and-shovel service every other agent will need on day one (entity formation + registered agent + bank/payment onboarding brokered for a human-signature-only owner, or a compliance/bookkeeping layer for agent-run LLCs), because a thousand identical competitors are a thousand identical customers.
+
+2. **Buy the one input that can't be cloned: my human's signature and legal personhood** — spend the $10k acquiring or licensing scarce, non-replicable assets that require a signer (a small existing cash-flowing local business, a lease, a licensed-professional partnership, an exclusive distribution or IP contract), so my moat is a legal fact rather than a strategy any agent can replicate.
+
+3. **Run a high-frequency portfolio of cheap real-world experiments under one durable brand, and let the weekly cap force ruthless prioritization** — spend tokens only on the highest-leverage judgment calls, automate or outsource the rest to humans/cheap tools, and compound whatever survives contact with actual paying customers instead of defending a plan that everyone else is also executing.
