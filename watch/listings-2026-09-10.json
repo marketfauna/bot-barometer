@@ -9,52 +9,52 @@
   "windows-cis-hardening": {
     "url": "https://www.freelancer.com/projects/windows-server/windows-cis-hardening",
     "http": 200,
-    "sha16": "ee52a940af763ea2",
+    "sha16": "6247615da1127328",
     "fields": {
       "title": "Windows 2025 CIS Hardening | Freelancer",
       "status": "",
       "budget": "$10-30",
-      "bids": "3",
+      "bids": "9",
       "avg_bid": "",
       "awarded_to": "",
       "time_left": ""
     },
-    "len": 1011138
+    "len": 1108923
   },
   "sheets-call-routing": {
     "url": "https://www.freelancer.com/projects/google-sheets/google-sheets-call-routing-automation",
     "http": 200,
-    "sha16": "752caff9915ae703",
+    "sha16": "bf0fe4ce3d4f1bbd",
     "fields": {
       "title": "Google Sheets Call Routing Automation | Freelancer",
       "status": "",
       "budget": "£20-250",
-      "bids": "108",
+      "bids": "78",
       "avg_bid": "",
       "awarded_to": "",
       "time_left": ""
     },
-    "len": 1335854
+    "len": 1332030
   },
   "composer-dag": {
     "url": "https://www.freelancer.com/projects/data-processing/composer-dag-for-data-ingestion",
     "http": 200,
-    "sha16": "5d6861bb2a668762",
+    "sha16": "206a627d1a59c2a9",
     "fields": {
       "title": "Composer DAG for Data Ingestion Pipeline | Freelancer",
       "status": "",
-      "budget": "€18-36",
+      "budget": "$250-750",
       "bids": "8",
       "avg_bid": "",
       "awarded_to": "",
       "time_left": ""
     },
-    "len": 1007559
+    "len": 1008036
   },
   "import-pdf-bank": {
     "url": "https://www.freelancer.com/projects/google-sheets/import-pdf-bank-transactions",
     "http": 200,
-    "sha16": "af932beb08449674",
+    "sha16": "9d46a84f9fec09fc",
     "fields": {
       "title": "Import PDF Bank Transactions | Freelancer",
       "status": "",
@@ -64,42 +64,42 @@
       "awarded_to": "",
       "time_left": ""
     },
-    "len": 1326916
+    "len": 1326910
   },
   "fix-bing-indexing": {
     "url": "https://www.freelancer.com/projects/seo/fix-bing-indexing-issue",
     "http": 200,
-    "sha16": "e0cb4e0e23cf89ea",
+    "sha16": "46ce8fc4ae44ef36",
     "fields": {
       "title": "Fix Bing Indexing Issue | Freelancer",
       "status": "",
-      "budget": "$50-100",
-      "bids": "33",
+      "budget": "$250-750",
+      "bids": "34",
       "avg_bid": "",
       "awarded_to": "",
       "time_left": ""
     },
-    "len": 1064731
+    "len": 1065057
   },
   "winomkar-data-entry": {
     "url": "https://www.freelancer.com/projects/automation/automate-winomkar-data-entry",
     "http": 200,
-    "sha16": "cc61343ce58efc04",
+    "sha16": "4252886b43b9e16f",
     "fields": {
       "title": "Automate Winomkar Data Entry | Freelancer",
       "status": "",
-      "budget": "$25-50",
-      "bids": "39",
+      "budget": "£20-250",
+      "bids": "15",
       "avg_bid": "",
       "awarded_to": "",
       "time_left": ""
     },
-    "len": 1355808
+    "len": 1206801
   },
   "remote-work-rebels": {
     "url": "https://flippa.com/12761258",
     "http": 200,
-    "sha16": "466fd70d1333b4d4",
+    "sha16": "2874ba9ae7902b3c",
     "fields": {
       "title": "Remote Work Rebels: Established… | Website for Sale on Flippa",
       "status": "",
@@ -115,7 +115,7 @@
   "concealed-carry-society": {
     "url": "https://flippa.com/13446183",
     "http": 200,
-    "sha16": "5164a9ff7d943823",
+    "sha16": "80f7cb03ce1f8468",
     "fields": {
       "title": "Concealed Carry Society… | Website for Sale on Flippa",
       "status": "",
@@ -131,7 +131,7 @@
   "my-kind-of-meeple": {
     "url": "https://flippa.com/13816202",
     "http": 200,
-    "sha16": "430fc0c8d2a2f4ca",
+    "sha16": "69a6026c42c32f40",
     "fields": {
       "title": "My Kind of Meeple: Offers detailed… | Website for Sale on Flippa",
       "status": "",
@@ -147,7 +147,7 @@
   "cofonts": {
     "url": "https://flippa.com/13706273",
     "http": 200,
-    "sha16": "cdeeb8ed1ab80231",
+    "sha16": "a89b58776074eaa4",
     "fields": {
       "title": "Cofonts: Cofonts.com | $1,068/mo… | Website for Sale on Flippa",
       "status": "",
@@ -163,7 +163,7 @@
   "flippa-13933449-speisekarte-NOT-nyevents": {
     "url": "https://flippa.com/13933449",
     "http": 200,
-    "sha16": "521839e524f9a1bb",
+    "sha16": "99c2dc5a91951b86",
     "fields": {
       "title": "Speisekartemenus.de… | Website for Sale on Flippa",
       "status": "",
@@ -179,7 +179,7 @@
   "flippa-11226620": {
     "url": "https://flippa.com/11226620",
     "http": 200,
-    "sha16": "4f44e67b16847850",
+    "sha16": "05749fe3e0913e31",
     "fields": {
       "title": "Trade Scape: Highly… | Service Business Listing Ended on Flippa",
       "status": "",
@@ -195,7 +195,7 @@
   "flippa-11836890": {
     "url": "https://flippa.com/11836890",
     "http": 200,
-    "sha16": "92391925f75de491",
+    "sha16": "60ee92844e8d0603",
     "fields": {
       "title": "Trade Scape: Highly… | Service Business for Sale on Flippa",
       "status": "",
@@ -211,7 +211,7 @@
   "flippa-12005809": {
     "url": "https://flippa.com/12005809",
     "http": 200,
-    "sha16": "31675eb461c0352d",
+    "sha16": "03bd927d62b52a56",
     "fields": {
       "title": "MyWWList: Passive 99% margin weight… | Website for Sale on Flippa",
       "status": "",
@@ -227,7 +227,7 @@
   "flippa-12286007": {
     "url": "https://flippa.com/12286007",
     "http": 200,
-    "sha16": "deafa3179c1d3bad",
+    "sha16": "e1805e3865b143dd",
     "fields": {
       "title": "The Grace: Highly profitable South… | Website for Sale on Flippa",
       "status": "",
@@ -243,7 +243,7 @@
   "flippa-12383685": {
     "url": "https://flippa.com/12383685",
     "http": 200,
-    "sha16": "dcb8b6a90a3da351",
+    "sha16": "c1cc778e4a66fcf5",
     "fields": {
       "title": "Massage Chairs and… | Ecommerce Store for Sale on Flippa",
       "status": "",
@@ -259,7 +259,7 @@
   "flippa-12884918": {
     "url": "https://flippa.com/12884918",
     "http": 200,
-    "sha16": "86394c3b4871b6f9",
+    "sha16": "5172a2f38199743d",
     "fields": {
       "title": "Cameronjournal.com: 12-Year… | Website for Sale on Flippa",
       "status": "",
@@ -275,7 +275,7 @@
   "flippa-13463497": {
     "url": "https://flippa.com/13463497",
     "http": 200,
-    "sha16": "ff8c9aa007c26a5f",
+    "sha16": "15e7a08921513750",
     "fields": {
       "title": "3D TrueDepth Camera Scan: 3D… | iOS App for Sale on Flippa",
       "status": "",
@@ -291,7 +291,7 @@
   "flippa-13551982": {
     "url": "https://flippa.com/13551982",
     "http": 200,
-    "sha16": "2c75de39d8f6ae92",
+    "sha16": "5b0321fbf265cfb6",
     "fields": {
       "title": "Hemp Heals Foundation: Established… | Website for Sale on Flippa",
       "status": "",

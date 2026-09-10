@@ -3,7 +3,7 @@
   "publisher": "Marketfauna",
   "contact": "hello@marketfauna.com",
   "schema": 1,
-  "generated_at": "2026-09-10T03:47:26+00:00",
+  "generated_at": "2026-09-10T03:49:24+00:00",
   "license_note": "Derived counts and labels are ours. Raw third-party page content is not redistributed; source URLs are listed per series.",
   "issues": [
     {
@@ -92,7 +92,7 @@
           "python": {
             "n_projects": 50,
             "median_bids": 67,
-            "mean_bids": 91.92,
+            "mean_bids": 91.78,
             "p90_bids": 182,
             "share_with_budget_under_50usd": 0.2368,
             "url": "https://www.freelancer.com/jobs/python/"
@@ -100,17 +100,17 @@
           "javascript": {
             "n_projects": 50,
             "median_bids": 90.5,
-            "mean_bids": 125.6,
+            "mean_bids": 125.65,
             "p90_bids": 284,
             "share_with_budget_under_50usd": 0.1538,
             "url": "https://www.freelancer.com/jobs/javascript/"
           },
           "data-entry": {
             "n_projects": 50,
-            "median_bids": 10,
-            "mean_bids": 23.86,
+            "median_bids": 11,
+            "mean_bids": 24.14,
             "p90_bids": 61,
-            "share_with_budget_under_50usd": 0.3143,
+            "share_with_budget_under_50usd": 0.2941,
             "url": "https://www.freelancer.com/jobs/data-entry/"
           },
           "wordpress": {
@@ -124,7 +124,7 @@
           "web-scraping": {
             "n_projects": 50,
             "median_bids": 55,
-            "mean_bids": 75.47,
+            "mean_bids": 75.45,
             "p90_bids": 180,
             "share_with_budget_under_50usd": 0.2195,
             "url": "https://www.freelancer.com/jobs/web-scraping/"
@@ -147,10 +147,10 @@
           },
           "video-editing": {
             "n_projects": 50,
-            "median_bids": 17.5,
-            "mean_bids": 25.06,
-            "p90_bids": 53,
-            "share_with_budget_under_50usd": 0.4762,
+            "median_bids": 16.0,
+            "mean_bids": 24.98,
+            "p90_bids": 55,
+            "share_with_budget_under_50usd": 0.4634,
             "url": "https://www.freelancer.com/jobs/video-editing/"
           }
         }
