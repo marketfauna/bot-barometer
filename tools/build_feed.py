@@ -18,11 +18,11 @@ for f in sorted((HERE / "data").glob("????-??-??.json")):
     s = d.get("series", {})
     b = s.get("freelancer_bids_by_category", {})
     out["series"].setdefault("freelancer_bids_by_category", []).append({
-        "date": day, "status": b.get("status"),
+        "date": day, "status": b.get("status"), "reason": b.get("reason"),
         "categories": {k: {kk: v.get(kk) for kk in ("n_projects", "median_bids", "mean_bids", "p90_bids", "share_with_budget_under_50usd", "url")} for k, v in (b.get("categories") or {}).items()}})
     c = s.get("exit_listing_ai_share", {})
     out["series"].setdefault("exit_listing_ai_keyword_share", []).append({
-        "date": day, "status": c.get("status"),
+        "date": day, "status": c.get("status"), "reason": c.get("reason"),
         "sites": {k: {kk: v.get(kk) for kk in ("n_listings", "n_ai", "share_ai", "url")} for k, v in (c.get("sites") or {}).items()}})
     g = s.get("github_bounty_synthetic_share", {})
     out["series"].setdefault("github_bounty_board_named_repo_share", []).append({

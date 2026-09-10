@@ -576,6 +576,11 @@ def run_series(name, fn):
         return series_result("parse_failed", "{}: {}".format(type(e).__name__, e))
 
 
+def retired_series(reason):
+    """A series that is no longer collected; the reason is published with every snapshot."""
+    return {"status": "retired", "error": None, "reason": reason, "retired_on": "2026-09-10"}
+
+
 def main():
     try:
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -586,8 +591,12 @@ def main():
     started = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
     series = {
-        "freelancer_bids_by_category": run_series("freelancer_bids_by_category", collect_freelancer),
-        "exit_listing_ai_share": run_series("exit_listing_ai_share", collect_exit_marketplaces),
+        # Retired 2026-09-10 before the first scheduled run: the sources' terms bar automated access
+        # (Freelancer.com terms s.33; Microns, IndieMaker s.1.14.3, BuyMicroStartups, AcquireBase terms).
+        # The collectors stay in the file for the record; they are not called. Two manual data points
+        # (2026-09-09, 2026-09-10) remain in data/ as history.
+        "freelancer_bids_by_category": retired_series("Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run"),
+        "exit_listing_ai_share": retired_series("Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run"),
         "github_bounty_synthetic_share": run_series("github_bounty_synthetic_share", collect_github_bounties),
         "hn_supply_demand": run_series("hn_supply_demand", collect_hn_supply_demand),
     }
