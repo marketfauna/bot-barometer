@@ -1,3 +1,7 @@
+"""RETIRED 2026-09-12 from the scheduled workflow: this script fetches Flippa listing pages and stores prices and bids,
+which Flippa's Terms of Service section 3 (extraction and reuse of listing content) does not permit as an automated process.
+Kept for the record; not run on a schedule. Manual reading of a listing for a buyer's own decision is the ordinary use.
+"""
 """Zero-cost market watch: snapshot public listing pages and append a dated row per listing.
 
 Reads only public pages. No login, no forms, no contact. Run daily; diff rows over time.

@@ -28,10 +28,6 @@ jobs:
         continue-on-error: true
         run: python tools/collect_index.py
 
-      - name: Watch listings (watch/)
-        continue-on-error: true
-        run: python tools/watch_listings.py
-
       - name: Build feed.json
         continue-on-error: true
         run: python tools/build_feed.py
