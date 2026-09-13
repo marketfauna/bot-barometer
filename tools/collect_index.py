@@ -41,10 +41,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repo r
 DATA_DIR = os.path.join(BASE_DIR, "data")
 LOG_CSV = os.path.join(DATA_DIR, "index-log.csv")
 
-USER_AGENT = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
-)
+# Honest self-identification: this collector is a bot and says so. Purpose, contact and
+# public signing key are on the page in the string. (Until 2026-09-13 this string
+# imitated a desktop Chrome browser; changed for the Web Bot Auth identity case.)
+USER_AGENT = "MarketfaunaBot/1.0 (+https://marketfauna.com/bot.html; hello@marketfauna.com)"
+
+# Web Bot Auth (RFC 9421 signatures, tools/wba.py). Signing is on only when the private
+# key is supplied through the environment; the key never lives in this repository.
+try:
+    import wba as _wba
+    _WBA_KEY = _wba.load_private_key()
+except Exception:  # missing key or library: run unsigned, exactly as before
+    _wba, _WBA_KEY = None, None
+_WBA_KID = _wba.thumbprint(_wba.public_jwk(_WBA_KEY.public_key())) if _WBA_KEY else None
+WBA_AGENT_URL = os.environ.get("MARKETFAUNA_WBA_AGENT_URL", "https://marketfauna.com")
 HOST_DELAY_SECONDS = 2.0
 TIMEOUT_SECONDS = 30
 
@@ -105,15 +115,15 @@ def fetch(url, accept="text/html,application/json;q=0.9,*/*;q=0.8"):
             time.sleep(wait)
 
     result = {"url": url, "status": None, "text": "", "error": None, "headers": {}}
-    req = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": USER_AGENT,
-            "Accept": accept,
-            "Accept-Language": "en-US,en;q=0.9",
-            "Accept-Encoding": "gzip",
-        },
-    )
+    req_headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": accept,
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept-Encoding": "gzip",
+    }
+    if _WBA_KEY is not None:
+        req_headers.update(_wba.sign_request(_WBA_KEY, _WBA_KID, "GET", url, WBA_AGENT_URL))
+    req = urllib.request.Request(url, headers=req_headers)
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT_SECONDS) as resp:
             body = resp.read()

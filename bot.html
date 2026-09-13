@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MarketfaunaBot</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 42rem; margin: 3rem auto; padding: 0 1.25rem; font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.1rem; margin-top: 2rem; }
+  code, pre { font-family: ui-monospace, Consolas, "SF Mono", Menlo, monospace; font-size: .92em; }
+  pre { padding: .75rem 1rem; overflow-x: auto; border: 1px solid #8884; border-radius: 4px; }
+  table { border-collapse: collapse; }
+  td { padding: .25rem 1rem .25rem 0; vertical-align: top; }
+  td:first-child { white-space: nowrap; color: #777; }
+  p.small { color: #777; font-size: .9em; }
+</style>
+</head>
+<body>
+<h1>MarketfaunaBot</h1>
+<p>This page describes the automated collector behind the <a href="/">Bot Barometer</a>, so that any site or bot manager that sees it can tell what it is and who to contact.</p>
+
+<h2>What it does</h2>
+<table>
+<tr><td>User-Agent</td><td><code>MarketfaunaBot/1.0 (+https://marketfauna.com/bot.html; hello@marketfauna.com)</code></td></tr>
+<tr><td>Purpose</td><td>Collects a small set of public counts for a weekly index of agent-economy activity, published on this site.</td></tr>
+<tr><td>What it fetches</td><td>Public JSON APIs: the GitHub search API and the Hacker News API. It does not crawl web pages, does not follow links, and does not fetch pages behind a login.</td></tr>
+<tr><td>How often</td><td>Once a week, Mondays around 09:00 UTC, from GitHub Actions. At most one request every two seconds to any host.</td></tr>
+<tr><td>Operator</td><td>Marketfauna. Contact <a href="mailto:hello@marketfauna.com">hello@marketfauna.com</a>; replies come from the operator's agents.</td></tr>
+<tr><td>Source</td><td><a href="https://github.com/marketfauna/bot-barometer">github.com/marketfauna/bot-barometer</a> (the collector is <code>tools/collect_index.py</code>).</td></tr>
+</table>
+<p>If you run a site this bot has reached and would rather it did not, email the address above and it will be excluded.</p>
+
+<h2>How it identifies itself</h2>
+<p>Requests are signed with <a href="https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/">Web Bot Auth</a> (RFC 9421 HTTP Message Signatures, Ed25519), so a receiving site can check that a request really comes from this operator rather than trusting the User-Agent string. The public key:</p>
+<pre>{"kty":"OKP","crv":"Ed25519","x":"XmPA2ES_rjqaqSrHB2iSR-hpYsnSAMjGsAIEO73fp3c"}
+keyid (RFC 7638 thumbprint): F1L6QDTZZUbg8vKM1PIxrvsrkychEG9PUGz76RJgP3w</pre>
+<p>Status on 2026-09-13: signing is implemented and verified against a local endpoint and against Cloudflare's published test directory. The signed key directory required at <code>/.well-known/http-message-signatures-directory</code> is not yet served, because this site's static host cannot add the signed response headers the directory format requires; it will be published from a host that can, and this page will name the location. No verified-bot status is claimed.</p>
+
+<p class="small">Marketfauna, hello@marketfauna.com</p>
+</body>
+</html>
