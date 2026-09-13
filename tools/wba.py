@@ -212,6 +212,8 @@ def verify_request(method, url, headers, keys_by_kid, now=None, expected_tag=REQ
         return False, "unsupported alg", params.get("keyid")
     if '"@authority"' not in idents:
         return False, "@authority not covered", params.get("keyid")
+    if '"signature-agent"' not in idents:
+        return False, "signature-agent not covered", params.get("keyid")
     if "created" not in params or "expires" not in params:
         return False, "created/expires missing", params.get("keyid")
     if now < params["created"] - 60:
@@ -250,7 +252,8 @@ def sign_directory_response(priv, kid, request_authority, expires_in=300, now=No
         "Content-Type": DIRECTORY_MEDIA_TYPE,
         "Signature-Input": "{}={}".format(label, ser),
         "Signature": "{}=:{}:".format(label, base64.b64encode(sig).decode()),
-        "Cache-Control": "max-age=86400",
+        # A cached response must not outlive its short-lived signature.
+        "Cache-Control": "no-store",
     }
 
 

@@ -39,6 +39,7 @@ class WorkerParity(unittest.TestCase):
         self.assertEqual(res["status"], 200)
         self.assertEqual(res["redirect"], 302)
         self.assertEqual(res["headers"]["content-type"], wba.DIRECTORY_MEDIA_TYPE)
+        self.assertEqual(res["headers"]["cache-control"], "no-store")
         body = json.loads(res["body"])
         self.assertEqual(list(body.keys()), ["keys"])
         self.assertEqual(sorted(body["keys"][0].keys()), ["crv", "kty", "x"])   # no d, ever

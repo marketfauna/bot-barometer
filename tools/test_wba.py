@@ -103,6 +103,7 @@ class Requests(unittest.TestCase):
     def test_directory_roundtrip(self):
         body = wba.directory_body([self.jwk])
         h = wba.sign_directory_response(self.priv, self.kid, "marketfauna.com", now=1000)
+        self.assertEqual(h["Cache-Control"], "no-store")
         valid, reasons = wba.verify_directory_response("marketfauna.com", h, body, now=1010)
         self.assertEqual(list(valid), [self.kid], reasons)
         valid, reasons = wba.verify_directory_response("marketfauna.com", h, body, now=2000)
@@ -112,6 +113,23 @@ class Requests(unittest.TestCase):
         body2 = wba.directory_body([self.jwk, stranger])
         valid, _ = wba.verify_directory_response("marketfauna.com", h, body2, now=1010)
         self.assertEqual(list(valid), [self.kid])
+
+    def test_valid_signature_without_agent_binding_is_rejected(self):
+        import base64
+
+        # Cryptographically valid, but identity can be changed without resigning.
+        idents = ['"@authority"']
+        params = [("alg", "ed25519"), ("keyid", self.kid),
+                  ("tag", wba.REQUEST_TAG), ("created", 1000), ("expires", 1060)]
+        ser = wba.serialize_params(idents, params)
+        components = [(i, wba.component_value(i, "GET", self.url, {})) for i in idents]
+        sig = self.priv.sign(wba.signature_base(components, ser))
+        h = {"Signature-Input": "sig1=" + ser,
+             "Signature": "sig1=:" + base64.b64encode(sig).decode() + ":",
+             "Signature-Agent": '"https://other.example"'}
+        ok, reason, _ = wba.verify_request("GET", self.url, h, self.keys, now=1010)
+        self.assertFalse(ok)
+        self.assertEqual(reason, "signature-agent not covered")
 
 
 # --------------------------------------------------------------------------- controlled endpoint

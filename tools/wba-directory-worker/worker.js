@@ -53,7 +53,8 @@ export default {
         "Content-Type": MEDIA_TYPE,
         "Signature-Input": `sig1=${params}`,
         "Signature": `sig1=:${b64(sig)}:`,
-        "Cache-Control": "max-age=86400",
+        // Regenerate short-lived signatures rather than cache expired responses.
+        "Cache-Control": "no-store",
       },
     });
   },
