@@ -1,0 +1,120 @@
+{
+  "date": "2026-09-14",
+  "generated_at_utc": "2026-09-14T09:09:30+00:00",
+  "finished_at_utc": "2026-09-14T09:09:34+00:00",
+  "series": {
+    "freelancer_bids_by_category": {
+      "status": "retired",
+      "error": null,
+      "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
+      "retired_on": "2026-09-10"
+    },
+    "exit_listing_ai_share": {
+      "status": "retired",
+      "error": null,
+      "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
+      "retired_on": "2026-09-10"
+    },
+    "github_bounty_synthetic_share": {
+      "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100",
+      "http_status": 200,
+      "rate_limit_remaining": "3",
+      "status": "ok",
+      "error": null,
+      "total_count_reported": 4388,
+      "n_issues": 100,
+      "n_distinct_repos": 7,
+      "n_synthetic_issues": 52,
+      "synthetic_share": 0.52,
+      "n_synthetic_repos": 2,
+      "top_repos": [
+        {
+          "repo": "zhangjiayang6835-cyber/bounty-plaza",
+          "n_issues": 35,
+          "synthetic": true
+        },
+        {
+          "repo": "relayhop/sn-monetization-runtime",
+          "n_issues": 29,
+          "synthetic": false
+        },
+        {
+          "repo": "NSPG13/agent-bounties",
+          "n_issues": 17,
+          "synthetic": true
+        },
+        {
+          "repo": "Ikalus1988/MisakaNet",
+          "n_issues": 11,
+          "synthetic": false
+        },
+        {
+          "repo": "Senthemodder/aquarium-of-gullibles",
+          "n_issues": 5,
+          "synthetic": false
+        }
+      ],
+      "top1_share": 0.35,
+      "oldest_created_in_page": "2026-09-09T15:04:42Z",
+      "newest_created_in_page": "2026-09-14T06:07:22Z",
+      "keywords": [
+        "bounty",
+        "bounties",
+        "plaza",
+        "claude",
+        "agent",
+        "gpt"
+      ]
+    },
+    "hn_supply_demand": {
+      "search_url": "https://hn.algolia.com/api/v1/search_by_date?query=%22Seeking%20freelancer%22&tags=ask_hn&hitsPerPage=30",
+      "http_status": 200,
+      "thread_id": "49522905",
+      "thread_title": "Ask HN: Freelancer? Seeking freelancer? (September 2026)",
+      "thread_author": "jon_north",
+      "thread_created_at": "2026-09-01T15:01:55Z",
+      "month": "September 2026",
+      "num_comments_reported": 23,
+      "same_month_candidates": [
+        {
+          "id": "49522905",
+          "author": "jon_north",
+          "num_comments": 23
+        },
+        {
+          "id": "49521942",
+          "author": "jbeard4",
+          "num_comments": 2
+        }
+      ],
+      "item_url": "https://hn.algolia.com/api/v1/items/49522905",
+      "item_http_status": 200,
+      "status": "ok",
+      "error": null,
+      "n_top_level": 23,
+      "seeking_work": 22,
+      "seeking_freelancer": 0,
+      "other": 1,
+      "deleted_or_empty": 0,
+      "work_per_freelancer_ratio": null,
+      "seeking_work_share": 1.0
+    }
+  },
+  "urls_fetched": [
+    {
+      "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://hn.algolia.com/api/v1/search_by_date?query=%22Seeking%20freelancer%22&tags=ask_hn&hitsPerPage=30",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://hn.algolia.com/api/v1/items/49522905",
+      "status": 200,
+      "error": null
+    }
+  ]
+}

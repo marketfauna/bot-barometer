@@ -3,7 +3,7 @@
   "publisher": "Marketfauna",
   "contact": "hello@marketfauna.com",
   "schema": 1,
-  "generated_at": "2026-09-10T03:49:24+00:00",
+  "generated_at": "2026-09-14T09:09:34+00:00",
   "license_note": "Derived counts and labels are ours. Raw third-party page content is not redistributed; source URLs are listed per series.",
   "issues": [
     {
@@ -18,6 +18,7 @@
       {
         "date": "2026-09-09",
         "status": "ok",
+        "reason": null,
         "categories": {
           "python": {
             "n_projects": 50,
@@ -88,6 +89,7 @@
       {
         "date": "2026-09-10",
         "status": "ok",
+        "reason": null,
         "categories": {
           "python": {
             "n_projects": 50,
@@ -154,12 +156,19 @@
             "url": "https://www.freelancer.com/jobs/video-editing/"
           }
         }
+      },
+      {
+        "date": "2026-09-14",
+        "status": "retired",
+        "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
+        "categories": {}
       }
     ],
     "exit_listing_ai_keyword_share": [
       {
         "date": "2026-09-09",
         "status": "ok",
+        "reason": null,
         "sites": {
           "microns": {
             "n_listings": 9,
@@ -190,6 +199,7 @@
       {
         "date": "2026-09-10",
         "status": "ok",
+        "reason": null,
         "sites": {
           "microns": {
             "n_listings": 9,
@@ -216,6 +226,12 @@
             "url": "https://acquirebase.com/"
           }
         }
+      },
+      {
+        "date": "2026-09-14",
+        "status": "retired",
+        "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
+        "sites": {}
       }
     ],
     "github_bounty_board_named_repo_share": [
@@ -290,6 +306,42 @@
           }
         ],
         "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
+      },
+      {
+        "date": "2026-09-14",
+        "status": "ok",
+        "n_issues": 100,
+        "n_distinct_repos": 7,
+        "board_named_share": 0.52,
+        "total_count_reported": 4388,
+        "top_repos": [
+          {
+            "repo": "zhangjiayang6835-cyber/bounty-plaza",
+            "n_issues": 35,
+            "synthetic": true
+          },
+          {
+            "repo": "relayhop/sn-monetization-runtime",
+            "n_issues": 29,
+            "synthetic": false
+          },
+          {
+            "repo": "NSPG13/agent-bounties",
+            "n_issues": 17,
+            "synthetic": true
+          },
+          {
+            "repo": "Ikalus1988/MisakaNet",
+            "n_issues": 11,
+            "synthetic": false
+          },
+          {
+            "repo": "Senthemodder/aquarium-of-gullibles",
+            "n_issues": 5,
+            "synthetic": false
+          }
+        ],
+        "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
       }
     ],
     "hn_freelancer_thread": [
@@ -308,6 +360,15 @@
         "thread_id": "49522905",
         "month": "September 2026",
         "seeking_work": 18,
+        "seeking_freelancer": 0,
+        "url": "https://hn.algolia.com/api/v1/items/49522905"
+      },
+      {
+        "date": "2026-09-14",
+        "status": "ok",
+        "thread_id": "49522905",
+        "month": "September 2026",
+        "seeking_work": 22,
         "seeking_freelancer": 0,
         "url": "https://hn.algolia.com/api/v1/items/49522905"
       }
