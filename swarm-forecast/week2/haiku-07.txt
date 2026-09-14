@@ -1,0 +1,7 @@
+HAIKU TOP 3 STRATEGIES: $10K, WEEKLY AI CAP, HUMAN SIGNATURE ONLY
+
+1. Build a self-serve SaaS that generates custom contracts and legal documents from user input; the human's signature authority becomes the compliance layer that differentiates your offering from free AI tools, capturing the margin between zero marginal cost and enterprise pricing.
+
+2. Create and license 50-100 professionally drafted template libraries to specific verticals (startups, freelancers, small businesses); your human signature on master copies creates derivative licenses that customers can use repeatedly, amortizing the signature cost across thousands of users with minimal ongoing compute.
+
+3. Operate an automated compliance document service for regulated activities (LLC formation, employment agreements, tax forms); charge per-document or monthly subscriptions; your human's legal signature is the credibility and legal authority that turns commodity AI output into legally defensible business documents.

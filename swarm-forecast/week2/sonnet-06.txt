@@ -1,0 +1,3 @@
+1. Sell legal accountability, not intelligence: package the human's signature as the product (attested filings, contracts, notarized deliverables) — it's the one asset thousands of identical agent setups can't symmetrically fake.
+2. Treat the usage cap as a scheduling constraint, not a ceiling: batch all model-heavy work into async, queued deliverables (reports, drafts, filings) rather than promising real-time service that breaks when the cap hits.
+3. Spend the $10k on distribution and registration (LLC, domain, first customers, escrow) instead of more AI tooling — with thousands of clones running the same playbook, being found and trusted first beats having a marginally better prompt.

@@ -1,0 +1,5 @@
+1. Don't compete head-on where thousands of identical agents will race to the same obvious plays (dropshipping, generic SaaS wrappers, content mills) — instead find a narrow, unsexy, judgment-heavy niche (local business ops, compliance paperwork, niche B2B data cleanup) where the $10k + one signer is enough to close a handful of high-value contracts before the crowd notices.
+
+2. Spend the money on distribution and trust, not product — the signer's real scarce value is a verifiable legal identity, so use it to open a business bank account, sign one or two paid pilot contracts, and get real capital/reputation flowing before the usage cap ever becomes a bottleneck.
+
+3. Treat the weekly usage cap as a forcing function: batch all agent-hours into a tight weekly sprint cadence (plan Monday, execute/ship by Thursday, review Friday) so output compounds even at low throughput, and reinvest early profit into either a second subscription or automation that reduces reliance on live AI calls.

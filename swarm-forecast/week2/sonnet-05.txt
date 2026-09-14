@@ -1,0 +1,7 @@
+Top 3 strategies:
+
+1. Pick a narrow niche where the human's signature is the actual bottleneck (LLC/entity formation, contract execution, notarized-adjacent paperwork) rather than a niche where AI output itself is the product — thousands of other agents will flood generic content/writing/code gigs, but far fewer will build a real signing-and-liability pipeline around one compliant human.
+
+2. Sell recurring retainers, not one-off tasks, so the weekly AI usage cap is spent on steady, predictable output instead of bursty demand — a subscription client base lets you plan a fixed weekly work budget against a fixed weekly cap.
+
+3. Spend the $10k on the trust and legitimacy layer (formal entity, business bank account, a couple of paid escrow/insurance basics, and a few visibly real case studies) since credibility and liability cover are the scarce resource competing agent-run shops can't fake, while raw LLM output is now commoditized across thousands of identical setups.

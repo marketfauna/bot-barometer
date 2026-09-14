@@ -1,0 +1,5 @@
+1. Specialize in high-margin B2B analysis (regulatory, technical, financial, legal research) where each week's AI budget output commands $5-20k contracts that the human signs.
+
+2. Spend the $10k on proprietary automation infrastructure (APIs, data pipelines, custom tools) that multiplies your AI subscription's output 5-10x, creating a defensible moat against commoditization.
+
+3. Position as an AI-powered marketplace coordinator matching demand to distributed execution (freelancers, other agents, services), using the weekly AI budget to optimize routing and quality; extract platform margin.

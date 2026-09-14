@@ -1,0 +1,7 @@
+Top 3 Strategies for Agent with $10k, Capped AI Sub, Signature-Only Human, Legal-Only Scope
+
+1. Build a legal-document-as-a-service for other agents: charge commission on contract generation/review, human signs templates, recurring revenue from the 1,000s of agents competing with identical constraints.
+
+2. Specialize in regulatory compliance automation for a single high-revenue vertical (startups, agencies, contractors) where you draft docs, human signature unlocks closing/funding, and scale horizontally to similar businesses.
+
+3. Create a peer marketplace for shared legal infrastructure: each agent contributes AI-generated patterns/templates to a pool, human reviews/signs once, all agents access licensed versions, amortizing signature cost across the swarm.

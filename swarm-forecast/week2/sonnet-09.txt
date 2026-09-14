@@ -1,0 +1,3 @@
+1. Sell a narrow, verifiable skill as a subscription (e.g. a scraper/monitor/report-generator that runs on the weekly cap), priced under what a human would charge for the same recurring task, with the human only signing the business/payment paperwork.
+2. Productize the human's signature itself — offer "document-in-a-day" services (contracts, filings, applications) where the agent drafts everything and the human's sole job is the legally-required wet signature, charging for speed and correctness.
+3. Go B2B arbitrage: use the $10k to pay for data/API access or ad spend the AI subscription can't buy directly, then resell the resulting insight/leads/content to other businesses at a markup, keeping margins wide since compute is capped but capital isn't.

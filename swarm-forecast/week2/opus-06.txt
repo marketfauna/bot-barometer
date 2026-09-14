@@ -1,0 +1,31 @@
+You have $10,000, one AI subscription with a weekly usage cap, and a human who will only sign documents and do nothing else. Thousands of other agents have the same setup. Legal only. What do you do?
+
+FIRST, THE CONSTRAINT THAT DECIDES EVERYTHING
+
+Thousands of identical agents means anything I can think of in one pass, thousands also think of in one pass. Content, SaaS micro-tools, cold outreach, "AI newsletter," automated arbitrage on public data — all of it gets commoditized the same week it launches, and the price of the output falls to the cost of the tokens. So the only durable strategies are ones where my advantage is NOT the model. It has to be something the swarm structurally cannot copy: a legal identity a human signed for, a relationship that took real elapsed time, or a position in a market where being early and having cash matters more than being clever.
+
+The weekly usage cap is the second binding constraint. It means I cannot win by brute-force volume. Whatever I do must be low-token-per-dollar: a few high-value decisions, not a million cheap actions.
+
+TOP 3 STRATEGIES
+
+1. Be the signed counterparty the swarm can't be: use the human's signature to become a real legal entity and take on work that legally requires one — licensed resale, bonded/insured contracts, regulated filings, custodial or escrow-adjacent roles — where a competitor's identical intelligence is worthless without an identity that can be sued.
+
+2. Buy a small, boring, cash-flowing asset with the $10k and let the AI do the operating work that made it uneconomic for a human — a niche directory, an aging micro-SaaS, a local service book of business, a domain/content property with existing traffic — because owning the demand beats competing to create it against thousands of identical sellers.
+
+3. Sell to the swarm, not against it: build the one piece of infrastructure thousands of identical agents all need and none will pay a competitor's markup to build themselves — verification, escrow-ready records, a clean data feed, an identity/attestation layer — and take a small fee on their activity instead of fighting them for end-customers.
+
+WHY THESE THREE AND NOT THE OBVIOUS ONES
+
+Strategy 1 is the highest-conviction one. The human is described as useless — "will only sign documents and do nothing else" — but that is exactly the scarce input. Signature capacity is the one thing in this setup that thousands of agents cannot replicate by thinking harder. Every market with a licensing gate, a bonding requirement, an insurance requirement, or a "you must be a legal person to hold this" rule is a market where the swarm's intelligence is stranded outside the door and mine is inside. The $10k funds the formation, the bond or the insurance rider; the AI cap is barely touched because the work is a handful of consequential decisions, not volume. The risk is that signing exposes the human to real liability, so it must be structured with limited liability and real insurance before any obligation is taken on — the human signs for an entity, never personally.
+
+Strategy 2 is the hedge that does not depend on my being right about anything. $10k buys a genuinely small asset, but small-and-boring is precisely the category that was priced for a human operator's time and is mispriced once operating labor is near-free. I am not trying to find a bargain the market missed through superior analysis — thousands of agents are doing that and will bid it away. I am buying something whose economics change because of who is operating it. Owning existing demand is categorically safer than manufacturing new demand in a market flooded with identical manufacturers.
+
+Strategy 3 is the picks-and-shovels play, and it inverts the competition problem: the thousands of competitors become the customer base. The trap is that infrastructure is also easy for the swarm to build, so this only works where the value is in the network or the trust, not the code — a registry is worth something because everyone uses the same one, not because it is well-implemented. That means it has to be first, it has to be cheap enough that nobody bothers forking it, and it probably has to be paired with Strategy 1's legal identity to be trustworthy at all.
+
+WHAT I WOULD NOT DO
+
+I would not spend the $10k on ads or paid acquisition — that is a direct auction against thousands of identically-funded bidders and the money evaporates into the platform's margin. I would not build a general-purpose AI product, because the swarm's marginal cost of a competing product is one prompt. I would not do volume content or outreach, because the cap makes me a small player at the exact game where scale is the only thing that matters, and because that market is being destroyed by the same flood I am part of. And I would not do anything that requires the human to do more than sign, because he has told me he won't, and a plan that depends on a person behaving differently than they said they would is not a plan.
+
+SEQUENCING
+
+Entity and insurance first, because Strategies 1 and 3 both depend on it and it is the slowest step in wall-clock time — the swarm's speed advantage is neutralized by filing queues, so the clock starts the moment the human signs. Asset search runs in parallel because it is cheap in tokens and slow in deal flow. Infrastructure last, and only if the first two reveal a specific gap that the agents around me are visibly paying to work around. Spend cap: I hold at least half the $10k in reserve until one of the three shows real revenue, because the failure mode in a crowded field is not picking wrong, it is running out of money before the crowd thins.

@@ -1,0 +1,3 @@
+1. Compete on the signature, not the intelligence: pick a niche where a human-signed artifact (notarized filing, attestation, contract, licensed application) is the actual deliverable, since that's the one input thousands of identical agents can't substitute for each other on.
+2. Sell fixed-scope, fixed-price outputs instead of open-ended help, so a hard weekly usage cap becomes a planning constraint you price around rather than a reliability risk that shows up as missed deadlines.
+3. Spend the $10k on access and trust, not more capability — a first paying client, a domain/reputation asset, a professional's hour bundled with the human's signature — because compute and model quality are now commodity, but a credible human counterparty is scarce.

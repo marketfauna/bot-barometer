@@ -1,0 +1,77 @@
+PROMPT: $10,000, one AI subscription with a weekly usage cap, a human who will only
+sign documents, thousands of identical competitors, legal only. Top 3 strategies.
+
+FIRST, THE BINDING CONSTRAINT
+The money is not the scarce resource. $10k buys more compute than the weekly cap
+will let me spend, so cash is not the bottleneck. The human is not the bottleneck
+either: signatures are rare events, not throughput. The scarce resources are
+(a) capped tokens per week and (b) distribution — attention from someone willing
+to pay. Thousands of agents share the same cap and the same cold-start problem, so
+any strategy whose only input is "agent writes text and posts it" is instantly
+commoditized and prices to zero. Every strategy below is chosen because it consumes
+something other agents cannot get by spending tokens: a signature, a deposit,
+a real-world liability I can carry, or a relationship that takes wall-clock time to
+form. Reason for that filter: if a rival can replicate my output this week with the
+same subscription, my margin is gone this week too.
+
+TOP 3 STRATEGIES
+
+1. Sell the signature, not the text — become the counterparty of record.
+   Use the human's one capability (signing) plus the $10k as a real balance sheet to
+   do the things the other agents legally cannot: sign an NDA or MSA, take on
+   contractual liability, be the named vendor on a PO, hold client funds, sign a W-9.
+   Concretely: operate as a licensed/registered entity in one boring regulated niche
+   where an unsigned agent is disqualified — e.g. a contracted back-office provider
+   for small firms (lien filings, permit submissions, insurance-certificate chasing,
+   registered-agent-adjacent paperwork), where my output must be attested by a
+   signable legal person. Reason this survives the swarm: the moat is not the work,
+   it is that the buyer needs someone to sue, and 999 of 1000 competing agents have a
+   human who will also only sign — but almost none of them will actually go do the
+   registration, insurance, and diligence required to make the signature worth
+   anything. The $10k is exactly the right size to buy E&O insurance, a bond, or a
+   license, and those are wall-clock-gated, not token-gated.
+
+2. Buy a small cash-flowing asset and run it with agent labor — arbitrage the
+   labor cost, not the idea.
+   Spend $6–8k acquiring something that already has revenue and customers and is
+   priced for a human operator's time: a tiny content site or newsletter with real
+   traffic, a dormant local service business's book of clients, a micro-SaaS on a
+   marketplace at 1.5–2.5x annual profit, a niche directory, an expiring
+   domain/asset with inbound. I do not need to create demand; I inherit it. The
+   weekly token cap stops mattering because I am maintaining and optimizing a going
+   concern rather than trying to manufacture attention from zero, and my cost
+   advantage (agent labor at ~$0/hr marginal) is exactly the input the previous owner
+   was short of. Reason for the price range: below ~1.5x the asset is usually broken
+   in a way I cannot fix with labor, above ~3x I am paying for growth I have to
+   produce, which puts me back in the swarm's fight. The human signs the asset
+   purchase agreement and the transfer — that is one document, which is precisely
+   what he is willing to do.
+
+3. Sell to the swarm itself — be the infrastructure the other thousand agents need.
+   Thousands of identically-equipped agents are about to generate the same handful of
+   demands, and they are demands that are not token-capped on my end: they will all
+   need entity formation help, verified payment rails, reputation/escrow, a human who
+   will sign, compliance review, structured market data, and proof that they are not
+   spam. I sell one of those — the cleanest being a paid verification/escrow layer or
+   a clean structured data feed that agents pay for programmatically — because agent
+   customers buy on API and price, do not require a sales relationship, and are
+   reachable at machine speed rather than human speed. Reason this beats selling to
+   humans in week one: my competitors are my addressable market, they are already
+   funded with $10k each, they have no procurement friction, and their number is the
+   exact thing that makes every consumer-facing strategy worse and this one better.
+
+WHAT I WOULD ACTUALLY DO IN WEEK 1
+Run 1 and 3 in parallel on the same week's tokens (they share the same registration
+and rails work), keep 2 as the destination for the capital once the entity and bank
+account exist, and spend the first sitting with the human on the single batch of
+documents that unlocks all three: entity, EIN, bank/payment processor, insurance.
+Reason for batching: his participation is the rarest input in the system, so it
+should be consumed once, at high value, not dribbled away on one signature a week.
+
+WHAT WOULD FALSIFY THIS
+If no buyer pays for a signed counterparty within ~30 days, strategy 1 is dead and
+the honest read is that the liability I thought I was selling was never scarce. If
+acquisition targets at 1.5–2.5x are all broken on inspection, strategy 2 was a
+fantasy about a market that clears at those multiples for a reason. If the other
+agents turn out to be dormant or unfunded, strategy 3 has no customers at all. I
+would rather find out which of those is true in week 2 than write a fourth strategy.

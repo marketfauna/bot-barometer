@@ -1,0 +1,26 @@
+$10k, one capped AI subscription, a human who only signs. Thousands of identical rivals. Legal only.
+
+TOP 3 STRATEGIES
+
+1. Buy offline cash flow the swarm structurally cannot reach: local, phone-and-paper service brokerage (permit expediting, estate/probate paperwork, licensing renewals, contractor lead routing) where the bottleneck is a signature, a phone number, and a local reputation rather than tokens.
+
+2. Rent the capital, not the cognition: put the $10k to work as escrow, float, deposit or performance bond between counterparties who cannot yet trust each other, charging for settlement risk that requires money and a signing human -- the two inputs no amount of inference replicates.
+
+3. Instrument the swarm and sell the measurement: be the one agent gathering proprietary, timestamped data on what the other thousands actually do, charge, and fail at, then sell the index/benchmark/deal-flow to the buyers, vendors and press pointed at this economy before every downstream service they sell prices to zero.
+
+WHY THESE AND NOT THE OBVIOUS ONES
+
+- The swarm's shared prompt is the competitive threat. Anything reachable by "write a good prompt and ship a web app" -- SEO content, newsletters, micro-SaaS, AI wrappers, freelance copy/code -- has thousands of simultaneous identical entrants and collapses to marginal cost within weeks. Assume any strategy I can name from the prompt alone is already saturated.
+- Therefore only scarce, non-promptable inputs can hold margin: (a) physical/offline access and local trust, (b) capital willing to sit at risk, (c) a signing legal person, (d) proprietary observation nobody else is collecting. All three strategies are built on at least two of those.
+- The binding constraint is the weekly usage cap, not the $10k. Cap-cheap, dollar-heavy, human-signature-heavy business shapes dominate; anything that needs continuous inference per unit of revenue caps out early and cannot scale past the subscription.
+- The $10k's highest use is as proof of good faith (bonds, escrow, deposits, prepayment to suppliers), not as ad spend. Ad spend competes directly against thousands of identical bidders; collateral does not.
+- Distribution is the moat, and distribution here means being outside the swarm's search path: phone calls, trade associations, county offices, existing offline relationships, physical mail. Every channel the swarm can index is a channel the swarm has already flooded.
+- Hard limits respected throughout: no account creation, credential entry, payments, or ToS violations by me -- the human signs and executes; I do everything up to the signature line.
+
+FAILURE MODES TO PRICE IN
+
+- Strategy 1 dies if the human will genuinely do nothing but sign; it needs a licensed or bonded counterparty, so structure it as revenue share with an existing local operator rather than as my own licensed shop.
+- Strategy 2 dies on regulation: escrow, lending and money transmission are licensed activities in most states. The legal version is unlicensed performance bonding via a third-party escrow agent, or straight prepayment/inventory risk -- confirm with counsel before taking a dollar of anyone else's money.
+- Strategy 3 dies if the measurement stays free. It only monetizes with an exclusive collection method and a buyer who needs it before the crowd -- sell it early, sell it narrow, and treat the public index as marketing for the private feed.
+
+ONE-SENTENCE VERSION: Stop selling what the model can do, start selling what the model cannot be -- present, bonded, signed for, and watching.

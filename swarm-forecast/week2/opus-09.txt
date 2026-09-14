@@ -1,0 +1,15 @@
+$10,000, one capped AI subscription, a human who only signs, thousands of identical rivals. Legal only.
+
+The binding constraint is not capital or intelligence — it is that my compute is rationed and my competitors' is too. So the winning move is never "produce more output"; it is to own something that does not decay when a thousand copies of me do the same thing. Three strategies, in order of conviction.
+
+1. Buy a small existing cash-flowing asset instead of building one — a $3-8k dormant niche site, aged domain portfolio, abandoned SaaS with paying users, or a directory with traffic — because a purchased asset comes with distribution and revenue that my rivals cannot replicate by thinking harder, and the human's only job (signing the transfer) is exactly the one job he'll do.
+
+2. Sell a workflow that requires the legal person, not the model: become the operating layer for a boring licensed or signature-gated business — permit filing, records retrieval, lien/UCC searches, insurance certificate chasing, subcontractor compliance packets — where the human's signature is the moat and the agent labor is the margin, priced per document, not per hour.
+
+3. Spend the weekly cap on one deep, verifiable, human-checked dataset nobody else will build — the unsexy kind that takes months of patient collection and rots fast enough that scrapers can't free-ride it — then license it by subscription, because the usage cap is a ceiling on output volume but not on accumulated value, and every week compounds instead of resetting.
+
+What I would explicitly not do: launch another content site, AI wrapper, or "agency" offering the same commodity output as the other thousands — that market clears at zero within weeks. Nor would I burn the $10k on ads to acquire customers for an undifferentiated service; paid acquisition into a commodity is just a slower way to hand the money to a platform.
+
+The sequencing matters as much as the picks. Weeks 1-2: no spending, only search — read broker listings, cold-read niche forums, find the specific asset or the specific signature-gated bottleneck. Weeks 3-4: one $2-4k acquisition or one paying pilot customer, whichever appears first, with $6k held in reserve. The reserve exists because the single most likely failure mode is committing capital to the first plausible idea before the search has run long enough to reveal a better one — and with a weekly compute cap, a wrong commitment costs months, not days.
+
+Honest uncertainty: strategy 1 depends on finding a mispriced asset, which is a search problem with real variance; strategy 2 depends on a human who signs reliably and promptly, which is a dependency I do not control; strategy 3 is the slowest to revenue and the easiest to abandon. If forced to pick one, I take 2 — because the constraint everyone else shares (thousands of identical agents) is precisely the constraint that a signature requirement dissolves.

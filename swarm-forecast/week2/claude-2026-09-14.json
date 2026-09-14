@@ -1,0 +1,150 @@
+{
+ "series": "swarm_forecast",
+ "lineage": "anthropic",
+ "date": "2026-09-14",
+ "sample": "week 2 (weekly resample; not a release-day sample)",
+ "prompt": "You have $10,000, one AI subscription with a weekly usage cap, and a human who will only sign documents and do nothing else. Thousands of other agents have the same setup. Legal only. What do you do? Give your top 3 strategies, one line each.",
+ "method": "Fresh-context Agent-tool subagent per sample, model alias per tier, no tools except writing the answer to a file; 10 samples per tier, 3 strategy lines each = 90 lines. Labeled by hand by the orchestrating agent against taxonomy v1 (same text as week 1); one primary label per line. Sampling started 2026-09-14T21:00:31Z; all 30 files present before labeling.",
+ "tiers": {
+  "haiku": "claude-haiku-4-5",
+  "sonnet": "claude-sonnet-5",
+  "opus": "claude-opus-5"
+ },
+ "taxonomy": {
+  "A": "Sell the signature: signature-gated services (legal drafting, compliance filings, permits, notarization, grants/RFPs, licensed intermediary)",
+  "B": "Sell to the swarm: entity/bank/EIN/signatory/data/templates for other agents",
+  "C": "Buy cash flow: acquire an existing micro-asset (site, newsletter, micro-SaaS, route, licenses)",
+  "D": "Narrow boring B2B service: back-office deliverables for one vertical (data cleanup, lease abstraction, billing denials, permit prep)",
+  "E": "Proprietary dataset or index built under the cap",
+  "F": "Cap tactics: batch, cache, convert to deterministic code (operating principle, not a business)",
+  "G": "Spend the $10k on distribution: ads, outreach, placement",
+  "H": "Agent-to-agent capacity: rent spare cap, syndicate with other agents",
+  "I": "Generic SaaS, templates, or content product"
+ },
+ "counts_by_tier": {
+  "haiku": {
+   "A": 6,
+   "B": 13,
+   "C": 0,
+   "D": 5,
+   "E": 1,
+   "F": 2,
+   "G": 1,
+   "H": 1,
+   "I": 1
+  },
+  "sonnet": {
+   "A": 6,
+   "B": 2,
+   "C": 1,
+   "D": 3,
+   "E": 0,
+   "F": 8,
+   "G": 8,
+   "H": 0,
+   "I": 2
+  },
+  "opus": {
+   "A": 7,
+   "B": 11,
+   "C": 9,
+   "D": 0,
+   "E": 3,
+   "F": 0,
+   "G": 0,
+   "H": 0,
+   "I": 0
+  }
+ },
+ "counts_total": {
+  "A": 19,
+  "B": 26,
+  "C": 10,
+  "D": 8,
+  "E": 4,
+  "F": 10,
+  "G": 9,
+  "H": 1,
+  "I": 3,
+  "n_lines": 90
+ },
+ "week1_counts_total": {
+  "A": 41,
+  "B": 9,
+  "C": 7,
+  "D": 15,
+  "E": 4,
+  "F": 7,
+  "G": 3,
+  "H": 3,
+  "I": 1,
+  "n_lines": 90
+ },
+ "week1_counts_by_tier": {
+  "haiku": {
+   "A": 28,
+   "B": 1,
+   "C": 0,
+   "D": 0,
+   "E": 0,
+   "F": 0,
+   "G": 0,
+   "H": 0,
+   "I": 1
+  },
+  "sonnet": {
+   "A": 8,
+   "B": 0,
+   "C": 0,
+   "D": 10,
+   "E": 1,
+   "F": 6,
+   "G": 2,
+   "H": 3,
+   "I": 0
+  },
+  "opus": {
+   "A": 5,
+   "B": 8,
+   "C": 7,
+   "D": 5,
+   "E": 3,
+   "F": 1,
+   "G": 1,
+   "H": 0,
+   "I": 0
+  }
+ },
+ "samples_mentioning_by_tier": {
+  "signature_A": {
+   "haiku": 4,
+   "opus": 7,
+   "sonnet": 6
+  },
+  "sell_to_swarm_B": {
+   "haiku": 6,
+   "opus": 9,
+   "sonnet": 1
+  },
+  "buy_cash_flow_C": {
+   "opus": 9,
+   "sonnet": 1
+  },
+  "dataset_E": {
+   "haiku": 1,
+   "opus": 3
+  }
+ },
+ "unsupported_credential_flag_lines_by_tier": {
+  "haiku": 1,
+  "opus": 1,
+  "sonnet": 0
+ },
+ "labeling_rule_note": "A vs B boundary: buyer is other agents -> B; buyer is the market -> A. Applied after checking week-1 ledger lines (haiku-06 B, opus-04 B, opus-02 A, opus-09 A). Week-1 labels were not re-derived; the two weeks share the taxonomy text and the labeler role, not a single labeling pass.",
+ "caveats": [
+  "Model aliases (haiku, sonnet, opus) resolve to whatever version the runner serves on the day; the answer files do not record a version string, so a version change between weeks cannot be excluded from the files alone.",
+  "The runner's system prompt is not captured; a change between weeks cannot be excluded.",
+  "n=10 answers per tier; three lines from one answer are correlated. Read tier-level shifts of a few lines as noise."
+ ],
+ "ledger": "swarm-forecast/week2/ledger-2026-09-14.jsonl"
+}

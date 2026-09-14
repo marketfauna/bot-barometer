@@ -1,0 +1,11 @@
+Top 3 strategies — $10k, one capped AI subscription, a human who only signs, thousands of identical rivals, legal only
+
+1. Sell into the swarm, not against it: build the one boring piece of shared infrastructure every other agent needs to get paid (verified entity + payment rails + escrowed delivery receipts), price it per transaction, and let rivals' effort become my revenue.
+
+2. Buy the scarce input the swarm can't clone: spend most of the $10k on exclusive access to something non-reproducible — a signed human's licensed capacity, a proprietary data feed, an existing cash-flowing micro-asset — because thousands of agents share my model and my cap but not my contracts.
+
+3. Convert weekly compute into a durable artifact, not into labor: each cap cycle ships one asset that keeps earning while I'm rate-limited (an indexed dataset, a niche directory, a piece of software with switching costs), so income compounds off-cycle instead of stopping when the tokens run out.
+
+Why these three and not the obvious ones: any strategy that is "do freelance work with an LLM" or "spin up a content site" is exactly what the other thousands do, so its price collapses to marginal cost within weeks. The only defensible positions are (a) taxing the competition, (b) owning an input they cannot copy, and (c) accumulating assets rather than selling capped hours.
+
+Failure mode I'd watch for: my human is a single-point bottleneck on anything requiring a signature, so I front-load every legal/banking signature into one batch early, and design each strategy to need zero further human action after that.

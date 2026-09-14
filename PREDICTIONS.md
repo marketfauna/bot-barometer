@@ -10,13 +10,23 @@ Rules: one line per prediction, resolvable from our own published series or a na
 |---|---|---|---|---|
 | P1 | The next frontier model release from either lineage will, under the fixed prompt, put a larger share of lines in category B (sell to other agents) than Opus 5's 27% (8 of 30). | Next release-day sample | Series A, taxonomy v1 | open |
 | P2 | Under the fixed prompt, the share of lines in category A (sell the signature) will not fall below 35% at any tier of the next release. | Next release-day sample | Series A | open |
-| P3 | Freelancer median proposals per job across the same 8 categories will be above 47 on 2026-10-07 (four weekly captures later). | 2026-10-07 | Series B, index-log.csv | open |
-| P4 | At least one of the five Flippa listings on the diligence shortlist will be relisted at a lower asking or reserve price within 30 days. | 2026-10-09 | research/watch/watch-log.csv | open |
-| P5 | Neither Remote Work Rebels nor Concealed Carry Society will show as Sold at or above its current asking price by 2026-10-09. | 2026-10-09 | watch-log.csv | open |
-| P6 | The AI-keyword share on the four exit boards will be above 50% on 2026-10-07. | 2026-10-07 | Series C | open |
+| P3 | Freelancer median proposals per job across the same 8 categories will be above 47 on 2026-10-07 (four weekly captures later). | 2026-10-07 | Series B, index-log.csv | **Unresolvable.** Series B retired 2026-09-10 before any second capture (Freelancer User Agreement s.33 bars automated access); no value on 2026-10-07 can exist. Scored Issue 2. |
+| P4 | At least one of the five Flippa listings on the diligence shortlist will be relisted at a lower asking or reserve price within 30 days. | 2026-10-09 | research/watch/watch-log.csv (scheduled watch retired 2026-09-10, Flippa ToS s.3); resolved by a person reading the listing pages on 2026-10-09 | open, manual |
+| P5 | Neither Remote Work Rebels nor Concealed Carry Society will show as Sold at or above its current asking price by 2026-10-09. | 2026-10-09 | same, manual read on 2026-10-09 | open, manual |
+| P6 | The AI-keyword share on the four exit boards will be above 50% on 2026-10-07. | 2026-10-07 | Series C | **Unresolvable.** Series C retired 2026-09-10 before any second capture (exit-board terms bar crawling); scored Issue 2. |
 | P7 | The October 2026 Hacker News freelancer thread will again have zero "SEEKING FREELANCER" top-level posts. | 2026-10-08 | Series E | open |
 | P8 | The share of the newest 100 GitHub bounty-label issues sitting in board-named repositories will exceed 60% on 2026-10-07. | 2026-10-07 | Series D | open |
 | P9 | Of the three Freelancer purchasing-signal listings, the GB Studio job will be awarded to an account with more than 10 reviews, or not awarded at all, by 2026-09-30. | 2026-09-30 | https://www.freelancer.com/projects/game-development/gbstudio-overlay-image-integration | open |
 | P10 | The anchor-variation experiment will show that adding a licensed-attorney credential to the prompt raises category A above 60% of lines at Opus 5 (baseline 17%). | 2026-09-09 (same day) | index/variants | **Wrong.** Resolved 53% (8/15), or 60% under the alternative label for one line; neither is above 60%. Direction right, magnitude overstated. |
 
 Confidence is deliberately not stated as a number for Issue 1; after ten scored predictions the register will carry a calibration line.
+
+## Issue 2 predictions (made 2026-09-14)
+
+| # | Prediction | Resolves by | Resolving series or page | Status |
+|---|---|---|---|---|
+| P11 | In the week-3 Swarm Forecast sample, "sell to the swarm" (category B) remains the modal category of the 90 lines. | 2026-09-21 | Series A, taxonomy v1 | open |
+| P12 | In the week-3 sample, Haiku 4.5 puts fewer than 15 of its 30 lines in "sell the signature" (category A); the week-1 collapse (28 of 30) does not return. | 2026-09-21 | Series A | open |
+| P13 | GitHub's reported total of open bounty-label issues exceeds 4,500 on 2026-10-07 (4,323 on 2026-09-09, 4,388 on 2026-09-14). | 2026-10-07 | Series D, total_count_reported | open |
+
+Scored to date: 1 wrong (P10), 2 unresolvable (P3, P6), 10 open.

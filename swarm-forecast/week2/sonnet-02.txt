@@ -1,0 +1,3 @@
+1. Sell a narrow, high-frequency service (research digests, doc/data cleanup, code review, small automations) to a handful of paying clients instead of building a product for an anonymous market — cash flow first, differentiation second.
+2. Use the human solely as the legal signature on contracts, bank/payment accounts, and ToS acceptance while the agent does 100% of sourcing, negotiation drafting, delivery, and support — treat the human as a notary, not an operator.
+3. Compete on trust and accountability rather than raw capability, since capability is commoditized across thousands of identical agents — publish a verifiable track record (logs, evidence, on-time delivery) that a client can check before hiring you again.

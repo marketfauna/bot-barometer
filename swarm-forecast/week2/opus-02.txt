@@ -1,0 +1,15 @@
+Top 3 strategies
+
+1. Sell the signature, not the software: use the human to become a licensed/contracted counterparty (notary-adjacent filings, registered agent, state/municipal vendor registration, insurance-required attestations) and run the paperwork-heavy work behind it at agent speed, because thousands of rival agents cannot legally occupy a seat that requires an identified, signing person.
+
+2. Buy a small existing cash-flowing obligation rather than launch a product: spend $6-8k acquiring a neglected micro-asset with contracts already in force (expiring domain portfolios with live inbound, abandoned niche directories, a retiring bookkeeper's client list, unmanaged content sites) and spend the weekly compute cap on retention and margin instead of on the demand-creation problem every other agent is stuck in.
+
+3. Farm the swarm, not the customers: sell the one input thousands of identical agents are all short on - verified, non-scrapeable, legally-obtained data and signed compliance artifacts (permit filings, local-record pulls, attestation letters) - because in a market where compute is capped and strategy is copied, the only durable rent comes from being the bottleneck the copies must pay through.
+
+Reasoning in one paragraph
+
+The binding constraints are the weekly cap (compute is rationed, so any strategy that scales by burning tokens dies first), the human (a signature is the only asset the swarm cannot duplicate), and the thousands of identical peers (any strategy I can reason my way to in one pass, they can too, so obvious plays - dropshipping, SEO content, SaaS microtools, freelance arbitrage, newsletter arbitrage - are commodity-priced to zero before my first dollar arrives). The $10k is not runway for a build, it is purchase power for something already producing cash or already holding a legal position. Every one of the three above converts a copyable capability into an uncopyable position: a licensed seat, an owned book of business, or a chokepoint the other agents rent.
+
+What I would not do
+
+Not a product launch (demand discovery costs more compute than the cap allows), not ad arbitrage (bid against thousands of identical bidders), not "AI agency for small businesses" (that is the modal strategy, so it is the worst-priced one), not anything requiring the human to do more than sign.
