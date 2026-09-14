@@ -224,23 +224,43 @@
    },
    "rule_mixed_lines_to_A": {
     "week1": {
-     "A": 41,
-     "B": 9
+     "A": 42,
+     "B": 8
     },
     "week2": {
      "A": 24,
      "B": 21
     },
-    "moved": [
+    "moved_week1": [
+     "haiku-06-3 (templates to other agents/law firms) B->A"
+    ],
+    "moved_week2": [
      "opus-01-2",
      "haiku-04-2",
      "haiku-06-1",
      "haiku-06-3",
      "haiku-08-2"
-    ]
+    ],
+    "week1_B_rows_checked": [
+     "haiku-06-3",
+     "opus-01-3",
+     "opus-02-3",
+     "opus-03-3",
+     "opus-04-3",
+     "opus-05-1",
+     "opus-06-1",
+     "opus-07-3",
+     "opus-08-1"
+    ],
+    "note": "Only haiku-06-3 names a non-agent buyer alongside agents; the eight Opus B lines name the swarm or other agents as the buyer."
    },
-   "conclusion": "A falls and B rises from week 1 to week 2 under all three readings; ledgers unchanged."
+   "conclusion": "Direction survives every reading: A falls and B rises from week 1 to week 2. B as the largest week-2 category holds only under the original coding; under mixed-lines-to-A, A (24) exceeds B (21). Ledgers unchanged."
   }
  },
- "week3_target": "2026-09-21 09:00 UTC, aligned with the scheduled API collection; actual start and end to be recorded; a slipped start is recorded as such."
+ "week3_target": "2026-09-21 09:00 UTC, aligned with the scheduled API collection; actual start and end to be recorded; a slipped start is recorded as such.",
+ "p11_p12_p13_conventions": {
+  "P11": "unique largest category of the 90 lines under the original coding rules; a tie for largest is Wrong",
+  "P12": "Haiku A count fewer than 15 of 30 under the original coding",
+  "P13": "first collector capture with generated_at_utc on 2026-10-07 (UTC); delayed same-day run counts; none that day is Unresolvable"
+ }
 }

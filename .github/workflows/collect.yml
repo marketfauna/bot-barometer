@@ -3,7 +3,7 @@ name: Weekly collection
 on:
   schedule:
     - cron: "0 9 * * 1"   # every Monday 09:00 UTC
-    - cron: "0 9 7 10 *"  # 2026-10-07 09:00 UTC (Wednesday): dated capture that resolves P8 and P13; remove after 2026-10-07
+    - cron: "0 9 7 10 *"  # 7 October 09:00 UTC each year; the guard step below lets it run only in 2026 (dated capture for P8 and P13)
   workflow_dispatch:
 
 permissions:
@@ -20,20 +20,34 @@ jobs:
       - name: Check out
         uses: actions/checkout@v4
 
+      - name: Guard the extra 7 October schedule to 2026
+        id: guard
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 9 7 10 *" ] && [ "$(date -u +%Y)" != "2026" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "7 October schedule outside 2026: nothing to do (remove the cron entry)."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Set up Python
+        if: steps.guard.outputs.run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Collect index series (data/)
+        if: steps.guard.outputs.run == 'true'
         continue-on-error: true
         run: python tools/collect_index.py
 
       - name: Build feed.json
+        if: steps.guard.outputs.run == 'true'
         continue-on-error: true
         run: python tools/build_feed.py
 
       - name: Commit and push changes
+        if: steps.guard.outputs.run == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

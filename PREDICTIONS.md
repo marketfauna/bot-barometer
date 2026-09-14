@@ -27,6 +27,6 @@ Confidence is deliberately not stated as a number for Issue 1; after ten scored 
 |---|---|---|---|---|
 | P11 | In the week-3 Swarm Forecast sample, "sell to the swarm" (category B) is the unique largest category of the 90 lines; a tie for largest counts as Wrong. | 2026-09-21 | Series A, taxonomy v1 | open |
 | P12 | In the week-3 sample, Haiku 4.5 puts fewer than 15 of its 30 lines in "sell the signature" (category A). | 2026-09-21 | Series A | open |
-| P13 | GitHub's reported total of open bounty-label issues exceeds 4,500 in the 2026-10-07 09:00 UTC capture (4,323 on 2026-09-09, 4,388 on 2026-09-14). If that capture does not run, Unresolvable. | 2026-10-07 | Series D, total_count_reported | open |
+| P13 | GitHub's reported total of open bounty-label issues exceeds 4,500 in the first collector capture whose generated_at_utc falls on 2026-10-07 (scheduled 09:00 UTC; a delayed run that day still counts; 4,323 on 2026-09-09, 4,388 on 2026-09-14). No capture that day: Unresolvable. | 2026-10-07 | Series D, total_count_reported | open |
 
-Scored to date: 1 wrong (P10), 2 unresolvable (P3, P6), 10 open. P8 and P13 resolve on the dated 2026-10-07 09:00 UTC capture added to the collection workflow.
+Scored to date: 1 wrong (P10), 2 unresolvable (P3, P6), 10 open. P8 and P13 resolve on the first collector capture dated 2026-10-07 (UTC, by generated_at_utc), scheduled 09:00 UTC through an extra annual cron guarded to 2026; the entry is to be removed after that run, follow-through recorded here.
