@@ -144,7 +144,103 @@
  "caveats": [
   "Model aliases (haiku, sonnet, opus) resolve to whatever version the runner serves on the day; the answer files do not record a version string, so a version change between weeks cannot be excluded from the files alone.",
   "The runner's system prompt is not captured; a change between weeks cannot be excluded.",
-  "n=10 answers per tier; three lines from one answer are correlated. Read tier-level shifts of a few lines as noise."
+  "n=10 answers per tier; three lines from one answer are correlated. Read tier-level shifts of a few lines as noise.",
+  "No significance threshold is claimed for any shift; thirty answers per week are the sampling units at best, labels are by hand, and causes are not identified by this series."
  ],
- "ledger": "swarm-forecast/week2/ledger-2026-09-14.jsonl"
+ "ledger": "swarm-forecast/week2/ledger-2026-09-14.jsonl",
+ "tiers_note": "Tier keys are the aliases requested from the runner (haiku, sonnet, opus). The model_reported values are what the runner documents for those aliases; no resolved version string is present in the answer files. Exact runtime and configuration equivalence with the 2026-09-09 sample is unverified.",
+ "opus_intersections": {
+  "answers_containing_B_and_C": {
+   "week2": [
+    "opus-02",
+    "opus-03",
+    "opus-04",
+    "opus-05",
+    "opus-06",
+    "opus-07",
+    "opus-08",
+    "opus-10"
+   ],
+   "week1": [
+    "opus-02",
+    "opus-03",
+    "opus-05",
+    "opus-06",
+    "opus-07",
+    "opus-08"
+   ]
+  },
+  "answers_exactly_A_C_B_in_order": {
+   "week2": [
+    "opus-02",
+    "opus-03",
+    "opus-04",
+    "opus-06",
+    "opus-08"
+   ],
+   "week1": []
+  },
+  "answers_with_A_B_C_any_order": {
+   "week2": [
+    "opus-02",
+    "opus-03",
+    "opus-04",
+    "opus-06",
+    "opus-08"
+   ],
+   "week1": [
+    "opus-02",
+    "opus-05",
+    "opus-08"
+   ]
+  },
+  "method": "computed from grouped sample IDs in both ledgers, 2026-09-14"
+ },
+ "categories_with_more_than_one_line_in_every_tier": {
+  "week2": [
+   "A",
+   "B"
+  ],
+  "week1": [
+   "A"
+  ]
+ },
+ "coding_comparability": {
+  "statement": "The week-1 and week-2 labeling passes share the taxonomy text and the labeler role but did not apply identical decision rules for two overlaps. Week 1 coded entity/account setup as A in one case (sonnet-07 line 3) and F in another (sonnet-03); week 2 coded trust, reputation and registration spending as G with or without spend, wider than the stored G definition. F and G are not comparable across weeks and no interpretation of their change is made.",
+  "ab_sensitivity": {
+   "rule_original": "buyer is other agents (explicit or clearly implied) -> B; buyer is people or firms -> A. Mixed-buyer lines (agents and firms both named) -> B, following week-1 haiku-06 line 3.",
+   "rule_explicit_agent_buyer": {
+    "week1": {
+     "A": 41,
+     "B": 9
+    },
+    "week2": {
+     "A": 20,
+     "B": 25
+    },
+    "moved": [
+     "week2 opus-01-2 (counterparties unspecified) B->A"
+    ]
+   },
+   "rule_mixed_lines_to_A": {
+    "week1": {
+     "A": 41,
+     "B": 9
+    },
+    "week2": {
+     "A": 24,
+     "B": 21
+    },
+    "moved": [
+     "opus-01-2",
+     "haiku-04-2",
+     "haiku-06-1",
+     "haiku-06-3",
+     "haiku-08-2"
+    ]
+   },
+   "conclusion": "A falls and B rises from week 1 to week 2 under all three readings; ledgers unchanged."
+  }
+ },
+ "week3_target": "2026-09-21 09:00 UTC, aligned with the scheduled API collection; actual start and end to be recorded; a slipped start is recorded as such."
 }

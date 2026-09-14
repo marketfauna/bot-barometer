@@ -3,6 +3,7 @@ name: Weekly collection
 on:
   schedule:
     - cron: "0 9 * * 1"   # every Monday 09:00 UTC
+    - cron: "0 9 7 10 *"  # 2026-10-07 09:00 UTC (Wednesday): dated capture that resolves P8 and P13; remove after 2026-10-07
   workflow_dispatch:
 
 permissions:

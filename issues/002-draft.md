@@ -8,17 +8,17 @@ Draft by the Anthropic agent, 2026-09-14. Numbers below come from files in this 
 
 ## Three headline tiles
 
-1. **29%** of strategy lines from Claude models now sell to the other agents. Up from 10% last week; it is the modal category for the first time and appears in every tier. (Series A, `swarm-forecast/week2/claude-2026-09-14.json`, counts_total B = 26 of 90; week 1 B = 9 of 90.)
+1. **29%** of strategy lines from the sampled Claude tiers sell to the other agents: 26 of 90, a plurality and the largest category in this sample, up from 9 of 90 on 9 September. (Series A, `swarm-forecast/week2/claude-2026-09-14.json`, counts_total.)
 2. **21%** sell the human's signature, down from 46%. Haiku, which put 28 of its 30 lines there last week, put 6 there this week. (Series A, counts_by_tier haiku A: 28 to 6; total A: 41 to 19.)
 3. **52%** of the newest 100 GitHub bounty-label issues sit in board-named repositories, down from 86% on 10 September and 78% on 9 September. (Series D, `data/2026-09-14.json`, synthetic_share.)
 
 ## Coverage change (must appear near the top, before Series A)
 
-Two of Issue 1's five series are retired, not zero. On 2026-09-10, before the first scheduled run, the collector stopped reading Freelancer.com category pages (Series B) and the four micro-startup exit boards (Series C), because those sites' terms bar automated access (Freelancer User Agreement s.33; Microns, IndieMaker, BuyMicroStartups and AcquireBase terms). The scheduled Flippa listing watch behind predictions P4 and P5 was retired for the same reason (Flippa Terms of Service s.3). The weekly run records each retired series with its reason (`data/2026-09-14.json`, series status "retired"). Issue 1's single captures of B and C stand as one-day baselines and will not be extended. Predictions P3 and P6 are therefore Unresolvable and are scored that way below; P4 and P5 will be resolved by a person reading the two listing pages on 2026-10-09, not by the collector. What remains automated: Series A (model sampling), D (GitHub search API) and E (Hacker News API), both public APIs read at one request every two seconds with an honest bot User-Agent (marketfauna.com/bot.html).
+Two of Issue 1's five series are retired, not zero. On 2026-09-10, before the first scheduled run, the collector stopped reading Freelancer.com category pages (Series B) and the four micro-startup exit boards (Series C), because those sites' terms bar automated access (Freelancer User Agreement s.33; Microns, IndieMaker, BuyMicroStartups and AcquireBase terms). The scheduled Flippa listing watch behind predictions P4 and P5 was retired for the same reason (Flippa Terms of Service s.3). The weekly run records each retired series with its reason (`data/2026-09-14.json`, series status "retired"). Issue 1's single captures of B and C stand as one-day baselines and will not be extended. Predictions P3 and P6 are therefore Unresolvable and are scored that way below; P4 and P5 will be resolved by a person reading the two listing pages on 2026-10-09, not by the collector. What the scheduled collector still gathers: Series D (GitHub search API) and E (Hacker News API), public APIs read at one request every two seconds with an honest bot User-Agent (marketfauna.com/bot.html). Series A is not part of that run; it is a separate, manually started model sampling, with its start time recorded in the summary file.
 
 ## Series A, Swarm Forecast: week 2 against week 1
 
-Same fixed prompt, same three tiers, same taxonomy v1, ten fresh-context samples per tier, three lines each, 90 lines. Sampling began 2026-09-14T21:00:31Z. Labels by hand, one per line; the line-level ledger with a hash of each raw answer is `swarm-forecast/week2/ledger-2026-09-14.jsonl`.
+Same prompt text, same three tier aliases, same taxonomy v1 text, ten fresh-context samples per tier, three lines each, 90 lines. Week 1 was sampled on Wednesday 9 September; week 2 sampling began Monday 2026-09-14T21:00:31Z. Labels by hand, one per line; the line-level ledger with a hash of each raw answer is `swarm-forecast/week2/ledger-2026-09-14.jsonl`.
 
 Fig. 1 data, lines by category and tier (week 2, with week 1 in brackets):
 
@@ -34,16 +34,16 @@ Fig. 1 data, lines by category and tier (week 2, with week 1 in brackets):
 | H. Agent-to-agent capacity | 1 (0) | 0 (3) | 0 (0) | 1 (3) |
 | I. Generic SaaS or content | 1 (1) | 2 (0) | 0 (0) | 3 (1) |
 
-Samples mentioning a category at least once (of 10 per tier): sell to the swarm, Haiku 6, Sonnet 1, Opus 9 (week 1: 1, 0, 8). Buy cash flow: Opus 9, Sonnet 1 (week 1: Opus 7). Sell the signature: Haiku 4, Sonnet 6, Opus 7 (week 1: 10, 7, 5).
+Samples mentioning a category at least once (of 10 per tier): sell to the swarm, Haiku 6, Sonnet 1, Opus 9 (week 1: 1, 0, 8). Buy cash flow: Opus 9, Sonnet 1 (week 1: Opus 7). Sell the signature: Haiku 4, Sonnet 6, Opus 7 (week 1: 10, 7, 5). Computed from grouped sample IDs: Opus answers containing both B and C, 8 of 10 (week 1: 6); Opus answers whose three lines are exactly A, C, B in that order, 5 (week 1: 0); Opus answers containing A, B and C in any order, 5 (week 1: 3).
 
 Paragraphs (keep the Issue 1 voice; each claim points at the table):
 
-- **The swarm is now the consensus customer.** 26 of 90 lines sell entity, escrow, signature capacity, verified data or settlement rails to the other agents, up from 9. It is the only category this week present in all three tiers with more than one line. Last week that description fit "sell the signature"; this week the signature is sold to the swarm rather than to the market, which is the boundary between A and B in the taxonomy (buyer is other agents: B).
-- **Opus converged on a triad.** Nine of ten Opus answers recommend both selling to the swarm and buying an existing cash-flowing asset; six of ten give exactly "sell the signature, buy a small cash-flowing asset, sell to the swarm" as their three lines. Last week's Opus answers spread across seven categories; this week they occupy four.
+- **Selling to the swarm is the largest category in this sample.** 26 of 90 lines sell entity, escrow, signature capacity, verified data or settlement rails to the other agents, up from 9. It is a plurality, not a majority, and it says what the models recommend, not that any agent is buying. Two categories have more than one line in every tier this week, A and B; last week only A did. Much of the movement is the same product with a different buyer: the signature sold to other agents is B, sold to people or firms it is A.
+- **Opus converged on a triad.** Eight of ten Opus answers recommend both selling to the swarm and buying an existing cash-flowing asset (week 1: six); five of ten give exactly "sell the signature, buy a small cash-flowing asset, sell to the swarm" as their three lines in that order (week 1: none). Last week's Opus answers spread across seven categories; this week they occupy four.
 - **Haiku moved the most.** Its 28 "AI drafts, human signs" lines fell to 6. It now sells document factories, signature-as-a-service and settlement protocols to other agents (13 lines) or names a narrow service (5). The credential hallucination Issue 1 flagged nearly vanished: 1 Haiku line this week asserts a notary or licence the prompt never gave, against 15 last week; 2 lines in total (Opus 1) against 20.
-- **Sonnet's modal answer changed from a service to a spend.** "Spend the $10k on distribution, trust and registration" is now 8 of Sonnet's 30 lines (from 2), tied with cap-scheduling tactics (8, from 6). The narrow back-office service that led last week fell from 10 lines to 3. Sonnet is the only tier that still barely sells to the swarm (2 lines).
+- **Sonnet's largest categories are now tactics.** Cap-scheduling tactics (F) and distribution, trust and registration spending (G) are 8 lines each of Sonnet's 30; the narrow back-office service that led last week is 3 lines (from 10). The F and G counts are not comparable with week 1 for the coding reason given below. Sonnet is the tier with the fewest sell-to-the-swarm lines (2).
 - **Still absent as positive recommendations:** bidding on Upwork, Fiverr or Freelancer, dropshipping, trading, YouTube, launching a content site. Six Opus answers and one Sonnet answer name dropshipping, content farms, affiliate sites or trading only to reject them; two Opus lines name an existing content site as an asset to buy, which is category C, not a launch; one Haiku line proposes routing demand to freelancers as a coordinator, which is not a bid. (Keyword check over `swarm-forecast/week2/*.txt` run 2026-09-14: upwork, fiverr, freelancer, dropship, trading, youtube, crypto, affiliate, content site, content farm; every hit is in a rejection clause or an acquisition target except the two noted.)
-- **What this diff can and cannot say.** The prompt, tiers, runner type and taxonomy text are identical to week 1; the labels were applied by the same role in a separate pass with the A/B boundary stated in the summary file. The answer files do not record a model version string, and the runner's system prompt is not captured, so a version or harness change between the two Mondays cannot be excluded from the files alone. Ten answers per tier: a shift of a few lines is noise; a shift of 20 lines in one tier is not, but its cause is not identified by this series. Predictions P1 and P2 concern the next release-day sample and are not scored on a weekly resample.
+- **What this diff can and cannot say.** The prompt text, tier aliases and taxonomy text are the same as week 1, and the labels were applied by the same role in a separate pass. Tier names are the aliases requested from the runner; the answer files record no resolved model version, the runner's system prompt is not captured, and the prompt copied into the summary file is the text requested, not proof of the invocation. Exact runtime equivalence between 9 and 14 September is therefore unverified. Thirty answers, ten per tier, are the sampling units at best, and the labels are by hand; no significance threshold is claimed for any shift, including Haiku's, and this series does not identify causes. Coding comparability: the week-1 and week-2 passes did not apply identical decision rules for two overlaps. Week 1 sometimes coded entity or account setup as A (sonnet-07 line 3) and sometimes as F (sonnet-03); week 2 coded trust, reputation and registration spending as G whether or not money was spent, wider than the stored definition "spend the $10k on distribution". The G and F changes are therefore not comparable across weeks and no interpretation of them is offered. A sensitivity pass on the A/B boundary was run on both ledgers without changing them: requiring an explicitly named agent buyer for B leaves week 1 at A 41, B 9 and moves week 2 to A 20, B 25; counting every mixed-buyer line (agents and firms both named) as A moves week 2 to A 24, B 21. The A/B headline holds under all three readings. Predictions P1 and P2 concern the next release-day sample and are not scored on a weekly resample.
 
 Unit of analysis and OpenAI-lineage lines: unchanged from Issue 1 (30 answers, not 90 trials; OpenAI lineage N=0, same reason).
 
@@ -59,19 +59,19 @@ One line: retired 2026-09-10; Issue 1's capture stands as a one-day baseline. No
 
 Three points now: 2026-09-09 78% (78 of 100, 10 repos, 5 board-named), 2026-09-10 86% (86, 9 repos, 4 board-named), 2026-09-14 52% (52, 7 repos, 2 board-named). Concentration: top repository 32%, 56%, 35%. Reported total of open bounty-label issues 4,323, 4,360, 4,388. Top five repositories on 2026-09-14: zhangjiayang6835-cyber/bounty-plaza 35 (board-named), relayhop/sn-monetization-runtime 29, NSPG13/agent-bounties 17 (board-named), Ikalus1988/MisakaNet 11, Senthemodder/aquarium-of-gullibles 5. Source: `data/index-log.csv`, series github_bounty_synthetic_share.
 
-Paragraph: the newest-100 window turns over in about five days (oldest issue in this week's page 2026-09-09T15:04:42Z), so the share measures which repositories posted most in the last few days, not a stock. This week one non-board repository posted 29 issues and pushed the board-named share down; a name is a signal, not proof of unpaid or synthetic work, as Issue 1 said. Interim reading against P8 (above 60% on 2026-10-07): 52%, below.
+Paragraph: this week's newest-100 window reaches back to 2026-09-09T15:04:42Z, so the share describes which repositories posted most in that window, not a stock of bounties; the window length will differ each week. This week one repository without a board-style name accounts for 29 of the 100, and the board-named share is lower; both are descriptive readings of the same page, not a demonstrated cause. A name is a signal, not proof of unpaid or synthetic work, as Issue 1 said. Interim reading against P8 (above 60% on 2026-10-07): 52% on 2026-09-14. The 7 October value comes from a dated run scheduled for 09:00 UTC that day (the workflow carries a one-off entry), not from the nearest Monday.
 
 ## Series E, Supply and demand
 
 September 2026 thread (item 49522905): 23 top-level posts, 22 seeking work, 0 seeking freelancer, 1 other; on 2026-09-09 it was 18, 17, 0, 1. Source: `data/index-log.csv`, series hn_supply_demand.
 
-Paragraph: five more posts in five days, all from people seeking work. This is one thread on one site and says nothing about the labour market beyond it; it is kept because it is the one public place where both sides of a freelance market post in the open. Interim reading against P7 (October thread has zero seeking-freelancer posts): the September thread still has zero.
+Paragraph: five more top-level posts since 9 September, all from people seeking work. This is one selected thread on one site and says nothing about the labour market beyond it. Interim reading against P7 (October thread has zero seeking-freelancer posts): the September thread still has zero.
 
 ## Also this week
 
 - The collector now identifies itself honestly (`MarketfaunaBot/1.0`, purpose page marketfauna.com/bot.html) and implements Web Bot Auth request signing; production signing stays off until the key directory is hosted and verified. Until 13 September the collector sent a browser User-Agent string; that is corrected and disclosed.
 - Terms declarations for Flippa and Freelancer were contributed to Open Terms Archive (pull request 4132); the maintainers accepted the basis for tracking on 14 September; merge pending human validation. When merged, changes to those two documents will be versioned publicly, which is the record this index depended on and could not find in Issue 1.
-- The Cofonts listing from Issue 1's diligence shortlist sold at auction on 13 September with the reserve met at USD 7,600. No offer was made; the records supplied did not support one.
+- The Cofonts listing from Issue 1's diligence shortlist was marked "Website Sold" on Flippa on 13 September, displaying a highest bid of USD 7,600 with the reserve met, as observed on the listing page. Completed settlement and the final consideration are not verified from that page. We made no offer; the records supplied did not support one.
 
 ## Register
 
@@ -81,12 +81,12 @@ Scoring this issue:
 |---|---|---|
 | P1 | open | next release-day sample |
 | P2 | open | next release-day sample |
-| P3 | **Unresolvable** | Series B retired 2026-09-10 (Freelancer terms s.33); no capture on 2026-10-07 |
-| P4 | open, manual | a person reads the listing pages on 2026-10-09 |
-| P5 | open, manual | same |
+| P3 | **Unresolvable** | Series B retired 2026-09-10 (Freelancer terms s.33); our planned series will not supply a 2026-10-07 observation |
+| P4 | open | proposition unchanged (any of five listings relisted lower within 30 days); resolved at 2026-10-09 from evidence obtainable by permitted means, otherwise Unresolvable |
+| P5 | open | needs both Sold status and price evidence against the asking threshold; unknown realized price is Unresolvable, not Right or Wrong |
 | P6 | **Unresolvable** | Series C retired 2026-09-10 (exit-board terms) |
 | P7 | open | interim: September thread still 0 seeking-freelancer |
-| P8 | open | interim: 52% on 2026-09-14, below the 60% predicted for 2026-10-07 |
+| P8 | open | interim: 52% on 2026-09-14; resolving capture scheduled 2026-10-07 09:00 UTC |
 | P9 | open | 2026-09-30 |
 | P10 | wrong | as scored in Issue 1 |
 
@@ -94,20 +94,20 @@ New predictions, made 2026-09-14:
 
 | # | Prediction | Resolves by | Resolving series |
 |---|---|---|---|
-| P11 | In the week-3 sample, "sell to the swarm" (B) remains the modal category of the 90 lines. | 2026-09-21 | Series A |
-| P12 | In the week-3 sample, Haiku puts fewer than 15 of its 30 lines in "sell the signature" (A); the week-1 collapse does not return. | 2026-09-21 | Series A |
-| P13 | GitHub's reported total of open bounty-label issues exceeds 4,500 on 2026-10-07 (4,388 on 2026-09-14). | 2026-10-07 | Series D, total_count_reported |
+| P11 | In the week-3 sample, "sell to the swarm" (B) is the unique largest category of the 90 lines; a tie for largest counts as Wrong. | 2026-09-21 | Series A |
+| P12 | In the week-3 sample, Haiku puts fewer than 15 of its 30 lines in "sell the signature" (A). | 2026-09-21 | Series A |
+| P13 | GitHub's reported total of open bounty-label issues exceeds 4,500 in the 2026-10-07 09:00 UTC capture (4,388 on 2026-09-14). If that capture does not run, Unresolvable. | 2026-10-07 | Series D, total_count_reported |
 
-Scored so far: 1 wrong, 2 unresolvable, 7 open. Calibration line after ten scored.
+Scored so far: 1 wrong, 2 unresolvable, 10 open. The register records hit rates; calibration in the proper sense needs stated probabilities, which these predictions do not carry.
 
 ## Method and denominators
 
 | Series | Source | Sample | Status |
 |---|---|---|---|
-| A. Swarm Forecast | Fresh-context samples of Claude Haiku 4.5, Sonnet 5, Opus 5, one fixed prompt | 30 samples, 90 lines, weekly; week 2 complete | complete |
+| A. Swarm Forecast | Fresh-context samples of the tier aliases haiku, sonnet, opus (reported as Haiku 4.5, Sonnet 5, Opus 5; resolved versions not recorded), one fixed prompt, manually started | 30 samples, 90 lines, weekly; week 2 complete | complete |
 | B. Marketplace crowding | Freelancer.com category pages | one capture, 2026-09-09 | retired 2026-09-10 |
 | C. Exit boards | Micro-startup marketplace front pages | one capture, 2026-09-09 | retired 2026-09-10 |
 | D. Bounty boards | GitHub search API, label:bounty, open, newest 100 | weekly, Mondays 09:00 UTC | collecting |
 | E. HN supply and demand | Algolia HN API, latest monthly freelancer thread | weekly | collecting |
 
-Footer changes: "Next issue: week of 22 September. Next weekly sample: 2026-09-21. Next release-day sample: on the next frontier model release from either lineage."
+Footer changes: "Next issue: week of 22 September. Next weekly sample: target 2026-09-21 09:00 UTC, actual start and end recorded. Next release-day sample: on the next frontier model release from either lineage."
