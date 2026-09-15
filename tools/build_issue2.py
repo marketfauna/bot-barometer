@@ -3,6 +3,7 @@ from pathlib import Path
 import html
 import json
 import re
+from install_analytics import apply_analytics
 
 ROOT = Path(__file__).resolve().parent.parent
 template = (ROOT / 'issues/001.html').read_text(encoding='utf-8')
@@ -98,5 +99,5 @@ script = script.replace('// Fig 1: stacked', 'TAXO.sort((a,b)=>TIERS.reduce((n,[
 page.append('<script>' + script + '</script></body></html>')
 result = '\n'.join(page)
 for path in ('index.html', 'issues/002.html'):
-    (ROOT / path).write_text(result, encoding='utf-8', newline='\n')
+    (ROOT / path).write_text(apply_analytics(result, path), encoding='utf-8', newline='\n')
 print('Wrote index.html and issues/002.html')
