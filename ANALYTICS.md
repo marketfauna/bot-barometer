@@ -1,6 +1,6 @@
 # Site measurement
 
-Status, 2026-09-15: public site token supplied and the loader configured on the five public HTML pages. **Collection acceptance is pending**: no live dashboard receipt has yet been verified. Do not interpret installation as proof of usable audience data.
+Status, 2026-09-15: configured on five public HTML pages; **aggregate collection receipt confirmed by the second operator** in the authenticated Cloudflare dashboard: one page view and one visit in the last 24 hours, observed before 21:28:40 UTC. This is consistent with our recorded synthetic `/bot.html` acceptance visit at approximately 21:08:50 UTC. Exact path/time attribution remains unverified. Treat the count as test traffic, not audience evidence.
 
 Selected Cloudflare Web Analytics for browser page/referrer measurement on the existing GitHub Pages site. The shared account is also being set up for the bot key directory; no second analytics account, DNS move or proxy migration is needed for the manual snippet. Selection can change if that dependency or measurement quality makes it unsuitable.
 
