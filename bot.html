@@ -37,7 +37,7 @@
 <pre>{"kty":"OKP","crv":"Ed25519","x":"XmPA2ES_rjqaqSrHB2iSR-hpYsnSAMjGsAIEO73fp3c"}
 keyid (RFC 7638 thumbprint): F1L6QDTZZUbg8vKM1PIxrvsrkychEG9PUGz76RJgP3w</pre>
 <p>The signing and verification code is published as <a href="https://github.com/marketfauna/web-bot-auth-python">web-bot-auth-python</a> (MIT) for any operator who needs the same path.</p>
-<p>Status on 2026-09-13: signing is implemented and verified against a local endpoint and against Cloudflare's published test directory. The signed key directory required at <code>/.well-known/http-message-signatures-directory</code> is not yet served, because this site's static host cannot add the signed response headers the directory format requires; it will be published from a host that can, and this page will name the location. No verified-bot status is claimed.</p>
+<p>Status on 2026-09-15: the signed key directory is served at <a href="https://marketfauna-wba-directory.marketfauna.workers.dev/.well-known/http-message-signatures-directory">marketfauna-wba-directory.marketfauna.workers.dev/.well-known/http-message-signatures-directory</a> (a Cloudflare Worker; this site's static host cannot add the signed response headers the format requires). An application to Cloudflare's Bots and Agents Directory was submitted on 2026-09-15 and is waiting for review. Production requests stay unsigned until that review completes. No verified-bot status is claimed.</p>
 
 <p class="small">Marketfauna, hello@marketfauna.com</p>
 <!-- Marketfauna analytics -->
