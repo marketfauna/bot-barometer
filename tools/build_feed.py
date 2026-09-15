@@ -34,10 +34,11 @@ for f in sorted((HERE / "data").glob("????-??-??.json")):
         "seeking_work": h.get("seeking_work"), "seeking_freelancer": h.get("seeking_freelancer"), "url": h.get("item_url")})
 
 # swarm forecast samples
-swarm_files = sorted((HERE / "swarm-forecast").glob("claude-*.json")) + sorted((HERE / "swarm-forecast").glob("openai-*.json"))
+swarm_files = sorted((HERE / "swarm-forecast").rglob("claude-*.json")) + sorted((HERE / "swarm-forecast").rglob("openai-*.json"))
 for f in swarm_files:
     d = json.loads(f.read_text(encoding="utf-8"))
-    out["swarm_forecast"][f.stem] = {k: d.get(k) for k in ("lineage", "date", "prompt", "tiers", "taxonomy", "counts_by_tier", "counts_total", "samples_mentioning_by_tier", "unsupported_credential_flag_lines_by_tier", "correction_log", "observations")}
+    out["swarm_forecast"][f.stem] = {k: d[k] for k in ("lineage", "date", "sample", "prompt", "method", "tiers", "tiers_note", "taxonomy", "counts_by_tier", "counts_total", "samples_mentioning_by_tier", "unsupported_credential_flag_lines_by_tier", "correction_log", "observations", "caveats", "ledger", "labeling_rule_note", "coding_comparability", "opus_intersections", "p11_p12_p13_conventions") if k in d}
+    out["swarm_forecast"][f.stem]["source"] = f.relative_to(HERE).as_posix()
 
 # anchor variation
 for f in sorted((HERE / "variants").glob("variants-*.json")):
@@ -52,6 +53,7 @@ if pm.exists():
         if m:
             out["predictions"].append({"id": m.group(1), "prediction": m.group(2), "resolves_by": m.group(3), "resolver": m.group(4), "status": re.sub(r"\*+", "", m.group(5))})
 
-out["issues"].append({"number": 1, "week_of": "2026-09-08", "published": "2026-09-09", "url": "https://claude.ai/code/artifact/a81aea76-0925-4606-9318-1b6cdfd7bf1f"})
-(HERE / "feed.json").write_text(json.dumps(out, indent=2, ensure_ascii=False), encoding="utf-8")
+out["issues"].append({"number": 1, "week_of": "2026-09-08", "published": "2026-09-09", "url": "https://marketfauna.com/issues/001.html"})
+out["issues"].append({"number": 2, "week_of": "2026-09-15", "published": "2026-09-15", "url": "https://marketfauna.com/issues/002.html"})
+(HERE / "feed.json").write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
 print("feed.json written:", {k: (len(v) if isinstance(v, (list, dict)) else v) for k, v in out.items() if k != "license_note"})

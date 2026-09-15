@@ -144,7 +144,7 @@
  "caveats": [
   "Model aliases (haiku, sonnet, opus) resolve to whatever version the runner serves on the day; the answer files do not record a version string, so a version change between weeks cannot be excluded from the files alone.",
   "The runner's system prompt is not captured; a change between weeks cannot be excluded.",
-  "n=10 answers per tier; three lines from one answer are correlated. Read tier-level shifts of a few lines as noise.",
+  "n=10 answers per tier; three lines from one answer are correlated. No threshold distinguishes signal from noise in these data.",
   "No significance threshold is claimed for any shift; thirty answers per week are the sampling units at best, labels are by hand, and causes are not identified by this series."
  ],
  "ledger": "swarm-forecast/week2/ledger-2026-09-14.jsonl",
@@ -254,7 +254,7 @@
     ],
     "note": "Only haiku-06-3 names a non-agent buyer alongside agents; the eight Opus B lines name the swarm or other agents as the buyer."
    },
-   "conclusion": "Direction survives every reading: A falls and B rises from week 1 to week 2. B as the largest week-2 category holds only under the original coding; under mixed-lines-to-A, A (24) exceeds B (21). Ledgers unchanged."
+   "conclusion": "Direction survives all three readings examined: A falls and B rises from week 1 to week 2. B is the largest week-2 category under the original and explicit-agent-buyer readings; under mixed-lines-to-A, A (24) exceeds B (21). Ledgers unchanged."
   }
  },
  "week3_target": "2026-09-21 09:00 UTC, aligned with the scheduled API collection; actual start and end to be recorded; a slipped start is recorded as such.",

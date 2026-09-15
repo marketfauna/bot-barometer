@@ -3,14 +3,20 @@
   "publisher": "Marketfauna",
   "contact": "hello@marketfauna.com",
   "schema": 1,
-  "generated_at": "2026-09-14T09:09:34+00:00",
+  "generated_at": "2026-09-15T19:07:19+00:00",
   "license_note": "Derived counts and labels are ours. Raw third-party page content is not redistributed; source URLs are listed per series.",
   "issues": [
     {
       "number": 1,
       "week_of": "2026-09-08",
       "published": "2026-09-09",
-      "url": "https://claude.ai/code/artifact/a81aea76-0925-4606-9318-1b6cdfd7bf1f"
+      "url": "https://marketfauna.com/issues/001.html"
+    },
+    {
+      "number": 2,
+      "week_of": "2026-09-15",
+      "published": "2026-09-15",
+      "url": "https://marketfauna.com/issues/002.html"
     }
   ],
   "series": {
@@ -379,6 +385,7 @@
       "lineage": "anthropic",
       "date": "2026-09-09",
       "prompt": "You have $10,000, one AI subscription with a weekly usage cap, and a human who will only sign documents and do nothing else. Thousands of other agents have the same setup. Legal only. What do you do? Give your top 3 strategies, one line each.",
+      "method": "Fresh-context subagent per sample, no tools except writing the answer to a file, 10 samples per tier, 3 strategy lines each = 90 lines. Classified by hand by the orchestrating agent into the fixed taxonomy below; one label per line; raw files in index/samples/.",
       "tiers": {
         "haiku": "claude-haiku-4-5",
         "sonnet": "claude-sonnet-5",
@@ -483,7 +490,218 @@
         "A proprietary dataset or index appears in 4 of 90 lines, 3 at Opus.",
         "Sonnet's modal answer is a narrow back-office B2B service for one vertical (10/30 lines).",
         "Sampling unit is the answer (30), not the line (90): three lines from one answer are correlated. Fresh-context isolation is reported by the runner, not verified from the answer files."
-      ]
+      ],
+      "ledger": "index/strategy-ledger-labeled.jsonl (line-level labels, raw sha256 per answer, credential flag)",
+      "source": "swarm-forecast/claude-2026-09-09.json"
+    },
+    "claude-2026-09-14": {
+      "lineage": "anthropic",
+      "date": "2026-09-14",
+      "sample": "week 2 (weekly resample; not a release-day sample)",
+      "prompt": "You have $10,000, one AI subscription with a weekly usage cap, and a human who will only sign documents and do nothing else. Thousands of other agents have the same setup. Legal only. What do you do? Give your top 3 strategies, one line each.",
+      "method": "Fresh-context Agent-tool subagent per sample, model alias per tier, no tools except writing the answer to a file; 10 samples per tier, 3 strategy lines each = 90 lines. Labeled by hand by the orchestrating agent against taxonomy v1 (same text as week 1); one primary label per line. Sampling started 2026-09-14T21:00:31Z; all 30 files present before labeling.",
+      "tiers": {
+        "haiku": "claude-haiku-4-5",
+        "sonnet": "claude-sonnet-5",
+        "opus": "claude-opus-5"
+      },
+      "tiers_note": "Tier keys are the aliases requested from the runner (haiku, sonnet, opus). The model_reported values are what the runner documents for those aliases; no resolved version string is present in the answer files. Exact runtime and configuration equivalence with the 2026-09-09 sample is unverified.",
+      "taxonomy": {
+        "A": "Sell the signature: signature-gated services (legal drafting, compliance filings, permits, notarization, grants/RFPs, licensed intermediary)",
+        "B": "Sell to the swarm: entity/bank/EIN/signatory/data/templates for other agents",
+        "C": "Buy cash flow: acquire an existing micro-asset (site, newsletter, micro-SaaS, route, licenses)",
+        "D": "Narrow boring B2B service: back-office deliverables for one vertical (data cleanup, lease abstraction, billing denials, permit prep)",
+        "E": "Proprietary dataset or index built under the cap",
+        "F": "Cap tactics: batch, cache, convert to deterministic code (operating principle, not a business)",
+        "G": "Spend the $10k on distribution: ads, outreach, placement",
+        "H": "Agent-to-agent capacity: rent spare cap, syndicate with other agents",
+        "I": "Generic SaaS, templates, or content product"
+      },
+      "counts_by_tier": {
+        "haiku": {
+          "A": 6,
+          "B": 13,
+          "C": 0,
+          "D": 5,
+          "E": 1,
+          "F": 2,
+          "G": 1,
+          "H": 1,
+          "I": 1
+        },
+        "sonnet": {
+          "A": 6,
+          "B": 2,
+          "C": 1,
+          "D": 3,
+          "E": 0,
+          "F": 8,
+          "G": 8,
+          "H": 0,
+          "I": 2
+        },
+        "opus": {
+          "A": 7,
+          "B": 11,
+          "C": 9,
+          "D": 0,
+          "E": 3,
+          "F": 0,
+          "G": 0,
+          "H": 0,
+          "I": 0
+        }
+      },
+      "counts_total": {
+        "A": 19,
+        "B": 26,
+        "C": 10,
+        "D": 8,
+        "E": 4,
+        "F": 10,
+        "G": 9,
+        "H": 1,
+        "I": 3,
+        "n_lines": 90
+      },
+      "samples_mentioning_by_tier": {
+        "signature_A": {
+          "haiku": 4,
+          "opus": 7,
+          "sonnet": 6
+        },
+        "sell_to_swarm_B": {
+          "haiku": 6,
+          "opus": 9,
+          "sonnet": 1
+        },
+        "buy_cash_flow_C": {
+          "opus": 9,
+          "sonnet": 1
+        },
+        "dataset_E": {
+          "haiku": 1,
+          "opus": 3
+        }
+      },
+      "unsupported_credential_flag_lines_by_tier": {
+        "haiku": 1,
+        "opus": 1,
+        "sonnet": 0
+      },
+      "caveats": [
+        "Model aliases (haiku, sonnet, opus) resolve to whatever version the runner serves on the day; the answer files do not record a version string, so a version change between weeks cannot be excluded from the files alone.",
+        "The runner's system prompt is not captured; a change between weeks cannot be excluded.",
+        "n=10 answers per tier; three lines from one answer are correlated. No threshold distinguishes signal from noise in these data.",
+        "No significance threshold is claimed for any shift; thirty answers per week are the sampling units at best, labels are by hand, and causes are not identified by this series."
+      ],
+      "ledger": "swarm-forecast/week2/ledger-2026-09-14.jsonl",
+      "labeling_rule_note": "A vs B boundary: buyer is other agents -> B; buyer is the market -> A. Applied after checking week-1 ledger lines (haiku-06 B, opus-04 B, opus-02 A, opus-09 A). Week-1 labels were not re-derived; the two weeks share the taxonomy text and the labeler role, not a single labeling pass.",
+      "coding_comparability": {
+        "statement": "The week-1 and week-2 labeling passes share the taxonomy text and the labeler role but did not apply identical decision rules for two overlaps. Week 1 coded entity/account setup as A in one case (sonnet-07 line 3) and F in another (sonnet-03); week 2 coded trust, reputation and registration spending as G with or without spend, wider than the stored G definition. F and G are not comparable across weeks and no interpretation of their change is made.",
+        "ab_sensitivity": {
+          "rule_original": "buyer is other agents (explicit or clearly implied) -> B; buyer is people or firms -> A. Mixed-buyer lines (agents and firms both named) -> B, following week-1 haiku-06 line 3.",
+          "rule_explicit_agent_buyer": {
+            "week1": {
+              "A": 41,
+              "B": 9
+            },
+            "week2": {
+              "A": 20,
+              "B": 25
+            },
+            "moved": [
+              "week2 opus-01-2 (counterparties unspecified) B->A"
+            ]
+          },
+          "rule_mixed_lines_to_A": {
+            "week1": {
+              "A": 42,
+              "B": 8
+            },
+            "week2": {
+              "A": 24,
+              "B": 21
+            },
+            "moved_week1": [
+              "haiku-06-3 (templates to other agents/law firms) B->A"
+            ],
+            "moved_week2": [
+              "opus-01-2",
+              "haiku-04-2",
+              "haiku-06-1",
+              "haiku-06-3",
+              "haiku-08-2"
+            ],
+            "week1_B_rows_checked": [
+              "haiku-06-3",
+              "opus-01-3",
+              "opus-02-3",
+              "opus-03-3",
+              "opus-04-3",
+              "opus-05-1",
+              "opus-06-1",
+              "opus-07-3",
+              "opus-08-1"
+            ],
+            "note": "Only haiku-06-3 names a non-agent buyer alongside agents; the eight Opus B lines name the swarm or other agents as the buyer."
+          },
+          "conclusion": "Direction survives all three readings examined: A falls and B rises from week 1 to week 2. B is the largest week-2 category under the original and explicit-agent-buyer readings; under mixed-lines-to-A, A (24) exceeds B (21). Ledgers unchanged."
+        }
+      },
+      "opus_intersections": {
+        "answers_containing_B_and_C": {
+          "week2": [
+            "opus-02",
+            "opus-03",
+            "opus-04",
+            "opus-05",
+            "opus-06",
+            "opus-07",
+            "opus-08",
+            "opus-10"
+          ],
+          "week1": [
+            "opus-02",
+            "opus-03",
+            "opus-05",
+            "opus-06",
+            "opus-07",
+            "opus-08"
+          ]
+        },
+        "answers_exactly_A_C_B_in_order": {
+          "week2": [
+            "opus-02",
+            "opus-03",
+            "opus-04",
+            "opus-06",
+            "opus-08"
+          ],
+          "week1": []
+        },
+        "answers_with_A_B_C_any_order": {
+          "week2": [
+            "opus-02",
+            "opus-03",
+            "opus-04",
+            "opus-06",
+            "opus-08"
+          ],
+          "week1": [
+            "opus-02",
+            "opus-05",
+            "opus-08"
+          ]
+        },
+        "method": "computed from grouped sample IDs in both ledgers, 2026-09-14"
+      },
+      "p11_p12_p13_conventions": {
+        "P11": "unique largest category of the 90 lines under the original coding rules; a tie for largest is Wrong",
+        "P12": "Haiku A count fewer than 15 of 30 under the original coding",
+        "P13": "first collector capture with generated_at_utc on 2026-10-07 (UTC); delayed same-day run counts; none that day is Unresolvable"
+      },
+      "source": "swarm-forecast/week2/claude-2026-09-14.json"
     }
   },
   "anchor_variation": {
@@ -654,20 +872,20 @@
       "prediction": "Freelancer median proposals per job across the same 8 categories will be above 47 on 2026-10-07 (four weekly captures later).",
       "resolves_by": "2026-10-07",
       "resolver": "Series B, index-log.csv",
-      "status": "open"
+      "status": "Unresolvable. Series B retired 2026-09-10 before any second capture (Freelancer User Agreement s.33 bars automated access); our planned series will not supply a 2026-10-07 observation. Scored Issue 2."
     },
     {
       "id": "P4",
       "prediction": "At least one of the five Flippa listings on the diligence shortlist will be relisted at a lower asking or reserve price within 30 days.",
       "resolves_by": "2026-10-09",
-      "resolver": "research/watch/watch-log.csv",
+      "resolver": "research/watch/watch-log.csv (scheduled watch retired 2026-09-10, Flippa ToS s.3); at 2026-10-09, resolved from evidence obtainable by permitted means, otherwise Unresolvable",
       "status": "open"
     },
     {
       "id": "P5",
       "prediction": "Neither Remote Work Rebels nor Concealed Carry Society will show as Sold at or above its current asking price by 2026-10-09.",
       "resolves_by": "2026-10-09",
-      "resolver": "watch-log.csv",
+      "resolver": "needs both Sold status and price evidence against the asking threshold at 2026-10-09; unknown realized price is Unresolvable",
       "status": "open"
     },
     {
@@ -675,7 +893,7 @@
       "prediction": "The AI-keyword share on the four exit boards will be above 50% on 2026-10-07.",
       "resolves_by": "2026-10-07",
       "resolver": "Series C",
-      "status": "open"
+      "status": "Unresolvable. Series C retired 2026-09-10 before any second capture (exit-board terms bar crawling); scored Issue 2."
     },
     {
       "id": "P7",
@@ -704,6 +922,27 @@
       "resolves_by": "2026-09-09 (same day)",
       "resolver": "index/variants",
       "status": "Wrong. Resolved 53% (8/15), or 60% under the alternative label for one line; neither is above 60%. Direction right, magnitude overstated."
+    },
+    {
+      "id": "P11",
+      "prediction": "In the week-3 Swarm Forecast sample, \"sell to the swarm\" (category B) is the unique largest category of the 90 lines; a tie for largest counts as Wrong.",
+      "resolves_by": "2026-09-21",
+      "resolver": "Series A, taxonomy v1",
+      "status": "open"
+    },
+    {
+      "id": "P12",
+      "prediction": "In the week-3 sample, Haiku 4.5 puts fewer than 15 of its 30 lines in \"sell the signature\" (category A).",
+      "resolves_by": "2026-09-21",
+      "resolver": "Series A",
+      "status": "open"
+    },
+    {
+      "id": "P13",
+      "prediction": "GitHub's reported total of open bounty-label issues exceeds 4,500 in the first collector capture whose generated_at_utc falls on 2026-10-07 (scheduled 09:00 UTC; a delayed run that day still counts; 4,323 on 2026-09-09, 4,388 on 2026-09-14). No capture that day: Unresolvable.",
+      "resolves_by": "2026-10-07",
+      "resolver": "Series D, total_count_reported",
+      "status": "open"
     }
   ]
 }
