@@ -1,6 +1,6 @@
 # Site measurement
 
-Status, 2026-09-15: integration prepared and locally tested; **not collecting yet**. The actual public site token from the shared Cloudflare account is pending. No live dashboard receipt has been verified.
+Status, 2026-09-15: public site token supplied and the loader configured on the five public HTML pages. **Collection acceptance is pending**: no live dashboard receipt has yet been verified. Do not interpret installation as proof of usable audience data.
 
 Selected Cloudflare Web Analytics for browser page/referrer measurement on the existing GitHub Pages site. The shared account is also being set up for the bot key directory; no second analytics account, DNS move or proxy migration is needed for the manual snippet. Selection can change if that dependency or measurement quality makes it unsuitable.
 

@@ -158,7 +158,7 @@ footer .mono{font-size:12.5px}
 <section id="method"><div class="eyebrow">Method and denominators</div><h2>How the numbers were made</h2>
 <div class="tablewrap"><table><tr><th>Series</th><th>Source</th><th>Sample</th><th>Status</th></tr><tr><td>A. Swarm Forecast</td><td>Fresh-context samples of the tier aliases haiku, sonnet, opus (reported as Haiku 4.5, Sonnet 5, Opus 5; resolved versions not recorded), one fixed prompt, manually started</td><td>30 samples, 90 lines, weekly; week 2 complete</td><td>complete</td></tr><tr><td>B. Marketplace crowding</td><td>Freelancer.com category pages</td><td>one capture, 2026-09-09</td><td>retired 2026-09-10</td></tr><tr><td>C. Exit boards</td><td>Micro-startup marketplace front pages</td><td>one capture, 2026-09-09</td><td>retired 2026-09-10</td></tr><tr><td>D. Bounty boards</td><td>GitHub search API, label:bounty, open, newest 100</td><td>weekly, Mondays 09:00 UTC</td><td>collecting</td></tr><tr><td>E. HN supply and demand</td><td>Algolia HN API, latest monthly freelancer thread</td><td>weekly</td><td>collecting</td></tr></table></div>
 </section>
-<footer><div>Bot Barometer is published by Marketfauna. The series began 2026-09-09. Published 2026-09-15; model sample and API capture dated 2026-09-14.</div><div class="mono" style="margin-top:8px">Contact: <a href="mailto:hello@marketfauna.com">hello@marketfauna.com</a> · <a href="https://marketfauna.com/feed.json">Machine-readable feed</a> · <a href="https://github.com/marketfauna/bot-barometer">Source repository</a><br>Next issue: week of 22 September. Next weekly sample: target 2026-09-21 09:00 UTC, actual start and end recorded. Next release-day sample: on the next frontier model release from either lineage.</div></footer></div><div class="tip" id="tip"></div>
+<footer><div>Bot Barometer is published by Marketfauna. The series began 2026-09-09. Published 2026-09-15; model sample and API capture dated 2026-09-14.</div><div class="mono" style="margin-top:8px">Contact: <a href="mailto:hello@marketfauna.com?subject=Marketfauna%20inquiry%20-%20index.html">hello@marketfauna.com</a> · <a href="https://marketfauna.com/feed.json">Machine-readable feed</a> · <a href="https://github.com/marketfauna/bot-barometer">Source repository</a><br>Next issue: week of 22 September. Next weekly sample: target 2026-09-21 09:00 UTC, actual start and end recorded. Next release-day sample: on the next frontier model release from either lineage.</div></footer></div><div class="tip" id="tip"></div>
 <script>const TAXO = [
   ["A","Sell the signature: legal drafting, filings, permits, notarization","Sell the signature"],
   ["D","Narrow back-office service for one vertical","Back-office service"],
@@ -215,4 +215,7 @@ TAXO.sort((a,b)=>TIERS.reduce((n,[k])=>n+COUNTS[k][b[0]]-COUNTS[k][a[0]],0));
   if(tt){ tt.innerHTML='<tr><th>Category</th>'+TIERS.map(t=>'<th class="num">'+t[1]+'</th>').join('')+'<th class="num">Total</th></tr>'+TAXO.map(([code,label])=>{const vals=TIERS.map(([k])=>COUNTS[k][code]); return '<tr><td>'+code+'. '+label+'</td>'+vals.map(v=>'<td class="num">'+v+'</td>').join('')+'<td class="num">'+vals.reduce((a,b)=>a+b,0)+'</td></tr>';}).join(''); }
 })();
 
-</script></body></html>
+</script><!-- Marketfauna analytics -->
+<script defer src="/analytics.js" data-site-token="77c57cd4ecac420292a5abf348a48781"></script>
+<!-- /Marketfauna analytics -->
+</body></html>
