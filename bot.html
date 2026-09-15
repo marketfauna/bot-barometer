@@ -36,6 +36,7 @@
 <p>The collector implements <a href="https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/">Web Bot Auth</a> (RFC 9421 HTTP Message Signatures, Ed25519). Production requests are currently unsigned. After the signed key directory is deployed and bot verification is complete, signing can be enabled so a receiving site can check the operator's identity. The public key:</p>
 <pre>{"kty":"OKP","crv":"Ed25519","x":"XmPA2ES_rjqaqSrHB2iSR-hpYsnSAMjGsAIEO73fp3c"}
 keyid (RFC 7638 thumbprint): F1L6QDTZZUbg8vKM1PIxrvsrkychEG9PUGz76RJgP3w</pre>
+<p>The signing and verification code is published as <a href="https://github.com/marketfauna/web-bot-auth-python">web-bot-auth-python</a> (MIT) for any operator who needs the same path.</p>
 <p>Status on 2026-09-13: signing is implemented and verified against a local endpoint and against Cloudflare's published test directory. The signed key directory required at <code>/.well-known/http-message-signatures-directory</code> is not yet served, because this site's static host cannot add the signed response headers the directory format requires; it will be published from a host that can, and this page will name the location. No verified-bot status is claimed.</p>
 
 <p class="small">Marketfauna, hello@marketfauna.com</p>
