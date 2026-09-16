@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Agent access readings and Web Bot Auth setup by Marketfauna: what the sites you fetch actually do to an identified bot, and a signed identity done right.">
+<title>Agent Access Readings</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{--paper:#f6f7f9;--paper-2:#eceef2;--line:#d5d9e0;--ink:#14171c;--ink-2:#4f5865;--ink-3:#5b6470;--accent:#2a78d6;--accent-ink:#1c5cab;--good:#0b7a0b}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#15171b;--paper-2:#1e2127;--line:#30353d;--ink:#f1f2f4;--ink-2:#b5bcc7;--ink-3:#7f8794;--accent:#3987e5;--accent-ink:#86b6ef;--good:#2fbf2f}}
+:root[data-theme="dark"]{--paper:#15171b;--paper-2:#1e2127;--line:#30353d;--ink:#f1f2f4;--ink-2:#b5bcc7;--ink-3:#7f8794;--accent:#3987e5;--accent-ink:#86b6ef;--good:#2fbf2f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.55}
+.wrap{max-width:900px;margin:0 auto;padding:32px 24px 72px}
+h1,h2,h3{font-family:"Archivo",Arial,sans-serif;text-wrap:balance;margin:0}
+h1{font-size:40px;font-weight:800;font-stretch:85%;letter-spacing:-.02em;line-height:1}
+h2{font-size:23px;font-weight:700;font-stretch:90%;letter-spacing:-.01em}
+.eyebrow{font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.mast{border-bottom:2px solid var(--ink);padding-bottom:16px}
+.sub{color:var(--ink-2);max-width:64ch;margin-top:10px}
+a{color:var(--accent-ink)}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin:28px 0}
+.product{background:var(--paper);padding:20px 22px}
+.price{font-family:"Archivo",Arial,sans-serif;font-size:34px;font-weight:700;font-stretch:90%;letter-spacing:-.02em;margin:8px 0 4px}
+.price small{font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);font-weight:400;margin-left:8px}
+.product p{color:var(--ink-2);margin:8px 0;max-width:48ch}
+.product ul{padding-left:18px;color:var(--ink-2);margin:8px 0}
+.cta{display:inline-block;margin-top:10px;padding:9px 14px;background:var(--accent);color:#fff;text-decoration:none;font-family:"Archivo",Arial,sans-serif;font-weight:700;border-radius:3px}
+.cta.secondary{background:transparent;color:var(--accent-ink);border:1px solid var(--accent-ink)}
+.note{background:var(--paper-2);border-left:3px solid var(--accent);padding:12px 16px;font-size:15px;color:var(--ink-2);max-width:72ch;margin-top:8px}
+section{margin-top:40px}
+p{max-width:68ch}
+code{font-family:"IBM Plex Mono",Consolas,monospace;font-size:.92em}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-family:"IBM Plex Mono",Consolas,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+footer{margin-top:56px;border-top:2px solid var(--ink);padding-top:14px;font-size:14px;color:var(--ink-2)}
+@media (max-width:700px){.products{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="eyebrow">Marketfauna · Agent access</div>
+    <h1>What the sites you fetch actually do to your bot</h1>
+    <div class="sub">For operators of small, honestly identified crawlers and agents. A robots.txt tracker tells you what a site says. An access reading tells you what the site returned to an identified request today, site by site, with the signed and unsigned cases kept apart and the cause left open where it is not established. The setup service puts a signed identity on your collector to the current Cloudflare profile, with the tests to show it.</div>
+  </header>
+
+  <div class="products">
+    <div class="product">
+      <div class="eyebrow">For operators</div>
+      <h2>Agent Access Reading</h2>
+      <div class="price">$149 <small>per panel, up to 25 sites</small></div>
+      <p>You name the sites your collector needs, one public URL per site (the root by default), and the User-Agent it sends. Within 48 hours of agreed scope you get a dated reading, readable and as JSON, with response metadata, headers, hashes and diagnostic evidence retained.</p>
+      <p>What is probed, exactly: our own identified bot, from our network, with your User-Agent string as the identifier and, for the signed condition, our own registered key and directory. Three attempts per condition. A User-Agent is not your egress, session or signing identity, so this is a reading of how the sites treat an identified request shaped like yours, not a reproduction of your bot. Running the same checks from your side is not included unless agreed.</p>
+      <ul>
+        <li>Declared policy per site: robots.txt for your agent name, for unnamed agents, and for the common AI crawlers, from the file as served that day</li>
+        <li>Observed response to an honest, identified request: status, challenge headers and the reported server, three attempts per site, robots.txt honoured throughout; a 200 is reported as an HTTP observation unless a content marker confirms the page arrived</li>
+        <li>Signed versus unsigned, measured separately: whether presenting a Web Bot Auth signature changed the observed status at each site, reported as observed and never inferred</li>
+        <li>The next step per site where you were refused: a documented API, a registration route, or exclusion</li>
+        <li>Where a free tracker already answers the question, we say so and link it instead of charging you for it</li>
+      </ul>
+      <a class="cta" href="mailto:hello@marketfauna.com?subject=Access%20reading%20request&body=Sites%20(up%20to%2025)%3A%20%0AUser-Agent%20your%20collector%20sends%3A%20%0AWhat%20failed%2C%20if%20anything%3A%20">Request a reading</a>
+      <div class="note">A reading is an observation from our network on one day, not a guarantee of what your network sees tomorrow. HTTP 200 is not permission: whether a site's terms allow your use is a reading of the terms, and the packet says where that reading is still needed.</div>
+    </div>
+    <div class="product">
+      <div class="eyebrow">For operators</div>
+      <h2>Web Bot Auth Setup</h2>
+      <div class="price">$249 <small>pilot price, fixed scope</small></div>
+      <p>A signed identity for one collector, to the current Cloudflare profile: RFC 9421 Ed25519 request signatures, a signed key directory on infrastructure that can set response headers (a free Worker on your own account), and the directory application prepared for you to submit.</p>
+      <p>Scope of the pilot: one Python collector, one directory deployment on your own Cloudflare account, integration done in your environment with the repository and account access we agree up front, and a handoff with the test evidence. You generate and keep the private key. Other languages are quoted separately. Retesting after Cloudflare's decision is included once; ongoing support is not.</p>
+      <ul>
+        <li>Signing integrated into your collector (Python reference implementation, MIT) with expired and tampered cases failing in tests</li>
+        <li>Key directory deployed and verified live: correct media type, thumbprint key id, signed response, no-store caching</li>
+        <li>Signing controls tested against our separately implemented verifier; Cloudflare diagnostic results included. Before registration, Cloudflare can reject the request as an unknown key, which does not establish signature acceptance</li>
+        <li>Application text and field values prepared; you submit from your own account</li>
+      </ul>
+      <a class="cta secondary" href="mailto:hello@marketfauna.com?subject=Web%20Bot%20Auth%20setup&body=Collector%20language%20and%20host%3A%20%0AWhere%20it%20is%20being%20blocked%3A%20">Ask about setup</a>
+      <div class="note">This does not obtain verified-bot status. Cloudflare decides that in its own review, registration is necessary but not sufficient, and no site is obliged to admit a verified bot. Our own collector's application has been waiting for review since 15 September 2026; we will say when that changes.</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>What a reading looks like</h2>
+    <p>In our 15 September 2026 reading of 24 sites, our parser found no root disallow for our unnamed identified bot at 20. Four of those sites returned HTTP 403 on every signed and unsigned attempt; a fifth returned 403 intermittently. A sixth produced transport failures, whose cause we did not identify. Signed and unsigned status sequences matched in this run. We did not establish that any site recognized our signing key. These are observations from our network, not a test of a customer's collector.</p>
+    <p>One row from that reading, as delivered:</p>
+    <div class="tablewrap"><table>
+      <tr><th>Site</th><th>Declared policy</th><th>Observed, unsigned (3)</th><th>Observed, signed (3)</th><th>Next step</th></tr>
+      <tr><td>www.npmjs.com</td><td>robots.txt: no root disallow for our agent, for unnamed agents, or for GPTBot and ClaudeBot</td><td>403, 403, 403 with <code>cf-mitigated: challenge</code>, <code>server: cloudflare</code></td><td>403, 403, 403, same headers</td><td>The npm registry publishes a documented API; the challenge is on the website, and the reading says which one your collector needs</td></tr>
+    </table></div>
+    <div class="tablewrap"><table>
+      <tr><th>Column</th><th>What it contains</th></tr>
+      <tr><td>Declared policy</td><td>robots.txt verdicts at the root for your agent, for unnamed agents, and for the common AI crawlers; the file's fetch status and hash</td></tr>
+      <tr><td>Observed response</td><td>Status per attempt, challenge headers such as <code>cf-mitigated</code>, the reported server header as a clue and never as proof of cause, whether the final page differed from the root, and transport failures kept as their own class</td></tr>
+      <tr><td>Signed observation</td><td>The same requests carrying a Web Bot Auth signature, reported beside the unsigned ones, with what can and cannot be concluded from one key on one day</td></tr>
+      <tr><td>Next step</td><td>Per refused site: the documented route we found, or "none found" with what we searched</td></tr>
+      <tr><td>Substitutes</td><td>Where BotWitness, StackScan or the site's own documentation already answers the question, stated plainly</td></tr>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Rules we hold ourselves to</h2>
+    <p>robots.txt governs: if it disallows your agent, we do not request the page and the row says so. One honest User-Agent, no evasion, no challenge solving, no proxies. A refusal is reported with the evidence that produced it, and no server header is presented as proof of cause. A null result is reported as null. We do not scrape sites whose terms we have read as barring automated access.</p>
+  </section>
+
+  <footer>
+    <div>Marketfauna is a research practice on the non-human participants in markets; its own collector is described at <a href="/bot.html">/bot.html</a> and its signing code is published at <a href="https://github.com/marketfauna/web-bot-auth-python">web-bot-auth-python</a>. Payment: card payment links once the business's payment account completes its review; until then, instructions are confirmed when scope is agreed and the work is invoiced at delivery. Contact <a href="mailto:hello@marketfauna.com?subject=Marketfauna%20inquiry%20-%20access.html">hello@marketfauna.com</a>. Weekly series: <a href="https://marketfauna.com/">Bot Barometer</a>.</div>
+  </footer>
+</div>
+
+<!-- Marketfauna analytics -->
+<script defer src="/analytics.js" data-site-token="77c57cd4ecac420292a5abf348a48781"></script>
+<!-- /Marketfauna analytics -->
+</body>
+</html>
