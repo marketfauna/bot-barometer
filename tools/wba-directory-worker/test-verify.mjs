@@ -35,6 +35,7 @@ const cases = [
   ["unknown keyid", await signed("/verify", { keyid: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" }), 401, /unknown keyid/],
   ["wrong key, right keyid", await signed("/verify", { key: other.privateKey }), 401, /signature invalid/],
   ["wrong tag", await signed("/verify", { tag: "http-message-signatures-directory" }), 401, /wrong tag/],
+  ["external agent, not allowlisted (no fetch)", await signed("/verify", { agent: "https://example.com" }), 401, /not verified by this test bed/],
   ["gated valid", await signed("/gated/sample.json"), 200, null],
   ["gated unsigned", new Request(`https://${authority}/gated/sample.json`, { headers: { host: authority } }), 400, null],
 ];

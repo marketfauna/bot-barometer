@@ -10,11 +10,14 @@
 //   GET /verify
 //       Verifies the incoming request's RFC 9421 signature (tag web-bot-auth) and returns a JSON
 //       verdict with every check's result. 400 when the three headers are absent, 401 when present
-//       but not verified, 200 when verified. Keys are looked up first in this Worker's own
-//       directory, else fetched from the Signature-Agent's directory (the directory response's own
-//       signature is NOT verified in this version; the verdict says so).
+//       but not verified, 200 when verified. Keys come from this Worker's own directory; a
+//       Signature-Agent host listed in the ALLOWED_SIGNATURE_AGENTS var has its directory fetched
+//       with bounds (no redirects, 16 KiB, 10 keys, 5 s); any other identity is rejected before any
+//       fetch. The fetched directory's own response signature is NOT verified in this version; the
+//       verdict says so. This verifies identity, not an authorization relationship.
 //   GET /gated/sample.json
-//       A resource served only to a verified request: the "demonstrated useful task" control.
+//       Public test data served only to a verified request: the "demonstrated useful task" control.
+//       Not a template for protecting customer resources (identity is not authorization).
 //   anything else -> 302 to the purpose page.
 //
 // The private key arrives only as the secret WBA_PRIVATE_KEY_PKCS8_B64 (base64 of the DER
@@ -97,8 +100,22 @@ function signatureBase(components, ser) {
 
 // ------------------------------------------------------------------ key lookup
 
-async function keysFromDirectory(agentUrl, own) {
-  // Own directory first (no network); otherwise fetch the Signature-Agent's directory.
+// Which Signature-Agent hosts this test bed will verify. Own host always; others only if listed in
+// the ALLOWED_SIGNATURE_AGENTS var (comma-separated hosts). Any other identity is rejected before
+// any network fetch (2026-09-16, after Codex's review: an unrestricted fetch of an attacker-chosen
+// host before the signature is checked is a request-forgery path, and this bed does not need it).
+function allowedAgentHosts(env, own) {
+  const set = new Set([own.host]);
+  for (const h of (env.ALLOWED_SIGNATURE_AGENTS || "").split(",")) if (h.trim()) set.add(h.trim().toLowerCase());
+  return set;
+}
+
+const DIRECTORY_MAX_BYTES = 16384;
+const DIRECTORY_MAX_KEYS = 10;
+
+async function keysFromDirectory(agentUrl, own, allowed) {
+  // Own directory first (no network); an allowlisted host's directory is fetched with bounds:
+  // no redirects followed, body capped, key count capped, 5 s timeout. Everything else: no fetch.
   const result = { source: null, directory_signature_verified: false, error: null, keys: {} };
   let host;
   try { host = new URL(agentUrl).host.toLowerCase(); } catch (e) { result.error = "Signature-Agent is not a URL"; return result; }
@@ -107,15 +124,27 @@ async function keysFromDirectory(agentUrl, own) {
     result.keys[own.kid] = own.jwk;
     return result;
   }
+  if (!allowed.has(host)) {
+    result.source = "not fetched";
+    result.error = "signature-agent host not in this test bed's allowlist; external identities are not verified here";
+    return result;
+  }
   try {
     const r = await fetch(`https://${host}${DIRECTORY_PATH}`, {
       headers: { accept: MEDIA_TYPE, "user-agent": "MarketfaunaVerifier/1.0 (+https://marketfauna.com/bot.html)" },
+      redirect: "manual",
       signal: AbortSignal.timeout(5000),
     });
-    result.source = `fetched https://${host}${DIRECTORY_PATH} (status ${r.status})`;
+    result.source = `fetched https://${host}${DIRECTORY_PATH} (status ${r.status}, redirects not followed)`;
     if (!r.ok) { result.error = "directory fetch failed"; return result; }
-    const body = await r.json();
+    const len = Number(r.headers.get("content-length") || 0);
+    if (len > DIRECTORY_MAX_BYTES) { result.error = "directory too large"; return result; }
+    const text = await r.text();
+    if (text.length > DIRECTORY_MAX_BYTES) { result.error = "directory too large"; return result; }
+    const body = JSON.parse(text);
+    let n = 0;
     for (const k of body.keys || []) {
+      if (++n > DIRECTORY_MAX_KEYS) { result.error = "too many keys in directory"; break; }
       if (k.kty === "OKP" && k.crv === "Ed25519" && typeof k.x === "string") result.keys[await thumbprint(k)] = { kty: k.kty, crv: k.crv, x: k.x };
     }
   } catch (e) {
@@ -126,7 +155,7 @@ async function keysFromDirectory(agentUrl, own) {
 
 // ------------------------------------------------------------------ verification
 
-async function verifyRequest(request, url, own) {
+async function verifyRequest(request, url, own, allowed) {
   const now = Math.floor(Date.now() / 1000);
   const h = request.headers;
   const verdict = {
@@ -163,8 +192,9 @@ async function verifyRequest(request, url, own) {
   verdict.checks.not_future = now >= p.created - CLOCK_SKEW_S; if (!verdict.checks.not_future) return fail("not_future", "created in the future");
   verdict.checks.not_expired = now <= p.expires; if (!verdict.checks.not_expired) return fail("not_expired", "expired");
   const agentUrl = (h.get("signature-agent") || "").trim().replace(/^"|"$/g, "");
-  const lookup = await keysFromDirectory(agentUrl, own);
+  const lookup = await keysFromDirectory(agentUrl, own, allowed);
   verdict.key_lookup = { source: lookup.source, directory_signature_verified: lookup.directory_signature_verified, error: lookup.error, keys_found: Object.keys(lookup.keys).length };
+  if (lookup.source === "not fetched") return fail("agent_allowed", "signature-agent not verified by this test bed");
   const jwk = lookup.keys[p.keyid];
   verdict.checks.keyid_known = !!jwk; if (!jwk) return fail("keyid_known", "unknown keyid");
   let components;
@@ -216,11 +246,11 @@ export default {
     if (url.pathname === "/verify" || url.pathname === "/gated/sample.json") {
       const { jwk, kid } = await loadKey(env);
       const own = { host: url.host.toLowerCase(), jwk, kid };
-      const verdict = await verifyRequest(request, url, own);
+      const verdict = await verifyRequest(request, url, own, allowedAgentHosts(env, own));
       if (url.pathname === "/verify") return json(verdict, verdict.http_status);
       if (verdict.verified) {
         return json({ ok: true, resource: "sample.json", served_to_keyid: verdict.keyid, served_at: verdict.now,
-          message: "Served only to a request whose Web Bot Auth signature verified against the Signature-Agent's directory." }, 200);
+          message: "Public test data, served only to a request whose Web Bot Auth signature verified. Identity was verified; no authorization relationship is checked, so this is not a template for protecting customer resources." }, 200);
       }
       return json({ ok: false, resource: "sample.json", verdict }, verdict.http_status);
     }
