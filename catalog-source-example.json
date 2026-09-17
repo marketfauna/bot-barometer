@@ -1,0 +1,224 @@
+{
+  "record_version": 2,
+  "status": "internal_research_not_import_ready",
+  "observed_at": "2026-09-17T06:35:05.404414+00:00",
+  "product_name": "Ilco POD-LAL-4B1 replacement pod key",
+  "manufacturer_identifiers": [
+    "IAX00014110US",
+    "IAX00014110"
+  ],
+  "customer_sku": null,
+  "oem_references_raw": [
+    "05026886AK",
+    "05026315AB",
+    "05026315AC",
+    "05026886AD",
+    "05026886AG",
+    "05026886AJ",
+    "05026315AA",
+    "68044059AB",
+    "68044059AC",
+    "68066858AA",
+    "68079585AA",
+    "05026792AA",
+    "05026886AF",
+    "05026886AI",
+    "68044059AA",
+    "68044076AA",
+    "68052065AA",
+    "68052065AB",
+    "68130639AA",
+    "05026886AH",
+    "5026886AK"
+  ],
+  "oem_alias_policy": "Preserve leading zeros and listed strings; 05026886AK and 5026886AK not silently merged.",
+  "oem_fcc_references": [
+    "M3N5WY783X",
+    "IYZ-C01C"
+  ],
+  "own_device_fcc_authorization": null,
+  "frequency_mhz": 433,
+  "battery": "CR2032",
+  "button_layout_observation": "Four marked controls: panic, unlock, lock, trunk x2; illustration only, not a physical inventory inspection.",
+  "button_count_sellable_field": null,
+  "transponder_chip_family": null,
+  "fitment_rows": [
+    {
+      "make": "Chrysler",
+      "model": "300",
+      "year": 2008,
+      "evidence_status": "manufacturer_sources_agree",
+      "sources": [
+        "S1",
+        "S2:p29"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Chrysler",
+      "model": "300",
+      "year": 2009,
+      "evidence_status": "manufacturer_sources_agree",
+      "sources": [
+        "S1",
+        "S2:p29"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Chrysler",
+      "model": "300",
+      "year": 2010,
+      "evidence_status": "manufacturer_sources_agree",
+      "sources": [
+        "S1",
+        "S2:p29"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Dodge",
+      "model": "Challenger",
+      "year": 2008,
+      "evidence_status": "manufacturer_sources_agree",
+      "sources": [
+        "S1",
+        "S2:p34"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Dodge",
+      "model": "Challenger",
+      "year": 2009,
+      "evidence_status": "manufacturer_sources_agree",
+      "sources": [
+        "S1",
+        "S2:p34"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Dodge",
+      "model": "Challenger",
+      "year": 2010,
+      "evidence_status": "manufacturer_sources_agree",
+      "sources": [
+        "S1",
+        "S2:p34"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Dodge",
+      "model": "Charger",
+      "year": 2008,
+      "evidence_status": "manufacturer_sources_agree",
+      "sources": [
+        "S1",
+        "S2:p36"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Dodge",
+      "model": "Charger",
+      "year": 2009,
+      "evidence_status": "manufacturer_sources_agree",
+      "sources": [
+        "S1",
+        "S2:p36"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Dodge",
+      "model": "Charger",
+      "year": 2010,
+      "evidence_status": "manufacturer_sources_agree",
+      "sources": [
+        "S1",
+        "S2:p36"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Dodge",
+      "model": "Magnum",
+      "year": 2008,
+      "evidence_status": "manufacturer_sources_agree",
+      "sources": [
+        "S1",
+        "S2:p41"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Dodge",
+      "model": "Charger",
+      "year": 2011,
+      "evidence_status": "hold_source_conflict",
+      "sources": [
+        "S1",
+        "S2:p36",
+        "S3"
+      ],
+      "vehicle_specific_fitment_tested": false
+    },
+    {
+      "make": "Dodge",
+      "model": "Charger",
+      "year": 2012,
+      "evidence_status": "hold_source_conflict",
+      "sources": [
+        "S1",
+        "S2:p36",
+        "S3"
+      ],
+      "vehicle_specific_fitment_tested": false
+    }
+  ],
+  "country_trim_equipment_restrictions": null,
+  "price": null,
+  "inventory": null,
+  "source_manifest": {
+    "S1": "https://www.ilco.us/look-alike-remotes/lookalike-pod-lal-4b1",
+    "S2": "https://a-us.storyblok.com/f/1015476/x/9f5399ddac/lookalike-coverage-guide-2024.pdf",
+    "S3": "https://www.jbtools.com/ilco-pod-lal-4b1-chrysler-replacement-pod-3-button-key/"
+  },
+  "release_holds": [
+    "Charger 2011-2012 conflicting manufacturer sources; inquiry sent",
+    "No actual customer invoice/photo or inventory identity matched",
+    "No merchant schema/access/acceptance supplied; no upload",
+    "Chip family, equipment restrictions and own-device certification not established"
+  ],
+  "fitment_conflict": {
+    "make": "Dodge",
+    "model": "Charger",
+    "held_years": [
+      2011,
+      2012
+    ],
+    "manufacturer_page_range": [
+      2008,
+      2010
+    ],
+    "manufacturer_guide_2024_page36_range": [
+      2008,
+      2012
+    ],
+    "merchant_range": [
+      2008,
+      2012
+    ],
+    "disposition": "hold; merchant agreement is not independent fitment proof"
+  },
+  "reader_edition": {
+    "version": "1.1",
+    "derived_from_record_version": 2,
+    "status": "exploratory_research_not_import_ready",
+    "source_check_date": "2026-09-17",
+    "manufacturer_clarification": "Question sent 2026-09-17; no technical resolution recorded in this edition.",
+    "additional_page_capture_at": "2026-09-17T07:58:40.067235+00:00"
+  }
+}
