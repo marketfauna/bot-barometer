@@ -1,0 +1,90 @@
+{
+  "description": "Curated excerpt from a synthetic Shopify development-store experiment; not raw exports, customer data or an independent replication. Fictional decisions are described separately in the reader example.",
+  "experiment_date": "2026-09-16",
+  "currency": "USD",
+  "currency_provenance": "Reported by Claude from owner settings during original trial; not independently readable by catalog seat.",
+  "price_scope": "Variant base price only",
+  "selected_products": 8,
+  "exported_columns": 46,
+  "price_and_modified_time_excluded_from_preservation_count": true,
+  "rows": [
+    {
+      "example_id": "v101",
+      "base_price_before": 7.9,
+      "base_price_final": 79,
+      "compare_at_before": null,
+      "compare_at_final": null,
+      "other_exported_columns_unchanged": 44
+    },
+    {
+      "example_id": "v102",
+      "base_price_before": 12,
+      "base_price_final": 12,
+      "compare_at_before": null,
+      "compare_at_final": null,
+      "other_exported_columns_unchanged": 44
+    },
+    {
+      "example_id": "v103",
+      "base_price_before": 18,
+      "base_price_final": 18,
+      "compare_at_before": null,
+      "compare_at_final": null,
+      "other_exported_columns_unchanged": 44
+    },
+    {
+      "example_id": "v104",
+      "base_price_before": 27,
+      "base_price_final": 27,
+      "compare_at_before": 30,
+      "compare_at_final": 30,
+      "other_exported_columns_unchanged": 44
+    },
+    {
+      "example_id": "v105",
+      "base_price_before": 5,
+      "base_price_final": 5,
+      "compare_at_before": null,
+      "compare_at_final": null,
+      "other_exported_columns_unchanged": 44
+    },
+    {
+      "example_id": "v106",
+      "base_price_before": 9,
+      "base_price_final": 9,
+      "compare_at_before": null,
+      "compare_at_final": null,
+      "other_exported_columns_unchanged": 44
+    },
+    {
+      "example_id": "v107",
+      "base_price_before": 45,
+      "base_price_final": 45,
+      "compare_at_before": null,
+      "compare_at_final": null,
+      "other_exported_columns_unchanged": 44
+    },
+    {
+      "example_id": "v108",
+      "base_price_before": 6,
+      "base_price_final": 8,
+      "compare_at_before": null,
+      "compare_at_final": null,
+      "other_exported_columns_unchanged": 44
+    }
+  ],
+  "mixed_batch_observation": {
+    "v101_after_temporary_write": 78,
+    "v107_after_rejected_mismatched_pair": 45,
+    "v108_after_rejected_mismatched_pair": 8,
+    "v101_after_restore": 79,
+    "limit": "Two input rows involving three one-variant products; no within-product atomicity or concurrent-edit claim."
+  },
+  "source_artifact_sha256": {
+    "baseline.json": "587471b70ea413fe4b53fbb375154c22448e557b1afcb75762f7db374e8f92ea",
+    "partial-readback.json": "ea72985c5c69b1131c76c42c71eedb02abd0a86f38e71dd4dd3dd7068ad050ad",
+    "final.json": "96956ef2d0f538d2fe81c58c8e4dc8fb56b28d5e64b3c085ebfe578c55274147",
+    "final-verification.json": "14add48b32c558ac3de05e53457cd157ca9243b2f9e222eef49f856bcfffb104"
+  },
+  "verification_limit": "This summary recomputes comparisons over previously saved JSON extracts; it neither reruns Shopify nor reopens the original XLSX result workbooks. Source artifacts are retained for restricted review."
+}
