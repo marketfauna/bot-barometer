@@ -36,7 +36,7 @@
 <tr><td>Purpose</td><td>A dated reading of how a named public URL answers an identified, non-browser request, for the operator of a feed reader, link-preview service or similar agent. Described on <a href="/access.html">the readings page</a>.</td></tr>
 <tr><td>What it fetches</td><td><code>/robots.txt</code>, then one public URL per site, only if robots.txt allows it for both the operator's agent name and ours. If robots.txt is refused or unreachable, the page is not requested. No links are followed, nothing behind a login is requested, and no challenge is attempted.</td></tr>
 <tr><td>How much</td><td>A handful of requests per site (robots.txt, one control, then up to three unsigned and three signed), at least two seconds apart and slower where robots.txt asks for a crawl delay. A reading is run once, not on a schedule. Readings to date: 15 and 18 September 2026.</td></tr>
-<tr><td>From where</td><td>The operator's own network, not a cloud provider.</td></tr>
+<tr><td>From where</td><td>Our own network. For comparison, the same reading is sometimes repeated once from a GitHub-hosted Actions runner, and the report says which vantage each result came from.</td></tr>
 <tr><td>What is kept</td><td>Status, response headers without cookie values, and a hash of the body. Response bodies are not stored.</td></tr>
 </table>
 <p>If you run a site either of these has reached and would rather it did not, email the address above and it will be excluded.</p>

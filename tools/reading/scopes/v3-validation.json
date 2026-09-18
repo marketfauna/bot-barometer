@@ -1,0 +1,57 @@
+{
+ "reading_id": "v3-validation-actions-2026-09-18",
+ "customer": "instrument validation after the first Challenger (three panel sites, one path each)",
+ "agent_token": "MarketfaunaBot",
+ "ua_mode": "own",
+ "accept": "application/atom+xml,application/rss+xml,application/xml;q=0.9,text/xml;q=0.8,*/*;q=0.5",
+ "selection_rule": "Three sites from the public panel chosen to exercise the three faults the Challenger found: a refused robots.txt (hashicorp.com), a permanent redirect (tweaktown.com), a crawl delay (indiemag.fr).",
+ "sites": [
+  {
+   "url": "https://www.indiemag.fr/feed/rss.xml",
+   "label": "indiemag.fr",
+   "source": "publicly reported 2025-05-09 by a user of Miniflux: https://github.com/miniflux/v2/issues/3340 (symptom quoted there: 'parser: unable to detect feed format')",
+   "reported": {
+    "report_url": "https://github.com/miniflux/v2/issues/3340",
+    "report_date": "2025-05-09",
+    "software": "Miniflux",
+    "symptom_quote": "parser: unable to detect feed format",
+    "cause_established_quote": "Nous venons d'ajouter une exception pour le flux RSS.",
+    "route_mentioned": "Site admin added an Anubis exception for the RSS feed after the reporter wrote to them."
+   }
+  },
+  {
+   "url": "https://www.tweaktown.com/news-feed/",
+   "label": "tweaktown.com",
+   "source": "publicly reported 2025-03-24 by a user of FreshRSS: https://github.com/FreshRSS/FreshRSS/issues/7454 (symptom quoted there: 'cURL error 22: The requested URL returned error: 403')",
+   "reported": {
+    "report_url": "https://github.com/FreshRSS/FreshRSS/issues/7454",
+    "report_date": "2025-03-24",
+    "software": "FreshRSS",
+    "symptom_quote": "cURL error 22: The requested URL returned error: 403",
+    "cause_established_quote": null,
+    "route_mentioned": null
+   }
+  },
+  {
+   "url": "https://www.hashicorp.com/blog/products/terraform/feed.xml",
+   "label": "hashicorp.com",
+   "source": "publicly reported 2025-11-21 by a user of FreshRSS 1.27.1: https://github.com/FreshRSS/FreshRSS/discussions/8238 (symptom quoted there: 'HTTP 429 Too Many Requests!')",
+   "reported": {
+    "report_url": "https://github.com/FreshRSS/FreshRSS/discussions/8238",
+    "report_date": "2025-11-21",
+    "software": "FreshRSS 1.27.1",
+    "symptom_quote": "HTTP 429 Too Many Requests!",
+    "cause_established_quote": "vercel decided to use 429 as response code for JS challenge page",
+    "route_mentioned": "FlareSolverr extension for FreshRSS solved the challenge; maintainer says best is to ask the site to fix the feed."
+   }
+  }
+ ],
+ "operator_profile": {
+  "kind": "self-hosted feed reader",
+  "can_apply_to_programmes": false
+ },
+ "conditions": [
+  "control",
+  "unsigned"
+ ]
+}

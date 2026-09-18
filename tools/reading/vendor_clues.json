@@ -1,0 +1,250 @@
+{
+ "note": "Tiers follow research/field/access-reading-comparables-2026-09-18.md section 6D. decisive = a documented marker that this vendor made the decision on this response. transit = the response passed through or was instrumented by the vendor; the refusal may still come from the site's own server. possible = marker known only from third-party reports. source_kind: vendor-doc, third-party, none. A clue never establishes why a request was refused.",
+ "surveyed": "2026-09-18",
+ "clues": [
+  {
+   "vendor": "Cloudflare",
+   "tier": "decisive",
+   "where": "header-value",
+   "key": "cf-mitigated",
+   "label": "cf-mitigated: challenge",
+   "means": "Cloudflare served a challenge page on this response",
+   "source": "https://developers.cloudflare.com/cloudflare-challenges/challenge-types/challenge-pages/detect-response/",
+   "source_kind": "vendor-doc",
+   "value": "challenge"
+  },
+  {
+   "vendor": "Cloudflare",
+   "tier": "decisive",
+   "where": "body-regex",
+   "key": "error code: 10(0[6-9]|1[0-9]|20)",
+   "label": "Cloudflare 1xxx error code in the body",
+   "means": "Cloudflare itself refused the request; the code says which kind of rule",
+   "source": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/",
+   "source_kind": "vendor-doc"
+  },
+  {
+   "vendor": "Cloudflare",
+   "tier": "decisive",
+   "where": "title-contains",
+   "key": "attention required! | cloudflare",
+   "label": "block page titled 'Attention Required! | Cloudflare'",
+   "means": "a Cloudflare-branded block page; the page names the vendor itself. This page usually reflects a rule the site owner set, which a vendor programme would not override",
+   "source": null,
+   "source_kind": "self-evident"
+  },
+  {
+   "vendor": "Vercel",
+   "tier": "decisive",
+   "where": "header-value",
+   "key": "x-vercel-mitigated",
+   "label": "x-vercel-mitigated: challenge",
+   "means": "a Vercel-named mitigation header on the response; the header names the vendor itself. We did not find it in the Vercel documentation we read",
+   "source": null,
+   "source_kind": "self-evident",
+   "value": "challenge"
+  },
+  {
+   "vendor": "Anubis",
+   "tier": "possible",
+   "where": "body-contains",
+   "key": "making sure you&#39;re not a bot",
+   "label": "Anubis interstitial text",
+   "means": "the open-source Anubis proof-of-work gate, which the site owner runs and configures",
+   "source": "https://github.com/TecharoHQ/anubis",
+   "source_kind": "third-party"
+  },
+  {
+   "vendor": "Anubis",
+   "tier": "possible",
+   "where": "body-contains",
+   "key": "within.website/x/cmd/anubis",
+   "label": "Anubis asset path in the body",
+   "means": "the open-source Anubis proof-of-work gate, which the site owner runs and configures",
+   "source": "https://github.com/TecharoHQ/anubis",
+   "source_kind": "third-party"
+  },
+  {
+   "vendor": "Cloudflare",
+   "tier": "transit",
+   "where": "header-present",
+   "key": "cf-ray",
+   "label": "cf-ray header",
+   "means": "the response passed through Cloudflare",
+   "source": "https://developers.cloudflare.com/fundamentals/reference/http-headers/",
+   "source_kind": "vendor-doc"
+  },
+  {
+   "vendor": "AWS WAF",
+   "tier": "decisive",
+   "where": "header-present",
+   "key": "x-amzn-waf-action",
+   "label": "x-amzn-waf-action header",
+   "means": "AWS WAF answered with a challenge or CAPTCHA action (HTTP 202 or 405); this is not delivery",
+   "source": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-captcha-and-challenge-actions.html",
+   "source_kind": "vendor-doc"
+  },
+  {
+   "vendor": "Amazon CloudFront",
+   "tier": "transit",
+   "where": "header-present",
+   "key": "x-amz-cf-id",
+   "label": "x-amz-cf-id header",
+   "means": "the response passed through CloudFront; AWS WAF may or may not be attached",
+   "source": "https://github.com/EnableSecurity/wafw00f/tree/master/wafw00f/plugins",
+   "source_kind": "third-party"
+  },
+  {
+   "vendor": "Vercel",
+   "tier": "decisive",
+   "where": "body-contains",
+   "key": "vercel security checkpoint",
+   "label": "Vercel Security Checkpoint page",
+   "means": "Vercel's firewall served its challenge page, which scripts cannot pass",
+   "source": "https://vercel.com/docs/vercel-firewall/firewall-concepts",
+   "source_kind": "vendor-doc"
+  },
+  {
+   "vendor": "Vercel",
+   "tier": "transit",
+   "where": "header-present",
+   "key": "x-vercel-id",
+   "label": "x-vercel-id header",
+   "means": "the response was served by Vercel",
+   "source": "https://github.com/EnableSecurity/wafw00f/tree/master/wafw00f/plugins",
+   "source_kind": "third-party"
+  },
+  {
+   "vendor": "HUMAN (PerimeterX)",
+   "tier": "decisive",
+   "where": "body-contains",
+   "key": "press & hold",
+   "label": "Press & Hold block page",
+   "means": "HUMAN served its block page",
+   "source": "https://www.humansecurity.com/ai-agent-verification/",
+   "source_kind": "vendor-doc"
+  },
+  {
+   "vendor": "HUMAN (PerimeterX)",
+   "tier": "transit",
+   "where": "cookie-prefix",
+   "key": "_px",
+   "label": "_px* cookie set",
+   "means": "the HUMAN sensor is present on this site",
+   "source": "https://docs.humansecurity.com/applications/cookies",
+   "source_kind": "vendor-doc"
+  },
+  {
+   "vendor": "Imperva",
+   "tier": "decisive",
+   "where": "body-contains",
+   "key": "incapsula incident id",
+   "label": "Incapsula incident ID in the body",
+   "means": "Imperva served a block page",
+   "source": "https://github.com/EnableSecurity/wafw00f/tree/master/wafw00f/plugins",
+   "source_kind": "third-party"
+  },
+  {
+   "vendor": "Imperva",
+   "tier": "transit",
+   "where": "cookie-prefix",
+   "key": "incap_ses",
+   "label": "incap_ses cookie set",
+   "means": "the site is behind Imperva Cloud WAF",
+   "source": "https://github.com/EnableSecurity/wafw00f/tree/master/wafw00f/plugins",
+   "source_kind": "third-party"
+  },
+  {
+   "vendor": "Imperva",
+   "tier": "transit",
+   "where": "cookie-prefix",
+   "key": "visid_incap",
+   "label": "visid_incap cookie set",
+   "means": "the site is behind Imperva Cloud WAF",
+   "source": "https://github.com/EnableSecurity/wafw00f/tree/master/wafw00f/plugins",
+   "source_kind": "third-party"
+  },
+  {
+   "vendor": "DataDome",
+   "tier": "transit",
+   "where": "cookie-prefix",
+   "key": "datadome",
+   "label": "datadome cookie set",
+   "means": "the DataDome module is in the request path",
+   "source": "https://docs.datadome.co/reference/validate-request",
+   "source_kind": "vendor-doc"
+  },
+  {
+   "vendor": "DataDome",
+   "tier": "possible",
+   "where": "header-present",
+   "key": "x-datadome",
+   "label": "x-datadome header",
+   "means": "reported by third parties as DataDome; not confirmed in vendor documentation",
+   "source": null,
+   "source_kind": "none"
+  },
+  {
+   "vendor": "Akamai",
+   "tier": "transit",
+   "where": "header-value",
+   "key": "server",
+   "label": "server: AkamaiGHost",
+   "means": "the response was generated by an Akamai edge server; not proof that Bot Manager decided",
+   "source": "https://github.com/EnableSecurity/wafw00f/tree/master/wafw00f/plugins",
+   "source_kind": "third-party",
+   "value": "akamaighost"
+  },
+  {
+   "vendor": "Akamai",
+   "tier": "possible",
+   "where": "cookie-prefix",
+   "key": "_abck",
+   "label": "_abck cookie set",
+   "means": "reported by third parties as Akamai Bot Manager; not confirmed in vendor documentation",
+   "source": null,
+   "source_kind": "none"
+  },
+  {
+   "vendor": "Akamai",
+   "tier": "possible",
+   "where": "cookie-prefix",
+   "key": "bm_sz",
+   "label": "bm_sz cookie set",
+   "means": "reported by third parties as Akamai Bot Manager; not confirmed in vendor documentation",
+   "source": null,
+   "source_kind": "none"
+  },
+  {
+   "vendor": "Fastly",
+   "tier": "possible",
+   "where": "header-value",
+   "key": "x-served-by",
+   "label": "x-served-by: cache-*",
+   "means": "commonly set by Fastly; says nothing about who refused",
+   "source": null,
+   "source_kind": "none",
+   "value": "cache-"
+  },
+  {
+   "vendor": "Kasada",
+   "tier": "possible",
+   "where": "header-prefix",
+   "key": "x-kpsdk",
+   "label": "x-kpsdk-* header",
+   "means": "reported by third parties as Kasada; no vendor documentation found",
+   "source": null,
+   "source_kind": "none"
+  },
+  {
+   "vendor": "F5 BIG-IP",
+   "tier": "possible",
+   "where": "body-contains",
+   "key": "the requested url was rejected. please consult with your administrator",
+   "label": "F5 'requested URL was rejected' page",
+   "means": "reported as a BIG-IP application-firewall policy block; vendor page not read",
+   "source": null,
+   "source_kind": "none"
+  }
+ ]
+}

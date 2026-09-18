@@ -1,0 +1,132 @@
+{
+ "note": "Documented routes by which an identified bot's operator, or the site owner, can change the outcome. 'No operator route found' is a dated finding. No entry ever suggests disguising the agent, rotating addresses or solving challenges.",
+ "surveyed": "2026-09-18",
+ "vendors": {
+  "Cloudflare": [
+   {
+    "step": "apply to Cloudflare's verified bots or signed agents programme through the Bot Submission Form in a Cloudflare account; approval is Cloudflare's decision and no site is obliged to admit a verified bot",
+    "who_acts": "operator",
+    "needs": "a Cloudflare account; a product-token User-Agent with an information page; published IP ranges or a Web Bot Auth key directory",
+    "acceptance_test": "Cloudflare lists the bot; then after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": "https://developers.cloudflare.com/bots/concepts/bot/verified-bots/",
+    "source_status": "read 2026-09-18"
+   },
+   {
+    "step": "ask the site owner to add a WAF custom rule that skips bot protections for this agent; Cloudflare's documentation says Bot Fight Mode cannot be bypassed or skipped by WAF custom rules or Page Rules, and that exceptions need Super Bot Fight Mode, which supports Skip rules",
+    "who_acts": "site owner",
+    "needs": "the agent's User-Agent token and information page; IP ranges or key directory if the owner wants to match on them",
+    "acceptance_test": "after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": "https://developers.cloudflare.com/bots/get-started/bot-fight-mode/",
+    "source_status": "read 2026-09-18"
+   }
+  ],
+  "AWS WAF": [
+   {
+    "step": "no public operator form exists; the site owner can allow the agent by label or scope-down rule, and AWS Support can be asked for a bot classification; Web Bot Auth is honoured from Bot Control rule group version 4.0",
+    "who_acts": "site owner",
+    "needs": "the agent's User-Agent token; the Bot Control category it falls in (content fetcher, page preview, monitoring)",
+    "acceptance_test": "after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": "https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html",
+    "source_status": "read 2026-09-18"
+   }
+  ],
+  "DataDome": [
+   {
+    "step": "apply through DataDome's bot and AI agent verification form (stated review time 3 to 5 business days); a dedicated User-Agent plus one authentication method is required (Web Bot Auth, reverse DNS, static IPs, dynamic IP file or private AS)",
+    "who_acts": "operator",
+    "needs": "a dedicated User-Agent; one of the five authentication methods",
+    "acceptance_test": "DataDome confirms verification; then after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": "https://datadome.co/resources/bot-and-ai-agent-verification/",
+    "source_status": "read 2026-09-18"
+   }
+  ],
+  "Vercel": [
+   {
+    "step": "submit the bot at bots.fyi/new-bot (name, description, documentation URL, verification instructions, contact); Vercel verifies by IP, reverse DNS or Web Bot Auth",
+    "who_acts": "operator",
+    "needs": "a documentation page for the bot; one verification method",
+    "acceptance_test": "the bot appears in Vercel's directory; then after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": "https://vercel.com/docs/bot-management",
+    "source_status": "read 2026-09-18"
+   }
+  ],
+  "HUMAN (PerimeterX)": [
+   {
+    "step": "HUMAN publishes an AI agent verification form; we could not read it (it served HUMAN's own challenge to us), so this route is unconfirmed; the site owner can also allow the agent under HUMAN's known bots and crawlers policy",
+    "who_acts": "operator or site owner",
+    "needs": "an identity HUMAN accepts (not confirmed by us)",
+    "acceptance_test": "after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": "https://docs.humansecurity.com/applications/known-bots-and-crawlers",
+    "source_status": "form not read"
+   }
+  ],
+  "Akamai": [
+   {
+    "step": "no public operator form found as of 2026-09-18; Akamai writes that it validates Web Bot Auth signatures at the edge by discovering the key directory; the practical route is the site owner",
+    "who_acts": "site owner",
+    "needs": "the agent's User-Agent token, information page, and key directory or IP list",
+    "acceptance_test": "after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": "https://www.akamai.com/blog/security/redefine-trust-web-bot-authentication",
+    "source_status": "read 2026-09-18"
+   }
+  ],
+  "Imperva": [
+   {
+    "step": "no public operator route found as of 2026-09-18; the route is the site owner",
+    "who_acts": "site owner",
+    "needs": "the agent's User-Agent token, information page, and IP list",
+    "acceptance_test": "after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": null,
+    "source_status": "none found"
+   }
+  ],
+  "Kasada": [
+   {
+    "step": "no public operator route found as of 2026-09-18; the route is the site owner",
+    "who_acts": "site owner",
+    "needs": "the agent's User-Agent token and information page",
+    "acceptance_test": "after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": null,
+    "source_status": "none found"
+   }
+  ],
+  "F5 BIG-IP": [
+   {
+    "step": "no public operator route found as of 2026-09-18; the route is the site owner",
+    "who_acts": "site owner",
+    "needs": "the agent's User-Agent token and information page",
+    "acceptance_test": "after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": null,
+    "source_status": "none found"
+   }
+  ],
+  "Fastly": [
+   {
+    "step": "no public operator route found as of 2026-09-18; the route is the site owner",
+    "who_acts": "site owner",
+    "needs": "the agent's User-Agent token and information page",
+    "acceptance_test": "after the change, the agent's own request returns the expected content on 3 of 3 attempts",
+    "source": null,
+    "source_status": "none found"
+   }
+  ]
+ },
+ "sites": {
+  "npmjs.com": [
+   {
+    "step": "use the documented npm registry API at registry.npmjs.org instead of the website",
+    "who_acts": "operator",
+    "needs": "nothing beyond the package names",
+    "acceptance_test": "the registry endpoint returns JSON for a known package",
+    "source": "https://github.com/npm/registry/blob/main/docs/REGISTRY-API.md",
+    "source_status": "to verify"
+   }
+  ]
+ },
+ "owner_paragraph": "Hello. We operate <agent name>, which <one-line purpose>. It identifies itself with the User-Agent token <token> (details: <info URL>) and requests <URL pattern> at most <rate>. Requests from it to your site are currently answered with <status>. If you are willing to allow it, the identifiers are: User-Agent token <token>; <IP ranges at URL, or reverse DNS pattern, or Web Bot Auth key directory URL>. If you would rather it did not visit, tell us and we will exclude your site. Contact: <address>.",
+ "readiness": [
+  "a product-token User-Agent that names the agent and links to an information page",
+  "a public information page stating purpose, request rate, robots.txt stance, how to block it, and a contact",
+  "at least one verifiable identity: a stable IP list at a URL, reverse DNS, or a Web Bot Auth key directory"
+ ]
+}
