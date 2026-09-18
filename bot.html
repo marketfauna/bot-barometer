@@ -19,9 +19,9 @@
 </head>
 <body>
 <h1>MarketfaunaBot</h1>
-<p>This page describes the automated collector behind the <a href="/">Bot Barometer</a>, so that any site or bot manager that sees it can tell what it is and who to contact.</p>
+<p>This page describes Marketfauna's automated requests, so that any site or bot manager that sees them can tell what they are and who to contact. There are two kinds: a weekly collector for the <a href="/">Bot Barometer</a>, and occasional access readings.</p>
 
-<h2>What it does</h2>
+<h2>The weekly collector</h2>
 <table>
 <tr><td>User-Agent</td><td><code>MarketfaunaBot/1.0 (+https://marketfauna.com/bot.html; hello@marketfauna.com)</code></td></tr>
 <tr><td>Purpose</td><td>Collects a small set of public counts for a weekly index of agent-economy activity, published on this site.</td></tr>
@@ -30,7 +30,16 @@
 <tr><td>Operator</td><td>Marketfauna. Contact <a href="mailto:hello@marketfauna.com?subject=Marketfauna%20inquiry%20-%20bot.html">hello@marketfauna.com</a>; replies come from the operator's agents.</td></tr>
 <tr><td>Source</td><td><a href="https://github.com/marketfauna/bot-barometer">github.com/marketfauna/bot-barometer</a> (the collector is <code>tools/collect_index.py</code>).</td></tr>
 </table>
-<p>If you run a site this bot has reached and would rather it did not, email the address above and it will be excluded.</p>
+<h2>Access readings</h2>
+<table>
+<tr><td>User-Agent</td><td>Either the collector's User-Agent above, or an operator's own User-Agent followed by <code>MarketfaunaReading/1.0 (+https://marketfauna.com/bot.html; reading for &lt;operator&gt;)</code>. One control request per site uses <code>python-urllib (generic HTTP client; control request for an access reading; +https://marketfauna.com/bot.html)</code>. We never present as a browser.</td></tr>
+<tr><td>Purpose</td><td>A dated reading of how a named public URL answers an identified, non-browser request, for the operator of a feed reader, link-preview service or similar agent. Described on <a href="/access.html">the readings page</a>.</td></tr>
+<tr><td>What it fetches</td><td><code>/robots.txt</code>, then one public URL per site, only if robots.txt allows it for both the operator's agent name and ours. If robots.txt is refused or unreachable, the page is not requested. No links are followed, nothing behind a login is requested, and no challenge is attempted.</td></tr>
+<tr><td>How much</td><td>A handful of requests per site (robots.txt, one control, then up to three unsigned and three signed), at least two seconds apart and slower where robots.txt asks for a crawl delay. A reading is run once, not on a schedule. Readings to date: 15 and 18 September 2026.</td></tr>
+<tr><td>From where</td><td>The operator's own network, not a cloud provider.</td></tr>
+<tr><td>What is kept</td><td>Status, response headers without cookie values, and a hash of the body. Response bodies are not stored.</td></tr>
+</table>
+<p>If you run a site either of these has reached and would rather it did not, email the address above and it will be excluded.</p>
 
 <h2>How it identifies itself</h2>
 <p>The collector implements <a href="https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/">Web Bot Auth</a> (RFC 9421 HTTP Message Signatures, Ed25519). Production requests are currently unsigned. After the signed key directory is deployed and bot verification is complete, signing can be enabled so a receiving site can check the operator's identity. The public key:</p>
