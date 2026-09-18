@@ -735,10 +735,10 @@ def compare(ours, theirs):
 
 def compare_md(cmp):
     out = ["# Two vantages, side by side", "",
-           "- Ours: %s (from %s UTC)" % (cmp["ours"]["vantage"], cmp["ours"]["started_utc"]),
-           "- Operator's: %s (from %s UTC)" % (cmp["theirs"]["vantage"], cmp["theirs"]["started_utc"]),
+           "- First vantage: %s (from %s UTC)" % (cmp["ours"]["vantage"], cmp["ours"]["started_utc"]),
+           "- Second vantage: %s (from %s UTC)" % (cmp["theirs"]["vantage"], cmp["theirs"]["started_utc"]),
            "- Same User-Agent at both: %s" % ("yes" if cmp["same_user_agent"] else "NO; differences below may follow the User-Agent as well as the network"), "",
-           "| Site | Our network, unsigned | Operator's network, unsigned | Reading |", "|---|---|---|---|"]
+           "| Site | First vantage, unsigned | Second vantage, unsigned | Reading |", "|---|---|---|---|"]
     for r in cmp["rows"]:
         out.append("| %s | %s | %s | %s |" % (r["site"], r["ours"], r["theirs"], r["verdict"]))
     n = sum(1 for r in cmp["rows"] if r["verdict"].startswith("DIFFERS"))
