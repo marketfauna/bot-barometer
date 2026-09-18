@@ -1,4 +1,5 @@
-"""Agent Access Reading: delivery instrument (version 1, 2026-09-18).
+"""Agent Access Reading: delivery instrument (version 3, 2026-09-18). Python 3.7 or later, standard library only;
+the signed condition additionally needs the cryptography package and a private key, and drops itself without them.
 
 One command from an agreed scope file to the two delivered artefacts (reading.json, reading.md/html):
 
@@ -17,7 +18,7 @@ Scope file (JSON):
                     presents their identity from our addresses and a site may treat that as spoofing
   sites             list of {"url", "label"?, "expect_marker"?, "source"?}, at most 25, one URL per site
   attempts          per condition, default 3;  spacing_s default 2.0
-  conditions        default ["unsigned", "signed"]
+  conditions        default ["control", "unsigned", "signed"]
 
 Rules kept from the specimen: robots.txt governs and is evaluated under RFC 9309 for the exact URL, for
 the customer's token AND for our own token (we are the ones fetching, so the stricter verdict decides);
@@ -45,6 +46,8 @@ sys.path.insert(0, os.path.join(HERE, ".."))  # when the instrument lives at too
 import rfc9309  # noqa: E402
 
 OWN_TOKEN = "MarketfaunaBot"
+READING_TOKEN = "MarketfaunaReading"  # the token appended in ua_mode appended; a site may name it
+CONTROL_TOKEN = "python-urllib"
 OWN_UA = "MarketfaunaBot/1.0 (+https://marketfauna.com/bot.html; hello@marketfauna.com)"
 AGENT_URL = "https://marketfauna-wba-directory.marketfauna.workers.dev"
 KEY_PATH = os.path.join(os.path.expanduser("~"), ".marketfauna", "wba-ed25519-private.pem")
@@ -467,15 +470,21 @@ def robots_for(url, scope_token, ua):
         out["robots_sha256"] = hashlib.sha256(body).hexdigest()
         out["robots_bytes_read"] = len(body)
         out["crawl_delay_lines"] = [l.strip() for l in text.splitlines() if l.strip().lower().startswith("crawl-delay")][:10]
-        out["verdicts"] = {t: rfc9309.evaluate(groups, t, url) for t in dict.fromkeys([scope_token, OWN_TOKEN, "*", "GPTBot", "ClaudeBot"])}
+        out["verdicts"] = {t: rfc9309.evaluate(groups, t, url) for t in dict.fromkeys([scope_token, OWN_TOKEN, READING_TOKEN, CONTROL_TOKEN, "*", "GPTBot", "ClaudeBot"])}
         out["named"] = {t: any(rfc9309.agent_token(t) in g["agents"] for g in groups) for t in (scope_token, OWN_TOKEN)}
         delays = []
         for line in out["crawl_delay_lines"]:
             try:
-                delays.append(float(line.split(":", 1)[1].strip()))
+                delays.append(float(line.split(":", 1)[1].split("#", 1)[0].strip()))
             except ValueError:
                 pass
         out["crawl_delay_s"] = max(delays) if delays else None  # the largest value in the file, whichever group: the polite reading
+    elif st == 200 and (body_facts(body[:HEAD_BYTES]).get("challenge_markers") or any(v["tier"] == "decisive" or v["vendor"] == "Anubis" for v in rec.get("vendor_clues", []))):
+        out["policy_basis"] = ("robots.txt request was answered with status 200 and a challenge or interstitial page instead of a robots file, so the policy could not be "
+                               "read by us; treated as a refusal, and no page request is made")
+        out["robots_refused"] = True
+        out["policy_unknown"] = True
+        out["verdicts"] = {t: {"allowed": False, "basis": "unknown: robots.txt was answered with a challenge page", "matched_rule": None} for t in (scope_token, OWN_TOKEN, "*")}
     elif st == 200:
         out["policy_basis"] = "200 with an HTML body, not a robots file: treated as unavailable (no restrictions), stated as an assumption"
         out["verdicts"] = {t: {"allowed": True, "basis": out["policy_basis"], "matched_rule": None} for t in (scope_token, OWN_TOKEN, "*")}
@@ -498,10 +507,11 @@ def robots_for(url, scope_token, ua):
         out["policy_basis"] = "unreachable (%s): policy unknown, treated as complete disallow per RFC 9309 2.3.1.4" % (st or rec.get("error"))
         out["verdicts"] = {t: {"allowed": False, "basis": out["policy_basis"], "matched_rule": None} for t in (scope_token, OWN_TOKEN, "*")}
     v = out["verdicts"]
-    allowed = v[scope_token]["allowed"] and v[OWN_TOKEN]["allowed"]
+    allowed = v[scope_token]["allowed"] and v[OWN_TOKEN]["allowed"] and v.get(READING_TOKEN, {"allowed": True})["allowed"]
+    out["control_allowed"] = v.get(CONTROL_TOKEN, {"allowed": True})["allowed"]
     out["decision"] = "requested" if allowed else "not-requested"
     if not allowed:
-        who = [t for t in (scope_token, OWN_TOKEN) if not v[t]["allowed"]]
+        who = [t for t in (scope_token, OWN_TOKEN, READING_TOKEN) if t in v and not v[t]["allowed"]]
         if out.get("robots_refused"):
             out["decision_reason"] = "robots.txt was refused to the agent, so the policy is unknown and the refusal is itself the observation; no page request made"
         elif out["policy_basis"].startswith("unreachable"):
@@ -590,8 +600,8 @@ def run(scope, outdir, vantage=None):
                 site["conditions"][c] = {"attempts": []}
             for rep in range(attempts_n):  # interleaved so time-of-request is not confounded with condition
                 for c in conditions:
-                    if c == "control" and rep > 0:
-                        continue  # one control request per site keeps the budget at eight
+                    if c == "control" and (rep > 0 or not site["robots"].get("control_allowed", True)):
+                        continue  # one control request per site; none where robots.txt disallows the control's own token
                     extra = wba.sign_request(priv, kid, "GET", target, AGENT_URL) if c == "signed" else None
                     rec, body = fetch(target, CONTROL_UA if c == "control" else ua, extra, hop_allowed=hop_check, accept=accept)
                     hops = rec.get("redirects") or []
@@ -659,6 +669,10 @@ def reinterpret(reading):
     return reading
 
 
+def body_is_challenge(robots):
+    return any(v.get("tier") == "decisive" for v in robots.get("fetch", {}).get("vendor_clues", []))
+
+
 def audit(reading):
     """The pre-ship checks the first Challenger asked for (research/process/challenger-access-reading-
     instrument-2026-09-18.md, 'Discriminating test'), computed from the reading itself. Returns a list of
@@ -667,6 +681,8 @@ def audit(reading):
     for s in reading["sites"]:
         r = s["robots"]
         name = s.get("label") or s["host"]
+        if r["decision"] == "requested" and (body_is_challenge(r) or any(not x.get("allowed", True) for k, x in r["verdicts"].items() if k in (READING_TOKEN,))):
+            fails.append("%s: page requested although robots.txt was answered with a challenge, or our reading token is disallowed" % name)
         if r["fetch"].get("status") != 200 and r["decision"] == "requested" and not str(r.get("policy_basis", "")).startswith("unavailable"):
             fails.append("%s: page requested although robots.txt was not read (%s)" % (name, r["fetch"].get("status")))
         if r.get("robots_refused") and any(v.get("allowed") for v in r["verdicts"].values()):

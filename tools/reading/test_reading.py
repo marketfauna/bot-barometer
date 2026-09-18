@@ -223,6 +223,41 @@ class Interpretation(unittest.TestCase):
         self.assertNotIn("because", md.lower())
         self.assertEqual(R.compare(rd("refused", "a"), rd("refused", "b"))["rows"][0]["verdict"], "same at both vantages")
 
+    def test_robots_answered_with_a_200_challenge_page_is_a_refusal(self):
+        # the second Challenger's discriminating test (2026-09-18)
+        import reading as mod
+        html_challenge = b"<html><head><title>Just a moment...</title></head><body>Verify you are human</body></html>"
+        calls = []
+
+        def fake_fetch(url, ua, extra=None, **kw):
+            calls.append(url)
+            return {"url": url, "requested_at_utc": "2026-09-18T22:00:00Z", "status": 200, "headers": {"content-type": "text/html"}, "requests_made": 1}, html_challenge
+        real = mod.fetch
+        mod.fetch = fake_fetch
+        try:
+            r = mod.robots_for("https://x.example/feed", "TestBot", "UA")
+        finally:
+            mod.fetch = real
+        self.assertEqual(r["decision"], "not-requested")
+        self.assertTrue(r["robots_refused"])
+        self.assertFalse(any(v["allowed"] for v in r["verdicts"].values()))
+
+    def test_reading_token_and_control_token_are_honoured(self):
+        import reading as mod
+        txt = b"User-agent: MarketfaunaReading\nDisallow: /\n\nUser-agent: python-urllib\nDisallow: /\n\nUser-agent: *\nAllow: /\n"
+
+        def fake_fetch(url, ua, extra=None, **kw):
+            return {"url": url, "requested_at_utc": "t", "status": 200, "headers": {"content-type": "text/plain"}, "requests_made": 1}, txt
+        real = mod.fetch
+        mod.fetch = fake_fetch
+        try:
+            r = mod.robots_for("https://x.example/feed", "TestBot", "UA")
+        finally:
+            mod.fetch = real
+        self.assertEqual(r["decision"], "not-requested")
+        self.assertFalse(r["control_allowed"])
+        self.assertIn("MarketfaunaReading", r["decision_reason"])
+
     def test_aws_waf_202_is_not_delivery(self):
         self.assertEqual(R.classify_attempt({"status": 202, "headers": {"x-amzn-waf-action": "challenge"}}, {}), "challenge")
 
