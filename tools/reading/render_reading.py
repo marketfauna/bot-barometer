@@ -22,7 +22,6 @@ LIMITS = [
     "Vendor clues say which product answered. They do not establish why a request was refused.",
     "Three attempts per condition can show that a response was stable or intermittent in this run. They cannot measure an effect of any one condition.",
     "Validity: one vantage point, one URL per site, the dates shown. Site rules change without notice. This is a dated reading, not monitoring.",
-    "Requests: robots.txt, one control and the named conditions make %(budget)s per site before redirects. A counter checked before every request, redirect targets included, stops any request that would be the eleventh to one host in this reading; the most any one host received was %(max_requests)s. Requests were at least %(spacing).1f s apart, and slower where robots.txt carried a crawl delay.",
     "The control request uses a generic, honestly labelled HTTP client, not a browser User-Agent. We do not present as a browser, so the control separates 'this agent name' from 'any non-browser client at this address', and cannot show what a browser would receive.",
     "Nothing in this report suggests disguising the agent, rotating addresses or solving challenges, and we will not advise it.",
 ]
@@ -200,6 +199,19 @@ def overview_rows(reading):
     return rows
 
 
+def request_statements(reading):
+    """The ceiling is claimed only for readings whose own record says it was enforced before each request."""
+    base = "Requests: robots.txt, one control and the named conditions make %s per site before redirects." % reading.get("request_budget_per_site", "8")
+    by_host = reading.get("requests_by_host") or {}
+    if reading.get("ceiling_enforced_before_request") and by_host:
+        tail = " A counter checked before every request, redirect targets and the signing self-test included, stops any request that would be the eleventh to one host in this reading; the most any one host received was %d." % max(by_host.values())
+    else:
+        seen = max([x.get("requests_to_host") or 0 for x in reading["sites"]] or [0])
+        tail = (" This reading was taken before the instrument enforced a per-host ceiling, so no ceiling is claimed for it; counted afterwards from the record, the most any one site's attempts came to was %s, and that count may attribute redirect hops to the wrong host." % (seen or "not recorded"))
+    spacing = " Requests were at least %.1f s apart%s." % (reading["spacing_s"], ", and slower where robots.txt carried a crawl delay" if any(s.get("spacing_s") for s in reading["sites"]) else "")
+    return [base + tail + spacing]
+
+
 def signing_statements(reading):
     """Only what the record supports: whether a signed condition ran, and what the self-test returned."""
     sg = reading.get("signing")
@@ -207,7 +219,12 @@ def signing_statements(reading):
         why = reading.get("signing_note")
         return ["No signed requests were made in this reading%s. Nothing here bears on Web Bot Auth." % ((" (" + why + ")") if why else "")]
     st = (sg.get("self_test") or {}).get("status")
-    base = "The signed requests used our own key and directory."
+    started = sum(1 for s in reading["sites"] for a in s.get("conditions", {}).get("signed", {}).get("attempts", [])
+                  if a.get("requests_started", 1 if a.get("status") is not None else 0) > 0)
+    if started == 0:
+        base = "A signed condition was configured with our own key and directory, but no signed request reached any destination in this reading."
+    else:
+        base = "%d signed request%s reached a destination, made with our own key and directory." % (started, "" if started == 1 else "s")
     if st == 200:
         return [base + " Cloudflare's public test endpoint accepted the signature and knew the key at the time of this reading; that says nothing about any other verifier or about any site's own rules."]
     if st == 401:
@@ -257,7 +274,7 @@ def render_md(reading):
             out.append("- Signature self-test at %s: status %s at %s (%s). Signature-Input sent: `%s`" % (st["url"], st["status"], st["requested_at_utc"], st["meaning"], st.get("signature_input")))
     fmt = {"vantage": reading.get("vantage", "not recorded"), "budget": reading.get("request_budget_per_site", "8"), "spacing": reading["spacing_s"],
            "max_requests": max(list((reading.get("requests_by_host") or {}).values()) or [x.get("requests_to_host") or 0 for x in reading["sites"]] or [0]) or "not recorded"}
-    out += ["", "## What this reading is not", ""] + ["- " + (x % fmt) for x in LIMITS] + ["- " + x for x in signing_statements(reading)]
+    out += ["", "## What this reading is not", ""] + ["- " + (x % fmt) for x in LIMITS] + ["- " + x for x in request_statements(reading)] + ["- " + x for x in signing_statements(reading)]
     out += ["", "HTTP 200 is an HTTP observation, not permission. A 200 does not show:", ""] + ["- " + x for x in NOT_200]
     out += ["", "A 403 does not show:", ""] + ["- " + x for x in NOT_403]
     if routes.get("readiness"):

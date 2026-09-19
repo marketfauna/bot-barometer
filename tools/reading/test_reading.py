@@ -364,11 +364,12 @@ class Interpretation(unittest.TestCase):
         self.assertIn("not followed", rec["redirect_stopped"])
 
     def test_signing_statements_follow_the_record(self):
-        base = {"conditions": ["control", "unsigned"], "signing": None, "signing_note": "signed condition dropped on this machine: FileNotFoundError"}
+        base = {"conditions": ["control", "unsigned"], "signing": None, "signing_note": "signed condition dropped on this machine: FileNotFoundError", "sites": []}
         t = " ".join(RR.signing_statements(base))
         self.assertIn("No signed requests were made", t)
         self.assertNotIn("401", t)
-        signed = {"conditions": ["unsigned", "signed"], "signing": {"keyid": "k", "agent_url": "u", "note": "n", "self_test": {"status": 401}}}
+        signed = {"conditions": ["unsigned", "signed"], "signing": {"keyid": "k", "agent_url": "u", "note": "n", "self_test": {"status": 401}},
+                  "sites": [{"conditions": {"signed": {"attempts": [{"status": 403, "requests_started": 1}]}}}]}
         self.assertIn("answered 401", " ".join(RR.signing_statements(signed)))
         signed["signing"]["self_test"]["status"] = 200
         self.assertIn("accepted the signature", " ".join(RR.signing_statements(signed)))
@@ -376,6 +377,107 @@ class Interpretation(unittest.TestCase):
         self.assertIn("not completed", " ".join(RR.signing_statements(signed)))
         signed["signing"]["self_test"] = {"status": 400}
         self.assertIn("uninterpreted", " ".join(RR.signing_statements(signed)))
+
+    # boundary cases from Codex's acceptance audit of 17e842a (2026-09-19)
+    def test_default_port_shares_the_host_budget(self):
+        import reading as mod
+        self.assertEqual(mod.authority_key("https://Alias.example/a"), mod.authority_key("https://alias.example:443/b"))
+        self.assertEqual(mod.authority_key("http://alias.example:80/"), "alias.example")
+        self.assertEqual(mod.authority_key("https://alias.example:8443/"), "alias.example:8443")
+        mod.reset_host_budget()
+        for _ in range(10):
+            self.assertTrue(mod._take_budget("https://alias.example/x"))
+        self.assertFalse(mod._take_budget("https://alias.example:443/x"))
+        mod.reset_host_budget()
+
+    def _run_with(self, responder, scope, sign=False):
+        """Run the whole instrument against a mocked transport; returns (reading, started_urls_with_ua)."""
+        import reading as mod
+        import tempfile
+        started = []
+
+        class Resp:
+            def __init__(self, status, headers, body):
+                self.status, self.headers, self._b = status, headers, body
+
+            def read(self, n=-1):
+                return self._b
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+
+        class Opener:
+            def open(self, req, timeout=None):
+                ua = req.get_header("User-agent")
+                started.append((req.full_url, ua))
+                status, headers, body = responder(req.full_url, ua)
+                return Resp(status, headers, body)
+        rb, rs = mod.urllib.request.build_opener, mod.time.sleep
+        mod.urllib.request.build_opener = lambda *a, **k: Opener()
+        mod.time.sleep = lambda s: None
+        mod._TLS = (None, "test")
+        try:
+            out = tempfile.mkdtemp()
+            path = mod.run(scope, out)
+            with open(path, encoding="utf-8") as f:
+                return json.load(f), started
+        finally:
+            mod.urllib.request.build_opener, mod.time.sleep = rb, rs
+            mod._TLS = None
+
+    def test_a_redirect_learned_by_the_control_is_not_reused_by_named_requests(self):
+        robots = b"User-agent: MarketfaunaReading\nDisallow: /private/\n\nUser-agent: *\nAllow: /\n"
+
+        def responder(url, ua):
+            if url.endswith("/robots.txt"):
+                return 200, {"content-type": "text/plain"}, robots
+            if url.endswith("/start"):
+                return 301, {"Location": "/private/end"}, b""
+            return 200, {"content-type": "text/html"}, b"<title>end</title>"
+        scope = {"reading_id": "t", "customer": "T", "agent_token": "TestBot", "user_agent": "TestBot/1.0", "conditions": ["control", "unsigned"],
+                 "sites": [{"url": "https://x.example/start"}]}
+        rd, started = self._run_with(responder, scope)
+        named_private = [u for u, ua in started if "/private/end" in u and "MarketfaunaReading" in (ua or "")]
+        self.assertEqual(named_private, [], started)
+        outs = [a["outcome"] for a in rd["sites"][0]["conditions"]["unsigned"]["attempts"]]
+        self.assertEqual(set(outs), {"redirect-not-followed"})
+
+    def test_budget_is_reset_before_the_first_request_of_a_run(self):
+        import reading as mod
+        mod.reset_host_budget()
+        for _ in range(10):
+            mod._take_budget("https://y.example/")  # a previous run exhausted this host
+
+        def responder(url, ua):
+            if url.endswith("/robots.txt"):
+                return 200, {"content-type": "text/plain"}, b"User-agent: *\nAllow: /\n"
+            return 200, {"content-type": "text/html"}, b"<title>ok</title>"
+        scope = {"reading_id": "t2", "customer": "T", "agent_token": "TestBot", "user_agent": "TestBot/1.0", "conditions": ["control", "unsigned"],
+                 "sites": [{"url": "https://y.example/"}]}
+        rd, started = self._run_with(responder, scope)
+        self.assertEqual(rd["requests_by_host"]["y.example"], len(started))
+        self.assertEqual(len(started), 5)  # robots, control, three unsigned
+        self.assertTrue(rd["ceiling_enforced_before_request"])
+
+    def test_legacy_readings_do_not_claim_the_enforced_ceiling(self):
+        legacy = {"request_budget_per_site": 8, "spacing_s": 2.0, "sites": [{"requests_to_host": 15}]}
+        t = " ".join(RR.request_statements(legacy))
+        self.assertIn("no ceiling is claimed", t)
+        self.assertNotIn("stops any request", t)
+        new = dict(legacy, requests_by_host={"a": 8}, ceiling_enforced_before_request=True)
+        self.assertIn("stops any request", " ".join(RR.request_statements(new)))
+
+    def test_signed_configured_but_nothing_attempted_is_said_plainly(self):
+        rd = {"conditions": ["unsigned", "signed"], "signing": {"keyid": "k", "agent_url": "u", "note": "n", "self_test": {"status": 401}},
+              "sites": [{"conditions": {}}, {"conditions": {"signed": {"attempts": [{"status": None, "budget_stopped": "x", "requests_started": 0}]}}}]}
+        t = " ".join(RR.signing_statements(rd))
+        self.assertIn("no signed request reached any destination", t)
+        self.assertNotIn("signed requests used", t)
+        rd["sites"][1]["conditions"]["signed"]["attempts"] = [{"status": 403, "requests_started": 1}]
+        self.assertIn("1 signed request reached a destination", " ".join(RR.signing_statements(rd)))
 
     def test_aws_waf_202_is_not_delivery(self):
         self.assertEqual(R.classify_attempt({"status": 202, "headers": {"x-amzn-waf-action": "challenge"}}, {}), "challenge")

@@ -157,9 +157,19 @@ def reset_host_budget():
     _HOST_COUNTS.clear()
 
 
+def authority_key(url):
+    """Scheme-aware authority with the default port removed, so https://h and https://h:443 share one budget."""
+    parts = urlsplit(url)
+    host = (parts.hostname or "").lower()
+    port = parts.port
+    if port and not ((parts.scheme == "https" and port == 443) or (parts.scheme == "http" and port == 80)):
+        host = "%s:%d" % (host, port)
+    return host
+
+
 def _take_budget(url):
     """True if one more request to this authority may start; counts it if so."""
-    host = urlsplit(url).netloc.lower()
+    host = authority_key(url)
     if _HOST_COUNTS.get(host, 0) >= HOST_CEILING:
         return False
     _HOST_COUNTS[host] = _HOST_COUNTS.get(host, 0) + 1
@@ -603,13 +613,13 @@ def run(scope, outdir, vantage=None):
                "tls_trust_store": tls_context()[1], "started_utc": now_utc(), "sites": []}
     os.makedirs(outdir, exist_ok=True)
     path = os.path.join(outdir, "reading.json")
+    reset_host_budget()  # before the first request of the run, so the self-test is counted too
     if kid:
         sig = wba.sign_request(priv, kid, "GET", SELFTEST_URL, AGENT_URL)
         st_rec, _ = fetch(SELFTEST_URL, ua, sig)
         reading["signing"]["self_test"] = {"url": SELFTEST_URL, "status": st_rec.get("status"), "requested_at_utc": st_rec["requested_at_utc"],
                                            "signature_input": sig.get("Signature-Input"),
                                            "meaning": "Cloudflare's public test endpoint: 200 = signature valid and key known, 401 = well formed but key unknown to Cloudflare, 400 = malformed"}
-    reset_host_budget()
     robots_cache = {}
     hop_check = make_hop_check(scope["agent_token"], ua, robots_cache)
     hop_check_control = make_hop_check(scope["agent_token"], ua, robots_cache, control=True)
@@ -626,7 +636,7 @@ def run(scope, outdir, vantage=None):
         site["spacing_s"] = site_spacing
         if delay and delay > MAX_CRAWL_DELAY:
             site["spacing_note"] = "robots.txt asks for a crawl delay of %s s; we waited %s s between requests and say so" % (delay, MAX_CRAWL_DELAY)
-        target = url
+        targets = {"control": url, "named": url}  # a redirect learned by one kind of request is never reused by the other
         time.sleep(site_spacing)
         site["conditions"] = {}
         if site["robots"]["decision"] == "requested":
@@ -636,12 +646,20 @@ def run(scope, outdir, vantage=None):
                 for c in conditions:
                     if c == "control" and (rep > 0 or not site["robots"].get("control_allowed", True)):
                         continue  # one control request per site; none where robots.txt disallows the control's own token
+                    kind = "control" if c == "control" else "named"
+                    check = hop_check_control if c == "control" else hop_check
+                    target = targets[kind]
+                    if target != url:
+                        ok, note = check(target)  # the shortcut is re-checked for this request's own tokens every time
+                        if not ok:
+                            target = targets[kind] = url
                     extra = wba.sign_request(priv, kid, "GET", target, AGENT_URL) if c == "signed" else None
-                    rec, body = fetch(target, CONTROL_UA if c == "control" else ua, extra, hop_allowed=hop_check_control if c == "control" else hop_check, accept=accept)
+                    rec, body = fetch(target, CONTROL_UA if c == "control" else ua, extra, hop_allowed=check, accept=accept)
                     hops = rec.get("redirects") or []
                     if target == url and hops and all(h["status"] in (301, 308) for h in hops) and rec.get("status") is not None and not rec.get("redirect_stopped"):
-                        target = rec["final_url"]  # permanent redirect: later attempts go straight there, which keeps the request count down
-                        site["resolved_url"] = target
+                        targets[kind] = rec["final_url"]  # permanent redirect: later attempts of the same kind go straight there
+                        if kind == "named":
+                            site["resolved_url"] = rec["final_url"]
                     facts = body_facts(body, s.get("expect_marker"))
                     rec.update(rep=rep, body_facts=facts, outcome=classify_attempt(rec, facts),
                                vendor_clues=vendor_clues(rec, clue_table, body.decode("utf-8", "replace").lower(), facts.get("title")))
@@ -649,7 +667,7 @@ def run(scope, outdir, vantage=None):
                     time.sleep(site_spacing)
             for c in conditions:
                 site["conditions"][c]["summary"] = summarise_condition(site["conditions"][c]["attempts"])
-        site["requests_to_host"] = _HOST_COUNTS.get(host.lower(), 0)  # this authority only; redirect targets are counted under their own host in requests_by_host
+        site["requests_to_host"] = _HOST_COUNTS.get(authority_key(url), 0)  # this authority only; redirect targets are counted under their own host in requests_by_host
         site["reported"] = s.get("reported")
         site["comparison"] = compare_conditions(site)
         site["clue_verdict"] = clue_verdict(site)
@@ -662,6 +680,7 @@ def run(scope, outdir, vantage=None):
     reading["finished_utc"] = now_utc()
     reading["requests_by_host"] = dict(_HOST_COUNTS)  # counted before each request started, every host including redirect targets
     reading["request_ceiling_per_host"] = HOST_CEILING
+    reading["ceiling_enforced_before_request"] = True  # written only by versions that check the counter before every request
     hashes = {}
     for st in reading["sites"]:
         h = st["robots"].get("robots_sha256")
