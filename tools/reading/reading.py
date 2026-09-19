@@ -844,10 +844,15 @@ def main(argv=None):
         return 0
     if a.cmd == "render":
         import render_reading
+        # reading.json is the record of the run and is never rewritten. The reinterpretation (outcomes, clues,
+        # summaries, comparisons, next steps, counts: all derived) goes to reading.interpreted.json beside it.
         with open(a.reading, encoding="utf-8") as f:
             rd = reinterpret(json.load(f))
-        with open(a.reading, "w", encoding="utf-8") as f:
+        interp = os.path.join(os.path.dirname(a.reading), "reading.interpreted.json")
+        with open(interp, "w", encoding="utf-8") as f:
             json.dump(rd, f, indent=1)
+        print(render_reading.render_files(interp))
+        return 0
         print(render_reading.render_files(a.reading))
         return 0
     with open(a.scope, encoding="utf-8") as f:
