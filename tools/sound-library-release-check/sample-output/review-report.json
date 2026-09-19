@@ -1,0 +1,320 @@
+{
+  "schema": 1,
+  "mode": "unique-basename",
+  "columnIndex": 0,
+  "columnName": "Filename",
+  "headers": [
+    "Filename",
+    "Description",
+    "Library",
+    "RecordID",
+    "CustomNote"
+  ],
+  "rows": [
+    {
+      "record": 1,
+      "line": 2,
+      "values": [
+        "doors/front.wav",
+        "Front door closes, then a quiet latch.",
+        "Synthetic Workshop",
+        "00017",
+        "=SUM(1,2)"
+      ],
+      "filename": "doors/front.wav",
+      "status": "hold",
+      "matchedPath": "doors/front.wav",
+      "candidates": [
+        "doors/front.wav"
+      ],
+      "issueCodes": [
+        "duplicate_metadata_key",
+        "multiple_rows_for_file",
+        "inventory_identity_hold"
+      ]
+    },
+    {
+      "record": 2,
+      "line": 3,
+      "values": [
+        "rooms/café.wav",
+        "Room tone with café hum.\nSecond description line stays with this record.",
+        "Synthetic Workshop",
+        "00018",
+        "<script>alert(\"literal\")</script>"
+      ],
+      "filename": "rooms/café.wav",
+      "status": "matched",
+      "matchedPath": "rooms/café.wav",
+      "candidates": [
+        "rooms/café.wav"
+      ],
+      "issueCodes": []
+    },
+    {
+      "record": 3,
+      "line": 5,
+      "values": [
+        "shared.wav",
+        "Two subfolders use this basename; do not silently choose one.",
+        "Synthetic Workshop",
+        "00019",
+        "AUDIO CONTENT NOT PROVIDED"
+      ],
+      "filename": "shared.wav",
+      "status": "hold",
+      "matchedPath": null,
+      "candidates": [
+        "a/shared.wav",
+        "b/shared.wav"
+      ],
+      "issueCodes": [
+        "ambiguous_file_match"
+      ]
+    },
+    {
+      "record": 4,
+      "line": 6,
+      "values": [
+        "missing.wav",
+        "This row has no corresponding selected file.",
+        "Synthetic Workshop",
+        "00020",
+        "Review missing file"
+      ],
+      "filename": "missing.wav",
+      "status": "hold",
+      "matchedPath": null,
+      "candidates": [],
+      "issueCodes": [
+        "metadata_without_file"
+      ]
+    },
+    {
+      "record": 5,
+      "line": 7,
+      "values": [
+        "doors/front.wav",
+        "A second metadata row for the same file is an unresolved duplicate.",
+        "Synthetic Workshop",
+        "00021",
+        "Keep both source rows"
+      ],
+      "filename": "doors/front.wav",
+      "status": "hold",
+      "matchedPath": "doors/front.wav",
+      "candidates": [
+        "doors/front.wav"
+      ],
+      "issueCodes": [
+        "duplicate_metadata_key",
+        "multiple_rows_for_file",
+        "inventory_identity_hold"
+      ]
+    },
+    {
+      "record": 6,
+      "line": 8,
+      "values": [
+        "",
+        "A meaningful record with a blank filename remains visible.",
+        "Synthetic Workshop",
+        "00022",
+        "Do not drop"
+      ],
+      "filename": "",
+      "status": "hold",
+      "matchedPath": null,
+      "candidates": [],
+      "issueCodes": [
+        "blank_filename"
+      ]
+    },
+    {
+      "record": 7,
+      "line": 9,
+      "values": [
+        "long.wav",
+        "A deliberately long description. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. The air changes from soft to loud; this is synthetic text, not an audio-quality claim. ",
+        "Synthetic Workshop",
+        "00023",
+        "End marker: LONG-DESCRIPTION-COMPLETE"
+      ],
+      "filename": "long.wav",
+      "status": "matched",
+      "matchedPath": "long.wav",
+      "candidates": [
+        "long.wav"
+      ],
+      "issueCodes": []
+    }
+  ],
+  "files": [
+    {
+      "id": 1,
+      "path": "doors/front.wav",
+      "issueCodes": [
+        "multiple_rows_for_file"
+      ],
+      "referencedBy": [
+        1,
+        5
+      ],
+      "matchedBy": [
+        1,
+        5
+      ],
+      "status": "review"
+    },
+    {
+      "id": 2,
+      "path": "rooms/café.wav",
+      "issueCodes": [],
+      "referencedBy": [
+        2
+      ],
+      "matchedBy": [
+        2
+      ],
+      "status": "matched"
+    },
+    {
+      "id": 3,
+      "path": "a/shared.wav",
+      "issueCodes": [
+        "ambiguous_file_match"
+      ],
+      "referencedBy": [
+        3
+      ],
+      "matchedBy": [],
+      "status": "review"
+    },
+    {
+      "id": 4,
+      "path": "b/shared.wav",
+      "issueCodes": [
+        "ambiguous_file_match"
+      ],
+      "referencedBy": [
+        3
+      ],
+      "matchedBy": [],
+      "status": "review"
+    },
+    {
+      "id": 5,
+      "path": "long.wav",
+      "issueCodes": [],
+      "referencedBy": [
+        7
+      ],
+      "matchedBy": [
+        7
+      ],
+      "status": "matched"
+    },
+    {
+      "id": 6,
+      "path": "unlisted.wav",
+      "issueCodes": [
+        "file_without_metadata"
+      ],
+      "referencedBy": [],
+      "matchedBy": [],
+      "status": "review"
+    }
+  ],
+  "issues": [
+    {
+      "id": 1,
+      "code": "duplicate_metadata_key",
+      "message": "Multiple metadata records have the same selected filename value.",
+      "rowIds": [
+        1,
+        5
+      ],
+      "fileIds": []
+    },
+    {
+      "id": 2,
+      "code": "ambiguous_file_match",
+      "message": "More than one inventory entry can match this row. Use an unambiguous relative path.",
+      "rowIds": [
+        3
+      ],
+      "fileIds": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": 3,
+      "code": "metadata_without_file",
+      "message": "No file in the supplied inventory matches this metadata record.",
+      "rowIds": [
+        4
+      ],
+      "fileIds": []
+    },
+    {
+      "id": 4,
+      "code": "blank_filename",
+      "message": "The selected filename field is blank.",
+      "rowIds": [
+        6
+      ],
+      "fileIds": []
+    },
+    {
+      "id": 5,
+      "code": "multiple_rows_for_file",
+      "message": "More than one metadata record resolves to this file.",
+      "rowIds": [
+        1,
+        5
+      ],
+      "fileIds": [
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "code": "file_without_metadata",
+      "message": "No metadata row exactly references this inventory entry in the selected mode.",
+      "rowIds": [],
+      "fileIds": [
+        6
+      ]
+    },
+    {
+      "id": 7,
+      "code": "inventory_identity_hold",
+      "message": "The matched inventory entry has identity issues; review it before release.",
+      "rowIds": [
+        1
+      ],
+      "fileIds": []
+    },
+    {
+      "id": 8,
+      "code": "inventory_identity_hold",
+      "message": "The matched inventory entry has identity issues; review it before release.",
+      "rowIds": [
+        5
+      ],
+      "fileIds": []
+    }
+  ],
+  "counts": {
+    "metadataRows": 7,
+    "inventoryEntries": 6,
+    "matchedRows": 2,
+    "heldRows": 5,
+    "issues": 8
+  },
+  "scope": "Supplied metadata and filename inventory only. Not embedded metadata, sound quality, rights, UCS correctness, ZIP contents or marketplace acceptance.",
+  "createdAt": "2026-09-19T16:53:52.910Z",
+  "metadataInputName": "synthetic-release.csv",
+  "inventorySource": "synthetic-paths.txt"
+}
