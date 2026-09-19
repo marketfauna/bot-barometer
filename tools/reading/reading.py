@@ -846,9 +846,16 @@ def main(argv=None):
         import render_reading
         # reading.json is the record of the run and is never rewritten. The reinterpretation (outcomes, clues,
         # summaries, comparisons, next steps, counts: all derived) goes to reading.interpreted.json beside it.
-        with open(a.reading, encoding="utf-8") as f:
-            rd = reinterpret(json.load(f))
         interp = os.path.join(os.path.dirname(a.reading), "reading.interpreted.json")
+        with open(a.reading, encoding="utf-8") as f:
+            record = json.load(f)
+        if os.path.exists(interp):  # reviews are recorded in the interpreted file and survive a re-render
+            with open(interp, encoding="utf-8") as f:
+                prev = {s["url"]: s for s in json.load(f).get("sites", []) if s.get("next_steps_reviewed")}
+            for site in record["sites"]:
+                if site["url"] in prev:
+                    site["next_steps"], site["next_steps_reviewed"] = prev[site["url"]]["next_steps"], True
+        rd = reinterpret(record)
         with open(interp, "w", encoding="utf-8") as f:
             json.dump(rd, f, indent=1)
         print(render_reading.render_files(interp))
