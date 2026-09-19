@@ -149,6 +149,21 @@ def tls_context():
 
 
 _TLS = None
+HOST_CEILING = 10
+_HOST_COUNTS = {}  # authority -> requests actually started in this run; checked before every request
+
+
+def reset_host_budget():
+    _HOST_COUNTS.clear()
+
+
+def _take_budget(url):
+    """True if one more request to this authority may start; counts it if so."""
+    host = urlsplit(url).netloc.lower()
+    if _HOST_COUNTS.get(host, 0) >= HOST_CEILING:
+        return False
+    _HOST_COUNTS[host] = _HOST_COUNTS.get(host, 0) + 1
+    return True
 
 
 class _NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -173,6 +188,11 @@ def fetch(url, ua, extra=None, follow=True, max_hops=5, hop_allowed=None, accept
         if extra and cur == url:
             h.update(extra)  # a signature covers the first request only (@authority is bound)
         req = urllib.request.Request(cur, headers=h, method="GET")
+        if not _take_budget(cur):
+            rec.update(status=None, final_url=cur, redirects=hops,
+                       budget_stopped="request not started: %d requests already made to %s in this run" % (HOST_CEILING, urlsplit(cur).netloc))
+            break
+        rec["requests_started"] = rec.get("requests_started", 0) + 1
         try:
             with opener.open(req, timeout=TIMEOUT) as r:
                 status, msg, body = r.status, r.headers, r.read(HEAD_BYTES * 5)
@@ -200,7 +220,7 @@ def fetch(url, ua, extra=None, follow=True, max_hops=5, hop_allowed=None, accept
     rec["elapsed_ms"] = int((time.time() - t0) * 1000)
     rec["body_sha256"] = hashlib.sha256(body).hexdigest()
     rec["body_bytes_read"] = len(body)
-    rec["requests_made"] = len(hops) + (0 if rec.get("redirect_stopped") else 1) if rec.get("status") is not None or hops else 1
+    rec["requests_made"] = rec.get("requests_started", 0)
     return rec, body[:keep_bytes]
 
 
@@ -230,6 +250,8 @@ def body_facts(body, expect_marker=None):
 def classify_attempt(rec, facts):
     """One word for what came back, without asserting cause."""
     st = rec.get("status")
+    if rec.get("budget_stopped"):
+        return "budget-stop"  # our own ceiling, not a refusal and not a transport failure
     if rec.get("redirect_stopped"):
         return "redirect-not-followed"
     if st is None:
@@ -334,8 +356,8 @@ def compare_conditions(site):
         same = c["unsigned"]["summary"]["outcomes"] == c["signed"]["summary"]["outcomes"] and \
                c["unsigned"]["summary"]["statuses"] == c["signed"]["summary"]["statuses"]
         return {"sequences_match": same,
-                "note": ("signed and unsigned sequences matched. Our key is not registered with any verifier, and an unregistered key "
-                         "reads as unknown, so this does not show that signing is useless at this site; it shows nothing either way"
+                "note": ("signed and unsigned sequences matched. Unless the self-test in this report shows the key is known to a verifier, "
+                         "this does not show that signing is useless at this site; it shows nothing either way"
                          if same else
                          "signed and unsigned sequences differed in this run; with three attempts each this is an "
                          "observation, not a measured effect of signing")}
@@ -465,6 +487,7 @@ def robots_for(url, scope_token, ua):
     if st == 200 and "<html" not in body[:500].decode("utf-8", "replace").lower():
         text = body.decode("utf-8-sig", "replace")
         groups = rfc9309.parse(text)
+        _GROUPS[robots_url] = groups
         out["policy_basis"] = "parsed"
         out["robots_text"] = text[:60000]
         out["robots_sha256"] = hashlib.sha256(body).hexdigest()
@@ -522,22 +545,31 @@ def robots_for(url, scope_token, ua):
     return out
 
 
-def make_hop_check(scope_token, ua, cache):
+_GROUPS = {}  # robots_url -> parsed groups from the complete file as fetched (the stored robots_text is an archive copy and may be truncated)
+
+
+def make_hop_check(scope_token, ua, cache, control=False):
+    """Before a redirect is followed, the exact target is evaluated for every token the request actually
+    carries: the customer's token, ours and the reading token for named requests; the control client's
+    token for the control request."""
+    tokens = (CONTROL_TOKEN, OWN_TOKEN) if control else (scope_token, OWN_TOKEN, READING_TOKEN)
+
     def hop_allowed(nxt):
         parts = urlsplit(nxt)
         key = parts.scheme + "://" + parts.netloc.lower()
         if key not in cache:
             cache[key] = robots_for(nxt, scope_token, ua)
             cache[key]["fetched_for_redirect"] = True
-            r = cache[key]
-        else:
-            r = cache[key]
-            if r.get("policy_basis") == "parsed":
-                groups = rfc9309.parse(r["robots_text"])
-                ok = all(rfc9309.evaluate(groups, t, nxt)["allowed"] for t in (scope_token, OWN_TOKEN))
-                return ok, ("allowed by that host's robots.txt" if ok else "that host's robots.txt disallows the target")
-        ok = r["decision"] == "requested"
-        return ok, ("allowed by that host's robots.txt" if ok else r.get("decision_reason", "policy unknown"))
+        r = cache[key]
+        if r.get("policy_basis") == "parsed":
+            groups = _GROUPS.get(r["robots_url"])
+            if groups is None:
+                groups = rfc9309.parse(r.get("robots_text") or "")
+            bad = [t for t in tokens if not rfc9309.evaluate(groups, t, nxt)["allowed"]]
+            return (not bad), ("allowed by that host's robots.txt" if not bad else "that host's robots.txt disallows the target for " + ", ".join(bad))
+        if r.get("policy_unknown") or r.get("robots_refused"):
+            return False, r.get("decision_reason", "policy unknown")
+        return True, "robots.txt unavailable there (" + str(r.get("policy_basis", ""))[:60] + ")"
     return hop_allowed
 
 
@@ -577,8 +609,10 @@ def run(scope, outdir, vantage=None):
         reading["signing"]["self_test"] = {"url": SELFTEST_URL, "status": st_rec.get("status"), "requested_at_utc": st_rec["requested_at_utc"],
                                            "signature_input": sig.get("Signature-Input"),
                                            "meaning": "Cloudflare's public test endpoint: 200 = signature valid and key known, 401 = well formed but key unknown to Cloudflare, 400 = malformed"}
+    reset_host_budget()
     robots_cache = {}
     hop_check = make_hop_check(scope["agent_token"], ua, robots_cache)
+    hop_check_control = make_hop_check(scope["agent_token"], ua, robots_cache, control=True)
     for s in scope["sites"]:
         url = s["url"]
         host = urlsplit(url).netloc
@@ -603,7 +637,7 @@ def run(scope, outdir, vantage=None):
                     if c == "control" and (rep > 0 or not site["robots"].get("control_allowed", True)):
                         continue  # one control request per site; none where robots.txt disallows the control's own token
                     extra = wba.sign_request(priv, kid, "GET", target, AGENT_URL) if c == "signed" else None
-                    rec, body = fetch(target, CONTROL_UA if c == "control" else ua, extra, hop_allowed=hop_check, accept=accept)
+                    rec, body = fetch(target, CONTROL_UA if c == "control" else ua, extra, hop_allowed=hop_check_control if c == "control" else hop_check, accept=accept)
                     hops = rec.get("redirects") or []
                     if target == url and hops and all(h["status"] in (301, 308) for h in hops) and rec.get("status") is not None and not rec.get("redirect_stopped"):
                         target = rec["final_url"]  # permanent redirect: later attempts go straight there, which keeps the request count down
@@ -615,8 +649,7 @@ def run(scope, outdir, vantage=None):
                     time.sleep(site_spacing)
             for c in conditions:
                 site["conditions"][c]["summary"] = summarise_condition(site["conditions"][c]["attempts"])
-        site["requests_to_host"] = site["robots"]["fetch"].get("requests_made", 1) + site["robots"].get("control_fetch", {}).get("requests_made", 0) + sum(
-            a.get("requests_made", 1) for c in site["conditions"].values() for a in c["attempts"])
+        site["requests_to_host"] = _HOST_COUNTS.get(host.lower(), 0)  # this authority only; redirect targets are counted under their own host in requests_by_host
         site["reported"] = s.get("reported")
         site["comparison"] = compare_conditions(site)
         site["clue_verdict"] = clue_verdict(site)
@@ -627,6 +660,8 @@ def run(scope, outdir, vantage=None):
         with open(path, "w", encoding="utf-8") as f:
             json.dump(reading, f, indent=1)
     reading["finished_utc"] = now_utc()
+    reading["requests_by_host"] = dict(_HOST_COUNTS)  # counted before each request started, every host including redirect targets
+    reading["request_ceiling_per_host"] = HOST_CEILING
     hashes = {}
     for st in reading["sites"]:
         h = st["robots"].get("robots_sha256")
@@ -694,10 +729,13 @@ def audit(reading):
             gap = min((b - a).total_seconds() for a, b in zip(t, t[1:]))
             if gap + 1 < need:  # timestamps are whole seconds
                 fails.append("%s: smallest gap %.0f s is under the crawl delay %.0f s" % (name, gap, need))
-        if s.get("requests_to_host") is not None and s["requests_to_host"] > reading.get("request_ceiling_per_host", 10):
+        if s.get("requests_to_host") is not None and s["requests_to_host"] > reading.get("request_ceiling_per_host", 10) and not reading.get("requests_by_host"):
             fails.append("%s: %d requests exceed the stated ceiling" % (name, s["requests_to_host"]))
         if s.get("next_steps") and not s.get("next_steps_reviewed"):
             fails.append("%s: next steps not reviewed" % name)
+    for host, n in (reading.get("requests_by_host") or {}).items():
+        if n > reading.get("request_ceiling_per_host", 10):
+            fails.append("%s: %d requests exceed the stated ceiling" % (host, n))
     return fails
 
 
@@ -740,7 +778,7 @@ def compare(ours, theirs):
         elif a == b:
             verdict = "same at both vantages"
         elif (a in OK_OUTCOMES) != (b in OK_OUTCOMES):
-            verdict = "DIFFERS: served at one vantage and not the other; the difference follows the network or address, since the request was otherwise the same"
+            verdict = "DIFFERS: served at one vantage and not the other. Observed difference only: the readings were taken at different times and the two environments were not otherwise shown to be equal, so the cause is unresolved"
         else:
             verdict = "differs in kind; both not served"
         rows.append({"site": s.get("label") or s["host"], "url": s["url"], "ours": a, "theirs": b, "verdict": verdict})
@@ -758,7 +796,7 @@ def compare_md(cmp):
     for r in cmp["rows"]:
         out.append("| %s | %s | %s | %s |" % (r["site"], r["ours"], r["theirs"], r["verdict"]))
     n = sum(1 for r in cmp["rows"] if r["verdict"].startswith("DIFFERS"))
-    out += ["", "%d of %d sites were served at one vantage and not the other. Readings were taken at different times; a site's rules can change between them." % (n, len(cmp["rows"])), ""]
+    out += ["", "%d of %d sites were served at one vantage and not the other. The readings were not concurrent (start times above), and a site's rules can change between them; network, address, timing and, where the User-Agents differ, the User-Agent all remain possible explanations." % (n, len(cmp["rows"])), ""]
     return "\n".join(out)
 
 

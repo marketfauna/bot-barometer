@@ -258,6 +258,125 @@ class Interpretation(unittest.TestCase):
         self.assertFalse(r["control_allowed"])
         self.assertIn("MarketfaunaReading", r["decision_reason"])
 
+    def test_compare_never_names_a_cause_even_with_same_user_agent(self):
+        def rd(summary, ua, start):
+            return {"vantage": "v", "started_utc": start, "user_agent_sent": ua, "sites": [
+                {"url": "https://a.example/f", "host": "a.example", "label": None, "robots": {"decision": "requested"},
+                 "conditions": {"unsigned": {"summary": {"summary": summary}}}}]}
+        for ua2 in ("UA", "OtherUA"):
+            cmp = R.compare(rd("delivered-feed", "UA", "2026-09-18T21:00:00Z"), rd("refused", ua2, "2026-09-19T09:00:00Z"))
+            text = (cmp["rows"][0]["verdict"] + R.compare_md(cmp)).lower()
+            self.assertNotIn("follows the network", text)
+            self.assertNotIn("otherwise the same", text)
+            self.assertIn("cause is unresolved", text)
+            self.assertIn("not concurrent", text)
+        self.assertIn("NO; differences", R.compare_md(R.compare(rd("refused", "UA", "t1"), rd("refused", "OtherUA", "t2"))))
+
+    def test_eleventh_request_to_a_host_never_starts(self):
+        import reading as mod
+        started = []
+
+        class FakeResp:
+            status = 302
+
+            def __init__(self, url):
+                self.headers = {"Location": url + "x"}
+
+            def read(self, n=-1):
+                return b""
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+
+        class FakeOpener:
+            def open(self, req, timeout=None):
+                started.append(req.full_url)
+                return FakeResp(req.full_url)
+        real_build = mod.urllib.request.build_opener
+        mod.urllib.request.build_opener = lambda *a, **k: FakeOpener()
+        mod._TLS = (None, "test")
+        try:
+            mod.reset_host_budget()
+            recs = []
+            for _ in range(4):  # each call would follow up to six same-host temporary redirects
+                rec, _ = mod.fetch("https://loop.example/a", "UA")
+                recs.append(rec)
+            other, _ = mod.fetch("https://other.example/a", "UA", max_hops=0)
+        finally:
+            mod.urllib.request.build_opener = real_build
+            mod._TLS = None
+        self.assertEqual(sum(1 for u in started if "loop.example" in u), 10)
+        self.assertTrue(any(r.get("budget_stopped") for r in recs))
+        self.assertEqual(mod.classify_attempt([r for r in recs if r.get("budget_stopped")][0], {}), "budget-stop")
+        self.assertEqual(sum(1 for u in started if "other.example" in u), 1)  # a separate host keeps its own budget
+        self.assertEqual(mod._HOST_COUNTS["loop.example"], 10)
+
+    def test_redirect_target_disallowed_for_the_reading_token_is_never_requested(self):
+        import reading as mod
+        robots = b"User-agent: MarketfaunaReading\nDisallow: /private/\n\nUser-agent: python-urllib\nDisallow: /ctl/\n\nUser-agent: *\nAllow: /\n"
+        cache = {}
+        real = mod.fetch
+        mod.fetch = lambda url, ua, extra=None, **kw: ({"url": url, "requested_at_utc": "t", "status": 200, "headers": {"content-type": "text/plain"}, "requests_made": 1}, robots)
+        try:
+            cache["https://x.example"] = mod.robots_for("https://x.example/feed", "TestBot", "UA")
+        finally:
+            mod.fetch = real
+        named = mod.make_hop_check("TestBot", "UA", cache)
+        ctl = mod.make_hop_check("TestBot", "UA", cache, control=True)
+        self.assertEqual(named("https://x.example/private/feed")[0], False)
+        self.assertIn("MarketfaunaReading", named("https://x.example/private/feed")[1])
+        self.assertEqual(named("https://x.example/ctl/feed")[0], True)
+        self.assertEqual(ctl("https://x.example/ctl/feed")[0], False)
+        self.assertEqual(ctl("https://x.example/private/feed")[0], True)
+        # and fetch() does not start the request when the check refuses
+        started = []
+
+        class Resp:
+            status = 302
+            headers = {"Location": "/private/feed"}
+
+            def read(self, n=-1):
+                return b""
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *a):
+                return False
+
+        class Opener:
+            def open(self, req, timeout=None):
+                started.append(req.full_url)
+                return Resp()
+        rb = mod.urllib.request.build_opener
+        mod.urllib.request.build_opener = lambda *a, **k: Opener()
+        mod._TLS = (None, "test")
+        try:
+            mod.reset_host_budget()
+            rec, _ = mod.fetch("https://x.example/feed", "UA", hop_allowed=named)
+        finally:
+            mod.urllib.request.build_opener = rb
+            mod._TLS = None
+        self.assertEqual(started, ["https://x.example/feed"])
+        self.assertIn("not followed", rec["redirect_stopped"])
+
+    def test_signing_statements_follow_the_record(self):
+        base = {"conditions": ["control", "unsigned"], "signing": None, "signing_note": "signed condition dropped on this machine: FileNotFoundError"}
+        t = " ".join(RR.signing_statements(base))
+        self.assertIn("No signed requests were made", t)
+        self.assertNotIn("401", t)
+        signed = {"conditions": ["unsigned", "signed"], "signing": {"keyid": "k", "agent_url": "u", "note": "n", "self_test": {"status": 401}}}
+        self.assertIn("answered 401", " ".join(RR.signing_statements(signed)))
+        signed["signing"]["self_test"]["status"] = 200
+        self.assertIn("accepted the signature", " ".join(RR.signing_statements(signed)))
+        signed["signing"]["self_test"] = {"status": None}
+        self.assertIn("not completed", " ".join(RR.signing_statements(signed)))
+        signed["signing"]["self_test"] = {"status": 400}
+        self.assertIn("uninterpreted", " ".join(RR.signing_statements(signed)))
+
     def test_aws_waf_202_is_not_delivery(self):
         self.assertEqual(R.classify_attempt({"status": 202, "headers": {"x-amzn-waf-action": "challenge"}}, {}), "challenge")
 

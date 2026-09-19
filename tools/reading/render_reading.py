@@ -20,10 +20,9 @@ LIMITS = [
     "Vantage: %(vantage)s. Vendors that validate bots by address will never match our address to the customer's bot, in either direction.",
     "The requests were sent by us. A User-Agent is not the customer's egress addresses, session or signing identity.",
     "Vendor clues say which product answered. They do not establish why a request was refused.",
-    "Three attempts per condition can show that a response was stable or intermittent in this run. They cannot measure an effect of signing.",
-    "The signature was made with our own key and directory. Cloudflare's public test endpoint reports the key as unknown to Cloudflare (see the self-test above); we have no evidence that any other verifier knows it either. Identical signed and unsigned results therefore say nothing about what a recognised key would receive.",
+    "Three attempts per condition can show that a response was stable or intermittent in this run. They cannot measure an effect of any one condition.",
     "Validity: one vantage point, one URL per site, the dates shown. Site rules change without notice. This is a dated reading, not monitoring.",
-    "Requests: robots.txt, one control and the named conditions make %(budget)s per site before redirects. Counting every redirect hop, the most any one host received in this reading was %(max_requests)s. Requests were at least %(spacing).1f s apart, and slower where robots.txt carried a crawl delay.",
+    "Requests: robots.txt, one control and the named conditions make %(budget)s per site before redirects. A counter checked before every request, redirect targets included, stops any request that would be the eleventh to one host in this reading; the most any one host received was %(max_requests)s. Requests were at least %(spacing).1f s apart, and slower where robots.txt carried a crawl delay.",
     "The control request uses a generic, honestly labelled HTTP client, not a browser User-Agent. We do not present as a browser, so the control separates 'this agent name' from 'any non-browser client at this address', and cannot show what a browser would receive.",
     "Nothing in this report suggests disguising the agent, rotating addresses or solving challenges, and we will not advise it.",
 ]
@@ -201,6 +200,23 @@ def overview_rows(reading):
     return rows
 
 
+def signing_statements(reading):
+    """Only what the record supports: whether a signed condition ran, and what the self-test returned."""
+    sg = reading.get("signing")
+    if "signed" not in reading.get("conditions", []) or not sg:
+        why = reading.get("signing_note")
+        return ["No signed requests were made in this reading%s. Nothing here bears on Web Bot Auth." % ((" (" + why + ")") if why else "")]
+    st = (sg.get("self_test") or {}).get("status")
+    base = "The signed requests used our own key and directory."
+    if st == 200:
+        return [base + " Cloudflare's public test endpoint accepted the signature and knew the key at the time of this reading; that says nothing about any other verifier or about any site's own rules."]
+    if st == 401:
+        return [base + " Cloudflare's public test endpoint answered 401, which it documents as a well-formed signature from a key it does not know; we have no evidence that any other verifier knows the key either. Identical signed and unsigned results therefore say nothing about what a recognised key would receive."]
+    if st is None:
+        return [base + " The signature self-test was not completed in this run, so whether any verifier knows the key is unrecorded here."]
+    return [base + " The signature self-test returned status %s, which is neither of the two documented outcomes; treat the signed results as uninterpreted." % st]
+
+
 def render_md(reading):
     tok = reading["agent_token"]
     d = reading.get("denominators", {})
@@ -240,8 +256,8 @@ def render_md(reading):
         if st:
             out.append("- Signature self-test at %s: status %s at %s (%s). Signature-Input sent: `%s`" % (st["url"], st["status"], st["requested_at_utc"], st["meaning"], st.get("signature_input")))
     fmt = {"vantage": reading.get("vantage", "not recorded"), "budget": reading.get("request_budget_per_site", "8"), "spacing": reading["spacing_s"],
-           "max_requests": max([x.get("requests_to_host") or 0 for x in reading["sites"]] or [0]) or "not recorded"}
-    out += ["", "## What this reading is not", ""] + ["- " + (x % fmt) for x in LIMITS]
+           "max_requests": max(list((reading.get("requests_by_host") or {}).values()) or [x.get("requests_to_host") or 0 for x in reading["sites"]] or [0]) or "not recorded"}
+    out += ["", "## What this reading is not", ""] + ["- " + (x % fmt) for x in LIMITS] + ["- " + x for x in signing_statements(reading)]
     out += ["", "HTTP 200 is an HTTP observation, not permission. A 200 does not show:", ""] + ["- " + x for x in NOT_200]
     out += ["", "A 403 does not show:", ""] + ["- " + x for x in NOT_403]
     if routes.get("readiness"):
