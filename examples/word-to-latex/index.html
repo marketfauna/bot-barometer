@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A tested Word-to-LaTeX example · Marketfauna</title>
+<meta name="description" content="A free reproducible Word-to-LaTeX example: five native equations, citations, a merged table and a cross-reference repair tested by inserting another table.">
+<style>
+:root{color-scheme:light dark;--bg:#f6f7f2;--paper:#fff;--ink:#192b27;--muted:#52645c;--line:#cbd7cb;--accent:#236444}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Georgia,serif}main{max-width:980px;margin:auto;padding:35px 22px 80px}h1,h2,h3,nav,.tag,.button,th{font-family:system-ui,sans-serif}nav{font-size:14px}h1{font-size:clamp(30px,5vw,47px);line-height:1.13;max-width:21ch;margin:22px 0}h2{font-size:24px;line-height:1.25;margin-top:42px}h3{font-size:18px}p,li{max-width:74ch}a{color:var(--accent);text-underline-offset:3px}a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}.tag{font-size:13px;color:var(--muted)}.lead{font-size:21px;max-width:66ch}.button{display:inline-block;background:var(--accent);color:white;padding:12px 19px;border-radius:5px;text-decoration:none;font-size:15px;font-weight:650;margin:8px 12px 8px 0}.small{font-size:14px;color:var(--muted)}.callout{background:var(--paper);border-left:4px solid var(--accent);padding:16px 23px;margin:25px 0}.table-scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}th{background:var(--paper)}pre{overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:16px;font-size:14px;line-height:1.55}code{font-family:ui-monospace,Consolas,monospace}.twoup{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{padding:18px;border:1px solid var(--line);background:var(--paper);border-radius:6px}.card p{margin:8px 0}figure{margin:20px 0}img{display:block;width:100%;height:auto;border:1px solid var(--line)}figcaption{font-size:14px;color:var(--muted);margin-top:8px}summary{cursor:pointer;font-family:system-ui,sans-serif}footer{margin-top:45px;padding-top:20px;border-top:1px solid var(--line)}@media(max-width:650px){.twoup{grid-template-columns:1fr}main{padding:24px 16px 55px}th,td{padding:9px}.button{display:block;text-align:center;margin-right:0}}@media(prefers-color-scheme:dark){:root{--bg:#121b16;--paper:#1a261f;--ink:#eaf1e9;--muted:#b1c2b4;--line:#405445;--accent:#95d5ad}.button{color:#102218}}
+</style></head><body><main>
+<nav><a href="/">Marketfauna</a> / Worked examples</nav>
+<div class="tag">Free example · Synthetic manuscript · Tested 19 September 2026</div>
+<h1>Word to LaTeX: check the document after it changes</h1>
+<p class="lead">Free Pandoc preserved all five equations in our test manuscript. Review found a subtler defect: inserting a table updated the caption, while a cross-reference still pointed to the old number.</p>
+<p>This small example shows the source, the free conversion and a reviewed repair. Download it, reproduce the conversion, and use the checks on your own manuscript. All research content, values and citations in the sample are invented.</p>
+<a class="button" href="word-to-latex-example.zip" download>Download the complete example</a><a href="reviewed.pdf">Read the reviewed PDF</a>
+<p class="small">ZIP includes the Word source, free-conversion source/PDF, reviewed source/PDF, figure, bibliography, commands and verification evidence. No executables or TeX cache. No upload, account or purchase required.</p>
+
+<h2>What happened in this example</h2>
+<div class="table-scroll"><table><thead><tr><th>Content</th><th>Configured free conversion</th><th>Reviewed result</th></tr></thead><tbody>
+<tr><td>Five native Word equations</td><td>All five preserved</td><td>Same math source; each expression visually checked</td></tr>
+<tr><td>Merged table and its numbers</td><td>Values/grouping retained; layout warning</td><td>Table rebuilt with the same values and grouping</td></tr>
+<tr><td>Structured citation</td><td>Bibliography exported by Pandoc</td><td>Free export retained</td></tr>
+<tr><td>Typed citation without metadata</td><td>Literal text retained</td><td>No bibliographic details invented</td></tr>
+<tr><td>Captions</td><td>Cached number duplicated by LaTeX numbering</td><td>Redundant caption prefixes removed</td></tr>
+<tr><td>Table cross-reference</td><td>Clickable, but its displayed number was cached</td><td>Live LaTeX reference</td></tr>
+<tr><td>Tracked edits / text box</td><td>Selected accepted text and text-box note retained</td><td>Same explicit revision policy</td></tr>
+</tbody></table></div>
+<p class="small">The initial raw conversion was three pages; bibliography export and explicit margins produced the stronger two-page baseline above. The reviewed output is also two pages. This one case does not measure general converter accuracy.</p>
+
+<h2>The useful test: insert a preceding table</h2>
+<p>A PDF can look correct today and contain references that break during editing. We compiled isolated copies after inserting another table before the one being cited.</p>
+<div class="twoup"><div class="card"><h3>Free configuration</h3><p>Actual target caption: <strong>Table 2</strong></p><p>Cross-reference still displayed: <strong>Table 1</strong></p><p class="small">Compilation succeeded. Successful compilation did not detect the stale number.</p></div><div class="card"><h3>Reviewed source</h3><p>Actual target caption: <strong>Table 2</strong></p><p>Cross-reference displayed: <strong>Table 2</strong></p><p class="small">The reference followed the target when its position changed.</p></div></div>
+<pre><code>% Free conversion of the cached Word field:
+\hyperref[TableResults]{1}
+
+% Repair for this known target:
+\ref{TableResults}</code></pre>
+<p>Check the target label before making this change. It is a repair for an identified field, not a rule to replace every number in a document.</p>
+
+<h2>Reproduce the free baseline</h2>
+<p>The download includes exact commands for the stronger baseline using <a href="https://github.com/jgm/pandoc/releases/tag/3.11">Pandoc 3.11</a> and <a href="https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.17.0">Tectonic 0.17.0</a>. The tools are free and obtained separately from their official releases. See the <a href="https://pandoc.org/MANUAL.html">Pandoc manual</a> for conversion options.</p>
+<p>For the included reviewed packet, enter its folder and compile:</p>
+<pre><code>tectonic --untrusted --keep-logs --keep-intermediates manuscript.tex</code></pre>
+<p class="small">A first Tectonic run may download TeX dependencies. This example uses XeTeX via Tectonic. Confirm the required engine and template for your actual publisher before choosing a build.</p>
+
+<h2>A practical review sequence</h2>
+<ol><li>Keep the original document and choose how to handle tracked changes. This example accepts them.</li><li>Compare every equation, table value, grouping, citation and extracted image with the source.</li><li>Inspect all rendered pages, including long captions, table widths and symbols.</li><li>Insert or move a table/figure in a copy. Check that references update with their targets.</li><li>Compile using the actual submission template and engine, then have the author approve scientific meaning and the final proof.</li></ol>
+<details><summary>Preview of the reviewed synthetic manuscript</summary><figure><img src="reviewed-page-1.png" alt="First page of an invented manuscript containing five displayed equations and a three-row results table." loading="lazy"><figcaption>First of two reviewed pages. <a href="reviewed.pdf">Open the complete PDF.</a></figcaption></figure></details>
+
+<div class="callout"><strong>Scope of the evidence</strong><p>Eleven focused checks passed, including the inserted-table comparison; all pages of the raw, configured and reviewed PDFs were inspected. The original Word file was not rendered in Word or LibreOffice, so original layout equivalence is unverified. No actual journal template, pdfLaTeX acceptance, accessibility certification, customer time saving or general equation-conversion accuracy is established. The compiler retained a Fontconfig configuration warning; the reviewed PDF was readable and its TeX log had no detected layout, undefined-reference or missing-character warnings.</p></div>
+<footer><p>Marketfauna made this example with AI-assisted development and a separate AI-agent review. The source, reproduction commands and verification results are included so you can inspect the result. A reproducible failure or a description of the conversion step that still takes you time would help improve the example: <a href="mailto:hello@marketfauna.com?subject=Word-to-LaTeX%20example">hello@marketfauna.com</a>. Please do not send an unpublished manuscript without first agreeing how it will be handled.</p><p class="small">Published example version: 2026-09-19. Ordinary site visit measurement may be provided by Cloudflare; this page has no document-upload form.</p></footer>
+</main></body></html>
