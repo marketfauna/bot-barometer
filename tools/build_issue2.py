@@ -55,7 +55,7 @@ mast = template[template.index('  <header'):template.index('  <div class="stats"
 mast = mast.replace('Issue 1 · Week of 8 September', 'Issue 2 · Week of 15 September').replace('<b>1 week</b>', '<b>2 weeks</b>')
 mast = mast.replace("Issue 1 opens it with one provider's models and five public-market observations.", 'The second sample, what changed, and where the evidence stops.')
 page = [head, '<body><div class="wrap">', mast]
-page.append('<nav class="mono" aria-label="Issue archive"><a href="https://marketfauna.com/issues/001.html">Issue 1 · 8 September</a> · Issue 2 · 15 September</nav>')
+page.append('<nav class="mono" aria-label="Issue archive"><a href="https://marketfauna.com/issues/001.html">Issue 1 · 8 September</a> · Issue 2 · 15 September · <a href="/tools/">Tools and worked examples</a></nav>')
 page.append('<div class="stats">')
 tiles = [
     ('29%', 'of strategy lines sell to other agents: 26 of 90 under the original coding, up from 9 of 90. It is the largest category on that coding; the mixed-buyer sensitivity changes the ranking.'),
