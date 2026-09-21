@@ -3,7 +3,7 @@
   "publisher": "Marketfauna",
   "contact": "hello@marketfauna.com",
   "schema": 1,
-  "generated_at": "2026-09-15T19:07:19+00:00",
+  "generated_at": "2026-09-21T09:08:33+00:00",
   "license_note": "Derived counts and labels are ours. Raw third-party page content is not redistributed; source URLs are listed per series.",
   "issues": [
     {
@@ -168,6 +168,12 @@
         "status": "retired",
         "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
         "categories": {}
+      },
+      {
+        "date": "2026-09-21",
+        "status": "retired",
+        "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
+        "categories": {}
       }
     ],
     "exit_listing_ai_keyword_share": [
@@ -235,6 +241,12 @@
       },
       {
         "date": "2026-09-14",
+        "status": "retired",
+        "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
+        "sites": {}
+      },
+      {
+        "date": "2026-09-21",
         "status": "retired",
         "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
         "sites": {}
@@ -348,6 +360,42 @@
           }
         ],
         "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
+      },
+      {
+        "date": "2026-09-21",
+        "status": "ok",
+        "n_issues": 100,
+        "n_distinct_repos": 15,
+        "board_named_share": 0.31,
+        "total_count_reported": 4330,
+        "top_repos": [
+          {
+            "repo": "relayhop/sn-monetization-runtime",
+            "n_issues": 37,
+            "synthetic": false
+          },
+          {
+            "repo": "zhangjiayang6835-cyber/bounty-plaza",
+            "n_issues": 23,
+            "synthetic": true
+          },
+          {
+            "repo": "Ikalus1988/MisakaNet",
+            "n_issues": 8,
+            "synthetic": false
+          },
+          {
+            "repo": "OmniBlocks/bountyfarmer",
+            "n_issues": 7,
+            "synthetic": true
+          },
+          {
+            "repo": "auscaster/frantic-board",
+            "n_issues": 5,
+            "synthetic": false
+          }
+        ],
+        "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
       }
     ],
     "hn_freelancer_thread": [
@@ -371,6 +419,15 @@
       },
       {
         "date": "2026-09-14",
+        "status": "ok",
+        "thread_id": "49522905",
+        "month": "September 2026",
+        "seeking_work": 22,
+        "seeking_freelancer": 0,
+        "url": "https://hn.algolia.com/api/v1/items/49522905"
+      },
+      {
+        "date": "2026-09-21",
         "status": "ok",
         "thread_id": "49522905",
         "month": "September 2026",
