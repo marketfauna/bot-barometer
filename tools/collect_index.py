@@ -442,6 +442,24 @@ def collect_github_bounties():
         return any(k in name for k in GITHUB_SYNTHETIC_KEYWORDS)
 
     n_synth = sum(cnt for full, cnt in repo_counts.items() if synthetic(full))
+
+    # Added 2026-09-21 after week 3: the repository-name rule above missed a repository whose 37 newest
+    # "bounty" issues were all opened on a timer by github-actions[bot]. A bot-account author is observable in
+    # the API response and needs no judgement, so it is reported beside the name rule, which stays unchanged so
+    # that weeks 1 to 3 remain comparable. Neither rule sees an issue a person's account posts with a script.
+    def bot_authored(it):
+        user = it.get("user") or {}
+        return user.get("type") == "Bot" or str(user.get("login", "")).endswith("[bot]")
+
+    def repo_of(it):
+        return it.get("repository_url", "").replace("https://api.github.com/repos/", "")
+
+    n_bot = sum(1 for it in items if bot_authored(it))
+    n_either = sum(1 for it in items if bot_authored(it) or synthetic(repo_of(it)))
+    bot_repo_counts = {}
+    for it in items:
+        if bot_authored(it):
+            bot_repo_counts[repo_of(it)] = bot_repo_counts.get(repo_of(it), 0) + 1
     top = sorted(repo_counts.items(), key=lambda kv: (-kv[1], kv[0]))[:5]
     created = sorted(it.get("created_at", "") for it in items)
     out.update(
@@ -452,7 +470,12 @@ def collect_github_bounties():
         n_synthetic_issues=n_synth,
         synthetic_share=pct(n_synth, len(items)),
         n_synthetic_repos=sum(1 for full in repo_counts if synthetic(full)),
-        top_repos=[{"repo": full, "n_issues": cnt, "synthetic": synthetic(full)} for full, cnt in top],
+        n_bot_authored_issues=n_bot,
+        bot_authored_share=pct(n_bot, len(items)),
+        n_name_rule_or_bot_issues=n_either,
+        name_rule_or_bot_share=pct(n_either, len(items)),
+        top_repos=[{"repo": full, "n_issues": cnt, "synthetic": synthetic(full),
+                    "n_bot_authored": bot_repo_counts.get(full, 0)} for full, cnt in top],
         top1_share=pct(top[0][1], len(items)) if top else None,
         oldest_created_in_page=created[0] if created else None,
         newest_created_in_page=created[-1] if created else None,
@@ -563,7 +586,8 @@ def log_rows(date, series):
         add("exit_listing_ai_share", "all." + k, v)
 
     gh = series["github_bounty_synthetic_share"]
-    for k in ("status", "total_count_reported", "n_issues", "n_distinct_repos", "n_synthetic_issues", "synthetic_share", "n_synthetic_repos", "top1_share"):
+    for k in ("status", "total_count_reported", "n_issues", "n_distinct_repos", "n_synthetic_issues", "synthetic_share", "n_synthetic_repos", "top1_share",
+              "n_bot_authored_issues", "bot_authored_share", "n_name_rule_or_bot_issues", "name_rule_or_bot_share"):
         add("github_bounty_synthetic_share", k, gh.get(k))
     for i, t in enumerate(gh.get("top_repos", []), 1):
         add("github_bounty_synthetic_share", "top{}.repo".format(i), t["repo"])
