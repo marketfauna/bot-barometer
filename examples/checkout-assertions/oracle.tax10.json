@@ -1,0 +1,12 @@
+{
+  "ruleId": "synthetic-backpack-tax10-v2",
+  "basis": "Explicit local exercise rule change: require 10% tax instead of 8%, independently calculate 2999 cents x 10% = 299.9 cents rounded to 300, total 3299 cents. The local tax10 variant applies this synthetic app change. Not customer policy or permission to accept an unexpected live result.",
+  "product": "Sauce Labs Backpack",
+  "quantity": 1,
+  "itemCents": 2999,
+  "subtotalCents": 2999,
+  "taxCents": 300,
+  "totalCents": 3299,
+  "customer": {"firstName": "Avery", "lastName": "River", "postalCode": "10001"},
+  "confirmation": "Thank you for your order!"
+}

@@ -1,0 +1,12 @@
+{
+  "ruleId": "synthetic-backpack-tax8-v1",
+  "basis": "Author-specified independent acceptance rule, agreed only for this local sample: one Backpack at 2999 cents, 8% tax rounded to cents, 3239-cent total. Not a customer tax policy; never derived from the page result at runtime.",
+  "product": "Sauce Labs Backpack",
+  "quantity": 1,
+  "itemCents": 2999,
+  "subtotalCents": 2999,
+  "taxCents": 240,
+  "totalCents": 3239,
+  "customer": {"firstName": "Avery", "lastName": "River", "postalCode": "10001"},
+  "confirmation": "Thank you for your order!"
+}
