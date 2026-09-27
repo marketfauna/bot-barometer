@@ -1,0 +1,83 @@
+--- configured.tex (published free baseline)
++++ reviewed/manuscript.tex (published reviewed result)
+@@ -37,7 +37,7 @@
+ }{% if KOMA class
+   \KOMAoptions{parskip=half}}
+ \makeatother
+-\usepackage{longtable,booktabs,array}
++\usepackage{longtable,booktabs,array,tabularx}
+ \usepackage{caption}
+ \captionsetup[table]{skip=6pt}
+ \newcounter{none} % for unnumbered tables
+@@ -123,45 +123,23 @@
+ \section{Results table and cross
+ reference}\label{results-table-and-cross-reference}
+ 
+-\begin{longtable}[]{@{}
+-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+-  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+-\caption{\protect\phantomsection\label{TableResults}{}Table 1 Invented
+-method values}\tabularnewline
+-\toprule\noalign{}
+-\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+-\begin{minipage}[b]{\linewidth}\raggedright
+-Method and setting
+-\end{minipage}} &
+-\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}@{}}{%
+-\begin{minipage}[b]{\linewidth}\raggedright
+-Invented outcomes
+-\end{minipage}} \\
+-\midrule\noalign{}
+-\endfirsthead
+-\toprule\noalign{}
+-\multicolumn{2}{@{}>{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}}{%
+-\begin{minipage}[b]{\linewidth}\raggedright
+-Method and setting
+-\end{minipage}} &
+-\multicolumn{2}{>{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.5000} + 2\tabcolsep}@{}}{%
+-\begin{minipage}[b]{\linewidth}\raggedright
+-Invented outcomes
+-\end{minipage}} \\
+-\midrule\noalign{}
+-\endhead
+-\bottomrule\noalign{}
+-\endlastfoot
++\begin{table}[htbp]
++\centering
++\caption{Invented method values}\label{TableResults}
++\begin{tabularx}{\linewidth}{@{}lXrr@{}}
++\toprule
++\multicolumn{2}{c}{Method and setting} & \multicolumn{2}{c}{Invented outcomes} \\
++\cmidrule(lr){1-2}\cmidrule(lr){3-4}
+ Method & Condition & Score & Uncertainty \\
+-\multirow{2}{=}{Control} & baseline & 0.125 & ±0.003 \\
+-& held out & 0.118 & ±0.007 \\
+-Variant B & long condition name that must wrap without changing its
+-meaning & 0.139 & ±0.004 \\
+-\end{longtable}
++\midrule
++\multirow{2}{*}{Control} & baseline & 0.125 & $\pm0.003$ \\
++ & held out & 0.118 & $\pm0.007$ \\
++Variant B & long condition name that must wrap without changing its meaning & 0.139 & $\pm0.004$ \\
++\bottomrule
++\end{tabularx}
++\end{table}
+ 
+-The selected cross reference is Table \hyperref[TableResults]{1}. It
++The selected cross reference is Table \ref{TableResults}. It
+ must remain useful after later source edits; merely printing the cached
+ number is weaker.
+ 
+@@ -169,8 +147,8 @@
+ 
+ \begin{figure}
+ \centering
+-\includegraphics[width=5.6in,height=1.99111in]{configured-media/media/image1.png}
+-\caption{Figure 1 Invented series for media extraction only}
++\includegraphics[width=5.6in,height=1.99111in]{synthetic-figure.png}
++\caption{Invented series for media extraction only}
+ \end{figure}
+ 
+ The next citation is an invented Zotero-compatible field; it tests

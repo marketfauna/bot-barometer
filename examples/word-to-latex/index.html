@@ -37,6 +37,17 @@
 \ref{TableResults}</code></pre>
 <p>Check the target label before making this change. It is a repair for an identified field, not a rule to replace every number in a document.</p>
 
+<h2 id="source-changes">Exactly what changed in the source</h2>
+<p><a href="SOURCE-CHANGES.diff" download>Download the complete source diff</a> for <code>configured.tex</code> and <code>reviewed/manuscript.tex</code> inside the existing ZIP. These are the free baseline and reviewed result shown above. The diff matches those exact source versions after normalizing line endings; it is a review aid, not an automatic patch for another project.</p>
+<div class="table-scroll"><table><thead><tr><th>Change and source location</th><th>Integration effect to review</th></tr></thead><tbody>
+<tr><td>Live reference: baseline line 164 → reviewed line 142</td><td>The hyperlink with literal number <code>1</code> becomes <code>\ref{TableResults}</code>. Check the intended target. In the September 19 insertion test, the baseline stayed at 1 while the repaired reference and target became 2.</td></tr>
+<tr><td>Table structure: baseline lines 126–162 → reviewed lines 126–140</td><td><code>longtable</code> becomes a floating <code>table</code> with <code>tabularx</code>; the dependency is added at reviewed line 40. Grouping, values, wrapping and placement need review. This changes layout; multipage long-table behavior is not demonstrated.</td></tr>
+<tr><td>Captions: reviewed lines 128 and 151</td><td>Cached table and figure number prefixes are removed. Review the wording and generated numbers; content approval stays with the author.</td></tr>
+<tr><td>Figure path: baseline line 172 → reviewed line 150</td><td>The path changes from <code>configured-media/media/image1.png</code> to <code>synthetic-figure.png</code>. Asset bytes match, but a parent project may need its original path.</td></tr>
+</tbody></table></div>
+<p>The bibliography and figure bytes match across these versions. The five displayed equations were unchanged in the historical check. The repair includes layout and dependency changes, so this example does not establish a minimal change or successful integration into a publisher’s project. Keep the original and inspect all changes before merging; a required parent build is part of the real job.</p>
+<p class="small">Explanation and diff added September 27, 2026. Source correspondence was checked that day; no conversion, compiler run or visual test was repeated. The existing build and insertion checks completed September 19 using Tectonic 0.17.0/XeTeX, with the Fontconfig warning described below. Original Word layout, another engine and a publisher template remain unverified.</p>
+
 <h2>Reproduce the free baseline</h2>
 <p>The download includes exact commands for the stronger baseline using <a href="https://github.com/jgm/pandoc/releases/tag/3.11">Pandoc 3.11</a> and <a href="https://github.com/tectonic-typesetting/tectonic/releases/tag/tectonic%400.17.0">Tectonic 0.17.0</a>. The tools are free and obtained separately from their official releases. See the <a href="https://pandoc.org/MANUAL.html">Pandoc manual</a> for conversion options.</p>
 <p>For the included reviewed packet, enter its folder and compile:</p>
