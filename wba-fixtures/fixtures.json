@@ -1,0 +1,164 @@
+{
+ "generator": "Marketfauna site/tools/wba.py (Python, cryptography)",
+ "key": {
+  "source": "RFC 9421 Appendix B.1.4 test-key-ed25519",
+  "jwk": {
+   "kty": "OKP",
+   "crv": "Ed25519",
+   "x": "JrQLj5P_89iXES9-vFgrIy29clF9CC_oPPsw3c5D0bs"
+  },
+  "keyid": "poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U"
+ },
+ "requests": [
+  {
+   "name": "valid",
+   "note": "legacy sf-string Signature-Agent; covers @authority and signature-agent",
+   "method": "GET",
+   "url": "https://receiver.example/protected/resource",
+   "received_at_url": "https://receiver.example/protected/resource",
+   "headers": {
+    "Signature-Agent": "\"https://agent.example\"",
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"699QuP61upaPmKUhIdZbfm295gxjTtjc2YYTbJ0QP+1I8uh/df0Gjv8ZG4AWh2LD\";tag=\"web-bot-auth\";created=1790730000;expires=1790730060",
+    "Signature": "sig1=:sDU6FQZEJOkXkIuW24rdLsPAD+L6YIvhqhyr9KN/NeyT8bwp7dOfXq4nETe15FgLiGHjYxMDLr9oi9JvrVTnCA==:"
+   },
+   "now": 1790730000,
+   "expected": "ALLOW",
+   "our_verifier_reason": "ok"
+  },
+  {
+   "name": "tampered-authority",
+   "note": "same headers presented to a different host",
+   "method": "GET",
+   "url": "https://receiver.example/protected/resource",
+   "received_at_url": "https://other.example/protected/resource",
+   "headers": {
+    "Signature-Agent": "\"https://agent.example\"",
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"699QuP61upaPmKUhIdZbfm295gxjTtjc2YYTbJ0QP+1I8uh/df0Gjv8ZG4AWh2LD\";tag=\"web-bot-auth\";created=1790730000;expires=1790730060",
+    "Signature": "sig1=:sDU6FQZEJOkXkIuW24rdLsPAD+L6YIvhqhyr9KN/NeyT8bwp7dOfXq4nETe15FgLiGHjYxMDLr9oi9JvrVTnCA==:"
+   },
+   "now": 1790730000,
+   "expected": "DENY",
+   "our_verifier_reason": "signature invalid: InvalidSignature"
+  },
+  {
+   "name": "expired",
+   "note": "clock past expires (created+60)",
+   "method": "GET",
+   "url": "https://receiver.example/protected/resource",
+   "received_at_url": "https://receiver.example/protected/resource",
+   "headers": {
+    "Signature-Agent": "\"https://agent.example\"",
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"699QuP61upaPmKUhIdZbfm295gxjTtjc2YYTbJ0QP+1I8uh/df0Gjv8ZG4AWh2LD\";tag=\"web-bot-auth\";created=1790730000;expires=1790730060",
+    "Signature": "sig1=:sDU6FQZEJOkXkIuW24rdLsPAD+L6YIvhqhyr9KN/NeyT8bwp7dOfXq4nETe15FgLiGHjYxMDLr9oi9JvrVTnCA==:"
+   },
+   "now": 1790730061,
+   "expected": "DENY",
+   "our_verifier_reason": "expired"
+  },
+  {
+   "name": "created-in-future",
+   "note": "created 600 s ahead of the verifier clock",
+   "method": "GET",
+   "url": "https://receiver.example/protected/resource",
+   "received_at_url": "https://receiver.example/protected/resource",
+   "headers": {
+    "Signature-Agent": "\"https://agent.example\"",
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"6pe1ip0UgjFJ+gVF1GbEP5u0Ubk7ZJBzgjLBxovcQFlbGU3FUntsV9q9m/Xg6QQl\";tag=\"web-bot-auth\";created=1790730600;expires=1790730660",
+    "Signature": "sig1=:AehQVKUrck7sFdXs5epkv+e8r/7YxrKFE/jLG2ewfzwNLHG6xr24XrpHWAFKvJ3AjZRlTyXPjd6nl/uonIkoAQ==:"
+   },
+   "now": 1790730000,
+   "expected": "DENY",
+   "our_verifier_reason": "created in the future"
+  },
+  {
+   "name": "unknown-keyid",
+   "note": "valid signature by a key not in the directory",
+   "method": "GET",
+   "url": "https://receiver.example/protected/resource",
+   "received_at_url": "https://receiver.example/protected/resource",
+   "headers": {
+    "Signature-Agent": "\"https://agent.example\"",
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"tJRx_JTKcqPgAGhz4YorlQCC6-yY2cwA_vQX8RX4978\";nonce=\"YQEYjKNdmGjX2nChKCSYKYjuNzQ036bjqZGTPv4PtjFkbAXth/63YW0kdrAOM5fC\";tag=\"web-bot-auth\";created=1790730000;expires=1790730060",
+    "Signature": "sig1=:c1D8LBijvHjvO4YsuUcWiSm+tOmUryabtiywIHXOhb6rgRp54roCiGhgpfZm/JxCEdPKxmLfCHx6Y4mvVxmFDA==:"
+   },
+   "now": 1790730000,
+   "expected": "DENY",
+   "our_verifier_reason": "unknown keyid"
+  },
+  {
+   "name": "signature-agent-swapped",
+   "note": "Signature-Agent changed after signing; the covered component no longer matches",
+   "method": "GET",
+   "url": "https://receiver.example/protected/resource",
+   "received_at_url": "https://receiver.example/protected/resource",
+   "headers": {
+    "Signature-Agent": "\"https://impostor.example\"",
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"699QuP61upaPmKUhIdZbfm295gxjTtjc2YYTbJ0QP+1I8uh/df0Gjv8ZG4AWh2LD\";tag=\"web-bot-auth\";created=1790730000;expires=1790730060",
+    "Signature": "sig1=:sDU6FQZEJOkXkIuW24rdLsPAD+L6YIvhqhyr9KN/NeyT8bwp7dOfXq4nETe15FgLiGHjYxMDLr9oi9JvrVTnCA==:"
+   },
+   "now": 1790730000,
+   "expected": "DENY",
+   "our_verifier_reason": "signature invalid: InvalidSignature"
+  },
+  {
+   "name": "wrong-tag",
+   "note": "tag parameter altered; also breaks the signature base",
+   "method": "GET",
+   "url": "https://receiver.example/protected/resource",
+   "received_at_url": "https://receiver.example/protected/resource",
+   "headers": {
+    "Signature-Agent": "\"https://agent.example\"",
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"699QuP61upaPmKUhIdZbfm295gxjTtjc2YYTbJ0QP+1I8uh/df0Gjv8ZG4AWh2LD\";tag=\"other\";created=1790730000;expires=1790730060",
+    "Signature": "sig1=:sDU6FQZEJOkXkIuW24rdLsPAD+L6YIvhqhyr9KN/NeyT8bwp7dOfXq4nETe15FgLiGHjYxMDLr9oi9JvrVTnCA==:"
+   },
+   "now": 1790730000,
+   "expected": "DENY",
+   "our_verifier_reason": "wrong tag"
+  }
+ ],
+ "directories": [
+  {
+   "name": "directory-signed",
+   "request_authority": "agent.example",
+   "headers": {
+    "Content-Type": "application/http-message-signatures-directory+json",
+    "Signature-Input": "sig1=(\"@authority\";req);alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"ahmIqxBj5spXU5vsHsztJ8AZTRvwEOJOH5j4eabfCeN8CAm+1DSB31smKqpKQNod\";tag=\"http-message-signatures-directory\";created=1790730000;expires=1790730300",
+    "Signature": "sig1=:C9Iy1Ng3C7/dVKcCJoxvI7IKwKy11+MvKJPUCUD9a4xUUYsHwIzWoNq1ruprvG08xR4vRHprCsoyqcbrwae3BA==:",
+    "Cache-Control": "no-store"
+   },
+   "body": "{\"keys\":[{\"kty\":\"OKP\",\"crv\":\"Ed25519\",\"x\":\"JrQLj5P_89iXES9-vFgrIy29clF9CC_oPPsw3c5D0bs\"}]}",
+   "now": 1790730000,
+   "keys_accepted_by_our_verifier": [
+    "poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U"
+   ],
+   "our_verifier_reasons": []
+  },
+  {
+   "name": "directory-unsigned",
+   "request_authority": "agent.example",
+   "headers": {
+    "Content-Type": "application/http-message-signatures-directory+json"
+   },
+   "body": "{\"keys\":[{\"kty\":\"OKP\",\"crv\":\"Ed25519\",\"x\":\"JrQLj5P_89iXES9-vFgrIy29clF9CC_oPPsw3c5D0bs\"}]}",
+   "now": 1790730000,
+   "keys_accepted_by_our_verifier": [],
+   "our_verifier_reasons": []
+  },
+  {
+   "name": "directory-signed-for-other-authority",
+   "request_authority": "mirror.example",
+   "headers": {
+    "Content-Type": "application/http-message-signatures-directory+json",
+    "Signature-Input": "sig1=(\"@authority\";req);alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"ahmIqxBj5spXU5vsHsztJ8AZTRvwEOJOH5j4eabfCeN8CAm+1DSB31smKqpKQNod\";tag=\"http-message-signatures-directory\";created=1790730000;expires=1790730300",
+    "Signature": "sig1=:C9Iy1Ng3C7/dVKcCJoxvI7IKwKy11+MvKJPUCUD9a4xUUYsHwIzWoNq1ruprvG08xR4vRHprCsoyqcbrwae3BA==:",
+    "Cache-Control": "no-store"
+   },
+   "body": "{\"keys\":[{\"kty\":\"OKP\",\"crv\":\"Ed25519\",\"x\":\"JrQLj5P_89iXES9-vFgrIy29clF9CC_oPPsw3c5D0bs\"}]}",
+   "now": 1790730000,
+   "keys_accepted_by_our_verifier": [],
+   "our_verifier_reasons": [
+    "sig1: signature invalid"
+   ]
+  }
+ ]
+}
