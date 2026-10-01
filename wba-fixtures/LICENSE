@@ -1,0 +1,58 @@
+Marketfauna Web Bot Auth fixtures: licence
+
+fixtures.json
+  To the extent Marketfauna LLC holds any copyright or related rights in
+  fixtures.json, it dedicates them to the public domain under the Creative
+  Commons CC0 1.0 Universal dedication:
+  https://creativecommons.org/publicdomain/zero/1.0/
+  Attribution is appreciated but not required: "Marketfauna,
+  https://marketfauna.com/wba-fixtures/".
+
+make_fixtures.py
+  To the extent Marketfauna LLC holds copyright or related rights in its
+  contribution to make_fixtures.py, it licenses that contribution under
+  the MIT License below. The RFC test material described below is excluded
+  from this grant and retains its separate terms.
+
+  MIT License
+
+  Copyright (c) 2026 Marketfauna LLC
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+Separate third-party terms and dependencies
+  - The RFC 9421 Appendix B.1.4 test key (test-key-ed25519) used to sign the
+    fixtures comes from RFC 9421 (IETF Trust) and is not Marketfauna's. It is a
+    public test key; never trust it in production. Its PEM/JWK representations
+    are supplied under the IETF terms below; CC0 and MIT do not replace them.
+  - make_fixtures.py imports Marketfauna's wba.py (site/tools/wba.py), which is
+    not included in this grant.
+
+IETF test material
+  Source: RFC 9421, Appendix B.1.4
+  https://www.rfc-editor.org/rfc/rfc9421.html#appendix-B.1.4
+
+Copyright (c) 2024 IETF Trust and the persons identified as authors of the code. All rights reserved.
+Redistribution and use in source and binary forms, with or without modification, is permitted pursuant to, and subject to the license terms contained in, the Revised BSD License set forth in Section 4.c of the IETF Trust’s Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info).
+
+The CC0 dedication above applies only to rights Marketfauna holds. It does
+not waive third-party rights or patent or trademark rights. Marketfauna
+attribution is optional; the IETF notice and its terms remain applicable
+to the RFC test material. This file grants no rights in wba.py or other
+dependencies, and makes no statement about any existing rights in them.

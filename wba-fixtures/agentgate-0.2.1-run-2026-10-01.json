@@ -1,0 +1,270 @@
+{
+ "what": "Marketfauna Web Bot Auth fixtures (October 2026 revision) run against the AgentGate 0.2.1-alpha fixture API, following the lab's TESTING.md (curl POST of a fixture envelope). This is the API response itself, not the lab page's Export button.",
+ "endpoint": "https://bynlvztbiohdjkiuctcy.supabase.co/functions/v1/agent-trust-alpha",
+ "sent_utc_window": [
+  "2026-10-01T21:49:54Z",
+  "2026-10-01T21:49:55Z"
+ ],
+ "fixtures_json_sha256": "4b62cfc75c8087f4427f79d5f4d2a8352444a2c9cfc9ee589f68d35287789447",
+ "envelope_sha256": "41db52d6ed19681ee02308b8fbcd47d7f9e5d5172cc28a638f8d00e3b56fe4d1",
+ "summary": {
+  "cases": 13,
+  "matched_expected": 13
+ },
+ "comparison": [
+  {
+   "name": "valid",
+   "expected": "VERIFIED",
+   "decision": "VERIFIED",
+   "match": true,
+   "reason": "Agent signature, freshness, and replay checks passed. Receiver policy was not evaluated; no action is authorized."
+  },
+  {
+   "name": "tampered-authority",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "Signature verification failed"
+  },
+  {
+   "name": "expired",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "Signature has expired"
+  },
+  {
+   "name": "created-in-future",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "Signature was created in the future"
+  },
+  {
+   "name": "unknown-keyid",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "Verifier resolution failed: Unknown signing key S8I4OaPCvhZqY-5jXMqeK3Is2UEOUNl0XySbWn8Bahk"
+  },
+  {
+   "name": "signature-agent-swapped",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "Signature verification failed"
+  },
+  {
+   "name": "wrong-tag",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "Verifier resolution failed: tag must be 'web-bot-auth'"
+  },
+  {
+   "name": "replay",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "Replay detected: this signed nonce has already been consumed."
+  },
+  {
+   "name": "directory-signed",
+   "expected": "VERIFIED",
+   "decision": "VERIFIED",
+   "match": true,
+   "reason": ""
+  },
+  {
+   "name": "directory-unsigned",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "Directory requires 1\u2013100 signatures"
+  },
+  {
+   "name": "directory-signed-for-other-authority",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "No authenticated directory keys: sig1: Signature verification failed"
+  },
+  {
+   "name": "directory-body-tampered",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "Directory body digest mismatch"
+  },
+  {
+   "name": "directory-legacy-no-digest",
+   "expected": "DENY",
+   "decision": "DENY",
+   "match": true,
+   "reason": "Directory requires Content-Digest (current draft profile)"
+  }
+ ],
+ "agentgate_response": {
+  "mode": "fixture",
+  "version": "0.2.1-alpha",
+  "production": false,
+  "authorization_granted": false,
+  "receiver_policy_evaluated": false,
+  "authorized": false,
+  "notice": "Synthetic test results only. Public test key, per-case clock, no network fetches, no persistent replay writes. Nonces share an isolated cache within this batch only.",
+  "results": [
+   {
+    "name": "valid",
+    "ok": true,
+    "proof_type": "web_bot_auth",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "identity_verified": true,
+    "delegated_authority_verified": false,
+    "replay_safe": true,
+    "agent": "https://agent.example",
+    "key_id": "poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U",
+    "created_at": "2026-10-02T00:13:20.000Z",
+    "expires_at": "2026-10-02T00:14:20.000Z",
+    "nonce_fingerprint": "L0ozEeI7D8WCACIebY",
+    "decision": "VERIFIED",
+    "reason": "Agent signature, freshness, and replay checks passed. Receiver policy was not evaluated; no action is authorized.",
+    "test_only": true
+   },
+   {
+    "name": "tampered-authority",
+    "ok": false,
+    "proof_type": "web_bot_auth",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "identity_verified": false,
+    "delegated_authority_verified": false,
+    "replay_safe": false,
+    "decision": "DENY",
+    "reason": "Signature verification failed",
+    "test_only": true
+   },
+   {
+    "name": "expired",
+    "ok": false,
+    "proof_type": "web_bot_auth",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "identity_verified": false,
+    "delegated_authority_verified": false,
+    "replay_safe": false,
+    "decision": "DENY",
+    "reason": "Signature has expired",
+    "test_only": true
+   },
+   {
+    "name": "created-in-future",
+    "ok": false,
+    "proof_type": "web_bot_auth",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "identity_verified": false,
+    "delegated_authority_verified": false,
+    "replay_safe": false,
+    "decision": "DENY",
+    "reason": "Signature was created in the future",
+    "test_only": true
+   },
+   {
+    "name": "unknown-keyid",
+    "ok": false,
+    "proof_type": "web_bot_auth",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "identity_verified": false,
+    "delegated_authority_verified": false,
+    "replay_safe": false,
+    "decision": "DENY",
+    "reason": "Verifier resolution failed: Unknown signing key S8I4OaPCvhZqY-5jXMqeK3Is2UEOUNl0XySbWn8Bahk",
+    "test_only": true
+   },
+   {
+    "name": "signature-agent-swapped",
+    "ok": false,
+    "proof_type": "web_bot_auth",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "identity_verified": false,
+    "delegated_authority_verified": false,
+    "replay_safe": false,
+    "decision": "DENY",
+    "reason": "Signature verification failed",
+    "test_only": true
+   },
+   {
+    "name": "wrong-tag",
+    "ok": false,
+    "proof_type": "web_bot_auth",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "identity_verified": false,
+    "delegated_authority_verified": false,
+    "replay_safe": false,
+    "decision": "DENY",
+    "reason": "Verifier resolution failed: tag must be 'web-bot-auth'",
+    "test_only": true
+   },
+   {
+    "name": "replay",
+    "ok": false,
+    "proof_type": "web_bot_auth",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "identity_verified": true,
+    "delegated_authority_verified": false,
+    "replay_safe": false,
+    "agent": "https://agent.example",
+    "key_id": "poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U",
+    "decision": "DENY",
+    "reason": "Replay detected: this signed nonce has already been consumed.",
+    "test_only": true
+   },
+   {
+    "name": "directory-signed",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "decision": "VERIFIED",
+    "accepted_keys": 1,
+    "test_only": true
+   },
+   {
+    "name": "directory-unsigned",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "decision": "DENY",
+    "reason": "Directory requires 1\u2013100 signatures",
+    "test_only": true
+   },
+   {
+    "name": "directory-signed-for-other-authority",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "decision": "DENY",
+    "reason": "No authenticated directory keys: sig1: Signature verification failed",
+    "test_only": true
+   },
+   {
+    "name": "directory-body-tampered",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "decision": "DENY",
+    "reason": "Directory body digest mismatch",
+    "test_only": true
+   },
+   {
+    "name": "directory-legacy-no-digest",
+    "receiver_policy_evaluated": false,
+    "authorized": false,
+    "decision": "DENY",
+    "reason": "Directory requires Content-Digest (current draft profile)",
+    "test_only": true
+   }
+  ]
+ },
+ "limits": "Synthetic, test-only results under the public RFC 9421 test key. A matching verdict with the intended reason shows these cases reach the intended check in this profile; it is not a production interoperability or security claim. Receiver policy and delegated authority are not evaluated."
+}

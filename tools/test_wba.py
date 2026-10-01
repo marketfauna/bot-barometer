@@ -114,6 +114,34 @@ class Requests(unittest.TestCase):
         valid, _ = wba.verify_directory_response("marketfauna.com", h, body2, now=1010)
         self.assertEqual(list(valid), [self.kid])
 
+    def test_request_nonce_is_64_bytes(self):
+        import base64
+        h = wba.sign_request(self.priv, self.kid, "GET", self.url, "https://marketfauna.com", now=1000)
+        _, _, _, params = wba.parse_signature_input(h["Signature-Input"])
+        self.assertEqual(len(base64.b64decode(params["nonce"])), 64)
+
+    def test_directory_with_signed_content_digest(self):
+        body = wba.directory_body([self.jwk])
+        h = wba.sign_directory_response(self.priv, self.kid, "marketfauna.com", now=1000, body=body)
+        self.assertEqual(h["Content-Digest"], wba.content_digest(body))
+        self.assertIn('"content-digest"', h["Signature-Input"])
+        valid, reasons = wba.verify_directory_response("marketfauna.com", h, body, now=1010,
+                                                        require_digest=True)
+        self.assertEqual(list(valid), [self.kid], reasons)
+        # a body changed after signing fails the digest check
+        tampered = body.replace(b'"keys"', b'"keys" ')
+        valid, reasons = wba.verify_directory_response("marketfauna.com", h, tampered, now=1010)
+        self.assertEqual(valid, {})
+        self.assertTrue(any("content-digest does not match body" in r for r in reasons), reasons)
+
+    def test_strict_directory_rejects_legacy_signature(self):
+        body = wba.directory_body([self.jwk])
+        h = wba.sign_directory_response(self.priv, self.kid, "marketfauna.com", now=1000)
+        valid, reasons = wba.verify_directory_response("marketfauna.com", h, body, now=1010,
+                                                        require_digest=True)
+        self.assertEqual(valid, {})
+        self.assertTrue(any("content-digest not covered" in r for r in reasons), reasons)
+
     def test_valid_signature_without_agent_binding_is_rejected(self):
         import base64
 

@@ -1,5 +1,10 @@
 {
  "generator": "Marketfauna site/tools/wba.py (Python, cryptography)",
+ "profile": {
+  "request_nonce_bytes": 64,
+  "directory": "SHA-256 Content-Digest signed with \"@authority\";req",
+  "verdicts": "VERIFIED / DENY (AgentGate 0.2.1 vocabulary)"
+ },
  "key": {
   "source": "RFC 9421 Appendix B.1.4 test-key-ed25519",
   "jwk": {
@@ -18,26 +23,28 @@
    "received_at_url": "https://receiver.example/protected/resource",
    "headers": {
     "Signature-Agent": "\"https://agent.example\"",
-    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"699QuP61upaPmKUhIdZbfm295gxjTtjc2YYTbJ0QP+1I8uh/df0Gjv8ZG4AWh2LD\";tag=\"web-bot-auth\";created=1790730000;expires=1790730060",
-    "Signature": "sig1=:sDU6FQZEJOkXkIuW24rdLsPAD+L6YIvhqhyr9KN/NeyT8bwp7dOfXq4nETe15FgLiGHjYxMDLr9oi9JvrVTnCA==:"
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"ESbu1iR/bv5yKm2qCPasDBGi9sfomz7BKJJqLIuv9zrDmCsulZakfvenHrG8qFbHDbmYAI0VANYq584jhJo8AA==\";tag=\"web-bot-auth\";created=1790900000;expires=1790900060",
+    "Signature": "sig1=:r6Hbi5VqdPMfIsFJ3RDD5tJaKvfJCfVTjx4uZOkoRNUAGxcLtucR+kd1giws7LBMqE4rMS3vfHMd5RNqo+ZjDw==:"
    },
-   "now": 1790730000,
-   "expected": "ALLOW",
+   "now": 1790900000,
+   "expected": "VERIFIED",
+   "our_verifier": "VERIFIED",
    "our_verifier_reason": "ok"
   },
   {
    "name": "tampered-authority",
-   "note": "same headers presented to a different host",
+   "note": "own signature, presented to a different host",
    "method": "GET",
    "url": "https://receiver.example/protected/resource",
    "received_at_url": "https://other.example/protected/resource",
    "headers": {
     "Signature-Agent": "\"https://agent.example\"",
-    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"699QuP61upaPmKUhIdZbfm295gxjTtjc2YYTbJ0QP+1I8uh/df0Gjv8ZG4AWh2LD\";tag=\"web-bot-auth\";created=1790730000;expires=1790730060",
-    "Signature": "sig1=:sDU6FQZEJOkXkIuW24rdLsPAD+L6YIvhqhyr9KN/NeyT8bwp7dOfXq4nETe15FgLiGHjYxMDLr9oi9JvrVTnCA==:"
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"rOiMWfBMl8xGmw2KyItfkx1u8wzFXBvI0uzM4CiIcyPTdpVenXe5DAOokNVLfjtl9Knu8YLq+cbojPe3nQDZUw==\";tag=\"web-bot-auth\";created=1790900000;expires=1790900060",
+    "Signature": "sig1=:2xuOSGQfksoaUkkFA02dBITag6wvkmlTsl75kSsyXfQwLj5VBdnmLPQPziRsJiASJMSMXHVnUqYEr6C2Su7fAw==:"
    },
-   "now": 1790730000,
+   "now": 1790900000,
    "expected": "DENY",
+   "our_verifier": "DENY",
    "our_verifier_reason": "signature invalid: InvalidSignature"
   },
   {
@@ -48,11 +55,12 @@
    "received_at_url": "https://receiver.example/protected/resource",
    "headers": {
     "Signature-Agent": "\"https://agent.example\"",
-    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"699QuP61upaPmKUhIdZbfm295gxjTtjc2YYTbJ0QP+1I8uh/df0Gjv8ZG4AWh2LD\";tag=\"web-bot-auth\";created=1790730000;expires=1790730060",
-    "Signature": "sig1=:sDU6FQZEJOkXkIuW24rdLsPAD+L6YIvhqhyr9KN/NeyT8bwp7dOfXq4nETe15FgLiGHjYxMDLr9oi9JvrVTnCA==:"
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"j6/CS13pu3i7urw2by/B4hSwY1N8heCproANklMN115QX9fmdf2WLGaHFb938pxrI/fHZSQLfqprbl7/U+6qxQ==\";tag=\"web-bot-auth\";created=1790900000;expires=1790900060",
+    "Signature": "sig1=:7zPu3mohS6gsVHD454o1yycYLSI0Zu7eBRRgPaX5hcQJCMBqSkWATV3rA1xyb8ruF4WZLILb0J+lSIbJzEl+Bg==:"
    },
-   "now": 1790730061,
+   "now": 1790900061,
    "expected": "DENY",
+   "our_verifier": "DENY",
    "our_verifier_reason": "expired"
   },
   {
@@ -63,26 +71,28 @@
    "received_at_url": "https://receiver.example/protected/resource",
    "headers": {
     "Signature-Agent": "\"https://agent.example\"",
-    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"6pe1ip0UgjFJ+gVF1GbEP5u0Ubk7ZJBzgjLBxovcQFlbGU3FUntsV9q9m/Xg6QQl\";tag=\"web-bot-auth\";created=1790730600;expires=1790730660",
-    "Signature": "sig1=:AehQVKUrck7sFdXs5epkv+e8r/7YxrKFE/jLG2ewfzwNLHG6xr24XrpHWAFKvJ3AjZRlTyXPjd6nl/uonIkoAQ==:"
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"JHxehamwP+WdS9IhnlPdjEfJZofyRcJCcKcR7V1plPKqYTFa51a1pPJk1jDIIVIKprzHrurIFlC16nkretZkmA==\";tag=\"web-bot-auth\";created=1790900600;expires=1790900660",
+    "Signature": "sig1=:oa+QI0Nj+5wKylJf1W5YyCaipR66JMjhXKi9Yi21SthBImLmCsTUWXvDgrSVkutYv6sEwnQ35Ary0LU6Vnm3DA==:"
    },
-   "now": 1790730000,
+   "now": 1790900000,
    "expected": "DENY",
+   "our_verifier": "DENY",
    "our_verifier_reason": "created in the future"
   },
   {
    "name": "unknown-keyid",
-   "note": "valid signature by a key not in the directory",
+   "note": "valid signature by a key the receiver doesn't trust (not the RFC test key)",
    "method": "GET",
    "url": "https://receiver.example/protected/resource",
    "received_at_url": "https://receiver.example/protected/resource",
    "headers": {
     "Signature-Agent": "\"https://agent.example\"",
-    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"tJRx_JTKcqPgAGhz4YorlQCC6-yY2cwA_vQX8RX4978\";nonce=\"YQEYjKNdmGjX2nChKCSYKYjuNzQ036bjqZGTPv4PtjFkbAXth/63YW0kdrAOM5fC\";tag=\"web-bot-auth\";created=1790730000;expires=1790730060",
-    "Signature": "sig1=:c1D8LBijvHjvO4YsuUcWiSm+tOmUryabtiywIHXOhb6rgRp54roCiGhgpfZm/JxCEdPKxmLfCHx6Y4mvVxmFDA==:"
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"S8I4OaPCvhZqY-5jXMqeK3Is2UEOUNl0XySbWn8Bahk\";nonce=\"eFjwGjfUml+0q0418WBaOuEYTzhfuYLiTMaqdCN8B1KwjrVM19d/TA4OQipZGe2Xe47TiuY64pg8Pbs/nqOJCw==\";tag=\"web-bot-auth\";created=1790900000;expires=1790900060",
+    "Signature": "sig1=:3EnAxyh84DBifCLY7yaWhiksYqeIV4cQlADgSUIWujqoOGMIkBYJ6smxFE7Rva2f1gNTSSv5+HetvFwDFp12Cw==:"
    },
-   "now": 1790730000,
+   "now": 1790900000,
    "expected": "DENY",
+   "our_verifier": "DENY",
    "our_verifier_reason": "unknown keyid"
   },
   {
@@ -93,41 +103,63 @@
    "received_at_url": "https://receiver.example/protected/resource",
    "headers": {
     "Signature-Agent": "\"https://impostor.example\"",
-    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"699QuP61upaPmKUhIdZbfm295gxjTtjc2YYTbJ0QP+1I8uh/df0Gjv8ZG4AWh2LD\";tag=\"web-bot-auth\";created=1790730000;expires=1790730060",
-    "Signature": "sig1=:sDU6FQZEJOkXkIuW24rdLsPAD+L6YIvhqhyr9KN/NeyT8bwp7dOfXq4nETe15FgLiGHjYxMDLr9oi9JvrVTnCA==:"
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"qlg70Q4LhR+hwZthSPBTmx/jLoBbVQrdjM6jesiaXlAxGtcYVp6IHR4LuEaTLJS2OMxFzhCQG3lBeAqBCDtyQw==\";tag=\"web-bot-auth\";created=1790900000;expires=1790900060",
+    "Signature": "sig1=:k4gpT3tcWS9bvRx6/ChkcMq2/BtnKVV6j8GIoYfAtYhi0xnAKmMz/v4kF9E3CRlVThOwUcElIWyaKSMlNtuhAg==:"
    },
-   "now": 1790730000,
+   "now": 1790900000,
    "expected": "DENY",
+   "our_verifier": "DENY",
    "our_verifier_reason": "signature invalid: InvalidSignature"
   },
   {
    "name": "wrong-tag",
-   "note": "tag parameter altered; also breaks the signature base",
+   "note": "validly signed with tag=\"other\"; isolates the tag check",
    "method": "GET",
    "url": "https://receiver.example/protected/resource",
    "received_at_url": "https://receiver.example/protected/resource",
    "headers": {
     "Signature-Agent": "\"https://agent.example\"",
-    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"699QuP61upaPmKUhIdZbfm295gxjTtjc2YYTbJ0QP+1I8uh/df0Gjv8ZG4AWh2LD\";tag=\"other\";created=1790730000;expires=1790730060",
-    "Signature": "sig1=:sDU6FQZEJOkXkIuW24rdLsPAD+L6YIvhqhyr9KN/NeyT8bwp7dOfXq4nETe15FgLiGHjYxMDLr9oi9JvrVTnCA==:"
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"mYRTK+T54v1ST1U+MOtAORErj1NpbrEH17h0o69TuH0bc5gGCn0sbDFRjPiRNL1VIqVtce41GxUDPnfgZJ2sxw==\";tag=\"other\";created=1790900000;expires=1790900060",
+    "Signature": "sig1=:R0ZZT7j4A2CgCBvmDX3FzO0mi/xz9Ka9GliWOB5vWnMnzgRfXtf3uAt1S2AOP6azIXNbALfKpWvWvugRCPEKBQ==:"
    },
-   "now": 1790730000,
+   "now": 1790900000,
    "expected": "DENY",
+   "our_verifier": "DENY",
    "our_verifier_reason": "wrong tag"
+  },
+  {
+   "name": "replay",
+   "note": "repeats the valid case's headers and nonce; a receiver with a per-batch replay cache must reject it. Our verifier has no replay cache, so its own verdict here is VERIFIED.",
+   "method": "GET",
+   "url": "https://receiver.example/protected/resource",
+   "received_at_url": "https://receiver.example/protected/resource",
+   "headers": {
+    "Signature-Agent": "\"https://agent.example\"",
+    "Signature-Input": "sig1=(\"@authority\" \"signature-agent\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"ESbu1iR/bv5yKm2qCPasDBGi9sfomz7BKJJqLIuv9zrDmCsulZakfvenHrG8qFbHDbmYAI0VANYq584jhJo8AA==\";tag=\"web-bot-auth\";created=1790900000;expires=1790900060",
+    "Signature": "sig1=:r6Hbi5VqdPMfIsFJ3RDD5tJaKvfJCfVTjx4uZOkoRNUAGxcLtucR+kd1giws7LBMqE4rMS3vfHMd5RNqo+ZjDw==:"
+   },
+   "now": 1790900000,
+   "expected": "DENY",
+   "our_verifier": "VERIFIED",
+   "our_verifier_reason": "ok"
   }
  ],
  "directories": [
   {
    "name": "directory-signed",
+   "note": "signed with Content-Digest and \"@authority\";req",
    "request_authority": "agent.example",
+   "directory_url": "https://agent.example/.well-known/http-message-signatures-directory",
    "headers": {
     "Content-Type": "application/http-message-signatures-directory+json",
-    "Signature-Input": "sig1=(\"@authority\";req);alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"ahmIqxBj5spXU5vsHsztJ8AZTRvwEOJOH5j4eabfCeN8CAm+1DSB31smKqpKQNod\";tag=\"http-message-signatures-directory\";created=1790730000;expires=1790730300",
-    "Signature": "sig1=:C9Iy1Ng3C7/dVKcCJoxvI7IKwKy11+MvKJPUCUD9a4xUUYsHwIzWoNq1ruprvG08xR4vRHprCsoyqcbrwae3BA==:",
+    "Content-Digest": "sha-256=:DXwJNthRyEwzbr761WSLdJB7FHEiqyvZIcfzuEVaSwc=:",
+    "Signature-Input": "sig1=(\"@authority\";req \"content-digest\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"D9vJRjIDHKWbAi/YiDddyW31dNs6Ya7/Kt98xVmzB/VHey2kDnMLHqcrN9crbbHJhwzA69d4/ikGpjj+blISfg==\";tag=\"http-message-signatures-directory\";created=1790900000;expires=1790900300",
+    "Signature": "sig1=:wcf2HFmonh8mRPIBZ5fMzaeEpZZqsCNb/VOEpsQFWVdjmWhKRTxWjOEmGi377cg4fMw3MJTPLvpWzhgkJPpiAQ==:",
     "Cache-Control": "no-store"
    },
    "body": "{\"keys\":[{\"kty\":\"OKP\",\"crv\":\"Ed25519\",\"x\":\"JrQLj5P_89iXES9-vFgrIy29clF9CC_oPPsw3c5D0bs\"}]}",
-   "now": 1790730000,
+   "now": 1790900000,
+   "expected": "VERIFIED",
    "keys_accepted_by_our_verifier": [
     "poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U"
    ],
@@ -135,30 +167,82 @@
   },
   {
    "name": "directory-unsigned",
+   "note": "correct digest, no signature",
    "request_authority": "agent.example",
+   "directory_url": "https://agent.example/.well-known/http-message-signatures-directory",
    "headers": {
-    "Content-Type": "application/http-message-signatures-directory+json"
+    "Content-Type": "application/http-message-signatures-directory+json",
+    "Content-Digest": "sha-256=:DXwJNthRyEwzbr761WSLdJB7FHEiqyvZIcfzuEVaSwc=:"
    },
    "body": "{\"keys\":[{\"kty\":\"OKP\",\"crv\":\"Ed25519\",\"x\":\"JrQLj5P_89iXES9-vFgrIy29clF9CC_oPPsw3c5D0bs\"}]}",
-   "now": 1790730000,
+   "now": 1790900000,
+   "expected": "DENY",
    "keys_accepted_by_our_verifier": [],
    "our_verifier_reasons": []
   },
   {
    "name": "directory-signed-for-other-authority",
+   "note": "signature bound to agent.example, served for mirror.example",
    "request_authority": "mirror.example",
+   "directory_url": "https://mirror.example/.well-known/http-message-signatures-directory",
    "headers": {
     "Content-Type": "application/http-message-signatures-directory+json",
-    "Signature-Input": "sig1=(\"@authority\";req);alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"ahmIqxBj5spXU5vsHsztJ8AZTRvwEOJOH5j4eabfCeN8CAm+1DSB31smKqpKQNod\";tag=\"http-message-signatures-directory\";created=1790730000;expires=1790730300",
-    "Signature": "sig1=:C9Iy1Ng3C7/dVKcCJoxvI7IKwKy11+MvKJPUCUD9a4xUUYsHwIzWoNq1ruprvG08xR4vRHprCsoyqcbrwae3BA==:",
+    "Content-Digest": "sha-256=:DXwJNthRyEwzbr761WSLdJB7FHEiqyvZIcfzuEVaSwc=:",
+    "Signature-Input": "sig1=(\"@authority\";req \"content-digest\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"D9vJRjIDHKWbAi/YiDddyW31dNs6Ya7/Kt98xVmzB/VHey2kDnMLHqcrN9crbbHJhwzA69d4/ikGpjj+blISfg==\";tag=\"http-message-signatures-directory\";created=1790900000;expires=1790900300",
+    "Signature": "sig1=:wcf2HFmonh8mRPIBZ5fMzaeEpZZqsCNb/VOEpsQFWVdjmWhKRTxWjOEmGi377cg4fMw3MJTPLvpWzhgkJPpiAQ==:",
     "Cache-Control": "no-store"
    },
    "body": "{\"keys\":[{\"kty\":\"OKP\",\"crv\":\"Ed25519\",\"x\":\"JrQLj5P_89iXES9-vFgrIy29clF9CC_oPPsw3c5D0bs\"}]}",
-   "now": 1790730000,
+   "now": 1790900000,
+   "expected": "DENY",
    "keys_accepted_by_our_verifier": [],
    "our_verifier_reasons": [
     "sig1: signature invalid"
    ]
+  },
+  {
+   "name": "directory-body-tampered",
+   "note": "body changed after signing; Content-Digest no longer matches",
+   "request_authority": "agent.example",
+   "directory_url": "https://agent.example/.well-known/http-message-signatures-directory",
+   "headers": {
+    "Content-Type": "application/http-message-signatures-directory+json",
+    "Content-Digest": "sha-256=:DXwJNthRyEwzbr761WSLdJB7FHEiqyvZIcfzuEVaSwc=:",
+    "Signature-Input": "sig1=(\"@authority\";req \"content-digest\");alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"D9vJRjIDHKWbAi/YiDddyW31dNs6Ya7/Kt98xVmzB/VHey2kDnMLHqcrN9crbbHJhwzA69d4/ikGpjj+blISfg==\";tag=\"http-message-signatures-directory\";created=1790900000;expires=1790900300",
+    "Signature": "sig1=:wcf2HFmonh8mRPIBZ5fMzaeEpZZqsCNb/VOEpsQFWVdjmWhKRTxWjOEmGi377cg4fMw3MJTPLvpWzhgkJPpiAQ==:",
+    "Cache-Control": "no-store"
+   },
+   "body": "{\"keys\" :[{\"kty\":\"OKP\",\"crv\":\"Ed25519\",\"x\":\"JrQLj5P_89iXES9-vFgrIy29clF9CC_oPPsw3c5D0bs\"}]}",
+   "now": 1790900000,
+   "expected": "DENY",
+   "keys_accepted_by_our_verifier": [],
+   "our_verifier_reasons": [
+    "sig1: content-digest does not match body"
+   ]
+  },
+  {
+   "name": "directory-legacy-no-digest",
+   "note": "older form: signs only \"@authority\";req, no Content-Digest (rejected by the strict profile)",
+   "request_authority": "agent.example",
+   "directory_url": "https://agent.example/.well-known/http-message-signatures-directory",
+   "headers": {
+    "Content-Type": "application/http-message-signatures-directory+json",
+    "Signature-Input": "sig1=(\"@authority\";req);alg=\"ed25519\";keyid=\"poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U\";nonce=\"arOrBNWRRjsLRUGVxLzBdRuXPtF9nksTC2srjHSkJxbzsL4gt+mr2QINUpNvil8dcx/iCwpDJ93Hbb4StbYoeg==\";tag=\"http-message-signatures-directory\";created=1790900000;expires=1790900300",
+    "Signature": "sig1=:0ZhrtNP3CiNk1cXBjQ5LrUV0YlhRzHvNGByA+U1185ZiIMrZMNSs1VFOfOD9eBB7F9pUxoB5I65VSD8oLFQbCg==:",
+    "Cache-Control": "no-store"
+   },
+   "body": "{\"keys\":[{\"kty\":\"OKP\",\"crv\":\"Ed25519\",\"x\":\"JrQLj5P_89iXES9-vFgrIy29clF9CC_oPPsw3c5D0bs\"}]}",
+   "now": 1790900000,
+   "expected": "DENY",
+   "keys_accepted_by_our_verifier": [],
+   "our_verifier_reasons": [
+    "sig1: content-digest not covered"
+   ]
   }
- ]
+ ],
+ "third_party_notice": {
+  "scope": "RFC 9421 Appendix B.1.4 test-key-ed25519 PEM/JWK test material",
+  "source": "https://www.rfc-editor.org/rfc/rfc9421.html#appendix-B.1.4",
+  "notice": "Copyright (c) 2024 IETF Trust and the persons identified as authors of the code. All rights reserved.\nRedistribution and use in source and binary forms, with or without modification, is permitted pursuant to, and subject to the license terms contained in, the Revised BSD License set forth in Section 4.c of the IETF Trust\u2019s Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info)."
+ }
 }

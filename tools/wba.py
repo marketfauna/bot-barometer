@@ -8,7 +8,8 @@ Implements the pieces Cloudflare's Web Bot Auth reference requires
   * RFC 9421 HTTP Message Signatures over derived components and headers,
     with the web-bot-auth tag on requests.
   * Signed key-directory responses (tag http-message-signatures-directory,
-    component "@authority";req) for /.well-known/http-message-signatures-directory.
+    component "@authority";req, plus a signed SHA-256 Content-Digest when the body
+    is supplied) for /.well-known/http-message-signatures-directory.
   * Verification of both, used by the local controlled endpoint in test_wba.py.
 
 Only the public key ever leaves this machine. The private key lives outside
@@ -180,15 +181,23 @@ def component_value(ident, method, url, headers, req_url=None):
 
 # --------------------------------------------------------------------------- requests
 
-def sign_request(priv, kid, method, url, agent_url, expires_in=60, now=None, label="sig1"):
+NONCE_BYTES = 64  # web-bot-auth 0.2.0 (as pinned by AgentGate 0.2.1) requires 64-byte nonces
+
+
+def _nonce():
+    return base64.b64encode(os.urandom(NONCE_BYTES)).decode()
+
+
+def sign_request(priv, kid, method, url, agent_url, expires_in=60, now=None, label="sig1",
+                 tag=REQUEST_TAG):
     """Headers to attach to an outgoing request: Signature-Input, Signature, Signature-Agent."""
     now = int(now if now is not None else time.time())
     agent_header = '"{}"'.format(agent_url)
     headers = {"Signature-Agent": agent_header}
     idents = ['"@authority"', '"signature-agent"']
     params = [("alg", "ed25519"), ("keyid", kid),
-              ("nonce", base64.b64encode(os.urandom(48)).decode()),
-              ("tag", REQUEST_TAG), ("created", now), ("expires", now + expires_in)]
+              ("nonce", _nonce()),
+              ("tag", tag), ("created", now), ("expires", now + expires_in)]
     ser = serialize_params(idents, params)
     comps = [(i, component_value(i, method, url, headers)) for i in idents]
     sig = priv.sign(signature_base(comps, ser))
@@ -238,33 +247,51 @@ def directory_body(jwks):
     return json.dumps({"keys": jwks}, separators=(",", ":")).encode()
 
 
-def sign_directory_response(priv, kid, request_authority, expires_in=300, now=None, label="sig1"):
-    """Response headers for the key directory, one signature for this key."""
+def content_digest(body):
+    """RFC 9530 Content-Digest value (sha-256) for the exact response body bytes."""
+    if isinstance(body, str):
+        body = body.encode()
+    return "sha-256=:{}:".format(base64.b64encode(hashlib.sha256(body).digest()).decode())
+
+
+def sign_directory_response(priv, kid, request_authority, expires_in=300, now=None, label="sig1",
+                            body=None):
+    """
+    Response headers for the key directory, one signature for this key.
+    With body given, also sends Content-Digest and signs it with "@authority";req
+    (the strict profile AgentGate 0.2.1 requires). Without body: the legacy form.
+    """
     now = int(now if now is not None else time.time())
+    headers = {"Content-Type": DIRECTORY_MEDIA_TYPE}
     idents = ['"@authority";req']
+    comps = [('"@authority";req', request_authority.lower())]
+    if body is not None:
+        headers["Content-Digest"] = content_digest(body)
+        idents.append('"content-digest"')
+        comps.append(('"content-digest"', headers["Content-Digest"]))
     params = [("alg", "ed25519"), ("keyid", kid),
-              ("nonce", base64.b64encode(os.urandom(48)).decode()),
+              ("nonce", _nonce()),
               ("tag", DIRECTORY_TAG), ("created", now), ("expires", now + expires_in)]
     ser = serialize_params(idents, params)
-    comps = [('"@authority";req', request_authority.lower())]
     sig = priv.sign(signature_base(comps, ser))
-    return {
-        "Content-Type": DIRECTORY_MEDIA_TYPE,
-        "Signature-Input": "{}={}".format(label, ser),
-        "Signature": "{}=:{}:".format(label, base64.b64encode(sig).decode()),
-        # A cached response must not outlive its short-lived signature.
-        "Cache-Control": "no-store",
-    }
+    headers["Signature-Input"] = "{}={}".format(label, ser)
+    headers["Signature"] = "{}=:{}:".format(label, base64.b64encode(sig).decode())
+    # A cached response must not outlive its short-lived signature.
+    headers["Cache-Control"] = "no-store"
+    return headers
 
 
-def verify_directory_response(request_authority, headers, body, now=None):
+def verify_directory_response(request_authority, headers, body, now=None, require_digest=False):
     """
     Return (valid_keys_by_kid, reasons). A key counts only if the response carries a
     valid signature made with it (draft-meunier-http-message-signatures-directory-03 s.5.2).
+    If the signature covers "content-digest", the header must match SHA-256 of the body.
+    require_digest=True (the strict profile) rejects signatures that don't cover it.
     """
     now = int(now if now is not None else time.time())
     lookup = {k.lower(): v for k, v in headers.items()}
     reasons = []
+    body_bytes = body.encode() if isinstance(body, str) else body
     if not lookup.get("content-type", "").split(";")[0].strip() == DIRECTORY_MEDIA_TYPE:
         reasons.append("wrong content-type")
         return {}, reasons
@@ -292,15 +319,26 @@ def verify_directory_response(request_authority, headers, body, now=None):
             continue
         if params.get("tag") != DIRECTORY_TAG:
             reasons.append("{}: wrong tag".format(label)); continue
-        if idents != ['"@authority";req']:
+        if idents not in (['"@authority";req'], ['"@authority";req', '"content-digest"']):
             reasons.append("{}: unexpected components {}".format(label, idents)); continue
+        covers_digest = '"content-digest"' in idents
+        if require_digest and not covers_digest:
+            reasons.append("{}: content-digest not covered".format(label)); continue
+        comps = [('"@authority";req', request_authority.lower())]
+        if covers_digest:
+            cd = " ".join(lookup.get("content-digest", "").split())
+            if not cd:
+                reasons.append("{}: content-digest header missing".format(label)); continue
+            if cd != content_digest(body_bytes):
+                reasons.append("{}: content-digest does not match body".format(label)); continue
+            comps.append(('"content-digest"', cd))
         if now > params.get("expires", 0) or now < params.get("created", 0) - 60:
             reasons.append("{}: outside created/expires".format(label)); continue
         pub = keys.get(params.get("keyid"))
         if pub is None:
             reasons.append("{}: keyid not in directory".format(label)); continue
         try:
-            pub.verify(sig, signature_base([('"@authority";req', request_authority.lower())], ser))
+            pub.verify(sig, signature_base(comps, ser))
         except Exception:
             reasons.append("{}: signature invalid".format(label)); continue
         valid[params["keyid"]] = pub
