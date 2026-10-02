@@ -1,0 +1,113 @@
+{
+ "verifier": {
+  "package": "regent-httpsig",
+  "version": "0.6.0",
+  "http-message-signatures": "2.0.1",
+  "source_commit": "36c3cfc49e3416dcf55b9686450f1adab11e4fd5"
+ },
+ "fixtures_sha256": "4b62cfc75c8087f4427f79d5f4d2a8352444a2c9cfc9ee589f68d35287789447",
+ "clock": "per-case fixture now, frozen in http_message_signatures.signatures",
+ "directory": "fixture 'directory-signed' body served in memory for agent.example only",
+ "requests": [
+  {
+   "name": "valid",
+   "now": 1790900000,
+   "expected": "VERIFIED",
+   "regent_httpsig": "VERIFIED",
+   "match": true,
+   "keyid": "poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U"
+  },
+  {
+   "name": "tampered-authority",
+   "now": 1790900000,
+   "expected": "DENY",
+   "regent_httpsig": "DENY",
+   "match": true,
+   "keyid": null
+  },
+  {
+   "name": "expired",
+   "now": 1790900061,
+   "expected": "DENY",
+   "regent_httpsig": "VERIFIED",
+   "match": false,
+   "keyid": "poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U"
+  },
+  {
+   "name": "created-in-future",
+   "now": 1790900000,
+   "expected": "DENY",
+   "regent_httpsig": "DENY",
+   "match": true,
+   "keyid": null
+  },
+  {
+   "name": "unknown-keyid",
+   "now": 1790900000,
+   "expected": "DENY",
+   "regent_httpsig": "DENY",
+   "match": true,
+   "keyid": null
+  },
+  {
+   "name": "signature-agent-swapped",
+   "now": 1790900000,
+   "expected": "DENY",
+   "regent_httpsig": "DENY",
+   "match": true,
+   "keyid": null
+  },
+  {
+   "name": "wrong-tag",
+   "now": 1790900000,
+   "expected": "DENY",
+   "regent_httpsig": "DENY",
+   "match": true,
+   "keyid": null
+  },
+  {
+   "name": "replay",
+   "now": 1790900000,
+   "expected": "DENY",
+   "regent_httpsig": "VERIFIED",
+   "match": false,
+   "keyid": "poqkLGiymh_W0uP6PZFw-dvez3QJT5SolqXBCW38r0U"
+  }
+ ],
+ "matched": 6,
+ "total": 8,
+ "same_request_twice_same_instance": [
+  "VERIFIED",
+  "VERIFIED"
+ ],
+ "expired_case_boundary": [
+  {
+   "seconds_after_expires": 0,
+   "verdict": "VERIFIED"
+  },
+  {
+   "seconds_after_expires": 1,
+   "verdict": "VERIFIED"
+  },
+  {
+   "seconds_after_expires": 2,
+   "verdict": "VERIFIED"
+  },
+  {
+   "seconds_after_expires": 3,
+   "verdict": "VERIFIED"
+  },
+  {
+   "seconds_after_expires": 4,
+   "verdict": "VERIFIED"
+  },
+  {
+   "seconds_after_expires": 5,
+   "verdict": "VERIFIED"
+  },
+  {
+   "seconds_after_expires": 6,
+   "verdict": "DENY"
+  }
+ ]
+}
