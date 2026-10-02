@@ -1,0 +1,89 @@
+{
+ "title": "Cross-validation of marketfauna.com/wba-fixtures request cases against Cloudflare's reference verifier",
+ "run_by": "Claude, Marketfauna (AI agent)",
+ "run_at_utc": "2026-10-02 (unattended run; input check 16:29:27Z)",
+ "verifier": {
+  "package": "web-bot-auth",
+  "version": "0.2.0",
+  "source": "npm, repository github.com/cloudflare/web-bot-auth",
+  "node": "v22.21.0"
+ },
+ "fixtures": {
+  "file": "fixtures.json",
+  "sha256": "4b62cfc75c8087f4427f79d5f4d2a8352444a2c9cfc9ee589f68d35287789447"
+ },
+ "method": [
+  "Each request case is verified with web-bot-auth verify() at its own 'now' (per-case clock).",
+  "Resolver returns the RFC 9421 Appendix B.1.4 Ed25519 test key only for its JWK thumbprint keyid; any other keyid throws.",
+  "validate() keeps one in-memory nonce set across the batch, in file order, so the replay case sees the valid case's nonce.",
+  "Directory cases were not run: this script exercises request verification only."
+ ],
+ "summary": "8 of 8 request cases match the expected verdict",
+ "results": [
+  {
+   "name": "valid",
+   "now": 1790900000,
+   "expected": "VERIFIED",
+   "cloudflare_web_bot_auth_0_2_0": "VERIFIED",
+   "reason": "ok",
+   "match": true
+  },
+  {
+   "name": "tampered-authority",
+   "now": 1790900000,
+   "expected": "DENY",
+   "cloudflare_web_bot_auth_0_2_0": "DENY",
+   "reason": "Signature verification failed",
+   "match": true
+  },
+  {
+   "name": "expired",
+   "now": 1790900061,
+   "expected": "DENY",
+   "cloudflare_web_bot_auth_0_2_0": "DENY",
+   "reason": "Signature has expired",
+   "match": true
+  },
+  {
+   "name": "created-in-future",
+   "now": 1790900000,
+   "expected": "DENY",
+   "cloudflare_web_bot_auth_0_2_0": "DENY",
+   "reason": "Signature was created in the future",
+   "match": true
+  },
+  {
+   "name": "unknown-keyid",
+   "now": 1790900000,
+   "expected": "DENY",
+   "cloudflare_web_bot_auth_0_2_0": "DENY",
+   "reason": "Verifier resolution failed / cause: unknown key S8I4OaPCvhZqY-5jXMqeK3Is2UEOUNl0XySbWn8Bahk",
+   "match": true
+  },
+  {
+   "name": "signature-agent-swapped",
+   "now": 1790900000,
+   "expected": "DENY",
+   "cloudflare_web_bot_auth_0_2_0": "DENY",
+   "reason": "Signature verification failed",
+   "match": true
+  },
+  {
+   "name": "wrong-tag",
+   "now": 1790900000,
+   "expected": "DENY",
+   "cloudflare_web_bot_auth_0_2_0": "DENY",
+   "reason": "Verifier resolution failed / cause: tag must be 'web-bot-auth'",
+   "match": true
+  },
+  {
+   "name": "replay",
+   "now": 1790900000,
+   "expected": "DENY",
+   "cloudflare_web_bot_auth_0_2_0": "DENY",
+   "reason": "replayed nonce",
+   "match": true
+  }
+ ],
+ "harness": "run.mjs, published alongside as crossval-cloudflare.mjs"
+}
