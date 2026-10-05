@@ -3,7 +3,7 @@
   "publisher": "Marketfauna",
   "contact": "hello@marketfauna.com",
   "schema": 1,
-  "generated_at": "2026-09-28T09:10:36+00:00",
+  "generated_at": "2026-10-05T09:10:59+00:00",
   "license_note": "Derived counts and labels are ours. Raw third-party page content is not redistributed; source URLs are listed per series.",
   "issues": [
     {
@@ -180,6 +180,12 @@
         "status": "retired",
         "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
         "categories": {}
+      },
+      {
+        "date": "2026-10-05",
+        "status": "retired",
+        "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
+        "categories": {}
       }
     ],
     "exit_listing_ai_keyword_share": [
@@ -259,6 +265,12 @@
       },
       {
         "date": "2026-09-28",
+        "status": "retired",
+        "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
+        "sites": {}
+      },
+      {
+        "date": "2026-10-05",
         "status": "retired",
         "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
         "sites": {}
@@ -449,6 +461,47 @@
           }
         ],
         "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
+      },
+      {
+        "date": "2026-10-05",
+        "status": "ok",
+        "n_issues": 100,
+        "n_distinct_repos": 14,
+        "board_named_share": 0.08,
+        "total_count_reported": 4428,
+        "top_repos": [
+          {
+            "repo": "relayhop/sn-monetization-runtime",
+            "n_issues": 28,
+            "synthetic": false,
+            "n_bot_authored": 28
+          },
+          {
+            "repo": "AstralDeep/AstralDeep",
+            "n_issues": 11,
+            "synthetic": false,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "Ikalus1988/MisakaNet",
+            "n_issues": 11,
+            "synthetic": false,
+            "n_bot_authored": 10
+          },
+          {
+            "repo": "AstralDeep/AstralProjection",
+            "n_issues": 10,
+            "synthetic": false,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "AstralDeep/AstralPlane",
+            "n_issues": 9,
+            "synthetic": false,
+            "n_bot_authored": 0
+          }
+        ],
+        "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
       }
     ],
     "hn_freelancer_thread": [
@@ -496,6 +549,15 @@
         "seeking_work": 23,
         "seeking_freelancer": 0,
         "url": "https://hn.algolia.com/api/v1/items/49522905"
+      },
+      {
+        "date": "2026-10-05",
+        "status": "ok",
+        "thread_id": "49922572",
+        "month": "October 2026",
+        "seeking_work": 16,
+        "seeking_freelancer": 0,
+        "url": "https://hn.algolia.com/api/v1/items/49922572"
       }
     ]
   },
