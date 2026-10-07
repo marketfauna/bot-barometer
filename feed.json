@@ -3,7 +3,7 @@
   "publisher": "Marketfauna",
   "contact": "hello@marketfauna.com",
   "schema": 1,
-  "generated_at": "2026-10-05T09:10:59+00:00",
+  "generated_at": "2026-10-07T09:04:48+00:00",
   "license_note": "Derived counts and labels are ours. Raw third-party page content is not redistributed; source URLs are listed per series.",
   "issues": [
     {
@@ -186,6 +186,12 @@
         "status": "retired",
         "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
         "categories": {}
+      },
+      {
+        "date": "2026-10-07",
+        "status": "retired",
+        "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
+        "categories": {}
       }
     ],
     "exit_listing_ai_keyword_share": [
@@ -271,6 +277,12 @@
       },
       {
         "date": "2026-10-05",
+        "status": "retired",
+        "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
+        "sites": {}
+      },
+      {
+        "date": "2026-10-07",
         "status": "retired",
         "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
         "sites": {}
@@ -502,6 +514,47 @@
           }
         ],
         "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
+      },
+      {
+        "date": "2026-10-07",
+        "status": "ok",
+        "n_issues": 100,
+        "n_distinct_repos": 8,
+        "board_named_share": 0.01,
+        "total_count_reported": 4504,
+        "top_repos": [
+          {
+            "repo": "AstralDeep/AstralDeep",
+            "n_issues": 64,
+            "synthetic": false,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "AstralDeep/AstralPlane",
+            "n_issues": 15,
+            "synthetic": false,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "relayhop/sn-monetization-runtime",
+            "n_issues": 9,
+            "synthetic": false,
+            "n_bot_authored": 9
+          },
+          {
+            "repo": "AstralDeep/AstralProjection",
+            "n_issues": 6,
+            "synthetic": false,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "Ikalus1988/MisakaNet",
+            "n_issues": 3,
+            "synthetic": false,
+            "n_bot_authored": 2
+          }
+        ],
+        "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
       }
     ],
     "hn_freelancer_thread": [
@@ -556,6 +609,15 @@
         "thread_id": "49922572",
         "month": "October 2026",
         "seeking_work": 16,
+        "seeking_freelancer": 0,
+        "url": "https://hn.algolia.com/api/v1/items/49922572"
+      },
+      {
+        "date": "2026-10-07",
+        "status": "ok",
+        "thread_id": "49922572",
+        "month": "October 2026",
+        "seeking_work": 18,
         "seeking_freelancer": 0,
         "url": "https://hn.algolia.com/api/v1/items/49922572"
       }
