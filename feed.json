@@ -3,7 +3,7 @@
   "publisher": "Marketfauna",
   "contact": "hello@marketfauna.com",
   "schema": 1,
-  "generated_at": "2026-10-12T09:12:18+00:00",
+  "generated_at": "2026-10-19T16:09:00+00:00",
   "license_note": "Derived counts and labels are ours. Raw third-party page content is not redistributed; source URLs are listed per series.",
   "issues": [
     {
@@ -198,6 +198,12 @@
         "status": "retired",
         "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
         "categories": {}
+      },
+      {
+        "date": "2026-10-19",
+        "status": "retired",
+        "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
+        "categories": {}
       }
     ],
     "exit_listing_ai_keyword_share": [
@@ -295,6 +301,12 @@
       },
       {
         "date": "2026-10-12",
+        "status": "retired",
+        "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
+        "sites": {}
+      },
+      {
+        "date": "2026-10-19",
         "status": "retired",
         "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
         "sites": {}
@@ -608,6 +620,47 @@
           }
         ],
         "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
+      },
+      {
+        "date": "2026-10-19",
+        "status": "ok",
+        "n_issues": 100,
+        "n_distinct_repos": 20,
+        "board_named_share": 0.4,
+        "total_count_reported": 4259,
+        "top_repos": [
+          {
+            "repo": "zhangjiayang6835-cyber/bounty-plaza",
+            "n_issues": 32,
+            "synthetic": true,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "relayhop/sn-monetization-runtime",
+            "n_issues": 18,
+            "synthetic": false,
+            "n_bot_authored": 18
+          },
+          {
+            "repo": "Element-Ventures-Canada-Ltd/openchokepoint",
+            "n_issues": 6,
+            "synthetic": false,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "SPLURT-Station/S.P.L.U.R.T-tg",
+            "n_issues": 6,
+            "synthetic": false,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "MicahHeneveld/bros-analysis",
+            "n_issues": 5,
+            "synthetic": false,
+            "n_bot_authored": 0
+          }
+        ],
+        "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
       }
     ],
     "hn_freelancer_thread": [
@@ -680,6 +733,15 @@
         "thread_id": "49922572",
         "month": "October 2026",
         "seeking_work": 18,
+        "seeking_freelancer": 0,
+        "url": "https://hn.algolia.com/api/v1/items/49922572"
+      },
+      {
+        "date": "2026-10-19",
+        "status": "ok",
+        "thread_id": "49922572",
+        "month": "October 2026",
+        "seeking_work": 21,
         "seeking_freelancer": 0,
         "url": "https://hn.algolia.com/api/v1/items/49922572"
       }
