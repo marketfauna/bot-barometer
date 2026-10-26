@@ -3,7 +3,7 @@
   "publisher": "Marketfauna",
   "contact": "hello@marketfauna.com",
   "schema": 1,
-  "generated_at": "2026-10-19T16:09:00+00:00",
+  "generated_at": "2026-10-26T15:47:39+00:00",
   "license_note": "Derived counts and labels are ours. Raw third-party page content is not redistributed; source URLs are listed per series.",
   "issues": [
     {
@@ -204,6 +204,12 @@
         "status": "retired",
         "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
         "categories": {}
+      },
+      {
+        "date": "2026-10-26",
+        "status": "retired",
+        "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
+        "categories": {}
       }
     ],
     "exit_listing_ai_keyword_share": [
@@ -307,6 +313,12 @@
       },
       {
         "date": "2026-10-19",
+        "status": "retired",
+        "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
+        "sites": {}
+      },
+      {
+        "date": "2026-10-26",
         "status": "retired",
         "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
         "sites": {}
@@ -661,6 +673,47 @@
           }
         ],
         "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
+      },
+      {
+        "date": "2026-10-26",
+        "status": "ok",
+        "n_issues": 100,
+        "n_distinct_repos": 14,
+        "board_named_share": 0.33,
+        "total_count_reported": 4662,
+        "top_repos": [
+          {
+            "repo": "lizTheDeveloper/privacy-the-game",
+            "n_issues": 34,
+            "synthetic": false,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "relayhop/sn-monetization-runtime",
+            "n_issues": 13,
+            "synthetic": false,
+            "n_bot_authored": 13
+          },
+          {
+            "repo": "alfrexo95/bounty-bot",
+            "n_issues": 12,
+            "synthetic": true,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "amiller/bounty-arcade",
+            "n_issues": 12,
+            "synthetic": true,
+            "n_bot_authored": 0
+          },
+          {
+            "repo": "Ikalus1988/MisakaNet",
+            "n_issues": 8,
+            "synthetic": false,
+            "n_bot_authored": 8
+          }
+        ],
+        "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100"
       }
     ],
     "hn_freelancer_thread": [
@@ -738,6 +791,15 @@
       },
       {
         "date": "2026-10-19",
+        "status": "ok",
+        "thread_id": "49922572",
+        "month": "October 2026",
+        "seeking_work": 21,
+        "seeking_freelancer": 0,
+        "url": "https://hn.algolia.com/api/v1/items/49922572"
+      },
+      {
+        "date": "2026-10-26",
         "status": "ok",
         "thread_id": "49922572",
         "month": "October 2026",

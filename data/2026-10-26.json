@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-26",
+  "generated_at_utc": "2026-10-26T15:47:35+00:00",
+  "finished_at_utc": "2026-10-26T15:47:38+00:00",
+  "series": {
+    "freelancer_bids_by_category": {
+      "status": "retired",
+      "error": null,
+      "reason": "Freelancer.com terms s.33 bar robots, spiders, scrapers and other automated access; retired 2026-09-10 before the first scheduled run",
+      "retired_on": "2026-09-10"
+    },
+    "exit_listing_ai_share": {
+      "status": "retired",
+      "error": null,
+      "reason": "Microns, IndieMaker, BuyMicroStartups and AcquireBase terms bar crawling or scraping; retired 2026-09-10 before the first scheduled run",
+      "retired_on": "2026-09-10"
+    },
+    "github_bounty_synthetic_share": {
+      "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100",
+      "http_status": 200,
+      "rate_limit_remaining": "7",
+      "status": "ok",
+      "error": null,
+      "total_count_reported": 4662,
+      "n_issues": 100,
+      "n_distinct_repos": 14,
+      "n_synthetic_issues": 33,
+      "synthetic_share": 0.33,
+      "n_synthetic_repos": 4,
+      "n_bot_authored_issues": 25,
+      "bot_authored_share": 0.25,
+      "n_name_rule_or_bot_issues": 57,
+      "name_rule_or_bot_share": 0.57,
+      "top_repos": [
+        {
+          "repo": "lizTheDeveloper/privacy-the-game",
+          "n_issues": 34,
+          "synthetic": false,
+          "n_bot_authored": 0
+        },
+        {
+          "repo": "relayhop/sn-monetization-runtime",
+          "n_issues": 13,
+          "synthetic": false,
+          "n_bot_authored": 13
+        },
+        {
+          "repo": "alfrexo95/bounty-bot",
+          "n_issues": 12,
+          "synthetic": true,
+          "n_bot_authored": 0
+        },
+        {
+          "repo": "amiller/bounty-arcade",
+          "n_issues": 12,
+          "synthetic": true,
+          "n_bot_authored": 0
+        },
+        {
+          "repo": "Ikalus1988/MisakaNet",
+          "n_issues": 8,
+          "synthetic": false,
+          "n_bot_authored": 8
+        }
+      ],
+      "top1_share": 0.34,
+      "oldest_created_in_page": "2026-10-19T17:06:53Z",
+      "newest_created_in_page": "2026-10-26T15:45:45Z",
+      "keywords": [
+        "bounty",
+        "bounties",
+        "plaza",
+        "claude",
+        "agent",
+        "gpt"
+      ]
+    },
+    "hn_supply_demand": {
+      "search_url": "https://hn.algolia.com/api/v1/search_by_date?query=%22Seeking%20freelancer%22&tags=ask_hn&hitsPerPage=30",
+      "http_status": 200,
+      "thread_id": "49922572",
+      "thread_title": "Ask HN: Freelancer? Seeking freelancer? (October 2026)",
+      "thread_author": "jon_north",
+      "thread_created_at": "2026-10-01T15:02:19Z",
+      "month": "October 2026",
+      "num_comments_reported": 22,
+      "same_month_candidates": [
+        {
+          "id": "49922572",
+          "author": "jon_north",
+          "num_comments": 22
+        }
+      ],
+      "item_url": "https://hn.algolia.com/api/v1/items/49922572",
+      "item_http_status": 200,
+      "status": "ok",
+      "error": null,
+      "n_top_level": 21,
+      "seeking_work": 21,
+      "seeking_freelancer": 0,
+      "other": 0,
+      "deleted_or_empty": 0,
+      "work_per_freelancer_ratio": null,
+      "seeking_work_share": 1.0
+    }
+  },
+  "urls_fetched": [
+    {
+      "url": "https://api.github.com/search/issues?q=label:bounty+is:issue+is:open&sort=created&order=desc&per_page=100",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://hn.algolia.com/api/v1/search_by_date?query=%22Seeking%20freelancer%22&tags=ask_hn&hitsPerPage=30",
+      "status": 200,
+      "error": null
+    },
+    {
+      "url": "https://hn.algolia.com/api/v1/items/49922572",
+      "status": 200,
+      "error": null
+    }
+  ]
+}
