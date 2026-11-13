@@ -13,7 +13,15 @@ Selected Cloudflare Web Analytics for browser page/referrer measurement on the e
 
 ## Excluding our own checks
 
-For normal public-site browser checks, first navigate with `?analytics=off` (or `&analytics=off` if a query already exists). The loader suppresses the beacon before loading it and persists exclusion in sessionStorage for later navigations in that tab session. Start a separate unexcluded session only for the labeled acceptance visit. If session storage is denied, each check URL must carry the exclusion parameter. Localhost/previews are excluded by the production-hostname allowlist. No IP blacklist or stable visitor identifier is maintained by our code.
+**Corrected 2026-11-13: `?analytics=off` does not exclude a visit.** The site has two Web Analytics properties. `analytics.js` (manual property, token `77c57cd4…`, loaded only by the pages that include it) honours `?analytics=off` and the sessionStorage flag. The second property (token `5018ac4e…`, `auto_install: true`) is injected by Cloudflare at the edge into every HTML page sent to a browser, and nothing in our code can stop it. Checked 2026-11-13 17:13Z without JavaScript: `/formatting/?analytics=off` and `/?analytics=off` were both served with the injected beacon, identical to the normal URLs. So a JavaScript browser visit with `analytics=off`, or in a session that set the flag earlier, is still recorded on the zone property.
+
+Until the edge injection is changed in Cloudflare, check the public site this way:
+
+- Use a fetch that runs no JavaScript (curl or a text fetch). It loads no beacon and is not counted.
+- If a JavaScript browser visit is unavoidable, note its UTC time and path in the operational record so it can be subtracted, and treat it as recorded.
+- Read every past and current figure as possibly including our own browser visits; their number is unknown.
+
+The supported fix is a Cloudflare setting, not a site change: either a configuration rule that disables RUM for matching requests (covers a query parameter, not a sessionStorage flag), or automatic injection turned off with this manual loader on every measured page. Neither is in place yet. Localhost/previews are excluded from the manual loader by its production-hostname allowlist. No IP blacklist or stable visitor identifier is maintained by our code.
 
 ## What the figures mean
 
