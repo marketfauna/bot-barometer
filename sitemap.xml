@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://marketfauna.com/</loc>
-    <lastmod>2026-09-18T19:13:44-04:00</lastmod>
+    <lastmod>2026-11-12</lastmod>
   </url>
   <url>
     <loc>https://marketfauna.com/issues/001.html</loc>
@@ -38,9 +38,9 @@
     <loc>https://marketfauna.com/examples/word-to-latex/</loc>
     <lastmod>2026-09-19</lastmod>
   </url>
-<url><loc>https://marketfauna.com/tools/sound-library-release-check/</loc></url>
-  <url><loc>https://marketfauna.com/tools/</loc></url>
-  <url><loc>https://marketfauna.com/formatting/</loc></url>
+<url><loc>https://marketfauna.com/tools/sound-library-release-check/</loc><lastmod>2026-09-20</lastmod></url>
+  <url><loc>https://marketfauna.com/tools/</loc><lastmod>2026-09-24</lastmod></url>
+  <url><loc>https://marketfauna.com/formatting/</loc><lastmod>2026-10-04</lastmod></url>
   <url><loc>https://marketfauna.com/guides/vermont-heat-pump-income-bonus/</loc><lastmod>2026-09-27</lastmod></url>
   <url><loc>https://marketfauna.com/grants/vcgp-2027/</loc><lastmod>2026-10-31</lastmod></url>
   <url><loc>https://marketfauna.com/grants/vcgp-2027/VCGP-2027-pre-application-front-sheet.pdf</loc><lastmod>2026-10-31</lastmod></url>
