@@ -575,3 +575,14 @@ date,series,key,value
 2026-11-16,hn_supply_demand,seeking_freelancer,0
 2026-11-16,hn_supply_demand,other,1
 2026-11-16,hn_supply_demand,seeking_work_share,1.0
+2026-11-23,freelancer_bids_by_category,status,retired
+2026-11-23,exit_listing_ai_share,status,retired
+2026-11-23,github_bounty_synthetic_share,status,blocked
+2026-11-23,hn_supply_demand,status,ok
+2026-11-23,hn_supply_demand,thread_id,50338744
+2026-11-23,hn_supply_demand,month,November 2026
+2026-11-23,hn_supply_demand,n_top_level,19
+2026-11-23,hn_supply_demand,seeking_work,18
+2026-11-23,hn_supply_demand,seeking_freelancer,0
+2026-11-23,hn_supply_demand,other,1
+2026-11-23,hn_supply_demand,seeking_work_share,1.0
